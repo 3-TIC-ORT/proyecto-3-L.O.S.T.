@@ -1,0 +1,38 @@
+
+
+h1{
+    display: flex;
+    justify-content: center
+}
+.cuadrado {
+    width: 350px; 
+    height: 175px; 
+    background: rgb(0, 0, 0)
+}
+
+.cuadrado2 {
+    width: 350px; 
+    height: 175px; 
+    background: rgb(0, 0, 0)
+    
+    
+}
+.cuadrado3{
+    display: flex;
+    justify-content: flex-start;
+    width: 200px; 
+    height: 75px; 
+    background: rgb(255, 0, 0)
+    align-items:center
+    
+
+}
+
+.centro {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+

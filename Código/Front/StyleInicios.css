@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro {
+    width: 60vw;
+    height: 50vh;
+}
+
+.cuadrado{
+    display: flex;
+    width: 275px; 
+     height: 125px; 
+     background: #000000;
+     align-items: center;
+     justify-content: center;
+}
+
+.cuadrados{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+

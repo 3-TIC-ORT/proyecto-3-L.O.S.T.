@@ -1,8 +1,10 @@
 body {
-    height: 100vh;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
+    height:100rem;
+
     margin: 0;
+    overflow: scroll;
 }
 
 header {
@@ -13,11 +15,24 @@ header {
     align-items: center;
     border-bottom: solid black;
     border-bottom-width: 0.3vh;
-    padding: 3vh;
+    padding: 5vh;
     margin: auto;
 }
 
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    height: 90rem;
+    width: 100%;
+}
+
 .ObjectsList {
-    display: grid;
-    grid: ;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 80vw;
+    height: 90%;
+    
 }

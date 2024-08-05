@@ -2,7 +2,7 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 400;
     height:100rem;
-
+    user-select: none;
     margin: 0;
     overflow: scroll;
 }
@@ -35,4 +35,31 @@ header {
     width: 80vw;
     height: 90%;
     
+}
+
+.create {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    font-size: 30vh;
+    background-color: blue;
+    cursor: pointer;
+    width: 20vw;
+    height: 50vh;
+}
+
+.post {
+    display: flex;
+    flex: 1 0 33%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    font-size: 10vh;
+    background-color:coral;
+    cursor: pointer;
+    width: 20vw;
+    height: 50vh;
+    margin: 2vh;
+    order: -1;
 }

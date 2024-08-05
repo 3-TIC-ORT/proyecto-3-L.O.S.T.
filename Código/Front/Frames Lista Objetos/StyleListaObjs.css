@@ -1,7 +1,23 @@
+body {
+    height: 100vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
 header {
+    font-size: 7vh;
+    font-weight: 900;
     display: flex;  
     justify-content: center;
     align-items: center;
-    border-bottom-color: black;
-    border-bottom-width: 1vw;
+    border-bottom: solid black;
+    border-bottom-width: 0.3vh;
+    padding: 3vh;
+    margin: auto;
+}
+
+.ObjectsList {
+    display: grid;
+    grid: ;
 }

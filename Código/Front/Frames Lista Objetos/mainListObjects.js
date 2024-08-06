@@ -1,7 +1,6 @@
 function CreatePost() {
-   let pene = document.createElement("div");
-   pene.textContent = "épico"
-   pene.classList.add("post");
+   let nuevo = document.createElement("div");
+   nuevo.textContent = "épico"
+   nuevo.classList.add("post");
    document.getElementById("ObjectsList").appendChild(pene);
-   console.log("Hola")
 } document.getElementById("create").addEventListener("click", CreatePost);

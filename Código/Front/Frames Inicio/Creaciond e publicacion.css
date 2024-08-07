@@ -1,0 +1,129 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(95, 90, 87);
+    
+}
+
+.Mizq {
+    width: 50%;
+    height: 100%;
+}
+
+.Mder {
+    width: 100%;
+    margin-top: -650px;
+    margin-left: -500px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align:start;
+}
+
+.imagen{
+    width: 37vw;
+    height: 53vh;
+    background-color: rgb(161, 168, 153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7vh;
+}
+.cuadrado{
+    display: flex;
+    width: 505px;
+    height: 75px;
+    background-color: rgb(116, 115, 114);
+    margin-top: 20px;
+    align-items: center;
+    font-size: 20px;
+    
+}
+
+.cuadrada{
+    display: flex;
+    width: 505px;
+    height: 75px;
+    background-color: rgb(116, 115, 114);
+    margin-top: 20px;
+    align-items: center;
+    font-size: 20px;
+    
+}
+.cuadrade{
+    display: flex;
+    width: 505px;
+    height: 75px;
+    background-color: rgb(116, 115, 114);
+    margin-top: 20px;
+    align-items: center;
+    font-size: 20px;
+    
+}
+
+.titulo{
+    display: flex;
+    width: 400px;
+    height: 40px;
+    background-color: rgb(116, 115, 114);
+    margin-top: 20px;
+    align-items: center;
+    font-size: 20px;
+    margin-right: -80px;
+    align-content: flex-start;
+    
+    
+}
+
+.todito{
+    display: flex;
+    justify-content: flex-start;
+    width: -300px;
+}
+
+.descr{
+    width: 27vw;
+    height: 43vh;
+    background-color: rgb(161, 168, 153);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: 545px;
+    margin-top: 12px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 30px;
+    
+}
+
+.coment{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    background-color: rgb(161, 168, 153);
+    width: 27vw;
+    height: 27vh;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin-top  : 22px;
+    margin-left: 543px;
+
+}
+
+.in{
+    display: flex;
+    margin-left: 555px;
+    margin-top: -140px;
+    height: 40px;
+    font-size: 20px;
+
+} 
+
+.but{
+    display: flex;
+    margin-left: 805px;
+    margin-top: -45px;
+    font-size: 32px;
+    
+}

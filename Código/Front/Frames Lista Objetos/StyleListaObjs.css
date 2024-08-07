@@ -13,7 +13,7 @@ header {
     display: flex;  
     justify-content: center;
     align-items: center;
-    border-bottom: solid black;
+        border-bottom: solid black;
     border-bottom-width: 0.3vh;
     padding: 5vh;
     margin: auto;
@@ -30,22 +30,8 @@ header {
 .ObjectsList {
     display: grid;
     grid-template: repeat(20, 25rem) / 1fr 1fr 1fr 1fr ;
-    justify-content: space-between;
-    align-content: space-between;
     width: 90%;
     height: 90%;
-}
-
-.create {
-    font-size: 30vh;
-    background-color: blue;
-
-}
-
-.post {
-    font-size: 10vh;
-    background-color:coral;
-    order: -1;
 }
 
 .create, .post {
@@ -59,6 +45,44 @@ header {
     justify-self: center;
 }
 
-span {
+.create {
+    font-size: 30vh;
+    background-color: blue;
+
+}
+
+.post {
     font-size: 5vh;
+    order: -1;
+}
+
+.up, .down {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.up  {
+    height: 70%;
+    font-size: 4vh;
+    background-color: blue;
+}
+
+.down {
+    height: 30%;
+    font-size: 3vh;
+    background-color:blueviolet;
+}
+
+ h3 {
+    user-select:text;
+    cursor:text;
+}
+
+.addtxt {
+    font-size: 4vh;
+    
 }

@@ -1,6 +1,23 @@
+let i = 0;
 function CreatePost() {
-   let nuevo = document.createElement("div");
-   nuevo.textContent = "épico"
-   nuevo.classList.add("post");
-   document.getElementById("ObjectsList").appendChild(nuevo);
+
+   let nuevoBox = document.createElement("div");
+   nuevoBox.id = "nuevoBox" + i;
+   nuevoBox.classList.add("post");
+   let nuevoUp = document.createElement("div");
+   nuevoUp.id = "nuevoUp" + i;
+   nuevoUp.classList.add("up");
+   let Uptxt = document.createElement("h1");
+   Uptxt.textContent = "Imagen XD"
+   let nuevoDown = document.createElement("div");
+   nuevoDown.id = "nuevoDown" + i;
+   nuevoDown.classList.add("down");
+   let Downtxt = document.createElement("h3");
+   Downtxt.textContent = "Textito"
+   document.getElementById("ObjectsList").appendChild(nuevoBox);
+   document.getElementById("nuevoBox" + i).appendChild(nuevoUp);
+   document.getElementById("nuevoBox" + i).appendChild(nuevoDown);
+   document.getElementById("nuevoUp" + i).appendChild(Uptxt);
+   document.getElementById("nuevoDown" + i).appendChild(Downtxt);
+   i++;
 } document.getElementById("create").addEventListener("click", CreatePost);

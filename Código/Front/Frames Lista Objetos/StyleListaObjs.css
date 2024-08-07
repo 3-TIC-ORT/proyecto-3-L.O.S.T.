@@ -29,37 +29,34 @@ header {
 
 .ObjectsList {
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr / 5vh 5vh 5vh 5vh;
+    grid-template: repeat(20, 25rem) / 1fr 1fr 1fr 1fr ;
     justify-content: space-between;
     align-content: space-between;
-    width: 60vw;
+    width: 90%;
     height: 90%;
 }
 
 .create {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
     font-size: 30vh;
     background-color: blue;
-    cursor: pointer;
-    width: 20%;
-    height: 80%;
+
 }
 
 .post {
+    font-size: 10vh;
+    background-color:coral;
+    order: -1;
+}
+
+.create, .post {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    font-size: 10vh;
-    background-color:coral;
     cursor: pointer;
-    width: 100%;
+    width: 80%;
     height: 80%;
-    order: -1;
+    justify-self: center;
 }
 
 span {

@@ -34,11 +34,11 @@ header {
     align-content: space-between;
     width: 80vw;
     height: 90%;
-    
 }
 
 .create {
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-content: center;
@@ -51,7 +51,8 @@ header {
 
 .post {
     display: flex;
-    flex: 1 0 33%;
+    flex: 1 0 25%;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-content: center;
@@ -60,6 +61,9 @@ header {
     cursor: pointer;
     width: 20vw;
     height: 50vh;
-    margin: 2vh;
     order: -1;
+}
+
+span {
+    font-size: 5vh;
 }

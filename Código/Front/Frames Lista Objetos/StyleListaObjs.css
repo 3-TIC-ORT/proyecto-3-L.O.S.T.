@@ -28,11 +28,11 @@ header {
 }
 
 .ObjectsList {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 5vh 5vh 5vh 5vh;
     justify-content: space-between;
     align-content: space-between;
-    width: 80vw;
+    width: 60vw;
     height: 90%;
 }
 
@@ -45,22 +45,20 @@ header {
     font-size: 30vh;
     background-color: blue;
     cursor: pointer;
-    width: 20vw;
-    height: 50vh;
+    width: 20%;
+    height: 80%;
 }
 
 .post {
     display: flex;
-    flex: 1 0 25%;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    align-content: center;
     font-size: 10vh;
     background-color:coral;
     cursor: pointer;
-    width: 20vw;
-    height: 50vh;
+    width: 100%;
+    height: 80%;
     order: -1;
 }
 

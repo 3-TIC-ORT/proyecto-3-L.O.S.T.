@@ -8,7 +8,7 @@ function CreatePost() {
    nuevoUp.id = "nuevoUp" + i;
    nuevoUp.classList.add("up");
    let Uptxt = document.createElement("h1");
-   Uptxt.textContent = "Imagen XD"
+   Uptxt.textContent = "Imagen"
    let nuevoDown = document.createElement("div");
    nuevoDown.id = "nuevoDown" + i;
    nuevoDown.classList.add("down");

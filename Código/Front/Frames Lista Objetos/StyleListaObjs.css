@@ -39,6 +39,7 @@ header {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     width: 80%;
     height: 80%;
@@ -46,13 +47,13 @@ header {
 }
 
 .create {
-    font-size: 30vh;
+    font-size: 5vh;
     background-color: blue;
 
 }
 
 .post {
-    font-size: 5vh;
+    font-size: 20vh;
     order: -1;
 }
 

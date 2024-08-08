@@ -92,14 +92,14 @@ body{
 
 .coment{
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
     font-size: 4vh;
     background-color: rgb(161, 168, 153);
     width: 27vw;
     height: 27vh;
-    align-content: flex-start;
-    align-items: flex-start;
-
 }
 
 .in{
@@ -111,6 +111,13 @@ body{
 
 .but{
     display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 5vh;
 
+}
+
+.input-but {
+    display: flex;
+    flex-direction: row;
 }

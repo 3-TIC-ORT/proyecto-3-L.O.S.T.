@@ -13,7 +13,7 @@ header {
     display: flex;  
     justify-content: center;
     align-items: center;
-    border-bottom: solid black;
+        border-bottom: solid black;
     border-bottom-width: 0.3vh;
     padding: 5vh;
     margin: auto;
@@ -28,42 +28,62 @@ header {
 }
 
 .ObjectsList {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    width: 80vw;
+    display: grid;
+    grid-template: repeat(20, 25rem) / 1fr 1fr 1fr 1fr ;
+    width: 90%;
     height: 90%;
 }
 
-.create {
+.create, .post {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    align-content: center;
-    font-size: 30vh;
-    background-color: blue;
+    align-items: center;
     cursor: pointer;
-    width: 20vw;
-    height: 50vh;
+    width: 80%;
+    height: 80%;
+    justify-self: center;
+}
+
+.create {
+    font-size: 5vh;
+    background-color: blue;
+
 }
 
 .post {
-    display: flex;
-    flex: 1 0 25%;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    font-size: 10vh;
-    background-color:coral;
-    cursor: pointer;
-    width: 20vw;
-    height: 50vh;
+    font-size: 20vh;
     order: -1;
 }
 
-span {
-    font-size: 5vh;
+.up, .down {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.up  {
+    height: 70%;
+    font-size: 4vh;
+    background-color: blue;
+}
+
+.down {
+    height: 30%;
+    font-size: 3vh;
+    background-color:blueviolet;
+}
+
+ h3 {
+    user-select:text;
+    cursor:text;
+}
+
+.addtxt {
+    font-size: 4vh;
+    
 }

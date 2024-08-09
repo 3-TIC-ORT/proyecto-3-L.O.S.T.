@@ -29,7 +29,7 @@ header {
 
 .ObjectsList {
     display: grid;
-    grid-template: repeat(20, 25rem) / 1fr 1fr 1fr 1fr ;
+    grid-template: repeat(25, 25rem) / 1fr 1fr 1fr 1fr ;
     width: 90%;
     height: 90%;
 }
@@ -47,7 +47,7 @@ header {
 }
 
 .create {
-    font-size: 5vh;
+    font-size: 7vh;
     background-color: blue;
 
 }
@@ -85,5 +85,4 @@ header {
 
 .addtxt {
     font-size: 4vh;
-    
 }

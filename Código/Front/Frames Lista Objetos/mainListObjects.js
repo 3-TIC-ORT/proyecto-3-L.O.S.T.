@@ -13,7 +13,7 @@ function CreatePost() {
    nuevoDown.id = "nuevoDown" + i;
    nuevoDown.classList.add("down");
    let Downtxt = document.createElement("h3");
-   Downtxt.textContent = "Textito"
+   Downtxt.textContent = "Título"
    document.getElementById("ObjectsList").appendChild(nuevoBox);
    document.getElementById("nuevoBox" + i).appendChild(nuevoUp);
    document.getElementById("nuevoBox" + i).appendChild(nuevoDown);

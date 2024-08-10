@@ -1,15 +1,14 @@
 /* Frame Inicio: */
 
 body {
-    display: flex;
     height: 100vh;
     width: 100vw;
     margin: 0;
 }
 
 .home-frame {
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .header{
@@ -25,7 +24,7 @@ body {
 .user-name{
     display: flex;
     justify-self: flex-end;
-    font-size: 30px;
+    font-size: 4vh;
    }
    
    .img{
@@ -35,7 +34,7 @@ body {
    }
 
 .medio {
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -44,26 +43,29 @@ body {
 }
 
 .centro {
-    width: 60vw;
-    height: 50vh;
+    width: 50%;
+    height: 40%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     
 }
 
 .cuadrado{
-    font-size: 5vh;
-    text-align: center;
     display: flex;
-    width: 275px; 
-     height: 125px; 
-     background: #000000;
-     align-items: center;
-     justify-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 5vh;
+    width: 20vw; 
+    height: 15vh; 
+    background: #000000;
 }
 
 .cuadrados{
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -71,7 +73,6 @@ body {
 h1{
     display: flex;
     justify-content: center;
-    
 }
 
 .CS{

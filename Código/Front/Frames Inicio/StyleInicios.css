@@ -7,6 +7,7 @@ body {
 }
 
 .home-frame {
+    display: block;
     height: 100%;
     width: 100%;
 }
@@ -14,27 +15,71 @@ body {
 .header{
     display: flex;
     justify-content: flex-start;
-    width: 100%;
-    height: 10vh;
     align-items: center;
     text-align: center;
     justify-content: space-between;
+    width: 100%;
+    height: 15%;
+    padding: 2vh;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: aquamarine;
+}
+
+.log-stuff {
+    display: none;
+}
+
+.CS{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    height: 10vh;
+    width: 15vw;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.user-bell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .user-name{
     display: flex;
     justify-self: flex-end;
     font-size: 4vh;
-   }
-   
-   .img{
-       display: flex;
-       justify-content: flex-end;
-       background-image: url("..imgs/campanita-ej.png")
+    user-select:none;
    }
 
+img{
+    display: flex;
+    justify-content: flex-end;
+    width: 3.5vw;
+    height: 7vh;
+    padding-left: 1vw;
+}
+
+.LS-SU {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    height: 10vh;
+    width: 15vw;
+    background-color: #05B0E5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
 .medio {
-    height: 90%;
+    height: 85%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -47,12 +92,36 @@ body {
     height: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     
 }
 
-.cuadrado{
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+.acronim,
+.meaning {
+    margin: 0;
+}
+
+.acronim {
+    font-weight: 900;
+    font-size: 10vh;
+}
+
+.meaning {
+    font-weight: 400;
+    font-size: 3.5vh;
+    padding-bottom: 3vh;
+}
+
+
+.find-lost{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,43 +130,23 @@ body {
     width: 20vw; 
     height: 15vh; 
     background: #000000;
+    color: white;
+    cursor: pointer;
 }
 
-.cuadrados{
+.choice{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-}
-
-h1{
-    display: flex;
-    justify-content: center;
-}
-
-.CS{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4vh;
-    height: 10vh;
-    width: 15vw;
-    background-color: rgb(255, 0, 0);
-    display: flex;
-    border: none;
-}
-
-.CC{
-    display: flex;
-    justify-content: flex-end;
-    
+    width: 100%;
+    user-select:none;
 }
 
 /* Frame Log in/Sign up: */
 
 .user-frame {
     display: none;
-    /* display: flex; */
     flex-direction: column;
     justify-content: center;
     align-items: center;

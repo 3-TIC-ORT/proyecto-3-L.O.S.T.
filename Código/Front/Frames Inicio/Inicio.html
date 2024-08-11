@@ -9,29 +9,34 @@
 </head>
 <body>
 
-    <div class="home-frame">
+    <div class="home-frame" id="home-frame">
         <div class="header">
-            <button class="CS"><span style="color:rgb(235, 235, 235)">Cerrar sesión</span></button>
-            <div class="img"></div>
-            <span style="color:rgb(0, 0, 0)" class="user-name">Nombre de usuario</span>
+            <div class="log-stuff">
+                <button class="CS"><span>Cerrar sesión</span></button>
+                <div class="user-bell">
+                    <span class="user-name">User</span>
+                    <img src="../Imgs/bell.png" alt="campanita" title="notification-bell">
+                </div>
+            </div>
+            <div class="LS-SU" id="LS-SU"><span>Iniciar Sesión/Registrarse</span></div>
         </div>
             
         <div class="medio">
             <div class="centro">
-                    <div class="titulo">
-                        <h1>OBJETOS PERDIDOS</h1>
-                    </div>
-               
-                <div class="cuadrados">        
-                    <div class="cuadrado"><span style="color:white">Encontré algo</span></div>
-                    <div class="cuadrado"><span style="color:white">Perdí algo</span></div>
+                <div class="title"> 
+                    <h1 class="acronim">L.O.S.T.</h1>
+                    <h3 class="meaning">Logística de Objetos Sin Tenencia</h3>  
+                </div>
+                <div class="choice">        
+                    <div class="find-lost"><span>Encontré algo</span></div>
+                    <div class="find-lost"><span>Perdí algo</span></div>
                 </div>
             </div>
             
         </div>
     </div>
 
-    <div class="user-frame">
+    <div class="user-frame" id="user-frame" >
         <main>
             <div class="data"><span>Usuario</span></div>
             <div class="data"><span>Contraseña</span><div class="ojo"></div></div>
@@ -41,7 +46,6 @@
             </div>
         </main>
     </div>
-
+    <script src="Home.js"></script>
 </body>
- 
 </html

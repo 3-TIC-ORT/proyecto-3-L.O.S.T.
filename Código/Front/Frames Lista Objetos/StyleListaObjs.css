@@ -83,6 +83,10 @@ header {
     cursor:text;
 }
 
+h1 {
+    margin: 0;
+}
+
 .addtxt {
     font-size: 4vh;
 }

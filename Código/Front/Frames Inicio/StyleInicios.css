@@ -7,7 +7,8 @@ body {
 }
 
 .home-frame {
-    display: block;
+    position: fixed;
+    z-index:auto;
     height: 100%;
     width: 100%;
 }

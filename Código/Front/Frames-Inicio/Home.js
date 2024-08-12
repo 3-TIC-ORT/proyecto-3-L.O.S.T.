@@ -1,8 +1,7 @@
+let userFrame = document.getElementById("user-frame");  
+
 function LS () {
-    let home = document.getElementById("home-frame");
-    let userFrame = document.getElementById("user-frame");
-    console.log("funcion")
-    userFrame.style.display = "flex";
+    userFrame.style.display = "grid";
 } document.getElementById("LS-SU").addEventListener("click", LS);
 
 function found () {
@@ -12,3 +11,12 @@ function found () {
 function lost () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
 } document.getElementById("lost").addEventListener("click", found);
+
+function BackHome () {
+    userFrame.style.display = "none";
+    console.log("hola")
+} 
+document.getElementsByClassName("a")[0].addEventListener("click", BackHome);
+document.getElementsByClassName("b")[0].addEventListener("click", BackHome);
+document.getElementsByClassName("c")[0].addEventListener("click", BackHome);
+document.getElementsByClassName("d")[0].addEventListener("click", BackHome);

@@ -55,7 +55,7 @@ console.log(`Mínimo: Nombre: ${interpretado[minimo]['Game Title']} ${interpreta
 
 
 
-fs.appendFile('Video Games Sales.csv', '1907,1908,Minecraft,PC,2011.0,Adventure,Mojang,,,,,300.00,10', function (err) {
-    if (err) throw err;
-    console.log('Updated!');
-  });
+// fs.appendFile('Video Games Sales.csv', '1907,1908,Minecraft,PC,2011.0,Adventure,Mojang,,,,,300.00,10', function (err) {
+//     if (err) throw err;
+//     console.log('Updated!');
+//   });

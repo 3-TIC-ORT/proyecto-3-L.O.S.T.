@@ -209,9 +209,11 @@ main { /*Caja donde se logea uno */
     height: 25%;
     outline: none;
     color: white;
+    font-size: 3vh;
 }
 .data::placeholder {
     color: rgb(155, 155, 155);
+    font-size: 3vh;
 }
 
 .LS {
@@ -219,8 +221,8 @@ main { /*Caja donde se logea uno */
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 5vw;
-    height: 5vh;
+    width: 7vw;
+    height: 7vh;
     background-color: blueviolet;
     user-select: none;
     cursor: pointer;

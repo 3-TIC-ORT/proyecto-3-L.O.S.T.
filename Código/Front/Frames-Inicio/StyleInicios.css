@@ -28,6 +28,10 @@ body {
 
 .log-stuff {
     display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
 }
 
 .CS{
@@ -199,7 +203,8 @@ main { /*Caja donde se logea uno */
 .datas {
     display: flex;
     flex-direction: column;
-    height: 30%;
+    height: 50%;
+    width: 70%;
     justify-content: space-around;
 }
 
@@ -209,11 +214,11 @@ main { /*Caja donde se logea uno */
     height: 25%;
     outline: none;
     color: white;
-    font-size: 3vh;
+    font-size: 4vh;
 }
 .data::placeholder {
     color: rgb(155, 155, 155);
-    font-size: 3vh;
+    font-size: 4vh;
 }
 
 .LS {
@@ -221,8 +226,8 @@ main { /*Caja donde se logea uno */
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 7vw;
-    height: 7vh;
+    width: 47%;
+    height: 70%;
     background-color: blueviolet;
     user-select: none;
     cursor: pointer;
@@ -233,4 +238,7 @@ main { /*Caja donde se logea uno */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 30%;
+    width: 100%;
+    font-size: 3vh;
 }

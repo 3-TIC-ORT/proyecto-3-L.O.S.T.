@@ -247,3 +247,15 @@ main { /*Caja donde se logea uno */
     width: 100%;
     font-size: 3vh;
 }
+
+#anonymus {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    color: #1a0dab;
+}
+
+#anonymus:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

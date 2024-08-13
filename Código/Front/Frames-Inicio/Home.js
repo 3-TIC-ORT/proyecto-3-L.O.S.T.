@@ -25,7 +25,7 @@ document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 function BackHomeLogged() {
     userFrame.style.display = "none";
     LoggedOut.style.display = "flex"
-    LogIn.style.display = "none"
+    LogIn.style.display = "none";
 
     let UserName = document.getElementById("user-data").value;
     let UserShown = document.getElementById("user-nameShown");
@@ -33,7 +33,7 @@ function BackHomeLogged() {
     //Debería hacer que también haya un botón abajo de las dos opciones que te permita ir anónimo por la página, y que aparezca "Anónimo" como nombre de usuario.
 
     if (UserName === "") {
-        UserShown.textContent = "User"
+        UserShown.textContent = "User";
     } else {
         UserShown.textContent = `${UserName}`;
     }
@@ -41,6 +41,8 @@ function BackHomeLogged() {
 document.getElementById("FinalSign").addEventListener("click", BackHomeLogged);
 
 function BackHomeLoggedOut() {
-    LoggedOut.style.display = "none"
-    LogIn.style.display = "flex"
-} document.getElementById("CS").addEventListener("click", BackHomeLoggedOut)
+    LoggedOut.style.display = "none";
+    LogIn.style.display = "flex";
+    document.getElementById("user-data").value = "";
+    document.getElementById("password-data").value = "";
+} document.getElementById("CS").addEventListener("click", BackHomeLoggedOut);

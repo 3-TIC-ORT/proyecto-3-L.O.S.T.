@@ -7,10 +7,12 @@ function LS () {
 
 function found () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+    //Faltaría que cambie el textcontent del título de la lista así se distingue cual es cual, hay dos maneras que veo posibles: La primera es que se importe una clase o algo por el estilo del otro css. La otra que se me hace más fácil es que linkear el html con el css para que javascript tenga acceso a las otras clases, aunque deberíamos tener cuidado con el conflicto entre clases entre ambos css.
 } document.getElementById("found").addEventListener("click", found);
 
 function lost () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+    //Lo mismo que dije arriba
 } document.getElementById("lost").addEventListener("click", found);
 
 function BackHome () {
@@ -22,23 +24,26 @@ document.getElementsByClassName("b")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("c")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 
-function BackHomeLogged() {
-    userFrame.style.display = "none";
-    LoggedOut.style.display = "flex"
-    LogIn.style.display = "none";
-
+function BackHomeLogged(event) {
     let UserName = document.getElementById("user-data").value;
+    let UserPassword = document.getElementById("password-data").value
     let UserShown = document.getElementById("user-nameShown");
-
-    //Debería hacer que también haya un botón abajo de las dos opciones que te permita ir anónimo por la página, y que aparezca "Anónimo" como nombre de usuario.
-
-    if (UserName === "") {
-        UserShown.textContent = "User";
+    if (event.target.id === "anonymus") {
+        UserShown.textContent = `Anónimo`;
+        userFrame.style.display = "none";
+        LoggedOut.style.display = "flex"
+        LogIn.style.display = "none";
+    } else if (UserName === "" || UserPassword === ""){
+        alert(`Es obligatorio indicar un nombre de usuario y una contraseña para avanzar. Sí aún así desea continuar, aprete el botón "Anónimo"`)  
     } else {
         UserShown.textContent = `${UserName}`;
+        userFrame.style.display = "none";
+        LoggedOut.style.display = "flex"
+        LogIn.style.display = "none";
     }
 } document.getElementById("FinalLog").addEventListener("click", BackHomeLogged);
 document.getElementById("FinalSign").addEventListener("click", BackHomeLogged);
+document.getElementById("anonymus").addEventListener("click", BackHomeLogged);
 
 function BackHomeLoggedOut() {
     LoggedOut.style.display = "none";

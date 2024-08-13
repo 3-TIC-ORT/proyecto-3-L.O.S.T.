@@ -251,6 +251,7 @@ main { /*Caja donde se logea uno */
 #anonymus {
     display: flex;
     justify-content: center;
+    font-size: 3vh;
     user-select: none;
     color: #1a0dab;
 }

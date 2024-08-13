@@ -225,7 +225,7 @@ main { /*Caja donde se logea uno */
 }
 
 .LS {
-    display: flex;
+    display:;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -234,7 +234,7 @@ main { /*Caja donde se logea uno */
     background-color: blueviolet;
     user-select: none;
     cursor: pointer;
-
+    border: none;
 }
 
 .LSs {

@@ -1,8 +1,9 @@
-const fs = require('fs')
-const { readFileSync } = require('fs');
+const fs = require('fs');
+const json2csv = require('json2csv');
 const { parse } = require('csv-parse/sync');
 
-let contenido = readFileSync('Video Games Sales.csv', 'utf-8');
+
+let contenido = fs.readFileSync('Video Games Sales.csv', 'utf-8');
 let interpretado = parse(contenido, 
 {
     columns: true,
@@ -11,28 +12,28 @@ let interpretado = parse(contenido,
         return value;
     }
 });
-// console.log(interpretado);
 
-let maximaDiferencia;
-let minimaDiferencia;
+
+let maximaRelacion;
+let minimaRelacion;
 let maximo;
 let minimo;
 let generos=[];
 for(let i = 0; i < interpretado.length; i++) {
-    let diferencia = interpretado[i].Global / interpretado[i].Review;
+    let relacion = interpretado[i].Global / interpretado[i].Review;
     if(i===0){
-        maximaDiferencia = diferencia
+        maximaRelacion = relacion
         maximo = i;
-        minimaDiferencia = diferencia
+        minimaRelacion = relacion
         minimo = i;
         generos[0] = interpretado[i]['Genre'];
     }
     else {
-        if(diferencia > maximaDiferencia){
-            maximaDiferencia = diferencia
+        if(relacion > maximaRelacion){
+            maximaRelacion = relacion
             maximo = i;
-        } else if(diferencia < minimaDiferencia){
-            minimaDiferencia = diferencia
+        } else if(relacion < minimaRelacion){
+            minimaRelacion = relacion
             minimo = i;
         }
     }
@@ -50,12 +51,25 @@ for(let i = 0; i < interpretado.length; i++) {
 
 console.log(`Máximo: Nombre: ${interpretado[maximo]['Game Title']} ${interpretado[maximo]['Global']}  ${interpretado[maximo]['Review']}`);
 console.log(`Mínimo: Nombre: ${interpretado[minimo]['Game Title']} ${interpretado[minimo]['Global']}  ${interpretado[minimo]['Review']}`);
-// console.log(generos);
+console.log(generos);
 
+let NuevoInterpretado = []
 
+function columnaRelacion(){
+    for(let i = 0; i < interpretado.length; i++){
+        let relacion = interpretado[i].Global / interpretado[i].Review;
+        interpretado[i].relacion = relacion;
+        NuevoInterpretado.push(interpretado[i]);
+    }
+    ;
+    let NuevoCsv = json2csv({data: NuevoInterpretado, fields: Object.keys(NuevoInterpretado[0])});
+    fs.writeFileSync("NuevaBase.csv", NuevoCsv);
+    console.log("Terminado");
+}
+columnaRelacion();
 
 
 // fs.appendFile('Video Games Sales.csv', '1907,1908,Minecraft,PC,2011.0,Adventure,Mojang,,,,,300.00,10', function (err) {
 //     if (err) throw err;
-//     console.log('Updated!');
+//     console.log('Listo!');
 //   });

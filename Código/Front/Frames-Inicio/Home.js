@@ -9,10 +9,10 @@ function found () {
 
     //Por seguir
 
-    const home = document.querySelector(`home-frame`);
-    const data = Object.fromEntries(UD);
-    const json = JSON.stringify(data);
-    sessionStorage.setItem(`info`, json)
+    // const home = document.querySelector(`home-frame`);
+    // const data = Object.fromEntries(UD);
+    // const json = JSON.stringify(data);
+    // sessionStorage.setItem(`info`, json)
 
 
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"

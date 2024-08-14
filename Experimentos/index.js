@@ -61,9 +61,27 @@ function columnaRelacion(){
         interpretado[i].relacion = relacion;
         NuevoInterpretado.push(interpretado[i]);
     }
-    ;
-    let NuevoCsv = json2csv({data: NuevoInterpretado, fields: Object.keys(NuevoInterpretado[0])});
-    fs.writeFileSync("NuevaBase.csv", NuevoCsv);
+    let NuevoCsv = "";
+    for(let i = 0; i<Object.keys(NuevoInterpretado[0]).length;i++){
+        if (NuevoCsv != ""){
+        NuevoCsv = NuevoCsv + "," + Object.keys(NuevoInterpretado[0])[i];
+        } else {
+            NuevoCsv = Object.keys(NuevoInterpretado[0])[i];
+        }
+    }
+    NuevoCsv = NuevoCsv + "\n"
+    console.log(NuevoCsv)
+    for(let i = 0; i<NuevoInterpretado.length; i++){
+        for(let a = 0; a < Object.values(NuevoInterpretado[0]).length; a++){
+            if(a===0){
+                NuevoCsv = NuevoCsv + Object.values(NuevoInterpretado[i])[a];
+            } else {
+                NuevoCsv = NuevoCsv + "," + Object.values(NuevoInterpretado[i])[a];
+            }
+        }
+        NuevoCsv = NuevoCsv + "\n";
+    }
+    fs.writeFileSync("NuevaBase.csv", NuevoCsv, 'utf-8');
     console.log("Terminado");
 }
 columnaRelacion();

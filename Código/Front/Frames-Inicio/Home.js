@@ -6,6 +6,15 @@ function LS () {
 } document.getElementById("LS-SU").addEventListener("click", LS);
 
 function found () {
+
+    //Por seguir
+
+    const home = document.querySelector(`home-frame`);
+    const data = Object.fromEntries(UD);
+    const json = JSON.stringify(data);
+    sessionStorage.setItem(`info`, json)
+
+
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     //Faltaría que cambie el textcontent del título de la lista así se distingue cual es cual, hay dos maneras que veo posibles: La primera es que se importe una clase o algo por el estilo del otro css. La otra que se me hace más fácil es que linkear el html con el css para que javascript tenga acceso a las otras clases, aunque deberíamos tener cuidado con el conflicto entre clases entre ambos css.
 } document.getElementById("found").addEventListener("click", found);
@@ -51,3 +60,4 @@ function BackHomeLoggedOut() {
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
 } document.getElementById("CS").addEventListener("click", BackHomeLoggedOut);
+LOCA

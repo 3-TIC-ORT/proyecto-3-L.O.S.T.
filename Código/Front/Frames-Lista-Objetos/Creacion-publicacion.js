@@ -17,3 +17,4 @@ function comentar(){
     document.getElementById("coment-box").appendChild(coment);
 }
 document.getElementById("boti").addEventListener("click", comentar);
+

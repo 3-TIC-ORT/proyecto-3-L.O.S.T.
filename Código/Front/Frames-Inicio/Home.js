@@ -1,6 +1,9 @@
 let userFrame = document.getElementById("user-frame");  
-let LoggedOut = document.getElementById("log-stuff");
+let UserShwon = document.getElementById("user-nameShown")
 let LogIn = document.getElementById("LS-SU");
+let LogOut = document.getElementById("log-stuff")
+let bell = document.getElementById("bell")
+let CS = document.getElementById("CS")
 function LS () {
     userFrame.style.display = "grid";
 } document.getElementById("LS-SU").addEventListener("click", LS);
@@ -26,7 +29,6 @@ function lost () {
 
 function BackHome () {
     userFrame.style.display = "none";
-    console.log("hola")
 } 
 document.getElementsByClassName("a")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("b")[0].addEventListener("click", BackHome);
@@ -37,27 +39,25 @@ function BackHomeLogged(event) {
     let UserName = document.getElementById("user-data").value;
     let UserPassword = document.getElementById("password-data").value
     let UserShown = document.getElementById("user-nameShown");
-    if (event.target.id === "anonymus") {
-        UserShown.textContent = `Anónimo`;
-        userFrame.style.display = "none";
-        LoggedOut.style.display = "flex"
-        LogIn.style.display = "none";
-    } else if (UserName === "" || UserPassword === ""){
+    if (UserName === "" || UserPassword === ""){
         alert(`Es obligatorio indicar un nombre de usuario y una contraseña para avanzar. Sí aún así desea continuar, aprete el botón "Anónimo"`)  
     } else {
         UserShown.textContent = `${UserName}`;
         userFrame.style.display = "none";
-        LoggedOut.style.display = "flex"
         LogIn.style.display = "none";
+        CS.style.display = "flex"
+        bell.style.display = "flex"
+
     }
 } document.getElementById("FinalLog").addEventListener("click", BackHomeLogged);
 document.getElementById("FinalSign").addEventListener("click", BackHomeLogged);
-document.getElementById("anonymus").addEventListener("click", BackHomeLogged);
 
 function BackHomeLoggedOut() {
-    LoggedOut.style.display = "none";
+    bell.style.display = "none";
+    CS.style.display = "none"
     LogIn.style.display = "flex";
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
+    UserShwon.textContent = "Anónimo"
 } document.getElementById("CS").addEventListener("click", BackHomeLoggedOut);
 LOCA

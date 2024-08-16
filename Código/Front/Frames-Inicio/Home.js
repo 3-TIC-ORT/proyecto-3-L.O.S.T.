@@ -40,7 +40,7 @@ function BackHomeLogged(event) {
     let UserPassword = document.getElementById("password-data").value
     let UserShown = document.getElementById("user-nameShown");
     if (UserName === "" || UserPassword === ""){
-        alert(`Es obligatorio indicar un nombre de usuario y una contraseña para avanzar. Sí aún así desea continuar, aprete el botón "Anónimo"`)  
+        alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
     } else {
         UserShown.textContent = `${UserName}`;
         userFrame.style.display = "none";
@@ -52,6 +52,22 @@ function BackHomeLogged(event) {
 } document.getElementById("FinalLog").addEventListener("click", BackHomeLogged);
 document.getElementById("FinalSign").addEventListener("click", BackHomeLogged);
 
+function HideShow (event) {
+    let show = document.getElementById("show");
+    let hide = document.getElementById("hide");
+    if (event.target.id === "hide") {
+        document.getElementById(`password-data`).type = `text`;
+        show.style.display = "block"
+        hide.style.display = "none"
+    } else if (event.target.id === "show"){
+        document.getElementById(`password-data`).type = `password`;
+        show.style.display = "none"
+        hide.style.display = "block"
+    }
+} document.getElementById("hide").addEventListener("click", HideShow);
+document.getElementById("show").addEventListener("click", HideShow);
+
+
 function BackHomeLoggedOut() {
     bell.style.display = "none";
     CS.style.display = "none"
@@ -60,4 +76,3 @@ function BackHomeLoggedOut() {
     document.getElementById("password-data").value = "";
     UserShwon.textContent = "Anónimo"
 } document.getElementById("CS").addEventListener("click", BackHomeLoggedOut);
-LOCA

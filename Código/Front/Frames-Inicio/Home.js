@@ -71,13 +71,13 @@ document.getElementById("show").addEventListener("click", HideShow);
 
 //Hay que arreglar esta función que debería hacer que cuando clickeas el input te desaparezcan los ojos, y cuando hacer click afuera o doble click al input aparezcan denuevo.
 
-function HideEyes (event) {
+function HideEyes () {
     let password = document.getElementById("password-data").value;
-    if (event.target.id === "password-data") {
+    if (password === "") {
         show.style.display = "none";
-        hide.style.display = "none";
-    } else if (doubleClicked(event.target.id === "password-data")){
         hide.style.display = "block";
+    } else {
+        hide.style.display = "none";
     }
 
 } document.getElementById("password-data").addEventListener("click", HideEyes);
@@ -91,3 +91,4 @@ function BackHomeLoggedOut() {
     document.getElementById("password-data").value = "";
     UserShwon.textContent = "Anónimo"
 } document.getElementById("CS").addEventListener("click", BackHomeLoggedOut);
+

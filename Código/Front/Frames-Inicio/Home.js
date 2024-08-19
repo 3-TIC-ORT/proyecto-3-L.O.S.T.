@@ -15,6 +15,11 @@ function lost () {
     //Lo mismo que dije arriba
 } document.getElementById("lost").addEventListener("click", found);
 
+//La función Noti debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
+
+function Noti () {
+} document.getElementById("bell").addEventListener("keydown", Noti);
+
 //La función de LS va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
 
 function LS () {

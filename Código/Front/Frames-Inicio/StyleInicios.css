@@ -65,6 +65,7 @@ header{
 #bell{
     display: none;
     justify-content: flex-end;
+    cursor: pointer;
     width: 3.5vw;
     height: 7vh;
     padding-left: 1vw;
@@ -253,7 +254,7 @@ main { /*Caja donde se logea uno */
 .show,
 .hide {
     height: 60%;
-    width: 18%;
+    width: 18f%;
     cursor: pointer;
 }
 

@@ -69,19 +69,7 @@ function HideShow (event) {
 } document.getElementById("hide").addEventListener("click", HideShow);
 document.getElementById("show").addEventListener("click", HideShow);
 
-//Hay que arreglar esta función que debería hacer que cuando clickeas el input te desaparezcan los ojos, y cuando hacer click afuera o doble click al input aparezcan denuevo.
-
-function HideEyes () {
-    let password = document.getElementById("password-data").value;
-    if (password === "") {
-        show.style.display = "none";
-        hide.style.display = "block";
-    } else {
-        hide.style.display = "none";
-    }
-
-} document.getElementById("password-data").addEventListener("click", HideEyes);
-
+//Te deslogea de la cuenta y te vuelve al anónimo
 
 function BackHomeLoggedOut() {
     bell.style.display = "none";

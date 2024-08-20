@@ -10,16 +10,14 @@
 <body>
 
     <div class="home-frame" id="home-frame">
-        <div class="header">
-            <div class="log-stuff" id="log-stuff">
+        <header>
                 <nav class="CS" id="CS"><span>Cerrar sesión</span></nav>
+                <div class="LS-SU" id="LS-SU"><span>Iniciar Sesión/Registrarse</span></div>
                 <div class="user-bell">
-                    <span id="user-nameShown" class="user-nameShown"></span>
-                    <img src="../Imgs/bell.png" alt="campanita" title="notification-bell">
+                    <span id="user-nameShown" class="user-nameShown">Anónimo</span>
+                    <img src="../Imgs/bell.png" id="bell" alt="campanita" title="notification-bell">
                 </div>
-            </div>
-            <div class="LS-SU" id="LS-SU"><span>Iniciar Sesión/Registrarse</span></div>
-        </div>
+        </header>
             
         <div class="medio">
             <div class="centro">
@@ -40,10 +38,14 @@
         <div class="a" id="back-log"></div>
         <div class="b" id="back-log"></div>
         <div class="c" id="back-log"></div>
-        <main>
-            <div class="datas">
+        <main id="main-data">
+            <div class="datas" id="datas" >
                 <input class="data" id="user-data" type="text" name="user-data"  placeholder="Usuario">
-                <input class="data" id="password-data" type="password" name="password-data" placeholder="Contraseña" >
+                <div class="data" id="password-eye">
+                    <input id="password-data" type="password" name="password-data" placeholder="Contraseña">
+                    <img class="show" id="show" src="../Imgs/view-eye.png" alt="">
+                    <img class="hide" id="hide" src="../Imgs/hide-eye.png" alt="">
+                </div>
                 <div class="LSs">
                     <nav class="LS" id="FinalLog" type="submit" >
                         <span>Iniciar Sesión</span>
@@ -52,7 +54,6 @@
                         <span>Registrarse</span>
                     </nav>
                 </div>
-                <span id="anonymus">Anónimo</span>
             </div>
         </main>
         <div class="d" id="back-log"></div>

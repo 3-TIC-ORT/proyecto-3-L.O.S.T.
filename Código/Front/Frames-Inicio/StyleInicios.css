@@ -12,8 +12,9 @@ body {
     width: 100%;
 }
 
-.header{
+header{
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
@@ -26,16 +27,9 @@ body {
     background-color: aquamarine;
 }
 
-.log-stuff {
-    display: none;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-}
 
 .CS{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     font-size: 4vh;
@@ -47,22 +41,31 @@ body {
     cursor: pointer;
 }
 
-.user-bell {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .user-nameShown{
     display: flex;
     justify-self: flex-end;
+    padding-right: 1vh;
     font-size: 4vh;
     user-select:none;
-   }
+}
 
-img{
+.user-bell {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.user-bell > .bell::after {
+    display: none;
+}
+
+#bell{
+    display: none;
+    justify-content: flex-end;
+    cursor: pointer;
     width: 3.5vw;
     height: 7vh;
     padding-left: 1vw;
@@ -205,22 +208,64 @@ main { /*Caja donde se logea uno */
 .datas {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: 80%;
     width: 70%;
     justify-content: space-around;
 }
 
+
+
+#password-data {
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 4vh;
+    background-color: #636363;
+    border:none;
+    z-index: 2;
+    outline: none;
+    padding: 0;
+}
+
+#password-data::placeholder {
+    color: rgb(155, 155, 155);
+}
+
 .data {
+    height: 14vh;
+    width: 100%;
     background-color: #636363;
     border: none;
-    height: 25%;
     outline: none;
     color: white;
     font-size: 4vh;
     box-sizing: border-box;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding: 1vh;
+
 }
+
+#password-eye {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.show,
+.hide {
+    height: 60%;
+    width: 18f%;
+    cursor: pointer;
+}
+
+.show {
+    display: none;
+}
+
+.hide {
+    display: block;
+}
+
 .data::placeholder {
     color: rgb(155, 155, 155);
     font-size: 4vh;
@@ -243,7 +288,7 @@ main { /*Caja donde se logea uno */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 30%;
+    height: 15vh;
     width: 100%;
     font-size: 3vh;
 }

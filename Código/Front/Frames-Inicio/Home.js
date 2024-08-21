@@ -4,6 +4,7 @@ let LogIn = document.getElementById("LS-SU");
 let LogOut = document.getElementById("log-stuff")
 let bell = document.getElementById("bell")
 let CS = document.getElementById("CS")
+let comentNotis = document.getElementById("comentNotis")
 
 function found () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
@@ -17,8 +18,19 @@ function lost () {
 
 //La función Noti debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
 
-function Noti () {
-} document.getElementById("bell").addEventListener("keydown", Noti);
+//Pedir opinión a Santi
+
+function Notifications () {
+let comentNotis = document.getElementById("comentNotis");
+
+if (comentNotis.style.display === "") {
+    comentNotis.style.display = "flex"
+} else if (comentNotis.style.display === "none"){
+    comentNotis.style.display = "flex"
+} else {
+    comentNotis.style.display = "none"
+}
+} document.getElementById("bell").addEventListener("click", Notifications);
 
 //La función de LS va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
 
@@ -77,6 +89,10 @@ document.getElementById("show").addEventListener("click", HideShow);
 //Te deslogea de la cuenta y te vuelve al anónimo
 
 function BackHomeLoggedOut() {
+
+    //comentNotis está por ver
+
+    comentNotis.style.display = "none"
     bell.style.display = "none";
     CS.style.display = "none"
     LogIn.style.display = "flex";

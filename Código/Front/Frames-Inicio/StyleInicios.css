@@ -71,6 +71,19 @@ header{
     padding-left: 1vw;
 }
 
+.comentNotis {
+    background-color: #1a0dab;
+    width: 30vw;
+    height: 70%;
+    z-index: 0;
+    top: 15vh;
+    left: 70vw;
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    padding: 1vh 1vw 1vh 1vw;
+}
+
 .LS-SU {
     display: flex;
     align-items: center;
@@ -254,7 +267,9 @@ main { /*Caja donde se logea uno */
 .show,
 .hide {
     height: 60%;
-    width: 18f%;
+    width: 18%;
+    padding-left: 0.5vw;
+
     cursor: pointer;
 }
 

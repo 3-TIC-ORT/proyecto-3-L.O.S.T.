@@ -1,32 +1,14 @@
 [
   {
-    "user": "Pepe",
-    "password": "Juan23Hi",
-    "id": 0
+    "user": "Nachito",
+    "password": "Pepe263hdaf",
+    "id": 0,
+    "admin": false
   },
   {
-    "user": "pepitOo32",
-    "password": "MiconTraSe�a._51",
-    "id": 1
-  },
-  {
-    "user": "44134h",
-    "password": "Hodwadwajlll�2",
-    "id": 2
-  },
-  {
-    "user": "lisandro25",
-    "password": "PepitoGOD123",
-    "id": 3
-  },
-  {
-    "user": "HOLAA",
-    "password": "ComoEsta123",
-    "id": 4
-  },
-  {
-    "user": "HOLAAñÑ",
-    "password": "ComoEsta123ñÑ",
-    "id": 5
+    "user": "Nachito2",
+    "password": "Pepe263hdaf",
+    "id": 1,
+    "admin": false
   }
 ]

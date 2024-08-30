@@ -74,14 +74,19 @@ function Register() {
     if (UserName === "" || UserPassword === ""){
         alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
     } else {
-        UserShown.textContent = `${UserName}`;
-        userFrame.style.display = "none";
-        LogIn.style.display = "none";
-        CS.style.display = "flex"
-        bell.style.display = "flex"
-
+        postData("register", {name:UserName, password: UserPassword}, (data) => {
+            if(data === true){
+                UserShown.textContent = `${UserName}`;
+                userFrame.style.display = "none";
+                LogIn.style.display = "none";
+                CS.style.display = "flex"
+                bell.style.display = "flex"
+            } else{
+                alert("Hubo un error");
+            }
+        })
     }
-    postData("register", {name:UserName, password: UserPassword})
+
 }
 document.getElementById("FinalSign").addEventListener("click", Register);
 

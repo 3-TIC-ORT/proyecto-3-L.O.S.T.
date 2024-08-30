@@ -1,7 +1,7 @@
 import readlineSync from "readline-sync";
-import fs from 'fs'
+import fs from 'fs';
 
-let usuarios = JSON.parse(fs.readFileSync("users.json"))
+let usuarios = JSON.parse(fs.readFileSync("users.json"));
 let currentUser;
 
 // Funcion para registrarse desde la consola

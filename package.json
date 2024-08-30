@@ -1,5 +1,25 @@
 {
+  "name": "proyecto-3-objetos-perdidos-en-ruinas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodeman Codigo/Back/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3-TIC-ORT/proyecto-3-objetos-perdidos-en-ruinas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3-TIC-ORT/proyecto-3-objetos-perdidos-en-ruinas/issues"
+  },
+  "homepage": "https://github.com/3-TIC-ORT/proyecto-3-objetos-perdidos-en-ruinas#readme",
+  "description": "",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "nodeman": "^1.1.2",
+    "soquetic": "^1.0.3"
   }
 }

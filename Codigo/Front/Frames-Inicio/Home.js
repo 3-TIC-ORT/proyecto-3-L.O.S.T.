@@ -51,7 +51,7 @@ document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 
 //La función BackHomeLogged simula lo que es cuando te loggeas, displayeando tu nombre de usuario arriba a la derecha, aunque esta función es útil, a la larga con base de datos hay una posibilidad de que se saque o modifique
 
-function BackHomeLogged(event) {
+function BackHomeLogged() {
     let UserName = document.getElementById("user-data").value;
     let UserPassword = document.getElementById("password-data").value
     let UserShown = document.getElementById("user-nameShown");
@@ -66,7 +66,24 @@ function BackHomeLogged(event) {
 
     }
 } document.getElementById("FinalLog").addEventListener("click", BackHomeLogged);
-document.getElementById("FinalSign").addEventListener("click", BackHomeLogged);
+
+function Register() {
+    let UserName = document.getElementById("user-data").value;
+    let UserPassword = document.getElementById("password-data").value
+    let UserShown = document.getElementById("user-nameShown");
+    if (UserName === "" || UserPassword === ""){
+        alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+    } else {
+        UserShown.textContent = `${UserName}`;
+        userFrame.style.display = "none";
+        LogIn.style.display = "none";
+        CS.style.display = "flex"
+        bell.style.display = "flex"
+
+    }
+    postData("register", {name:UserName, password: UserPassword})
+}
+document.getElementById("FinalSign").addEventListener("click", Register);
 
 let show = document.getElementById("show");
 let hide = document.getElementById("hide");

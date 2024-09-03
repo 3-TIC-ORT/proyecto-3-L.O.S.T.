@@ -29,11 +29,30 @@ function register(user){
     }
 }
 
+function login(user){
+    let usuarios = JSON.parse(fs.readFileSync("users.json", 'utf-8'));
+    for(let i = 0; i < usuarios.length; i++){
+        if(user.name === usuarios[i].name){
+            user.id = usuarios[i].id
+        }
+    }
+    if (user.id === null || user.id === undefined){
+        return false;
+    } else {
+        if(user.password === usuarios[user.id].password){
+            usuarioLogged = user.id;
+            return true;
+        } else{
+            return false;
+        }
+    }
+}
+
 function mostrarNombre(){
     if (usuarioLogged === null || usuarioLogged === undefined){
         return "Anónimo";
     } else{
-        usuarios = JSON.parse(fs.readFileSync("users.json", 'utf-8'))
+        let usuarios = JSON.parse(fs.readFileSync("users.json", 'utf-8'))
         return usuarios[usuarioLogged].name;
     }
 }
@@ -41,6 +60,7 @@ function mostrarNombre(){
 
 // On Events
 onEvent("register", register);
+onEvent("login", login);
 onEvent("mostrarNombre", mostrarNombre);
 
 startServer();

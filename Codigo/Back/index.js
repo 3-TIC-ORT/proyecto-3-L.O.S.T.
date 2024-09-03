@@ -2,7 +2,7 @@ import { onEvent, startServer } from "soquetic";
 import fs from 'fs';
 
 
-let usuarioLogged
+let usuarioLogged;
 // Funciones
 
 
@@ -30,7 +30,12 @@ function register(user){
 }
 
 function mostrarNombre(){
-    
+    if (usuarioLogged === null || usuarioLogged === undefined){
+        return "Anónimo";
+    } else{
+        usuarios = JSON.parse(fs.readFileSync("users.json", 'utf-8'))
+        return usuarios[usuarioLogged].name;
+    }
 }
 
 

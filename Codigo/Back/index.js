@@ -71,11 +71,14 @@ function crearPublicacion(publicacion){
         publicacion.id = lista.length;
         publicacion.cumplio = false;
         lista.push({...publicacion});
-        writeFileSync("publicaciones.json", JSON.stringify(lista));
+        writeFileSync("publicaciones.json", JSON.stringify(lista, null, 2));
         return true;
     }
 }
 
+function terminarPublicacion(publicacionID){
+    let lista = JSON.parse(fs.readFileSync(""))
+}
 
 
 // On Events
@@ -84,5 +87,6 @@ onEvent("login", login);
 onEvent("cerrarSesion", cerrarSesion);
 onEvent("mostrarNombre", mostrarNombre);
 onEvent("crearPublicacion", crearPublicacion)
+onEvent("terminarPublicacion", terminarPublicacion)
 
 startServer();

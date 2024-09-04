@@ -2,6 +2,7 @@
   {
     "name": "dwaodiaw",
     "password": "djkwand",
-    "id": 0
+    "id": 0,
+    "admin": false
   }
 ]

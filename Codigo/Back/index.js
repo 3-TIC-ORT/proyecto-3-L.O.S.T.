@@ -1,5 +1,5 @@
 import { onEvent, startServer } from "soquetic";
-import fs from 'fs';
+import fs, { readFileSync, writeFileSync } from 'fs';
 
 
 let usuarioLogged;
@@ -22,6 +22,7 @@ function register(user){
         return false;
     }
     user.id = lista.length;
+    user.admin = false;
     lista.push({...user});
     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
     usuarioLogged = user.id;
@@ -48,6 +49,10 @@ function login(user){
     }
 }
 
+function cerrarSesion(){
+    usuarioLogged = null;
+}
+
 function mostrarNombre(){
     if (usuarioLogged === null || usuarioLogged === undefined){
         return "Anónimo";
@@ -57,10 +62,27 @@ function mostrarNombre(){
     }
 }
 
+function crearPublicacion(publicacion){
+    if(usuarioLogged === null || usuarioLogged === undefined){
+        return false;
+    } else{
+        publicacion.creador = usuarioLogged;
+        let lista = JSON.parse(fs.readFileSync("publicaciones.json", 'utf-8'));
+        publicacion.id = lista.length;
+        publicacion.cumplio = false;
+        lista.push({...publicacion});
+        writeFileSync("publicaciones.json", JSON.stringify(lista));
+        return true;
+    }
+}
+
+
 
 // On Events
 onEvent("register", register);
 onEvent("login", login);
+onEvent("cerrarSesion", cerrarSesion);
 onEvent("mostrarNombre", mostrarNombre);
+onEvent("crearPublicacion", crearPublicacion)
 
 startServer();

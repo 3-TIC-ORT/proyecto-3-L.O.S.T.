@@ -84,7 +84,7 @@ function Register() {
             } else{
                 alert("Hubo un error");
             }
-        })
+        },)
     }
 
 }

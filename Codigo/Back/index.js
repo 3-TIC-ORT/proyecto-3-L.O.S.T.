@@ -91,11 +91,28 @@ function terminarPublicacion(propuesta){
     let usuarios  = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
     if(lista[propuesta.id].creador === propuesta.user || usuarios[propuesta.user].admin === true){
         lista[propuesta.id].cumplio = true;
-        fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2))
+        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2))
         return true;
     } else{
         return false;
     }
+}
+
+function cargarPublicaciones(data){
+    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'))
+    let van;
+    if(data === "perdido"){
+        for(let i = 0; i < lista.length; i++){
+            if(lista[i].tipo === "encontrado")
+            van.push({...lista[i]})
+        }
+    } else {
+        for(let i = 0; i < lista.length; i++){
+            if(lista[i].tipo === "perdido")
+            van.push({...lista[i]})
+        }
+    }
+    return van;
 }
 
 
@@ -107,5 +124,6 @@ onEvent("mostrarNombre", mostrarNombre);
 onEvent("crearPublicacion", crearPublicacion);
 onEvent("editarPublicacion", editarPublicacion);
 onEvent("terminarPublicacion", terminarPublicacion);
+onEvent("cargarPublicaciones", cargarPublicaciones);
 
 startServer();

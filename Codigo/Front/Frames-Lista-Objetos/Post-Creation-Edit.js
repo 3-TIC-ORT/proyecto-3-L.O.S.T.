@@ -7,5 +7,7 @@ let publicacion = {}
 
 document.getElementById("imagen").addEventListener( `submit`, TransferData(e)); {
     e.preventDefault();
-    postData("img", e.img)
+    publicacion.image = e.img;
+    
+
 }

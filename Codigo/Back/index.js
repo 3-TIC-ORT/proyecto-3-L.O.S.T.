@@ -5,8 +5,6 @@ import fs from 'fs';
 let usuarioLogged;
 // Funciones
 
-
-
 function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     if(user.name.length > 32){
@@ -79,7 +77,7 @@ function crearPublicacion(publicacion){
 function terminarPublicacion(propuesta){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json"));
     let usuarios  = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
-    if(lista[propuesta.id].creador === propuesta.user || usuarioLogged[propuesta.user].admin === true){
+    if(lista[propuesta.id].creador === propuesta.user || usuarios[propuesta.user].admin === true){
         lista[propuesta.id].cumplio = true;
         fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2))
         return true;

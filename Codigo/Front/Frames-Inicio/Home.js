@@ -67,12 +67,16 @@ function BackHomeLogged() {
     }
 } document.getElementById("FinalLog").addEventListener("click", BackHomeLogged);
 
+
+
 function Register() {
     let UserName = document.getElementById("user-data").value;
     let UserPassword = document.getElementById("password-data").value
     let UserShown = document.getElementById("user-nameShown");
     if (UserName === "" || UserPassword === ""){
         alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+    } else if ((UserName.length > 32||UserPassword.length  > 32 || UserPassword.length < 8 || UserPassword.match(/[a-z]/) == null && UserPassword.includes("ñ") === false || UserPassword.match(/[A-Z]/) == null && UserPassword.includes("Ñ") === false || UserPassword.match(/[0-9]/) == null)) {
+        alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
     } else {
         postData("register", {name:UserName, password: UserPassword}, (data) => {
             if(data === true){

@@ -74,6 +74,18 @@ function crearPublicacion(publicacion){
     }
 }
 
+function editarPublicacion(data){
+    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
+    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
+    if((data.user.id === lista[data.publicacion.id].creador || usuarios[data.user.id].admin === true) && lista[data.publicacion.id] != null){
+        lista[data.publicacion.id] = ({...(data.publicacion)});
+        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
+        return true;
+    } else{
+        return false;
+    } 
+}
+
 function terminarPublicacion(propuesta){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json"));
     let usuarios  = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
@@ -92,7 +104,8 @@ onEvent("register", register);
 onEvent("login", login);
 onEvent("cerrarSesion", cerrarSesion);
 onEvent("mostrarNombre", mostrarNombre);
-onEvent("crearPublicacion", crearPublicacion)
-onEvent("terminarPublicacion", terminarPublicacion)
+onEvent("crearPublicacion", crearPublicacion);
+onEvent("editarPublicacion", editarPublicacion);
+onEvent("terminarPublicacion", terminarPublicacion);
 
 startServer();

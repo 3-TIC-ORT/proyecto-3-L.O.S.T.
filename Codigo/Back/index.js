@@ -1,11 +1,9 @@
 import { onEvent, startServer } from "soquetic";
-import fs, { readFileSync, writeFileSync } from 'fs';
+import fs from 'fs';
 
 
 let usuarioLogged;
 // Funciones
-
-
 
 function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
@@ -31,7 +29,7 @@ function register(user){
 }
 
 function login(user){
-    let usuarios = JSON.parse(fs.readFileSync("users.json", 'utf-8'));
+    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     for(let i = 0; i < usuarios.length; i++){
         if(user.name === usuarios[i].name){
             user.id = usuarios[i].id
@@ -57,7 +55,7 @@ function mostrarNombre(){
     if (usuarioLogged === null || usuarioLogged === undefined){
         return "Anónimo";
     } else{
-        let usuarios = JSON.parse(fs.readFileSync("users.json", 'utf-8'))
+        let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'))
         return usuarios[usuarioLogged].name;
     }
 }
@@ -67,17 +65,25 @@ function crearPublicacion(publicacion){
         return false;
     } else{
         publicacion.creador = usuarioLogged;
-        let lista = JSON.parse(fs.readFileSync("publicaciones.json", 'utf-8'));
+        let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
         publicacion.id = lista.length;
         publicacion.cumplio = false;
         lista.push({...publicacion});
-        writeFileSync("publicaciones.json", JSON.stringify(lista, null, 2));
+        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
         return true;
     }
 }
 
-function terminarPublicacion(publicacionID){
-    let lista = JSON.parse(fs.readFileSync(""))
+function terminarPublicacion(propuesta){
+    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json"));
+    let usuarios  = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
+    if(lista[propuesta.id].creador === propuesta.user || usuarios[propuesta.user].admin === true){
+        lista[propuesta.id].cumplio = true;
+        fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2))
+        return true;
+    } else{
+        return false;
+    }
 }
 
 

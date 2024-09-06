@@ -2,6 +2,7 @@ import { onEvent, startServer } from "soquetic";
 import fs from 'fs';
 
 
+
 let usuarioLogged;
 // Funciones
 
@@ -67,6 +68,7 @@ function crearPublicacion(publicacion){
         publicacion.creador = usuarioLogged;
         let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
         publicacion.id = lista.length;
+        publicacion.comentarios = [];
         publicacion.cumplio = false;
         lista.push({...publicacion});
         fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
@@ -88,7 +90,7 @@ function editarPublicacion(data){
 
 function terminarPublicacion(propuesta){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json"));
-    let usuarios  = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
+    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
     if(lista[propuesta.id].creador === propuesta.user || usuarios[propuesta.user].admin === true){
         lista[propuesta.id].cumplio = true;
         fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2))
@@ -99,7 +101,7 @@ function terminarPublicacion(propuesta){
 }
 
 function cargarPublicaciones(data){
-    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'))
+    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let van;
     if(data === "perdido"){
         for(let i = 0; i < lista.length; i++){
@@ -115,6 +117,17 @@ function cargarPublicaciones(data){
     return van;
 }
 
+function comentar(data){
+    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
+    let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
+    let comentario = {user:data.user, comm:data.comm};
+    lista[data.id].comentarios.push({...comentario});
+    fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));.
+    let notificación;
+
+    return true;
+}
+
 
 // On Events
 onEvent("register", register);
@@ -125,6 +138,7 @@ onEvent("crearPublicacion", crearPublicacion);
 onEvent("editarPublicacion", editarPublicacion);
 onEvent("terminarPublicacion", terminarPublicacion);
 onEvent("cargarPublicaciones", cargarPublicaciones);
+onEvent("comentar", comentar);
 
 
 startServer();

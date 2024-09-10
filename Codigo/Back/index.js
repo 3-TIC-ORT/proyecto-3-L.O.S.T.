@@ -2,30 +2,27 @@ import { onEvent, startServer } from "soquetic";
 import fs from 'fs';
 
 
-
-let usuarioLogged;
 // Funciones
 
 function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     if(user.name.length > 32){
         console.log("Su usuario no puede tener más de 32 caracteres")
-        return false;
+        return null;
     } else{
     for(let i = 0; i < lista.length; i++){
         if(user.name == lista[i].name){
-            return false;
+            return null;
         }
     } 
     if(user.password.length > 32 || user.password.length < 8 || user.password.match(/[a-z]/) == null && user.password.includes("ñ") === false || user.password.match(/[A-Z]/) == null && user.password.includes("Ñ") === false || user.password.match(/[0-9]/) == null){
-        return false;
+        return null;
     }
     user.id = lista.length;
     user.admin = false;
     lista.push({...user});
     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-    usuarioLogged = user.id;
-    return true;
+    return user.id;
     }
 }
 
@@ -37,43 +34,33 @@ function login(user){
         }
     }
     if (user.id === null || user.id === undefined){
-        return false;
+        return null;
     } else {
         if(user.password === usuarios[user.id].password){
-            usuarioLogged = user.id;
-            return true;
+            return user.id;
         } else{
-            return false;
+            return null;
         }
     }
 }
 
-function cerrarSesion(){
-    usuarioLogged = null;
-}
-
-function mostrarNombre(){
-    if (usuarioLogged === null || usuarioLogged === undefined){
+function mostrarNombre(userId){
+    if (userId === null || userId === undefined){
         return "Anónimo";
     } else{
         let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'))
-        return usuarios[usuarioLogged].name;
+        return usuarios[userId].name;
     }
 }
 
 function crearPublicacion(publicacion){
-    if(usuarioLogged === null || usuarioLogged === undefined){
-        return false;
-    } else{
-        publicacion.creador = usuarioLogged;
-        let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
-        publicacion.id = lista.length;
-        publicacion.comentarios = [];
-        publicacion.cumplio = false;
-        lista.push({...publicacion});
-        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-        return true;
-    }
+    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
+    publicacion.id = lista.length;
+    publicacion.comentarios = [];
+    publicacion.cumplio = false;
+    lista.push({...publicacion});
+    fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
+    return true;
 }
 
 function editarPublicacion(data){
@@ -119,26 +106,40 @@ function cargarPublicaciones(data){
 
 function comentar(data){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
-    let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
+    let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json"));
     let comentario = {user:data.user, comm:data.comm};
     lista[data.id].comentarios.push({...comentario});
     fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-    let notificación;
-
+    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
+    let notificación = {id:lista[data.id].creador, text: `${usuarios[data.user].name} ha comentado ${comentario.comm}`};
+    notificaciones.push({...notificaciones});
+    fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
     return true;
+}
+
+function mostrarNotificaciones(user){
+    let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", 'utf-8'));
+    let listita = [];
+    notificaciones.forEach(element => {
+        if(element.id === user){
+            listita.push(element.text);
+        }
+    });
+    return listita;
 }
 
 
 // On Events
 onEvent("register", register);
 onEvent("login", login);
-onEvent("cerrarSesion", cerrarSesion);
 onEvent("mostrarNombre", mostrarNombre);
 onEvent("crearPublicacion", crearPublicacion);
 onEvent("editarPublicacion", editarPublicacion);
 onEvent("terminarPublicacion", terminarPublicacion);
 onEvent("cargarPublicaciones", cargarPublicaciones);
 onEvent("comentar", comentar);
+onEvent("mostrarNotificaciones", mostrarNotificaciones);
+
 
 
 startServer();

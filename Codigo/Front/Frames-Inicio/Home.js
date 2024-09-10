@@ -14,7 +14,7 @@ function found () {
 function lost () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     //Lo mismo que dije arriba
-} document.getElementById("lost").addEventListener("click", found);
+} document.getElementById("lost").addEventListener("click", lost);
 
 //La función Noti debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
 

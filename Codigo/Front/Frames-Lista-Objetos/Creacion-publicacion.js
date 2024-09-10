@@ -4,6 +4,8 @@ function comentar(){
 
     //Hago que haya un h4 que tenga de nombre un número de usuario único y que se muestre arriba del comentario de quien lo creo, además de que no va a haber un user 0
 
+
+    window.location.href = "Post-Creation-Edit.html"
     userNum++
     let user = document.createElement("h4");
     user.textContent = `Usuario ${userNum}:`

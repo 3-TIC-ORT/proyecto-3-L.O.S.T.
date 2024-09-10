@@ -8,8 +8,8 @@
 </head>
 <body>
     <form action="submit">
-        <input type="file" name="img" id ="imagen">
-        <select name="category" id="category">
+        <input type="file" name="img" id ="imagen" required>
+        <select name="category" id="category" required>
             <option value="vestimenta">vestimenta</option>
             <option value="paraguas">paraguas</option>
             <option value="accesorios">accesorios</option>
@@ -19,9 +19,11 @@
             <option value="productos-electronicos">productos electrónicos</option>
             <option value="otros">otros</option>
         </select>
-        <input type="text" name="title">
-        <input type="text" name="location">
-        <input type="text" name= "description">
+        <input type="text" name="title" required>
+        <input type="text" name="location" required>
+        <input type="text" name= "description" required>
+        <input type="text" name="placeLeft" required>
+        <input type="text" name="time">
         <input type="submit" id = "submit">
     </form>
 </body>
@@ -29,3 +31,12 @@
 <script src="../socket.js"></script>
 <script src="Post-Creation-Edit.js"></script>
 </html>
+
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

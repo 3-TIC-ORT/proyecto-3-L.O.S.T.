@@ -10,16 +10,19 @@ const form = document.querySelector(`form`)
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target
-    publicacion.image = formulario.img;
-    publicacion.category = formulario.category;
-    publicacion.title = formulario.title;
-    publicacion.location = formulario.location;
-    publicacion.description = formulario.description;
+    publicacion.imagen = formulario.img;
+    publicacion.categoria = formulario.category;
+    publicacion.titulo = formulario.title;
+    publicacion.ubicacion = formulario.location;
+    publicacion.descripcion = formulario.description;
+    publicacion.dejado = formulario.placeLeft
+    publicacion.hora = formulario.time
     let userName = localStorage.getItem(`userName`)
     let userPassword = localStorage.getItem(`userPassword`)
-    let user = [JSON.parse(userPassword), JSON.parse(userName)]
-    publicacion.owner = user;
+    let usuario = [JSON.parse(userPassword), JSON.parse(userName)]
+    publicacion.creador = usuario;
     console.log(publicacion);
     // window.location.href = "ListaObjs.html"
     postData(`crearPublicacion`, publicacion)
 })
+

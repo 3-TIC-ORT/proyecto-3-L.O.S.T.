@@ -1,6 +1,6 @@
-//  function Redirect() {
-//    window.location.href =  "Creacion-publicacion.html"
-// } document.getElementById("create").addEventListener("click", Redirect);
+    function Redirect() {
+    window.location.href =  "Creacion-publicacion.html"
+ } document.getElementById("create").addEventListener("click", Redirect);
 
 let i = 0;
 function CreatePost() {
@@ -22,5 +22,5 @@ function CreatePost() {
     document.getElementById("nuevoBox" + i).appendChild(nuevoDown);
     document.getElementById("nuevoUp" + i).appendChild(Uptxt);
     document.getElementById("nuevoDown" + i).appendChild(Downtxt);
-   i++;
+    i++;
 } document.getElementById("create").addEventListener("click", CreatePost);

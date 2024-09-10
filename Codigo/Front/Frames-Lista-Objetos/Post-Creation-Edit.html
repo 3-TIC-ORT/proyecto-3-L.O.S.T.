@@ -9,19 +9,18 @@
 <body>
     <form action="submit">
         <input type="file" name="img" id ="imagen">
-        <select name="category" id="">
-            <option value="vestimenta"></option>
-            <option value="paraguas"></option>
-            <option value="accesorios"></option>
-            <option value="mochilas"></option>
-            <option value="cuaderno/carpetas"></option>
-            <option value="utiles-escolares"></option>
-            <option value="productos-electronicos"></option>
-            <option value="otros"></option>
+        <select name="category" id="category">
+            <option value="vestimenta">vestimenta</option>
+            <option value="paraguas">paraguas</option>
+            <option value="accesorios">accesorios</option>
+            <option value="mochilas">mochilas</option>
+            <option value="cuaderno/carpeta">cuaderno/carpeta</option>
+            <option value="utiles-escolares">utiles escolares</option>
+            <option value="productos-electronicos">productos electrónicos</option>
+            <option value="otros">otros</option>
         </select>
         <input type="text" name="title">
         <input type="text" name="location">
-
         <input type="text" name= "description">
         <input type="submit" id = "submit">
     </form>
@@ -29,4 +28,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
 <script src="../socket.js"></script>
 <script src="Post-Creation-Edit.js"></script>
-</html>8
+<script src="../Frames-Inicio/Home.js"></script>
+</html>

@@ -122,7 +122,7 @@ function comentar(data){
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
     let comentario = {user:data.user, comm:data.comm};
     lista[data.id].comentarios.push({...comentario});
-    fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));.
+    fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
     let notificación;
 
     return true;

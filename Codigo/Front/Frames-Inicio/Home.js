@@ -90,7 +90,8 @@ function Register() {
             }
         })
     }
-
+    localStorage.setItem(`userName`, JSON.stringify(UserName));
+    localStorage.setItem(`userPassword`, JSON.stringify(UserPassword));
 }
 document.getElementById("FinalSign").addEventListener("click", Register);
 

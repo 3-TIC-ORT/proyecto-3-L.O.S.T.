@@ -95,13 +95,16 @@ function cargarPublicaciones(data){
     let van = [];
     if(data === "perdido"){
         for(let i = 0; i < lista.length; i++){
-            if(lista[i].tipo === "encontrado")
-            van.push({...lista[i]})
+            if(lista[i].tipo === "encontrado" && lista[i].cumplio === false){
+                van.push({...lista[i]})
+            }
         }
     } else {
         for(let i = 0; i < lista.length; i++){
-            if(lista[i].tipo === "perdido")
-            van.push({...lista[i]})
+            if(lista[i].tipo === "perdido" && lista[i].cumplio === false){
+                van.push({...lista[i]})
+            }
+            
         }
     }
     return van;

@@ -40,5 +40,23 @@
     "password": "SodaStereo2007",
     "id": 6,
     "admin": false
+  },
+  {
+    "name": "Felgimon88",
+    "password": "SoyFeli123",
+    "id": 7,
+    "admin": false
+  },
+  {
+    "name": "HolaFeli123",
+    "password": "HolaFeli123",
+    "id": 8,
+    "admin": false
+  },
+  {
+    "name": "hudwiahdwD2",
+    "password": "DWaHIWDGAYyugdwad2",
+    "id": 9,
+    "admin": false
   }
 ]

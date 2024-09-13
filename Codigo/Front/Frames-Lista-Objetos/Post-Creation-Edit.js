@@ -4,7 +4,6 @@ let publicacion = {}
 // publicacion.creador tiene que ser el usuario q lo creó.
 
 //La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back.
-
 const form = document.querySelector(`form`)
 localStorage.setItem("userId", JSON.stringify(0))
 form.addEventListener(`submit`, (e) => {

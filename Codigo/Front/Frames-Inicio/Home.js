@@ -58,12 +58,18 @@ function BackHomeLogged() {
     if (UserName === "" || UserPassword === ""){
         alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
     } else {
-        UserShown.textContent = `${UserName}`;
-        userFrame.style.display = "none";
-        LogIn.style.display = "none";
-        CS.style.display = "flex"
-        bell.style.display = "flex"
-
+        postData("login", {name:UserName, password: UserPassword}, (data) => {
+            if(data.id !== null){
+                UserShown.textContent = `${UserName}`;
+                userFrame.style.display = "none";
+                LogIn.style.display = "none";
+                CS.style.display = "flex"
+                bell.style.display = "flex"
+                SetId(data.id)
+            } else{
+                alert(data.inf);
+            }
+        })
     }
 } document.getElementById("FinalLog").addEventListener("click", BackHomeLogged);
 
@@ -79,24 +85,27 @@ function Register() {
         alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
     } else {
         postData("register", {name:UserName, password: UserPassword}, (data) => {
-            if(data === true){
+            if(data.id !== null){
                 UserShown.textContent = `${UserName}`;
                 userFrame.style.display = "none";
                 LogIn.style.display = "none";
                 CS.style.display = "flex"
                 bell.style.display = "flex"
+                SetId(data.id)
             } else{
-                alert("Hubo un error");
+                alert(data.inf);
             }
         })
     }
-    localStorage.setItem(`userName`, JSON.stringify(UserName));
-    localStorage.setItem(`userPassword`, JSON.stringify(UserPassword));
 }
 document.getElementById("FinalSign").addEventListener("click", Register);
 
 let show = document.getElementById("show");
 let hide = document.getElementById("hide");
+
+function SetId(userId) {
+    localStorage.setItem("userId", JSON.stringify(userId));
+}
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
 

@@ -4,5 +4,41 @@
     "password": "djkwand",
     "id": 0,
     "admin": false
+  },
+  {
+    "name": "Pepito2010",
+    "password": "HolaCom311",
+    "id": 1,
+    "admin": false
+  },
+  {
+    "name": "Holahello",
+    "password": "Holacomo123",
+    "id": 2,
+    "admin": false
+  },
+  {
+    "name": "Holahellodwad",
+    "password": "Holacomo123132",
+    "id": 3,
+    "admin": false
+  },
+  {
+    "name": "Holad\\dhaw",
+    "password": "123HolaASDF",
+    "id": 4,
+    "admin": false
+  },
+  {
+    "name": "\\'´¨*~+{[^{`_°¬",
+    "password": "SodaStereo2007",
+    "id": 5,
+    "admin": false
+  },
+  {
+    "name": "¿¡!\"#$%&/()=;>><",
+    "password": "SodaStereo2007",
+    "id": 6,
+    "admin": false
   }
 ]

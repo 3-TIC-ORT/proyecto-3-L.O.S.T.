@@ -8,21 +8,21 @@ function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     if(user.name.length > 32){
         console.log("Su usuario no puede tener más de 32 caracteres")
-        return null;
+        return {id:null, inf:"Invalid"}
     } else{
     for(let i = 0; i < lista.length; i++){
         if(user.name == lista[i].name){
-            return null;
+            return {id:null, inf:"Existente"}
         }
     } 
     if(user.password.length > 32 || user.password.length < 8 || user.password.match(/[a-z]/) == null && user.password.includes("ñ") === false || user.password.match(/[A-Z]/) == null && user.password.includes("Ñ") === false || user.password.match(/[0-9]/) == null){
-        return null;
+        return {id:null, inf:"Invalid"}
     }
     user.id = lista.length;
     user.admin = false;
     lista.push({...user});
     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-    return user.id;
+    return {id:user.id, admin:user.admin};
     }
 }
 
@@ -34,12 +34,12 @@ function login(user){
         }
     }
     if (user.id === null || user.id === undefined){
-        return null;
+        return {id:null, inf:"Invalid"};
     } else {
         if(user.password === usuarios[user.id].password){
-            return user.id;
+            return {id:user.id, admin:usuarios[user.id].admin};
         } else{
-            return null;
+            return {id:null, inf:"Invalid"};
         }
     }
 }
@@ -54,6 +54,9 @@ function mostrarNombre(userId){
 }
 
 function crearPublicacion(publicacion){
+    if(publicacion.creador = null){
+        return false;
+    }
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     publicacion.id = lista.length;
     publicacion.comentarios = [];

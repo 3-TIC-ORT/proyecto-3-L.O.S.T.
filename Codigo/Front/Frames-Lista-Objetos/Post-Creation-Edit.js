@@ -6,7 +6,7 @@ let publicacion = {}
 //La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back.
 
 const form = document.querySelector(`form`)
-localStorage.setItem("userId", 0)
+localStorage.setItem("userId", JSON.stringify(0))
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target

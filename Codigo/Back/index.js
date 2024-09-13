@@ -92,7 +92,7 @@ function terminarPublicacion(propuesta){
 
 function cargarPublicaciones(data){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
-    let van;
+    let van = [];
     if(data === "perdido"){
         for(let i = 0; i < lista.length; i++){
             if(lista[i].tipo === "encontrado")

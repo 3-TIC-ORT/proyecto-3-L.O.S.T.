@@ -16,18 +16,16 @@ function lost () {
     //Lo mismo que dije arriba
 } document.getElementById("lost").addEventListener("click", lost);
 
+
+
 function LostFound(event) {
-    let Dupla;
-    if (event.id = "lost") {
-        Dupla = "perdido"
-        localStorage.setItem("Dupla", Dupla)
+    if (event.target.id === "lost") {
+        localStorage.setItem("Dupla", "perdido")
         window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     } else {
-        Dupla = "encontrado"
-        localStorage.setItem("Dupla", Dupla)
+        localStorage.setItem("Dupla", "encontrado")
         window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
-    }
-    window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+    } 
 } document.getElementById("lost").addEventListener("click", LostFound);
 document.getElementById("found").addEventListener("click", LostFound);
 

@@ -24,10 +24,12 @@ function CreatePost(postList) {
         
     } 
 }
+console.log(JSON.parse(localStorage.getItem("Dupla")))
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), CreatePost);
 
 
 function Add() {
+    console.log("add"); 
     window.location.href =  "Post-Creation-Edit.html";
  }document.getElementById("create").addEventListener("click", Add)
 
@@ -37,4 +39,4 @@ function Edit() {
 
 function Enter() {
     window.location.href = "Creacion-publicacion.html";
-} document.getElementById(for())
+}

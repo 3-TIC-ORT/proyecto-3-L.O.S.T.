@@ -92,3 +92,9 @@ h1 {
 .addtxt {
     font-size: 4vh;
 }
+
+body > header > img {
+    width: 5vw;
+    height: 5vh;
+    user-select: pointer;    
+}

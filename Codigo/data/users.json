@@ -64,5 +64,29 @@
     "password": "Vegetta777",
     "id": 10,
     "admin": false
+  },
+  {
+    "name": "Caro",
+    "password": "Hola1234",
+    "id": 11,
+    "admin": false
+  },
+  {
+    "name": "Felipe",
+    "password": "23546785654ewdsdfD",
+    "id": 12,
+    "admin": false
+  },
+  {
+    "name": "Hopña",
+    "password": "shjiduiojsalkdHUY(6",
+    "id": 13,
+    "admin": false
+  },
+  {
+    "name": "dssddsds",
+    "password": "SHVisfjakll768",
+    "id": 14,
+    "admin": false
   }
 ]

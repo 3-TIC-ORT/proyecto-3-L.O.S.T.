@@ -24,18 +24,21 @@ function CreatePost(postList) {
         
     } 
 }
-console.log(JSON.parse(localStorage.getItem("Dupla")))
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), CreatePost);
 
 
 function Add() {
-    console.log("add"); 
-    window.location.href =  "Post-Creation-Edit.html";
- }document.getElementById("create").addEventListener("click", Add)
+    window.location.href = "Post-Creation-Edit.html";
+ } document.getElementById("create").addEventListener("click", Add)
 
 function Edit() {
     window.location.href = "Post-Creation-Edit.html";
 }
+
+function Back() {
+    console.log("hola")
+    window.location.href = "../Frames-Inicio/Inicio.html";
+} document.getElementById("Flecha").addEventListener("click", Back);
 
 function Enter() {
     window.location.href = "Creacion-publicacion.html";

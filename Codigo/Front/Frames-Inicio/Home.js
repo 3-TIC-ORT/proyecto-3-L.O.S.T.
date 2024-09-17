@@ -6,6 +6,21 @@ let bell = document.getElementById("bell")
 let CS = document.getElementById("CS")
 let comentNotis = document.getElementById("comentNotis")
 
+//Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
+
+function ShowUsername() {
+    console.log("hola")
+    if (JSON.parse(localStorage.getItem("userName"))) {
+        UserShown.textContent = `${UserName}`;
+        userFrame.style.display = "none";
+        LogIn.style.display = "none";
+        CS.style.display = "flex"
+        bell.style.display = "flex"
+    }
+}
+
+ShowUsername()
+
 function found () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     //Faltaría que cambie el textcontent del título de la lista así se distingue cual es cual, hay dos maneras que veo posibles: La primera es que se importe una clase o algo por el estilo del otro css. La otra que se me hace más fácil es que linkear el html con el css para que javascript tenga acceso a las otras clases, aunque deberíamos tener cuidado con el conflicto entre clases entre ambos css.
@@ -20,10 +35,10 @@ function lost () {
 
 function LostFound(event) {
     if (event.target.id === "lost") {
-        localStorage.setItem("Dupla", "perdido")
+        localStorage.setItem("Dupla", JSON.stringify("perdido"))
         window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     } else {
-        localStorage.setItem("Dupla", "encontrado")
+        localStorage.setItem("Dupla", JSON.stringify("encontrado"))
         window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     } 
 } document.getElementById("lost").addEventListener("click", LostFound);
@@ -73,6 +88,7 @@ function BackHomeLogged() {
     } else {
         postData("login", {name:UserName, password: UserPassword}, (data) => {
             if(data.id !== null){
+                localStorage.setItem("userName", JSON.stringify(UserName));
                 UserShown.textContent = `${UserName}`;
                 userFrame.style.display = "none";
                 LogIn.style.display = "none";

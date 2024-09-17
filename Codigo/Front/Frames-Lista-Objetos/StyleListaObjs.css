@@ -19,11 +19,11 @@ header {
     margin: auto;
 }
 
-.bottom {
+main{
     display: flex;
     justify-content: center;
     align-items: flex-end; 
-    height: 90rem;
+    height: 90%;
     width: 100%;
 }
 
@@ -69,7 +69,9 @@ header {
 .up  {
     height: 70%;
     font-size: 4vh;
-    background-color: blue;
+    background-image: none;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .down {
@@ -78,7 +80,7 @@ header {
     background-color:blueviolet;
 }
 
- h3 {
+h3 {
     user-select:text;
     cursor:text;
 }

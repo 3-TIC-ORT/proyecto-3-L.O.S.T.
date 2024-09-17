@@ -9,12 +9,27 @@ let comentNotis = document.getElementById("comentNotis")
 function found () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     //Faltaría que cambie el textcontent del título de la lista así se distingue cual es cual, hay dos maneras que veo posibles: La primera es que se importe una clase o algo por el estilo del otro css. La otra que se me hace más fácil es que linkear el html con el css para que javascript tenga acceso a las otras clases, aunque deberíamos tener cuidado con el conflicto entre clases entre ambos css.
-} document.getElementById("found").addEventListener("click", found);
+} 
 
 function lost () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
     //Lo mismo que dije arriba
 } document.getElementById("lost").addEventListener("click", lost);
+
+function LostFound(event) {
+    let Dupla;
+    if (event.id = "lost") {
+        Dupla = "perdido"
+        localStorage.setItem("Dupla", Dupla)
+        window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+    } else {
+        Dupla = "encontrado"
+        localStorage.setItem("Dupla", Dupla)
+        window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+    }
+    window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+} document.getElementById("lost").addEventListener("click", LostFound);
+document.getElementById("found").addEventListener("click", LostFound);
 
 //La función Noti debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
 

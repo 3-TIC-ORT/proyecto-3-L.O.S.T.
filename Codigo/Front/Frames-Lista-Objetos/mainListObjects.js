@@ -24,17 +24,17 @@ function CreatePost(postList) {
         
     } 
 }
-postData("cargarPublicaciones", "encontrado", CreatePost);
+postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), CreatePost);
 
 
 function Add() {
-    window.location.href =  "Post-Creation-Edit.html"
- };
+    window.location.href =  "Post-Creation-Edit.html";
+ }document.getElementById("create").addEventListener("click", Add)
 
 function Edit() {
-    window.location.href = "Post-Creation-Edit.html"
+    window.location.href = "Post-Creation-Edit.html";
 }
 
 function Enter() {
-    window.location.href = "Creacion-publicacion.html"
-}
+    window.location.href = "Creacion-publicacion.html";
+} document.getElementById(for())

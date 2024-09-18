@@ -1,5 +1,5 @@
 let userFrame = document.getElementById("user-frame");  
-let UserShwon = document.getElementById("user-nameShown")
+let UserShown = document.getElementById("user-nameShown")
 let LogIn = document.getElementById("LS-SU");
 let LogOut = document.getElementById("log-stuff")
 let bell = document.getElementById("bell")
@@ -9,9 +9,8 @@ let comentNotis = document.getElementById("comentNotis")
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
 function ShowUsername() {
-    console.log("hola")
-    if (JSON.parse(localStorage.getItem("userName"))) {
-        UserShown.textContent = `${UserName}`;
+    if (JSON.parse(localStorage.getItem("userName")) !== "") {
+        UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
         LogIn.style.display = "none";
         CS.style.display = "flex"
@@ -82,7 +81,7 @@ document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 function BackHomeLogged() {
     let UserName = document.getElementById("user-data").value;
     let UserPassword = document.getElementById("password-data").value
-    let UserShown = document.getElementById("user-nameShown");
+    UserShown = document.getElementById("user-nameShown");
     if (UserName === "" || UserPassword === ""){
         alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
     } else {
@@ -107,7 +106,7 @@ function BackHomeLogged() {
 function Register() {
     let UserName = document.getElementById("user-data").value;
     let UserPassword = document.getElementById("password-data").value
-    let UserShown = document.getElementById("user-nameShown");
+    UserShown = document.getElementById("user-nameShown");
     if (UserName === "" || UserPassword === ""){
         alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
     } else if ((UserName.length > 32||UserPassword.length  > 32 || UserPassword.length < 8 || UserPassword.match(/[a-z]/) == null && UserPassword.includes("ñ") === false || UserPassword.match(/[A-Z]/) == null && UserPassword.includes("Ñ") === false || UserPassword.match(/[0-9]/) == null)) {
@@ -163,6 +162,6 @@ function BackHomeLoggedOut() {
     LogIn.style.display = "flex";
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
-    UserShwon.textContent = "Anónimo"
+    UserShown.textContent = "Anónimo"
 } document.getElementById("CS").addEventListener("click", BackHomeLoggedOut);
 

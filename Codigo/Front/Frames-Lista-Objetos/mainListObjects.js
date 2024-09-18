@@ -1,7 +1,8 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 
-function CreatePost(postList) {
-    for(i = 0; i < postList; i++) {
+function LoadPosts(postList) {
+    console.log(postList);
+    for(i = 0; i < postList.length; i++) {
         let nuevoBox = document.createElement("div");
         nuevoBox.id = "nuevoBox" + i;
         nuevoBox.classList.add("post");
@@ -13,17 +14,16 @@ function CreatePost(postList) {
         nuevoDown.id = "nuevoDown" + i;
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
-        nuevoUP.style.backgroundImage = postList[i].imagen;
+        nuevoUp.style.backgroundImage = postList[i].imagen;
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
         document.getElementById("nuevoBox" + i).appendChild(nuevoUp);
         document.getElementById("nuevoBox" + i).appendChild(nuevoDown);
         document.getElementById("nuevoUp" + i).appendChild(Uptxt);
         document.getElementById("nuevoDown" + i).appendChild(Downtxt);
-        
     } 
 }
-postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), CreatePost);
+postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);
 
 
 function Add() {

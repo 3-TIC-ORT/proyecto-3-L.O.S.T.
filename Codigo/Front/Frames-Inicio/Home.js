@@ -9,12 +9,15 @@ let comentNotis = document.getElementById("comentNotis")
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
 function ShowUsername() {
-    if (JSON.parse(localStorage.getItem("userName")) !== "") {
+    if (JSON.parse(localStorage.getItem("userName")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
         LogIn.style.display = "none";
         CS.style.display = "flex"
         bell.style.display = "flex"
+    }
+    else{
+        UserShown.textContent = "Anónimo"
     }
 }
 
@@ -87,13 +90,12 @@ function BackHomeLogged() {
     } else {
         postData("login", {name:UserName, password: UserPassword}, (data) => {
             if(data.id !== null){
-                localStorage.setItem("userName", JSON.stringify(UserName));
                 UserShown.textContent = `${UserName}`;
                 userFrame.style.display = "none";
                 LogIn.style.display = "none";
                 CS.style.display = "flex"
                 bell.style.display = "flex"
-                SetId(data.id)
+                SetId({id:data.id, name:UserName})
             } else{
                 alert(data.inf);
             }
@@ -119,7 +121,7 @@ function Register() {
                 LogIn.style.display = "none";
                 CS.style.display = "flex"
                 bell.style.display = "flex"
-                SetId(data.id)
+                SetId({id:data.id, name:UserName})
             } else{
                 alert(data.inf);
             }
@@ -131,8 +133,9 @@ document.getElementById("FinalSign").addEventListener("click", Register);
 let show = document.getElementById("show");
 let hide = document.getElementById("hide");
 
-function SetId(userId) {
-    localStorage.setItem("userId", JSON.stringify(userId));
+function SetId({id, name}) {
+    localStorage.setItem("userId", JSON.stringify(id));
+    localStorage.setItem("userName", JSON.stringify(name))
 }
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
@@ -155,7 +158,8 @@ document.getElementById("show").addEventListener("click", HideShow);
 function BackHomeLoggedOut() {
 
     //comentNotis está por ver
-
+    localStorage.removeItem("userId");
+    localStorage.removeItem("userName")
     comentNotis.style.display = "none"
     bell.style.display = "none";
     CS.style.display = "none"

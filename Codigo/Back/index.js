@@ -134,6 +134,7 @@ function mostrarNotificaciones(user){
     return listita;
 }
 
+module.exports = {register, login};
 
 // On Events
 onEvent("register", register);

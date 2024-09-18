@@ -8,7 +8,8 @@ let comentNotis = document.getElementById("comentNotis")
 
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
-function ShowUsername() {s
+function ShowUsername() {
+    localStorage.removeItem("Dupla");
     if (JSON.parse(localStorage.getItem("userName")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
@@ -21,7 +22,7 @@ function ShowUsername() {s
     }
 }
 
-ShowUsername()
+ShowUsername();
 
 function found () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"

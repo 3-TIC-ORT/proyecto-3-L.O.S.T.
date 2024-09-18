@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "dev": "npx nodeman Codigo/Back/index.js"
+    "dev": "npx nodemon Codigo/Back/index.js"
   },
   "repository": {
     "type": "git",

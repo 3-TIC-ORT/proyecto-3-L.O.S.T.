@@ -1,6 +1,5 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 
-
 function CreatePost(postList) {
     for(i = 0; i < postList; i++) {
         let nuevoBox = document.createElement("div");

@@ -1,6 +1,7 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 
 function LoadPosts(postList) {
+    console.log(postList)
     if(JSON.parse(localStorage.getItem("Dupla")) === "encontrado") {
         document.getElementById("title").textContent = "Objetos Perdidos"
     } else {
@@ -18,7 +19,7 @@ function LoadPosts(postList) {
         nuevoDown.id = "nuevoDown" + i;
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
-        nuevoUp.style.backgroundImage = postList[i].imagen;
+        nuevoUp.src = nuevoUp.src.replace(postList[i].imagen);
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
         document.getElementById("nuevoBox" + i).appendChild(nuevoUp);

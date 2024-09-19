@@ -49,7 +49,6 @@ main{
 .create {
     font-size: 7vh;
     background-color: blue;
-
 }
 
 .post {
@@ -69,9 +68,6 @@ main{
 .up  {
     height: 70%;
     font-size: 4vh;
-    background-image: none;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .down {

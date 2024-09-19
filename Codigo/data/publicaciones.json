@@ -223,5 +223,33 @@
     "id": 16,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "imagen": "C:\\fakepath\\xd.png",
+    "categoria": "paraguas",
+    "titulo": "Sabe puta",
+    "ubicacion": "puta",
+    "descripcion": "puta",
+    "dejado": "puta",
+    "hora": "na mentira",
+    "tipo": "perdido",
+    "creador": null,
+    "id": 17,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "imagen": "C:\\fakepath\\Referencia aliexpress.png",
+    "categoria": "paraguas",
+    "titulo": "feFDDSF",
+    "ubicacion": "DSFDSFDS",
+    "descripcion": "DSDFFDSFS",
+    "dejado": "DSFDF",
+    "hora": "DSFDSF",
+    "tipo": "encontrado",
+    "creador": null,
+    "id": 18,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

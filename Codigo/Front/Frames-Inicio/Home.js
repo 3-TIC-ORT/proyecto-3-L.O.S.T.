@@ -24,32 +24,21 @@ function ShowUsername() {
 
 ShowUsername();
 
-function found () {
+//Te mueve a la lista de objetos encontrados o perdidos
+
+function Found () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
-    //Faltaría que cambie el textcontent del título de la lista así se distingue cual es cual, hay dos maneras que veo posibles: La primera es que se importe una clase o algo por el estilo del otro css. La otra que se me hace más fácil es que linkear el html con el css para que javascript tenga acceso a las otras clases, aunque deberíamos tener cuidado con el conflicto entre clases entre ambos css.
-} 
+    localStorage.setItem("Dupla", JSON.stringify("encontrado"));
+} document.getElementById("found").addEventListener("click", Found);
 
-function lost () {
+function Lost () {
     window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
-    //Lo mismo que dije arriba
-} document.getElementById("lost").addEventListener("click", lost);
+    localStorage.setItem("Dupla", JSON.stringify("perdido"))
+} document.getElementById("lost").addEventListener("click", Lost);
 
-
-
-function LostFound(event) {
-    if (event.target.id === "lost") {
-        localStorage.setItem("Dupla", JSON.stringify("perdido"))
-        window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
-    } else {
-        localStorage.setItem("Dupla", JSON.stringify("encontrado"))
-        window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
-    } 
-} document.getElementById("lost").addEventListener("click", LostFound);
-document.getElementById("found").addEventListener("click", LostFound);
 
 //La función Noti debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
 
-//Pedir opinión a Santi
 
 function Notifications () {
 let comentNotis = document.getElementById("comentNotis");

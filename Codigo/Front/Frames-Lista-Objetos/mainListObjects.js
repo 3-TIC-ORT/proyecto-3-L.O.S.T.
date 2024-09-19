@@ -1,12 +1,16 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 
 function LoadPosts(postList) {
-    console.log(postList);
+    if(JSON.parse(localStorage.getItem("Dupla")) === "encontrado") {
+        document.getElementById("title").textContent = "Objetos Perdidos"
+    } else {
+        document.getElementById("title").textContent = "Objetos Encontrados"
+    }
     for(i = 0; i < postList.length; i++) {
         let nuevoBox = document.createElement("div");
         nuevoBox.id = "nuevoBox" + i;
         nuevoBox.classList.add("post");
-        let nuevoUp = document.createElement("div");
+        let nuevoUp = document.createElement("img");
         nuevoUp.id = "nuevoUp" + i;
         nuevoUp.classList.add("up");
         let Uptxt = document.createElement("h1");
@@ -21,7 +25,7 @@ function LoadPosts(postList) {
         document.getElementById("nuevoBox" + i).appendChild(nuevoDown);
         document.getElementById("nuevoUp" + i).appendChild(Uptxt);
         document.getElementById("nuevoDown" + i).appendChild(Downtxt);
-    } 
+    }
 }
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);
 
@@ -29,10 +33,6 @@ postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadP
 function Add() {
     window.location.href = "Post-Creation-Edit.html";
  } document.getElementById("create").addEventListener("click", Add)
-
-function Edit() {
-    window.location.href = "Post-Creation-Edit.html";
-}
 
 function Back() {
     console.log("hola")

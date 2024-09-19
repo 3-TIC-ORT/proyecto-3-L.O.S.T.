@@ -5,7 +5,6 @@ let publicacion = {}
 
 //La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back.
 const form = document.querySelector(`form`)
-localStorage.setItem("userId", JSON.stringify(0))
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target
@@ -16,10 +15,10 @@ form.addEventListener(`submit`, (e) => {
     publicacion.descripcion = formulario.description.value;
     publicacion.dejado = formulario.placeLeft.value;
     publicacion.hora = formulario.time.value;
+    publicacion.tipo = JSON.parse(localStorage.getItem("Dupla"));
     let usuario = JSON.parse(localStorage.getItem("userId"))
     publicacion.creador = usuario;
-    console.log(publicacion);
-    // window.location.href = "ListaObjs.html"
-    postData("crearPublicacion", publicacion)
+    window.location.href = "ListaObjs.html";
+    postData("crearPublicacion", publicacion);
 })
 

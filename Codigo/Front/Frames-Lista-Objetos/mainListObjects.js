@@ -14,17 +14,16 @@ function LoadPosts(postList) {
         let nuevoUp = document.createElement("img");
         nuevoUp.id = "nuevoUp" + i;
         nuevoUp.classList.add("up");
-        let Uptxt = document.createElement("h1");
         let nuevoDown = document.createElement("div");
         nuevoDown.id = "nuevoDown" + i;
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
-        nuevoUp.src = nuevoUp.src.replace(postList[i].imagen);
+        console.log(postList[i].imagen)
+        nuevoUp.src = postList[i].imagen;
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
         document.getElementById("nuevoBox" + i).appendChild(nuevoUp);
         document.getElementById("nuevoBox" + i).appendChild(nuevoDown);
-        document.getElementById("nuevoUp" + i).appendChild(Uptxt);
         document.getElementById("nuevoDown" + i).appendChild(Downtxt);
     }
 }

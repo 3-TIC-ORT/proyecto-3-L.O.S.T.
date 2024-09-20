@@ -251,5 +251,33 @@
     "id": 18,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "imagen": "C:\\fakepath\\1.jpg",
+    "categoria": "paraguas",
+    "titulo": "sddsjsd",
+    "ubicacion": "sdadsds",
+    "descripcion": "dsddssd",
+    "dejado": "sdsdds",
+    "hora": "sddsdsds",
+    "tipo": "perdido",
+    "creador": null,
+    "id": 19,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "imagen": "C:\\fakepath\\Imagen de WhatsApp 2024-09-11 a las 17.24.03_d8d8a2af.jpg",
+    "categoria": "paraguas",
+    "titulo": "132wew",
+    "ubicacion": "sddssd",
+    "descripcion": "dsdsds",
+    "dejado": "dsdsds",
+    "hora": "dsdsds",
+    "tipo": "perdido",
+    "creador": null,
+    "id": 20,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

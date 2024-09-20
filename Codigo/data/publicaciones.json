@@ -279,5 +279,60 @@
     "id": 20,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "imagen": "C:\\fakepath\\xd.png",
+    "categoria": "vestimenta",
+    "titulo": "fsf",
+    "ubicacion": "sad",
+    "descripcion": "asd",
+    "dejado": "sad",
+    "hora": "asd",
+    "tipo": "perdido",
+    "creador": null,
+    "id": 21,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "imagen": "C:\\fakepath\\xd.png",
+    "categoria": "productos-electronicos",
+    "titulo": "asd",
+    "ubicacion": "asd",
+    "descripcion": "asd",
+    "dejado": "asd",
+    "hora": "ad",
+    "tipo": "perdido",
+    "creador": null,
+    "id": 22,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "imagen": "C:\\fakepath\\xd.png",
+    "categoria": "vestimenta",
+    "titulo": "asd",
+    "ubicacion": "asd",
+    "descripcion": "aads",
+    "dejado": "aqweesd",
+    "hora": "sad",
+    "tipo": "perdido",
+    "creador": null,
+    "id": 23,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "categoria": "vestimenta",
+    "titulo": "",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "creador": null,
+    "id": 24,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

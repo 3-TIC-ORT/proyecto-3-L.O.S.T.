@@ -8,7 +8,11 @@ const form = document.querySelector(`form`)
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target
-    publicacion.imagen = formulario.img.files[0];
+    let fileReader = new FileReader();
+    fileReader.onload = function(fileRed) {
+        publicacion.imagen = fileRed.target.result;
+    }
+    fileReader.readAsDataURL(img.files[0]);
     publicacion.categoria = formulario.category.value;
     publicacion.titulo = formulario.title.value;
     publicacion.ubicacion = formulario.location.value;
@@ -19,7 +23,7 @@ form.addEventListener(`submit`, (e) => {
     console.log(publicacion)
     let usuario = JSON.parse(localStorage.getItem("userId"))
     publicacion.creador = usuario;
-    //window.location.href = "ListaObjs.html";
+    // window.location.href = "ListaObjs.html";
     postData("crearPublicacion", publicacion);
 })
 

@@ -334,5 +334,18 @@
     "id": 24,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "categoria": "vestimenta",
+    "titulo": "",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "creador": 8,
+    "id": 25,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

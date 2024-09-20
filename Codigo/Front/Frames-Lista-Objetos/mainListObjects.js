@@ -1,5 +1,4 @@
-// La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
-
+// La función create po t lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 function LoadPosts(postList) {
     console.log(postList)
     if(JSON.parse(localStorage.getItem("Dupla")) === "encontrado") {
@@ -25,6 +24,7 @@ function LoadPosts(postList) {
         document.getElementById("nuevoBox" + i).appendChild(nuevoUp);
         document.getElementById("nuevoBox" + i).appendChild(nuevoDown);
         document.getElementById("nuevoDown" + i).appendChild(Downtxt);
+        localStorage.setItem("i","")
     }
 }
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);

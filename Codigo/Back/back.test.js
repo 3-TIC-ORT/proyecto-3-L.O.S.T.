@@ -1,4 +1,4 @@
-import {register, login} from "index.js";
+import {register, login} from "./index.js";
 
 
 test('Pepito2010', () =>{

@@ -4,7 +4,7 @@ import fs from 'fs';
 
 // Funciones
 
-function register(user){
+export function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     if(user.name.length > 32){
         console.log("Su usuario no puede tener más de 32 caracteres")
@@ -26,7 +26,7 @@ function register(user){
     }
 }
 
-function login(user){
+export function login(user){
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     for(let i = 0; i < usuarios.length; i++){
         if(user.name === usuarios[i].name){
@@ -44,17 +44,8 @@ function login(user){
     }
 }
 
-function mostrarNombre(userId){
-    if (userId === null || userId === undefined){
-        return "Anónimo";
-    } else{
-        let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'))
-        return usuarios[userId].name;
-    }
-}
-
 function crearPublicacion(publicacion){
-    if(publicacion.creador = null){
+    if(publicacion.creador === null){
         return false;
     }
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
@@ -134,12 +125,10 @@ function mostrarNotificaciones(user){
     return listita;
 }
 
-// module.exports = {register, login};
 
 // On Events
 onEvent("register", register);
 onEvent("login", login);
-onEvent("mostrarNombre", mostrarNombre);
 onEvent("crearPublicacion", crearPublicacion);
 onEvent("editarPublicacion", editarPublicacion);
 onEvent("terminarPublicacion", terminarPublicacion);
@@ -148,5 +137,6 @@ onEvent("comentar", comentar);
 onEvent("mostrarNotificaciones", mostrarNotificaciones);
 
 
-
-startServer();
+if(require.main === module){
+    startServer();
+}

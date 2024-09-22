@@ -8,14 +8,7 @@ const form = document.querySelector(`form`)
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target
-
-    //No funciona el convertir en base 64 todavía.
-
-    let fileReader = new FileReader();
-    fileReader.onload = function(fileRed) {
-        publicacion.imagen = fileRed.target.result;
-    }
-    fileReader.readAsDataURL(img.files[0]);
+    publicacion.imagen = formulario.img.files[0];
     publicacion.categoria = formulario.category.value;
     publicacion.titulo = formulario.title.value;
     publicacion.ubicacion = formulario.location.value;

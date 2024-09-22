@@ -8,8 +8,15 @@ function LoadPosts(postList) {
         document.getElementById("title").textContent = "Objetos Encontrados"
     }
     for(i = 0; i < postList.length; i++) {
-        let nuevoBox = document.createElement("div");
-        nuevoBox.id = "nuevoBox" + i;
+        // let file = postList.imagen;
+        // let reader = new FileReader();
+    
+        // reader.onloadend = function() {
+        //     console.log('RESULT', reader.result)
+        // }
+        // reader.readAsDataURL(file);
+        let nuevoBox = document.createElement("article");
+        nuevoBox.id = `${postList[i].id}`;
         nuevoBox.classList.add("post");
         let nuevoUp = document.createElement("img");
         nuevoUp.id = "nuevoUp" + i;
@@ -22,8 +29,8 @@ function LoadPosts(postList) {
         nuevoUp.src = postList[i].imagen;
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
-        document.getElementById("nuevoBox" + i).appendChild(nuevoUp);
-        document.getElementById("nuevoBox" + i).appendChild(nuevoDown);
+        document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);
+        document.getElementById(`${postList[i].id}`).appendChild(nuevoDown);
         document.getElementById("nuevoDown" + i).appendChild(Downtxt);
         //Falta hacer que asigne un id a cada publicacion
     }

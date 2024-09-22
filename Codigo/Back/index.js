@@ -108,8 +108,8 @@ function comentar(data){
     lista[data.id].comentarios.push({...comentario});
     fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
-    let notificación = {id:lista[data.id].creador, text: `${usuarios[data.user].name} ha comentado ${comentario.comm}`};
-    notificaciones.push({...notificaciones});
+    let notificacion = {id:lista[data.id].creador, text: `${usuarios[data.user].name} ha comentado ${comentario.comm}`};
+    notificaciones.push({...notificacion});
     fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
     return true;
 }

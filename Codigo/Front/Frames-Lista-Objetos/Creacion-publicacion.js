@@ -1,28 +1,29 @@
 let userNum = 0
 let comentario = {};
 
-let Postdatear = postData("comentar", comentario)
-//Hago que haya un h4 que tenga de nombre un número de usuario único y que se muestre arriba del comentario de quien lo creo, además de que no va a haber un user 0
-function comentar(){
-    userNum++
+//Hace que se muestre todo en pantallas: imagen, comentarios, descripcion, titulo, entre mas cosas.
+
+function DataLoader () {
+let publicaciones = localStorage.getItem("publicaciones");
+}
+
+// DataLoader();
+
+//Creo el comentario, lo guarda, lo displayea y despues le manda el comentario al back.
+function Comentar(){
     let user = document.createElement("h4");
-    user.textContent = `Usuario ${userNum}:`
-    document.getElementById("coment-box").appendChild(user);
-    //Creo el comentario, lo guarda y los displayea
-    comentario.comm = document.getElementById("InputComentario").value
-    comentario.id = localStorage.getItem("");
-    comentario.user = localStorage.getItem("");
-
-
-    let coment = document.createElement("article"); 
+    user.textContent = JSON.parse(localStorage.getItem("userName"));
+    let coment = document.createElement("p"); 
     coment.textContent = `${document.getElementById("InputComentario").value}`;
-    coment.classList.add("ComentContent");
-    document.getElementById("coment-box").appendChild(coment);
- 
-    postData("comentar", comentario)
-}document.getElementById("enviar").addEventListener("click", comentar);
+    let container = document.createElement("article");
+    document.getElementById("coment-box").appendChild(container);
+    container.appendChild(user)
+    container.appendChild(coment)
+    comentario.comm = document.getElementById("InputComentario").value
+    comentario.id = localStorage.getItem("userId");
+    comentario.user = localStorage.getItem("userName");
+    postData("comentar", comentario);
+} document.getElementById("enviar").addEventListener("click", Comentar);
 
-//mostrarComent//
 
 
- 

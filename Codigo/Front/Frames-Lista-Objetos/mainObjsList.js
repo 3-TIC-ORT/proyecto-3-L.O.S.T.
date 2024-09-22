@@ -32,14 +32,14 @@ postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadP
 
 
 function Add() {
-    window.location.href = "Post-Creation-Edit.html";
+    window.location.href = "indexCreacionPublicacion.html";
  } document.getElementById("create").addEventListener("click", Add)
 
 function Back() {
     console.log("hola")
-    window.location.href = "../Frames-Inicio/Inicio.html";
+    window.location.href = "../Frames-Inicio/indexHome.html";
 } document.getElementById("Flecha").addEventListener("click", Back);
 
 function Enter() {
-    window.location.href = "Creacion-publicacion.html";
+    window.location.href = "indexPublicacion.html";
 }

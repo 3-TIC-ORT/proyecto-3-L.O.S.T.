@@ -27,12 +27,12 @@ ShowUsername();
 //Te mueve a la lista de objetos encontrados o perdidos
 
 function Found () {
-    window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+    window.location.href = "../Frames-Lista-Objetos/indexObjsList.html"
     localStorage.setItem("Dupla", JSON.stringify("encontrado"));
 } document.getElementById("found").addEventListener("click", Found);
 
 function Lost () {
-    window.location.href = "../Frames-Lista-Objetos/ListaObjs.html"
+    window.location.href = "../Frames-Lista-Objetos/indexObjsList.html"
     localStorage.setItem("Dupla", JSON.stringify("perdido"))
 } document.getElementById("lost").addEventListener("click", Lost);
 

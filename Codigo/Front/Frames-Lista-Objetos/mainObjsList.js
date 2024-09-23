@@ -1,4 +1,4 @@
-// La función create po t lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
+// La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 function LoadPosts(postList) {
     localStorage.setItem("publicaciones", postList);
     console.log(postList)
@@ -32,7 +32,12 @@ function LoadPosts(postList) {
         document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoDown);
         document.getElementById("nuevoDown" + i).appendChild(Downtxt);
+        
     }
+    //Una vez cargadas las publicaciones, le agrego el EventListener a cada publicación.
+    document.querySelectorAll("article").forEach(article => {
+        article.addEventListener("click", Enter);
+    })
 }
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);
 
@@ -42,13 +47,12 @@ function Add() {
  } document.getElementById("create").addEventListener("click", Add)
 
 function Back() {
-    console.log("hola")
     window.location.href = "../Frames-Inicio/indexHome.html";
 } document.getElementById("Flecha").addEventListener("click", Back);
 
 function Enter(publicacion) {
+    //publicacion.id agarra el id del  objeto de arriba.
+    console.log(publicacion.target.id);
     localStorage.setItem("publicacionId", publicacion.id);
-    window.location.href = "indexPublicacion.html";
-} document.querySelectorAll("article").forEach(article => {
-    article.addEventListener("click", Enter);
-})
+    // window.location.href = "indexPublicacion.html";
+} 

@@ -4,13 +4,15 @@ let comentario = {};
 //Hace que se muestre todo en pantallas: imagen, comentarios, descripcion, titulo, entre mas cosas.
 
 function DataLoader () {
-let publicaciones = localStorage.getItem("publicaciones");
+let publicacionId = localStorage.getItem("publicacionId");
+let publicaciones = localStorage.getItem("publicaciones")
+console.log(publicacionId);
 }
 
-// DataLoader();
+DataLoader();
 
 //Creo el comentario, lo guarda, lo displayea y despues le manda el comentario al back.
-function Comentar(){z
+function Comentar(){
     if(localStorage.getItem("userId") === null) {
         alert("Para hacer un comentario necesita haber iniciado sesión anteriormente")
     } else {

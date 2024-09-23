@@ -49,8 +49,7 @@ function Back() {
 } document.getElementById("Flecha").addEventListener("click", Back);
 
 function Enter(publicacion) {
-    //publicacion.id agarra el id del objeto de arriba.
-    console.log(publicacion.target.parentNode.nodeName.id);
-    localStorage.setItem("publicacionId", publicacion.id);
-    // window.location.href = "indexPublicacion.html";
+    //publicacion.target.parentNode.id agarra el id del "article", osea la publicacion
+    localStorage.setItem("publicacionId", publicacion.target.parentNode.id);
+    window.location.href = "indexPublicacion.html";
 } 

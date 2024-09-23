@@ -19,10 +19,8 @@ function LoadPosts(postList) {
         nuevoBox.id = `${postList[i].id}`;
         nuevoBox.classList.add("post");
         let nuevoUp = document.createElement("img");
-        nuevoUp.id = "nuevoUp" + i;
         nuevoUp.classList.add("up");
         let nuevoDown = document.createElement("div");
-        nuevoDown.id = "nuevoDown" + i;
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
         console.log(postList[i].imagen)
@@ -31,7 +29,7 @@ function LoadPosts(postList) {
         document.getElementById("ObjectsList").appendChild(nuevoBox);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoDown);
-        document.getElementById("nuevoDown" + i).appendChild(Downtxt);
+        nuevoDown.appendChild(Downtxt);
         
     }
     //Una vez cargadas las publicaciones, le agrego el EventListener a cada publicación.
@@ -51,8 +49,8 @@ function Back() {
 } document.getElementById("Flecha").addEventListener("click", Back);
 
 function Enter(publicacion) {
-    //publicacion.id agarra el id del  objeto de arriba.
-    console.log(publicacion.target.id);
+    //publicacion.id agarra el id del objeto de arriba.
+    console.log(publicacion.target.parentNode.nodeName.id);
     localStorage.setItem("publicacionId", publicacion.id);
     // window.location.href = "indexPublicacion.html";
 } 

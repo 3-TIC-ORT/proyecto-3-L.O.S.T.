@@ -1,12 +1,17 @@
-let userNum = 0
 let comentario = {};
 
 //Hace que se muestre todo en pantallas: imagen, comentarios, descripcion, titulo, entre mas cosas.
 
 function DataLoader () {
-let publicacionId = localStorage.getItem("publicacionId");
-let publicaciones = localStorage.getItem("publicaciones")
-console.log(publicacionId);
+    let publicacionId = JSON.parse(localStorage.getItem("publicacionId"));
+    let publicaciones = JSON.parse(localStorage.getItem("publicaciones"));
+    for (i = 0; i < publicaciones.length; i++) {
+        if(publicaciones[i].id === publicacionId) {
+            console.log("Hola")
+            document.getElementById("titulo").textContent = publicaciones[i].titulo
+        }
+    }
+    localStorage.removeItem("publicacionId");
 }
 
 DataLoader();

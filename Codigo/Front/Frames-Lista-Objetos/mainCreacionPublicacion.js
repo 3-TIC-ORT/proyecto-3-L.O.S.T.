@@ -7,11 +7,12 @@ let publicacion = {}
 const form = document.querySelector(`form`)
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
-    formulario = e.target
+    formulario = e.target;
     publicacion.imagen = formulario.img.files[0];
     publicacion.tipoImg = formulario.img.files[0].type;
     publicacion.categoria = formulario.category.value;
     publicacion.titulo = formulario.title.value;
+    console.log(publicacion.titulo);
     publicacion.ubicacion = formulario.location.value;
     publicacion.descripcion = formulario.description.value;
     publicacion.dejado = formulario.placeLeft.value;
@@ -20,7 +21,6 @@ form.addEventListener(`submit`, (e) => {
     console.log(publicacion)
     let usuario = JSON.parse(localStorage.getItem("userId"))
     publicacion.creador = usuario;
-    // window.location.href = "ListaObjs.html";
+    // window.location.href = "indexObjsList.html";
     postData("crearPublicacion", publicacion);
 })
-

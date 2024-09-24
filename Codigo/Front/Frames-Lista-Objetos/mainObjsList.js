@@ -1,7 +1,5 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 function LoadPosts(postList) {
-    localStorage.setItem("publicaciones", postList);
-    console.log(postList)
     if(JSON.parse(localStorage.getItem("Dupla")) === "encontrado") {
         document.getElementById("title").textContent = "Objetos Perdidos"
     } else {
@@ -24,7 +22,7 @@ function LoadPosts(postList) {
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
         console.log(postList[i].imagen)
-        nuevoUp.src = postList[i].imagen;
+        nuevoUp.src = `Codigo/data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);
@@ -36,6 +34,8 @@ function LoadPosts(postList) {
     document.querySelectorAll("article").forEach(article => {
         article.addEventListener("click", Enter);
     })
+    console.log(postList)
+    localStorage.setItem("publicaciones", JSON.stringify(postList));
 }
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);
 
@@ -46,6 +46,7 @@ function Add() {
 
 function Back() {
     window.location.href = "../Frames-Inicio/indexHome.html";
+    localStorage.removeItem("publicaciones");
 } document.getElementById("Flecha").addEventListener("click", Back);
 
 function Enter(publicacion) {

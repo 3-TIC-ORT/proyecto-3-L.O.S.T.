@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "name": "dwadwad",
+    "password": "ADWdawd123",
+    "id": 0,
+    "admin": false
+  },
+  {
+    "name": "DWAwddadaw",
+    "password": "dWAUIdwa132",
+    "id": 1,
+    "admin": false
+  }
+]

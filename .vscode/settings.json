@@ -1,7 +1,7 @@
 {
     "liveServer.settings.ignoreFiles" : [
             ".vscode/**",
-            "Codigo/data/*.json"
+            "Codigo/data/**"
     ]
 
 }

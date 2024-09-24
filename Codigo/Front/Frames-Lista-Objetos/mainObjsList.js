@@ -23,7 +23,7 @@ function LoadPosts(postList) {
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
         console.log(postList[i].imagen)
-        nuevoUp.src = `../Front/data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
+        nuevoUp.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);

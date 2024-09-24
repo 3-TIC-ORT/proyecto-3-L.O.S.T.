@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "tipoImg": "image/png",
+    "categoria": "mochilas",
+    "titulo": "adwdaw",
+    "ubicacion": "dwadwadd",
+    "descripcion": "wadwadw",
+    "dejado": "dwadwd",
+    "hora": "wadwad",
+    "tipo": "encontrado",
+    "creador": 0,
+    "id": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "image/png",
+    "categoria": "vestimenta",
+    "titulo": "wdadaw",
+    "ubicacion": "13213",
+    "descripcion": "dwawdw",
+    "dejado": "adwadw",
+    "hora": "adwwdwad",
+    "tipo": "perdido",
+    "creador": 1,
+    "id": 1,
+    "comentarios": [],
+    "cumplio": false
+  }
+]

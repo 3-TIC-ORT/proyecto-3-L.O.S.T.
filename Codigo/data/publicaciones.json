@@ -12,5 +12,19 @@
     "id": 0,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "image/jpeg",
+    "categoria": "otros",
+    "titulo": "j",
+    "ubicacion": "j",
+    "descripcion": "j",
+    "dejado": "j",
+    "hora": "j",
+    "tipo": "perdido",
+    "creador": 3,
+    "id": 1,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

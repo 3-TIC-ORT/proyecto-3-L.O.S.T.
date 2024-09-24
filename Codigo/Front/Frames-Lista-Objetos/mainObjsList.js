@@ -1,5 +1,6 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 function LoadPosts(postList) {
+    localStorage.removeItem("publicacionId");   
     if(JSON.parse(localStorage.getItem("Dupla")) === "encontrado") {
         document.getElementById("title").textContent = "Objetos Perdidos"
     } else {

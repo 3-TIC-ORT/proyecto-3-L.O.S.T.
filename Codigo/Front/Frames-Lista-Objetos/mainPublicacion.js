@@ -9,9 +9,16 @@ function DataLoader () {
         if(publicaciones[i].id === publicacionId) {
             console.log("Hola")
             document.getElementById("titulo").textContent = publicaciones[i].titulo
+            document.getElementById("descripcion").textContent = publicaciones[i].descripcion
+            document.getElementById("fecha").textContent = publicaciones[i].hora;
+            document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
+            document.getElementById("dejado").textContent = publicaciones[i].dejado;
+            document.getElementById("foto").textContent = publicaciones[i].imagen;
+            for (a = 0; a < publicaciones[i].comentario.length; a++) {
+                document.getElementById("coment-box").textContent = publicaciones[i].comentario[a].comm;
+            }
         }
     }
-    localStorage.removeItem("publicacionId");
 }
 
 DataLoader();
@@ -19,7 +26,7 @@ DataLoader();
 //Creo el comentario, lo guarda, lo displayea y despues le manda el comentario al back.
 function Comentar(){
     if(localStorage.getItem("userId") === null) {
-        alert("Para hacer un comentario necesita haber iniciado sesión anteriormente")
+        alert("Para hacer un comentario necesita haber iniciado sesión o registrado anteriormente")
     } else {
         let user = document.createElement("h4");
         user.textContent = JSON.parse(localStorage.getItem("userName"));

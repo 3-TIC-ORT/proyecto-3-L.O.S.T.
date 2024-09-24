@@ -12,5 +12,19 @@
     "id": 0,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "image/png",
+    "categoria": "paraguas",
+    "titulo": "Se pudo?",
+    "ubicacion": "2332",
+    "descripcion": "3223",
+    "dejado": "3223",
+    "hora": "3223",
+    "tipo": "encontrado",
+    "creador": 3,
+    "id": 1,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

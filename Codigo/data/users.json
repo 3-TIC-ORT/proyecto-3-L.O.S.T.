@@ -16,5 +16,11 @@
     "password": "BuenasTardes123",
     "id": 2,
     "admin": false
+  },
+  {
+    "name": "HolaSFdss",
+    "password": "23434qweDFAS6",
+    "id": 3,
+    "admin": false
   }
 ]

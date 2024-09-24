@@ -55,7 +55,6 @@ function crearPublicacion(publicacion){
     publicacion.comentarios = [];
     publicacion.cumplio = false;
     delete publicacion.imagen;
-    delete publicacion.tipoImg;
     lista.push({...publicacion});
     fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
     return true;

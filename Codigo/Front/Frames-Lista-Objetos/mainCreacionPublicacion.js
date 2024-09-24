@@ -9,6 +9,7 @@ form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target
     publicacion.imagen = formulario.img.files[0];
+    publicacion.tipoImg = formulario.img.files[0].type;
     publicacion.categoria = formulario.category.value;
     publicacion.titulo = formulario.title.value;
     publicacion.ubicacion = formulario.location.value;

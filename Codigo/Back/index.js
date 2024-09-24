@@ -48,10 +48,14 @@ function crearPublicacion(publicacion){
     if(publicacion.creador === null){
         return false;
     }
+    let tipoImg = publicacion.tipoImg.split("/").pop();
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     publicacion.id = lista.length;
+    fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
     publicacion.comentarios = [];
     publicacion.cumplio = false;
+    delete publicacion.imagen;
+    delete publicacion.tipoImg;
     lista.push({...publicacion});
     fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
     return true;

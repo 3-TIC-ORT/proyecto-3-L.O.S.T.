@@ -46,5 +46,11 @@
     "password": "SDFsadDS56476",
     "id": 7,
     "admin": false
+  },
+  {
+    "name": "ElonMuts",
+    "password": "Maduro2023",
+    "id": 8,
+    "admin": false
   }
 ]

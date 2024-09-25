@@ -16,5 +16,11 @@
     "password": "Hola12345",
     "id": 2,
     "admin": false
+  },
+  {
+    "name": "49550709",
+    "password": "Radio5tarjeta",
+    "id": 3,
+    "admin": false
   }
 ]

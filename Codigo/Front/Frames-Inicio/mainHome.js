@@ -120,15 +120,15 @@ function Register() {
 }
 document.getElementById("FinalSign").addEventListener("click", Register);
 
-let show = document.getElementById("show");
-let hide = document.getElementById("hide");
-
 function SetId({id, name}) {
     localStorage.setItem("userId", JSON.stringify(id));
     localStorage.setItem("userName", JSON.stringify(name));
 }
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
+
+let show = document.getElementById("show");
+let hide = document.getElementById("hide");
 
 function HideShow (event) {
     if (event.target.id === "hide") {

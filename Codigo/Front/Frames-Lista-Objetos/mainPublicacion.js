@@ -14,8 +14,15 @@ function DataLoader () {
             document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
             document.getElementById("dejado").textContent = publicaciones[i].dejado;
             document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`;
-            for (a = 0; a < publicaciones[i].comentario.length; a++) {
-                document.getElementById("coment-box").textContent = publicaciones[i].comentario[a].comm;
+            for (a = 0; a < publicaciones[i].comentarios.length; a++) {
+                let articulo = document.createElement("article");
+                document.getElementById("coment-box").appendChild(articulo);
+                let name =  document.createElement("h4");
+                name.textContent = publicaciones[i].comentario[a].user;
+                article.appendChild(name);
+                let coment =  document.createElement("p");
+                coment.textContent = publicaciones[i].comentario[a].comm;
+                article.appendChild(coment);
             }
         }
     }
@@ -28,6 +35,7 @@ function Comentar(){
     if(localStorage.getItem("userId") === null) {
         alert("Para hacer un comentario necesita haber iniciado sesión o registrado anteriormente")
     } else {
+        console.log("hola")
         let user = document.createElement("h4");
         user.textContent = JSON.parse(localStorage.getItem("userName"));
         let coment = document.createElement("p"); 

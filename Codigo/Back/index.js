@@ -1,8 +1,11 @@
 import { onEvent, startServer } from "soquetic";
 import fs from 'fs';
+import * as jose from "jose";
 
+const claveSecreta = new TextEncoder().encode(jose.base64url.encode("Feli"));
 
 // Funciones
+
 
 export function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
@@ -43,6 +46,28 @@ export function login(user){
         }
     }
 }
+
+
+// Intento Login JWT
+// export function login(user){
+//     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
+//     for(let i = 0; i < usuarios.length; i++){
+//         if(user.name === usuarios[i].name){
+//             user.id = usuarios[i].id
+//         }
+//     }
+//     if (user.id === null || user.id === undefined){
+//         return {id:null, inf:"Invalid"};
+//     } else {
+//         if(user.password === usuarios[user.id].password){
+//             // return {id:user.id, admin:usuarios[user.id].admin};
+//             const mensaje = await new jose.CompactSign(new TextEncoder().encode({id:user.id, admin:usuarios[user.id].admin}),).setProtectedHeader({alg: "HS256"}).sign(claveSecreta);
+//             return mensaje;
+//         } else{
+//             return {id:null, inf:"Invalid"};
+//         }
+//     }
+// }
 
 function crearPublicacion(publicacion){
     if(publicacion.creador === null){

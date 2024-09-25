@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "name": "Hola1234",
+    "password": "Hola1234",
+    "id": 0,
+    "admin": false
+  }
+]

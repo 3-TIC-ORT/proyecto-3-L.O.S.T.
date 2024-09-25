@@ -19,6 +19,7 @@
   "homepage": "https://github.com/3-TIC-ORT/proyecto-3-objetos-perdidos-en-ruinas#readme",
   "description": "",
   "dependencies": {
+    "jose": "^5.9.3",
     "nodeman": "^1.1.2",
     "nodemon": "^3.1.5",
     "soquetic": "^1.0.3"

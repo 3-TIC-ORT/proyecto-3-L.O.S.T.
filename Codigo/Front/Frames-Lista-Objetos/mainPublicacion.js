@@ -13,7 +13,7 @@ function DataLoader () {
             document.getElementById("fecha").textContent = publicaciones[i].hora;
             document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
             document.getElementById("dejado").textContent = publicaciones[i].dejado;
-            document.getElementById("foto").textContent = publicaciones[i].imagen;
+            document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`;
             for (a = 0; a < publicaciones[i].comentario.length; a++) {
                 document.getElementById("coment-box").textContent = publicaciones[i].comentario[a].comm;
             }

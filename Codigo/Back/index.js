@@ -61,7 +61,7 @@ export function login(user){
 //     } else {
 //         if(user.password === usuarios[user.id].password){
 //             // return {id:user.id, admin:usuarios[user.id].admin};
-//             const mensaje = await new jose.CompactSign(new TextEncoder().encode({id:user.id, admin:usuarios[user.id].admin}),).setProtectedHeader({alg: "HS256"}).sign(claveSecreta);
+//             // const mensaje = await new jose.CompactSign(new TextEncoder().encode({id:user.id, admin:usuarios[user.id].admin}),).setProtectedHeader({alg: "HS256"}).sign(claveSecreta);
 //             return mensaje;
 //         } else{
 //             return {id:null, inf:"Invalid"};

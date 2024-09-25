@@ -3,12 +3,18 @@
     "name": "JDdaiuhdwa123D",
     "password": "DWABHDWABad2",
     "id": 0,
-    "admin": false
+    "admin": true
   },
   {
     "name": "crtyct",
     "password": "tserWRS45",
     "id": 1,
+    "admin": false
+  },
+  {
+    "name": "Coolfede98",
+    "password": "Hola12345",
+    "id": 2,
     "admin": false
   }
 ]

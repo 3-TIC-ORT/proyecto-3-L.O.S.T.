@@ -21,6 +21,6 @@ form.addEventListener(`submit`, (e) => {
     console.log(publicacion)
     let usuario = JSON.parse(localStorage.getItem("userId"))
     publicacion.creador = usuario;
-    // window.location.href = "indexObjsList.html";
+    window.location.href = "indexObjsList.html";
     postData("crearPublicacion", publicacion);
 })

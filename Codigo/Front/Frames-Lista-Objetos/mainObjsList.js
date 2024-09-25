@@ -7,13 +7,6 @@ function LoadPosts(postList) {
         document.getElementById("title").textContent = "Objetos Encontrados"
     }
     for(i = 0; i < postList.length; i++) {
-        // let file = postList.imagen;
-        // let reader = new FileReader();
-    
-        // reader.onloadend = function() {
-        //     console.log('RESULT', reader.result)
-        // }
-        // reader.readAsDataURL(file);
         let nuevoBox = document.createElement("article");
         nuevoBox.id = `${postList[i].id}`;
         nuevoBox.classList.add("post");

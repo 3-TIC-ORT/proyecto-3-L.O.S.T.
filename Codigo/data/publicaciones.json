@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "titulo": "gxrgxr",
+    "ubicacion": "fyftcyt",
+    "descripcion": "rzwea",
+    "dejado": "rtxrs",
+    "hora": "trxr",
+    "tipo": "perdido",
+    "creador": 1,
+    "id": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "titulo": "AWDdwaihd",
+    "ubicacion": "wuiaWHIADW",
+    "descripcion": "DAhudwla",
+    "dejado": "LIUDAWdhaw",
+    "hora": "DLIAUHWwd",
+    "tipo": "perdido",
+    "creador": 1,
+    "id": 1,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "accesorios",
+    "titulo": "Santi puto",
+    "ubicacion": "ddds",
+    "descripcion": "dssdds",
+    "dejado": "dsds",
+    "hora": "dssd",
+    "tipo": "encontrado",
+    "creador": 1,
+    "id": 2,
+    "comentarios": [],
+    "cumplio": false
+  }
+]

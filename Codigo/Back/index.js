@@ -76,6 +76,7 @@ function crearPublicacion(publicacion){
     let tipoImg = publicacion.tipoImg.split("/").pop();
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     publicacion.id = lista.length;
+    publicacion.tipoImg = tipoImg;
     fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
     publicacion.comentarios = [];
     publicacion.cumplio = false;

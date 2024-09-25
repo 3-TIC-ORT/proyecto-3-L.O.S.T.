@@ -22,5 +22,11 @@
     "password": "Radio5tarjeta",
     "id": 3,
     "admin": false
+  },
+  {
+    "name": "Felidskpak",
+    "password": "CSNnjLYVdy89p",
+    "id": 4,
+    "admin": false
   }
 ]

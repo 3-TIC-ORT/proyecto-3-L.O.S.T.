@@ -1,4 +1,4 @@
-let comentario = {};
+
 
 //Hace que se muestre todo en pantallas: imagen, comentarios, descripcion, titulo, entre mas cosas.
 
@@ -7,7 +7,6 @@ function DataLoader () {
     let publicaciones = JSON.parse(localStorage.getItem("publicaciones"));
     for (i = 0; i < publicaciones.length; i++) {
         if(publicaciones[i].id === publicacionId) {
-            console.log("Hola")
             document.getElementById("titulo").textContent = publicaciones[i].titulo
             document.getElementById("descripcion").textContent = publicaciones[i].descripcion
             document.getElementById("fecha").textContent = publicaciones[i].hora;
@@ -32,6 +31,7 @@ DataLoader();
 
 //Creo el comentario, lo guarda, lo displayea y despues le manda el comentario al back.
 function Comentar(){
+    let comentario = {}
     if(localStorage.getItem("userId") === null) {
         alert("Para hacer un comentario necesita haber iniciado sesión o registrado anteriormente")
     } else {
@@ -45,8 +45,8 @@ function Comentar(){
         container.appendChild(user)
         container.appendChild(coment)
         comentario.comm = document.getElementById("InputComentario").value
-        comentario.id = localStorage.getItem("userId");
-        comentario.user = localStorage.getItem("userName");
+        comentario.id = JSON.parse(localStorage.getItem("userId"));
+        comentario.user = JSON.parse(localStorage.getItem("userName"));
         postData("comentar", comentario);
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);

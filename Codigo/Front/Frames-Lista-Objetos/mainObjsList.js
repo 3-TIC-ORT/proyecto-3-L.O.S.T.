@@ -15,7 +15,6 @@ function LoadPosts(postList) {
         let nuevoDown = document.createElement("div");
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
-        console.log(postList[i].imagen)
         nuevoUp.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
@@ -28,7 +27,6 @@ function LoadPosts(postList) {
     document.querySelectorAll("article").forEach(article => {
         article.addEventListener("click", Enter);
     })
-    console.log(postList)
     localStorage.setItem("publicaciones", JSON.stringify(postList));
 }
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);

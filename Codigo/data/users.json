@@ -28,5 +28,23 @@
     "password": "CSNnjLYVdy89p",
     "id": 4,
     "admin": false
+  },
+  {
+    "name": "Feli",
+    "password": "SDSda8vs",
+    "id": 5,
+    "admin": false
+  },
+  {
+    "name": "Holassd",
+    "password": "SXDFOSADJ789d",
+    "id": 6,
+    "admin": false
+  },
+  {
+    "name": "Santi",
+    "password": "SDJDKLjALKda44Gd",
+    "id": 7,
+    "admin": false
   }
 ]

@@ -13,15 +13,17 @@ function DataLoader () {
             document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
             document.getElementById("dejado").textContent = publicaciones[i].dejado;
             document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`;
-            for (a = 0; a < publicaciones[i].comentarios.length; a++) {
-                let articulo = document.createElement("article");
-                document.getElementById("coment-box").appendChild(articulo);
-                let name =  document.createElement("h4");
-                name.textContent = publicaciones[i].comentario[a].user;
-                article.appendChild(name);
-                let coment =  document.createElement("p");
-                coment.textContent = publicaciones[i].comentario[a].comm;
-                article.appendChild(coment);
+            if (publicaciones[i].comentarios.length !== 0) {
+                for (a = 0; a < publicaciones[i].comentarios.length; a++) {
+                    let articulo = document.createElement("article");
+                    document.getElementById("coment-box").appendChild(articulo);
+                    let name =  document.createElement("h4");
+                    name.textContent = publicaciones[i].comentarios[a].user;
+                    article.appendChild(name);
+                    let coment =  document.createElement("p");
+                    coment.textContent = publicaciones[i].comentarios[a].comm;
+                    article.appendChild(coment);
+                }
             }
         }
     }
@@ -32,21 +34,21 @@ DataLoader();
 //Creo el comentario, lo guarda, lo displayea y despues le manda el comentario al back.
 function Comentar(){
     let comentario = {}
-    if(localStorage.getItem("userId") === null) {
-        alert("Para hacer un comentario necesita haber iniciado sesión o registrado anteriormente")
+    if(JSON.parse(localStorage.getItem("userId")) === null) {
+        alert("Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente")
     } else {
-        console.log("hola")
         let user = document.createElement("h4");
         user.textContent = JSON.parse(localStorage.getItem("userName"));
         let coment = document.createElement("p"); 
         coment.textContent = `${document.getElementById("InputComentario").value}`;
         let container = document.createElement("article");
         document.getElementById("coment-box").appendChild(container);
-        container.appendChild(user)
-        container.appendChild(coment)
-        comentario.comm = document.getElementById("InputComentario").value
+        container.appendChild(user);
+        container.appendChild(coment);
+        comentario.comm = document.getElementById("InputComentario").value;
         comentario.id = JSON.parse(localStorage.getItem("userId"));
         comentario.user = JSON.parse(localStorage.getItem("userName"));
+        console.log(comentario)
         postData("comentar", comentario);
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);

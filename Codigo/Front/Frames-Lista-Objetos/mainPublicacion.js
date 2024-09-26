@@ -13,17 +13,15 @@ function DataLoader () {
             document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
             document.getElementById("dejado").textContent = publicaciones[i].dejado;
             document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`;
-            if (publicaciones[i].comentarios.length !== 0) {
-                for (a = 0; a < publicaciones[i].comentarios.length; a++) {
-                    let articulo = document.createElement("article");
-                    document.getElementById("coment-box").appendChild(articulo);
-                    let name =  document.createElement("h4");
-                    name.textContent = publicaciones[i].comentarios[a].user;
-                    article.appendChild(name);
-                    let coment =  document.createElement("p");
-                    coment.textContent = publicaciones[i].comentarios[a].comm;
-                    article.appendChild(coment);
-                }
+            for (a = 0; a < publicaciones[i].comentarios.length; a++) {
+                let articulo = document.createElement("article");
+                document.getElementById("coment-box").appendChild(articulo);
+                let name =  document.createElement("h4");
+                name.textContent = publicaciones[i].comentarios[a].userName;
+                articulo.appendChild(name);
+                let coment =  document.createElement("p");
+                coment.textContent = publicaciones[i].comentarios[a].comm;
+                articulo.appendChild(coment);
             }
         }
     }

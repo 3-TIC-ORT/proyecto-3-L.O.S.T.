@@ -40,12 +40,9 @@
     "id": 2,
     "comentarios": [
       {
-        "user": 9,
-        "comm": "Hola"
-      },
-      {
-        "user": "Satni",
-        "comm": "Hola"
+        "user": 10,
+        "comm": "Hola",
+        "userName": "adwaDawd"
       }
     ],
     "cumplio": false

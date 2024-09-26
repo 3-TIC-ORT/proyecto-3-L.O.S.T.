@@ -133,10 +133,10 @@ function cargarPublicaciones(data){
 function comentar(data){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", "utf-8"));
-    let comentario = {user:data.user, comm:data.comm};
+    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
+    let comentario = {user:data.user, comm:data.comm, userName:usuarios[data.user].name};
     lista[data.id].comentarios.push({...comentario});
     fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
     let notificacion = {id:lista[data.id].creador, text: `${usuarios[data.user].name} ha comentado ${comentario.comm}`};
     notificaciones.push({...notificacion});
     fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))

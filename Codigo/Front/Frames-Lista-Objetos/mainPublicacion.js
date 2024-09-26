@@ -12,7 +12,7 @@ function DataLoader () {
             document.getElementById("fecha").textContent = publicaciones[i].hora;
             document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
             document.getElementById("dejado").textContent = publicaciones[i].dejado;
-            document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`;
+            document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`
             for (a = 0; a < publicaciones[i].comentarios.length; a++) {
                 let articulo = document.createElement("article");
                 document.getElementById("coment-box").appendChild(articulo);
@@ -22,6 +22,12 @@ function DataLoader () {
                 let coment =  document.createElement("p");
                 coment.textContent = publicaciones[i].comentarios[a].comm;
                 articulo.appendChild(coment);
+            }
+            // Falta poner admin
+            if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador) {
+                let editar = document.createElement("button");
+                editar.id = "editar"
+                editar.textContent = "Editar";
             }
         }
     }
@@ -50,5 +56,9 @@ function Comentar(){
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);
 
-
-
+if (document.getElementById("editar")) {
+    function Editar ()   {
+        window.location.href = "indexCreacionPublicacion.html"
+        //Falta terminar para que la funcion de creacionPublicacion sepa que es para editar o crear. Estaba pensando que haya un localStorage y un if.
+    } document.getElementById("editar").addEventListener("click", Editar)
+}

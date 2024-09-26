@@ -31,16 +31,18 @@ function LoadPosts(postList) {
 }
 postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);
 
-
+// Para agregar publicación
 function Add() {
     window.location.href = "indexCreacionPublicacion.html";
  } document.getElementById("create").addEventListener("click", Add)
 
+//Ir para atrás
 function Back() {
     window.location.href = "../Frames-Inicio/indexHome.html";
     localStorage.removeItem("publicaciones");
 } document.getElementById("Flecha").addEventListener("click", Back);
 
+//Te permite entrar a cada publicación
 function Enter(publicacion) {
     //publicacion.target.parentNode.id agarra el id del "article", osea la publicacion
     localStorage.setItem("publicacionId", publicacion.target.parentNode.id);

@@ -18,8 +18,7 @@ form.addEventListener(`submit`, (e) => {
     publicacion.dejado = formulario.placeLeft.value;
     publicacion.hora = formulario.time.value;
     publicacion.tipo = JSON.parse(localStorage.getItem("Dupla"));
-    console.log(publicacion)
-    let usuario = JSON.parse(localStorage.getItem("userId"))
+    let usuario = JSON.parse(localStorage.getItem("userId"));
     publicacion.creador = usuario;
     window.location.href = "indexObjsList.html";
     postData("crearPublicacion", publicacion, (retorno) => {

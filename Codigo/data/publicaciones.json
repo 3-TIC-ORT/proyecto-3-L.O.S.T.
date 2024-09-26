@@ -38,7 +38,16 @@
     "tipo": "encontrado",
     "creador": 1,
     "id": 2,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 9,
+        "comm": "Hola"
+      },
+      {
+        "user": "Satni",
+        "comm": "Hola"
+      }
+    ],
     "cumplio": false
   }
 ]

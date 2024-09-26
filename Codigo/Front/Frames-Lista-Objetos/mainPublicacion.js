@@ -46,9 +46,8 @@ function Comentar(){
         container.appendChild(user);
         container.appendChild(coment);
         comentario.comm = document.getElementById("InputComentario").value;
-        comentario.id = JSON.parse(localStorage.getItem("userId"));
-        comentario.user = JSON.parse(localStorage.getItem("userName"));
-        console.log(comentario)
+        comentario.id = JSON.parse(localStorage.getItem("publicacionId"));
+        comentario.user = JSON.parse(localStorage.getItem("userId"));
         postData("comentar", comentario);
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);

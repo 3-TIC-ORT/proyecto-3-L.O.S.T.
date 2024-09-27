@@ -9,7 +9,7 @@ let comentNotis = document.getElementById("comentNotis")
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
 function ShowUsername() {
-    localStorage.removeItem("Dupla");
+    localStorage.removeItem("tipo");
     if (JSON.parse(localStorage.getItem("userName")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
@@ -28,12 +28,12 @@ ShowUsername();
 
 function Found () {
     window.location.href = "../Frames-Lista-Objetos/indexObjsList.html"
-    localStorage.setItem("Dupla", JSON.stringify("encontrado"));
+    localStorage.setItem("tipo", JSON.stringify("encontrado"));
 } document.getElementById("found").addEventListener("click", Found);
 
 function Lost () {
     window.location.href = "../Frames-Lista-Objetos/indexObjsList.html"
-    localStorage.setItem("Dupla", JSON.stringify("perdido"))
+    localStorage.setItem("tipo", JSON.stringify("perdido"))
 } document.getElementById("lost").addEventListener("click", Lost);
 
 

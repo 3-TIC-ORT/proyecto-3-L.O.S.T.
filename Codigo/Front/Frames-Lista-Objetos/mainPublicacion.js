@@ -57,9 +57,8 @@ function Comentar(){
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);
 
-if (document.getElementById("editar")) {
-    function Editar ()   {
-        window.location.href = "indexCreacionPublicacion.html"
-        localStorage.setItem("editado", 0);
-    } document.getElementById("editar").addEventListener("click", Editar)
-}
+
+function Editar ()   {
+    window.location.href = "indexCreacionPublicacion.html"
+    localStorage.setItem("editado", true);
+} document.getElementById("editar").addEventListener("click", Editar)

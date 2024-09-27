@@ -29,6 +29,33 @@ export function register(user){
     }
 }
 
+
+// Intento registro con JWT
+// export function register(user){
+//     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
+//     if(user.name.length > 32){
+//         console.log("Su usuario no puede tener más de 32 caracteres")
+//         return {id:null, inf:"Invalid"}
+//     } else{
+//     for(let i = 0; i < lista.length; i++){
+//         if(user.name == lista[i].name){
+//             return {id:null, inf:"Existente"}
+//         }
+//     }
+//     if(user.password.length > 32 || user.password.length < 8 || user.password.match(/[a-z]/) == null && user.password.includes("ñ") === false || user.password.match(/[A-Z]/) == null && user.password.includes("Ñ") === false || user.password.match(/[0-9]/) == null){
+//         return {id:null, inf:"Invalid"}
+//     }
+//     user.id = lista.length;
+//     user.admin = false;
+//     lista.push({...user});
+//     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
+//     const mensaje = await new jose.SignJWT(({id:user.id, admin:user.admin})).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+//     console.log(mensaje);
+//     return {JWT:mensaje, id:user.id, admin:user.admin};
+    
+//     }
+// }
+
 export function login(user){
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     for(let i = 0; i < usuarios.length; i++){
@@ -61,7 +88,7 @@ export function login(user){
 //     } else {
 //         if(user.password === usuarios[user.id].password){
 //             // return {id:user.id, admin:usuarios[user.id].admin};
-//             // const mensaje = await new jose.CompactSign(new TextEncoder().encode({id:user.id, admin:usuarios[user.id].admin}),).setProtectedHeader({alg: "HS256"}).sign(claveSecreta);
+//             const mensaje = new jose.SignJWT(({id:user.id, admin:usuarios[user.id].admin})).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
 //             return mensaje;
 //         } else{
 //             return {id:null, inf:"Invalid"};
@@ -174,5 +201,4 @@ if(import.meta.url.startsWith('file:')){
         startServer();
     }
 }
-
 

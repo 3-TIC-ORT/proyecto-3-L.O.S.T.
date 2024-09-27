@@ -181,7 +181,13 @@
     "tipo": "encontrado",
     "creador": 18,
     "id": 9,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 21,
+        "comm": "Puto",
+        "userName": "iudopsdnBB=avA"
+      }
+    ],
     "cumplio": false
   }
 ]

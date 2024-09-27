@@ -36,22 +36,6 @@ function Lost () {
     localStorage.setItem("tipo", JSON.stringify("perdido"))
 } document.getElementById("lost").addEventListener("click", Lost);
 
-
-//La función Noti debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
-
-
-function Notifications () {
-let comentNotis = document.getElementById("comentNotis");
-
-if (comentNotis.style.display === "") {
-    comentNotis.style.display = "flex"
-} else if (comentNotis.style.display === "none"){
-    comentNotis.style.display = "flex"
-} else {
-    comentNotis.style.display = "none"
-}
-} document.getElementById("bell").addEventListener("click", Notifications);
-
 //La función de LS va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
 
 function LS () {
@@ -158,4 +142,26 @@ function LogOut() {
     document.getElementById("password-data").value = "";
     UserShown.textContent = "Anónimo"
 } document.getElementById("CS").addEventListener("click", LogOut);
+
+//La función de notificaciones debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
+
+const modal= document.querySelector("[data-modal]")
+const overlay= document.querySelector("[data-overlay]")
+
+
+    document.querySelector("[data-open-modal]").addEventListener("click",() =>{
+        modal.showModal()
+    })
+
+    modal.addEventListener ("click", e => {
+        const dialogDimensions = modal.getBoundingClientRect()
+        if (
+            e.clientX < dialogDimensions.left ||
+            e.clientX > dialogDimensions.right ||
+            e.clientY < dialogDimensions.top ||
+            e.clientY > dialogDimensions.bottom 
+        ) {
+            modal.close()
+        }
+    })
 

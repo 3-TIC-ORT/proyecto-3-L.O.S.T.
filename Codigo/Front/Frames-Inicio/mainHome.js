@@ -1,9 +1,9 @@
 let userFrame = document.getElementById("user-frame");  
 let UserShown = document.getElementById("user-nameShown")
-let LogIn = document.getElementById("LS-SU");
-let LogOut = document.getElementById("log-stuff")
-let bell = document.getElementById("bell")
-let CS = document.getElementById("CS")
+let logIn = document.getElementById("LS-SU");
+let logOut = document.getElementById("log-stuff");
+let bell = document.getElementById("bell");
+let CS = document.getElementById("CS");
 let comentNotis = document.getElementById("comentNotis")
 
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
@@ -13,7 +13,7 @@ function ShowUsername() {
     if (JSON.parse(localStorage.getItem("userName")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
-        LogIn.style.display = "none";
+        logIn.style.display = "none";
         CS.style.display = "flex"
         bell.style.display = "flex"
     }
@@ -36,22 +36,6 @@ function Lost () {
     localStorage.setItem("tipo", JSON.stringify("perdido"))
 } document.getElementById("lost").addEventListener("click", Lost);
 
-
-//La función Noti debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
-
-
-function Notifications () {
-let comentNotis = document.getElementById("comentNotis");
-
-if (comentNotis.style.display === "") {
-    comentNotis.style.display = "flex"
-} else if (comentNotis.style.display === "none"){
-    comentNotis.style.display = "flex"
-} else {
-    comentNotis.style.display = "none"
-}
-} document.getElementById("bell").addEventListener("click", Notifications);
-
 //La función de LS va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
 
 function LS () {
@@ -69,9 +53,8 @@ document.getElementsByClassName("b")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("c")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 
-//La función BackHomeLogged simula lo que es cuando te loggeas, displayeando tu nombre de usuario arriba a la derecha, aunque esta función es útil, a la larga con base de datos hay una posibilidad de que se saque o modifique
 
-function BackHomeLogged() {
+function Login() {
     let UserName = document.getElementById("user-data").value;
     let UserPassword = document.getElementById("password-data").value
     UserShown = document.getElementById("user-nameShown");
@@ -82,7 +65,7 @@ function BackHomeLogged() {
             if(data.id !== null){
                 UserShown.textContent = `${UserName}`;
                 userFrame.style.display = "none";
-                LogIn.style.display = "none";
+                logIn.style.display = "none";
                 CS.style.display = "flex"
                 bell.style.display = "flex"
                 SetId({id:data.id, name:UserName})
@@ -91,7 +74,7 @@ function BackHomeLogged() {
             }
         })
     }
-} document.getElementById("FinalLog").addEventListener("click", BackHomeLogged);
+} document.getElementById("FinalLog").addEventListener("click", Login);
 
 
 
@@ -108,10 +91,10 @@ function Register() {
             if(data.id !== null){
                 UserShown.textContent = `${UserName}`;
                 userFrame.style.display = "none";
-                LogIn.style.display = "none";
+                logIn.style.display = "none";
                 CS.style.display = "flex"
                 bell.style.display = "flex"
-                SetId({id:data.id, name:UserName})
+                SetId({id:data.id, name:UserName, admin: data.admin})
             } else{
                 alert(data.inf);
             }
@@ -120,9 +103,10 @@ function Register() {
 }
 document.getElementById("FinalSign").addEventListener("click", Register);
 
-function SetId({id, name}) {
+function SetId({id, name, admin}) {
     localStorage.setItem("userId", JSON.stringify(id));
     localStorage.setItem("userName", JSON.stringify(name));
+    localStorage.setItem("admin", JSON.stringify(admin))
 }
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
@@ -145,17 +129,39 @@ document.getElementById("show").addEventListener("click", HideShow);
 
 //Te deslogea de la cuenta y te vuelve al anónimo
 
-function BackHomeLoggedOut() {
-
+function LogOut() {
     //comentNotis está por ver
+    localStorage.removeItem("admin")
     localStorage.removeItem("userId");
     localStorage.removeItem("userName")
     comentNotis.style.display = "none"
     bell.style.display = "none";
     CS.style.display = "none"
-    LogIn.style.display = "flex";
+    logIn.style.display = "flex";
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
     UserShown.textContent = "Anónimo"
-} document.getElementById("CS").addEventListener("click", BackHomeLoggedOut);
+} document.getElementById("CS").addEventListener("click", LogOut);
+
+//La función de notificaciones debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
+
+const modal= document.querySelector("[data-modal]")
+const overlay= document.querySelector("[data-overlay]")
+
+
+    document.querySelector("[data-open-modal]").addEventListener("click",() =>{
+        modal.showModal()
+    })
+
+    modal.addEventListener ("click", e => {
+        const dialogDimensions = modal.getBoundingClientRect()
+        if (
+            e.clientX < dialogDimensions.left ||
+            e.clientX > dialogDimensions.right ||
+            e.clientY < dialogDimensions.top ||
+            e.clientY > dialogDimensions.bottom 
+        ) {
+            modal.close()
+        }
+    })
 

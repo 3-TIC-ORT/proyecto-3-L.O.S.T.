@@ -6,6 +6,20 @@ let publicacion = {}
 //La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back.
 
 //Falta función de relleno de datos de la publicación que queres editar.
+ 
+function getData () {
+    if (URL.SearchParams.get('editado') === true) {
+        JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
+            if (p.id === JSON.parse(localStorage.getItem("publicacionId"))){
+                publicacion = p;
+                const form = document.querySelector(`form`)
+                console.log(form.img)
+            }
+        })
+    }
+}
+
+getData();
 
 const form = document.querySelector(`form`)
 form.addEventListener(`submit`, (e) => {

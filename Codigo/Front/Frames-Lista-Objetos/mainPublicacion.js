@@ -24,7 +24,7 @@ function DataLoader () {
                 articulo.appendChild(coment);
             }
             // Falta poner admin
-            if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador) {
+            if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador || JSON.parse(localStorage.getItem("admin")) === true) {
                 let editar = document.createElement("button");
                 editar.id = "editar"
                 editar.textContent = "Editar";
@@ -59,6 +59,5 @@ function Comentar(){
 
 
 function Editar ()   {
-    window.location.href = "indexCreacionPublicacion.html"
-    localStorage.setItem("editado", true);
+    window.location.href = `indexCreacionPublicacion.html?editado = true`
 } document.getElementById("editar").addEventListener("click", Editar)

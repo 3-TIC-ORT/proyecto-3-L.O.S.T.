@@ -320,3 +320,21 @@ main { /*Caja donde se logea uno */
     text-decoration: underline;
     cursor: pointer;
 }
+
+.overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    z-index: 9;
+}
+
+.modal{
+    padding: 0.5rem;
+    top:50%;
+    left: 50%;
+    translate: -50% -50%;
+    background:white;
+    border-radius: 0.25rem;
+    z-index: 10;
+}

@@ -155,5 +155,33 @@
     "id": 7,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "otros",
+    "titulo": "dsuyaODB((S)ff",
+    "ubicacion": "dssd",
+    "descripcion": "sdds",
+    "dejado": "dsds",
+    "hora": "dssdds",
+    "tipo": "perdido",
+    "creador": 17,
+    "id": 8,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "titulo": "HOLA",
+    "ubicacion": "chau",
+    "descripcion": "bye",
+    "dejado": "que onda",
+    "hora": "cosas",
+    "tipo": "encontrado",
+    "creador": 18,
+    "id": 9,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

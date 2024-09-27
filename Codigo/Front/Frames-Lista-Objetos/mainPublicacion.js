@@ -24,7 +24,7 @@ function DataLoader () {
                 articulo.appendChild(coment);
             }
             // Falta poner admin
-            if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador) {
+            if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador || JSON.parse(localStorage.getItem("admin")) === true) {
                 let editar = document.createElement("button");
                 editar.id = "editar"
                 editar.textContent = "Editar";

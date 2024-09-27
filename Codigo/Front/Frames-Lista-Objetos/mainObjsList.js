@@ -1,7 +1,7 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 function LoadPosts(postList) {
     localStorage.removeItem("publicacionId");   
-    if(JSON.parse(localStorage.getItem("Dupla")) === "encontrado") {
+    if(JSON.parse(localStorage.getItem("tipo")) === "encontrado") {
         document.getElementById("title").textContent = "Objetos Perdidos"
     } else {
         document.getElementById("title").textContent = "Objetos Encontrados"
@@ -29,7 +29,7 @@ function LoadPosts(postList) {
     })
     localStorage.setItem("publicaciones", JSON.stringify(postList));
 }
-postData("cargarPublicaciones", JSON.parse(localStorage.getItem("Dupla")), LoadPosts);
+postData("cargarPublicaciones", JSON.parse(localStorage.getItem("tipo")), LoadPosts);
 
 // Para agregar publicación
 function Add() {

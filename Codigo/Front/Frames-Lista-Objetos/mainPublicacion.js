@@ -59,6 +59,5 @@ function Comentar(){
 
 
 function Editar ()   {
-    window.location.href = "indexCreacionPublicacion.html"
-    localStorage.setItem("editado", true);
+    window.location.href = `indexCreacionPublicacion.html?editado = true`
 } document.getElementById("editar").addEventListener("click", Editar)

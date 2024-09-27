@@ -88,5 +88,17 @@
     "password": "Penerico123",
     "id": 14,
     "admin": false
+  },
+  {
+    "name": "Facha_l",
+    "password": "Pene12432",
+    "id": 15,
+    "admin": false
+  },
+  {
+    "name": "Facha_ll",
+    "password": "Penerico132344",
+    "id": 16,
+    "admin": false
   }
 ]

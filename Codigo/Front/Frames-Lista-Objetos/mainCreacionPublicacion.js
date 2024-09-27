@@ -21,9 +21,14 @@ form.addEventListener(`submit`, (e) => {
     let usuario = JSON.parse(localStorage.getItem("userId"));
     publicacion.creador = usuario;
     window.location.href = "indexObjsList.html";
-    postData("crearPublicacion", publicacion, (retorno) => {
-        if (!retorno) {
-            alert("Debes estar logeado para poder crear una publicación")
-        }
-    });
+    if (JSON.parse(localStorage.getItem("editado")) === 0) {
+        postData("editarPublicacion", publicacion);
+    } else {
+        postData("crearPublicacion", publicacion, (retorno) => {
+            if (!retorno) {
+                alert("Debes estar logeado para poder crear una publicación")
+            }
+        });
+    }
+    localStorage.removeItem("editado");
 })

@@ -24,7 +24,13 @@
     "tipo": "perdido",
     "creador": 1,
     "id": 1,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 16,
+        "comm": "Cascos de virgo momo",
+        "userName": "Facha_ll"
+      }
+    ],
     "cumplio": false
   },
   {
@@ -113,6 +119,40 @@
     "tipo": "perdido",
     "creador": 14,
     "id": 5,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "avif",
+    "categoria": "otros",
+    "titulo": "Kim Jong Un",
+    "ubicacion": "Facha mogolico",
+    "descripcion": "pete",
+    "dejado": "retresado",
+    "hora": "descapacitado",
+    "tipo": "perdido",
+    "creador": 16,
+    "id": 6,
+    "comentarios": [
+      {
+        "user": 16,
+        "comm": "Facto",
+        "userName": "Facha_ll"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "Facha no more",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "creador": 16,
+    "id": 7,
     "comentarios": [],
     "cumplio": false
   }

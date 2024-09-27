@@ -28,6 +28,7 @@ function DataLoader () {
                 let editar = document.createElement("button");
                 editar.id = "editar"
                 editar.textContent = "Editar";
+                document.getElementById("titulo").appendChild(editar);
             }
         }
     }
@@ -59,6 +60,6 @@ function Comentar(){
 if (document.getElementById("editar")) {
     function Editar ()   {
         window.location.href = "indexCreacionPublicacion.html"
-        //Falta terminar para que la funcion de creacionPublicacion sepa que es para editar o crear. Estaba pensando que haya un localStorage y un if.
+        localStorage.setItem("editado", 0);
     } document.getElementById("editar").addEventListener("click", Editar)
 }

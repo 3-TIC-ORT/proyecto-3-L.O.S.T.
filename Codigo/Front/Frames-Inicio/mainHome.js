@@ -162,3 +162,16 @@ const overlay= document.querySelector("[data-overlay]")
         }
     })
 
+   function showNotifications(noti){
+        if (noti){
+         `<div id= hola>
+          <h4>${notification.nombre}</h4>
+          <p>${notification.comn}</p>
+          </div>`        
+        }
+
+        
+    }
+ postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("userId")), showNotifications )
+
+ 

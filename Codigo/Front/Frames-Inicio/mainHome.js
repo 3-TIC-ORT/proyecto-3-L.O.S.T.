@@ -172,6 +172,7 @@ const overlay= document.querySelector("[data-overlay]")
 
         
     }
+    
  postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("userId")), showNotifications )
 
  

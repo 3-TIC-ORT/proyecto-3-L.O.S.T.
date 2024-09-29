@@ -4,7 +4,6 @@ let logIn = document.getElementById("LS-SU");
 let logOut = document.getElementById("log-stuff");
 let bell = document.getElementById("bell");
 let CS = document.getElementById("CS");
-let comentNotis = document.getElementById("comentNotis")
 
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
@@ -130,11 +129,9 @@ document.getElementById("show").addEventListener("click", HideShow);
 //Te deslogea de la cuenta y te vuelve al anónimo
 
 function LogOut() {
-    //comentNotis está por ver
     localStorage.removeItem("admin")
     localStorage.removeItem("userId");
     localStorage.removeItem("userName")
-    comentNotis.style.display = "none"
     bell.style.display = "none";
     CS.style.display = "none"
     logIn.style.display = "flex";

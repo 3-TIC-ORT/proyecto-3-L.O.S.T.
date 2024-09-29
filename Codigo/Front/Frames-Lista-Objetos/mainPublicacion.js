@@ -59,5 +59,6 @@ function Comentar(){
 
 
 function Editar ()   {
-    window.location.href = `indexCreacionPublicacion.html?editado = true`
+    let editado = true;
+    window.location.href =  new URLSearchParams((`indexCreacionPublicacion.html?editado=${editado}`).search);
 } document.getElementById("editar").addEventListener("click", Editar)

@@ -8,7 +8,8 @@ let publicacion = {}
 //Falta función de relleno de datos de la publicación que queres editar.
  
 function getData () {
-    if (URL.SearchParams.get('editado') === true) {
+    let params = new URLSearchParams(document.location.search);
+    if (params.get("editado") === true) {
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === JSON.parse(localStorage.getItem("publicacionId"))){
                 publicacion = p;

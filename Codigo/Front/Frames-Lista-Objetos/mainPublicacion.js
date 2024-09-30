@@ -63,4 +63,5 @@ function Editar () {
     // params.get("editado")   
     // params.set(`indexCreacionPublicacion?editado=pene`)
     // window.location.href = new URLSearchParams(`indexCreacionPublicacion.html?editado=true`)
+    window.location.href = `indexCreacionPublicacion.html?editado=true`
 } document.getElementById("editar").addEventListener("click", Editar);

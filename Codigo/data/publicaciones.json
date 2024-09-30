@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "TEst",
+    "ubicacion": "sdiaodp",
+    "descripcion": "jksddikak",
+    "dejado": "idsa",
+    "hora": "iksdfopa",
+    "tipo": "encontrado",
+    "creador": 0,
+    "id": 0,
+    "comentarios": [],
+    "cumplio": false
+  }
+]

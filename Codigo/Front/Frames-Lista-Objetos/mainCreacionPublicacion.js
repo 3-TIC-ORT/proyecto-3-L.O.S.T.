@@ -9,12 +9,21 @@ let publicacion = {}
  
 function getData () {
     let params = new URLSearchParams(document.location.search);
-    if (params.get("editado") === true) {
+    if (params.get( "editado")){
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === JSON.parse(localStorage.getItem("publicacionId"))){
                 publicacion = p;
                 const form = document.querySelector(`form`)
-                console.log(form.img)
+                //falta que hacer con la imagen
+                form.category.value = p.categoria;
+                form.title.value = p.titulo;
+                form.location.value = p.ubicacion;
+                form.description.value = p.descripcion;
+                form.placeLeft.value = p.dejado;
+                form.time.value = p.hora;
+                //quizá usar URL params también
+                localStorage.setItem("tipo", JSON.stringify(p.tipo));
+                localStorage.setItem("userId", JSON.stringify(p.creador));
             }
         })
     }
@@ -26,6 +35,7 @@ const form = document.querySelector(`form`)
 form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target;
+    //Que haya imagen predeterminada
     publicacion.imagen = formulario.img.files[0];
     publicacion.tipoImg = formulario.img.files[0].type;
     publicacion.categoria = formulario.category.value;
@@ -38,7 +48,7 @@ form.addEventListener(`submit`, (e) => {
     let usuario = JSON.parse(localStorage.getItem("userId"));
     publicacion.creador = usuario;
     window.location.href = "indexObjsList.html";
-    if (JSON.parse(localStorage.getItem("editado"))) {
+    if (params.get("editado")) {
         postData("editarPublicacion", publicacion);
     } else {
         postData("crearPublicacion", publicacion, (retorno) => {

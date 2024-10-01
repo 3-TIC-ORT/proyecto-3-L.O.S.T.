@@ -345,6 +345,7 @@ dialog{
     top:-80%;
     left: 52%;
     width: 13vw;
+    margin: 0;
 }
 
 dialog > h5 {

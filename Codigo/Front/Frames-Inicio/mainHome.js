@@ -157,7 +157,7 @@ const overlay= document.querySelector("[data-overlay]")
                 lista.forEach(noti => {
                     const markup =     
                     ` <div> 
-                          <h5>${noti.commenter}</h5>
+                          <h5>${noti.commenter}:</h5>
                           <small>ha comentado "${noti.text}"</small>
                       </div>`;
                     document.querySelector("dialog").innerHTML += markup;

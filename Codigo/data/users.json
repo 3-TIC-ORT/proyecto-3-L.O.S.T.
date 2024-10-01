@@ -70,5 +70,11 @@
     "password": "iddjsai09sduS()yfysy98",
     "id": 11,
     "admin": false
+  },
+  {
+    "name": "Nicolas",
+    "password": "Fuksman123",
+    "id": 12,
+    "admin": false
   }
 ]

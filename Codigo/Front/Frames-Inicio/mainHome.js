@@ -150,16 +150,17 @@ const overlay= document.querySelector("[data-overlay]")
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("userId")), (lista => {
-            if(lista === []) {
+            if(lista.length === 0) {
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.querySelector("dialog").innerHTML += h1;
             } else {
                 lista.forEach(noti => {
                     const markup =     
-                    ` <div> 
+                    ` <div id=${noti.publicacion}> 
                           <h5>${noti.commenter}:</h5>
-                          <small>ha comentado "${noti.text}"</small>
+                          <small>Ha comentado "${noti.text}"</small>
                       </div>`;
+                    // document.getElementById(noti.publicacion).addEventListener("click", reDirect)
                     document.querySelector("dialog").innerHTML += markup;
                 });
             }
@@ -175,8 +176,11 @@ const overlay= document.querySelector("[data-overlay]")
             e.clientY > dialogDimensions.bottom 
         ) {
             modal.close()
+            document.querySelector("dialog").innerHTML = ``;
         }
     }) 
 
-
+function reDirect(publicacionId) {
+    console.log(publicacionId)
+}
  

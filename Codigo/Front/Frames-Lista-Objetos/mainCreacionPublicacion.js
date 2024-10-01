@@ -37,6 +37,7 @@ form.addEventListener(`submit`, (e) => {
     e.preventDefault();
     formulario = e.target;
     //Que haya imagen predeterminada
+    //Hacer de que haya también la opción de no mandar imagen y que no se crashee
     publicacion.imagen = formulario.img.files[0];
     publicacion.tipoImg = formulario.img.files[0].type;
     publicacion.categoria = formulario.category.value;
@@ -52,11 +53,10 @@ form.addEventListener(`submit`, (e) => {
         postData("editarPublicacion", publicacion);
     } else {
         postData("crearPublicacion", publicacion, (retorno) => {
-            if (!retorno) {
+            if (retorno === false) {
                 alert("Debes estar logeado para poder crear una publicación")
             }
         });
     window.location.href = "indexObjsList.html";
     }
-    localStorage.removeItem("editado");
 })

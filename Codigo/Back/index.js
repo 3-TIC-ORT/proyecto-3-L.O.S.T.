@@ -2,12 +2,13 @@ import { onEvent, startServer } from "soquetic";
 import fs from 'fs';
 import * as jose from "jose";
 
-const claveSecreta = new TextEncoder().encode(jose.base64url.encode("Feli"));
+const claveSecreta = new TextEncoder().encode(jose.base64url.encode("Felipe Daniel Doval Ferrari"));
 
 // Funciones
 
 
-export function register(user){
+// Intento registro con JWT
+async function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     if(user.name.length > 32){
         console.log("Su usuario no puede tener más de 32 caracteres")
@@ -17,7 +18,7 @@ export function register(user){
         if(user.name == lista[i].name){
             return {id:null, inf:"Existente"}
         }
-    } 
+    }
     if(user.password.length > 32 || user.password.length < 8 || user.password.match(/[a-z]/) == null && user.password.includes("ñ") === false || user.password.match(/[A-Z]/) == null && user.password.includes("Ñ") === false || user.password.match(/[0-9]/) == null){
         return {id:null, inf:"Invalid"}
     }
@@ -25,36 +26,15 @@ export function register(user){
     user.admin = false;
     lista.push({...user});
     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-    return {id:user.id, admin:user.admin};
+    const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+    return {JWT:mensaje, id:user.id, admin:user.admin};
     }
 }
 
 
-// Intento registro con JWT
-// async function register(user){
-//     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
-//     if(user.name.length > 32){
-//         console.log("Su usuario no puede tener más de 32 caracteres")
-//         return {id:null, inf:"Invalid"}
-//     } else{
-//     for(let i = 0; i < lista.length; i++){
-//         if(user.name == lista[i].name){
-//             return {id:null, inf:"Existente"}
-//         }
-//     }
-//     if(user.password.length > 32 || user.password.length < 8 || user.password.match(/[a-z]/) == null && user.password.includes("ñ") === false || user.password.match(/[A-Z]/) == null && user.password.includes("Ñ") === false || user.password.match(/[0-9]/) == null){
-//         return {id:null, inf:"Invalid"}
-//     }
-//     user.id = lista.length;
-//     user.admin = false;
-//     lista.push({...user});
-//     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-//     const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
-//     return {JWT:mensaje, id:user.id, admin:user.admin};
-//     }
-// }
 
-export function login(user){
+// Intento Login JWT
+async function login(user){
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     for(let i = 0; i < usuarios.length; i++){
         if(user.name === usuarios[i].name){
@@ -65,34 +45,14 @@ export function login(user){
         return {id:null, inf:"Invalid"};
     } else {
         if(user.password === usuarios[user.id].password){
-            return {id:user.id, admin:usuarios[user.id].admin};
+            const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+            return {JWT:mensaje, id:user.id, admin:usuarios[user.id].admin};
+            
         } else{
             return {id:null, inf:"Invalid"};
         }
     }
 }
-
-
-// Intento Login JWT
-// async function login(user){
-//     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
-//     for(let i = 0; i < usuarios.length; i++){
-//         if(user.name === usuarios[i].name){
-//             user.id = usuarios[i].id
-//         }
-//     }
-//     if (user.id === null || user.id === undefined){
-//         return {id:null, inf:"Invalid"};
-//     } else {
-//         if(user.password === usuarios[user.id].password){
-//             const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
-//             return {JWT:mensaje, id:user.id, admin:usuarios[user.id].admin};
-            
-//         } else{
-//             return {id:null, inf:"Invalid"};
-//         }
-//     }
-// }
 
 function crearPublicacion(publicacion){
     if(publicacion.creador === null){

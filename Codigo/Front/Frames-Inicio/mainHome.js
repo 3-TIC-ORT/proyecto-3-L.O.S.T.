@@ -68,7 +68,7 @@ function Login() {
                 logIn.style.display = "none";
                 CS.style.display = "flex"
                 bell.style.display = "flex"
-                SetId({id:data.id, name:UserName})
+                SetId({id:data.id, name:UserName, admin:data.admin, JWT:data.JWT})
             } else{
                 alert(data.inf);
             }
@@ -94,7 +94,7 @@ function Register() {
                 logIn.style.display = "none";
                 CS.style.display = "flex"
                 bell.style.display = "flex"
-                SetId({id:data.id, name:UserName, admin: data.admin})
+                SetId({id:data.id, name:UserName, admin: data.admin, JWT:data.JWT})
             } else{
                 alert(data.inf);
             }
@@ -103,10 +103,11 @@ function Register() {
 }
 document.getElementById("FinalSign").addEventListener("click", Register);
 
-function SetId({id, name, admin}) {
+function SetId({id, name, admin, JWT}) {
     localStorage.setItem("userId", JSON.stringify(id));
     localStorage.setItem("userName", JSON.stringify(name));
-    localStorage.setItem("admin", JSON.stringify(admin))
+    localStorage.setItem("admin", JSON.stringify(admin));
+    localStorage.setItem("JWT", JSON.stringify(JWT));
 }
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
@@ -132,7 +133,8 @@ document.getElementById("show").addEventListener("click", HideShow);
 function LogOut() {
     localStorage.removeItem("admin")
     localStorage.removeItem("userId");
-    localStorage.removeItem("userName")
+    localStorage.removeItem("userName");
+    localStorage.removeItem("JWT");
     bell.style.display = "none";
     CS.style.display = "none"
     logIn.style.display = "flex";

@@ -89,5 +89,19 @@
     "id": 4,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "NACHo",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "creador": 21,
+    "id": 5,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

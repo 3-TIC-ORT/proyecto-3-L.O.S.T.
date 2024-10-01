@@ -54,27 +54,7 @@ export function register(user){
 //     }
 // }
 
-// export function login(user){
-//     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
-//     for(let i = 0; i < usuarios.length; i++){
-//         if(user.name === usuarios[i].name){
-//             user.id = usuarios[i].id
-//         }
-//     }
-//     if (user.id === null || user.id === undefined){
-//         return {id:null, inf:"Invalid"};
-//     } else {
-//         if(user.password === usuarios[user.id].password){
-//             return {id:user.id, admin:usuarios[user.id].admin};
-//         } else{
-//             return {id:null, inf:"Invalid"};
-//         }
-//     }
-// }
-
-
-// Intento Login JWT
-async function login(user){
+export function login(user){
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     for(let i = 0; i < usuarios.length; i++){
         if(user.name === usuarios[i].name){
@@ -85,14 +65,34 @@ async function login(user){
         return {id:null, inf:"Invalid"};
     } else {
         if(user.password === usuarios[user.id].password){
-            const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
-            return {JWT:mensaje, id:user.id, admin:usuarios[user.id].admin};
-            
+            return {id:user.id, admin:usuarios[user.id].admin};
         } else{
             return {id:null, inf:"Invalid"};
         }
     }
 }
+
+
+// Intento Login JWT
+// async function login(user){
+//     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
+//     for(let i = 0; i < usuarios.length; i++){
+//         if(user.name === usuarios[i].name){
+//             user.id = usuarios[i].id
+//         }
+//     }
+//     if (user.id === null || user.id === undefined){
+//         return {id:null, inf:"Invalid"};
+//     } else {
+//         if(user.password === usuarios[user.id].password){
+//             const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+//             return {JWT:mensaje, id:user.id, admin:usuarios[user.id].admin};
+            
+//         } else{
+//             return {id:null, inf:"Invalid"};
+//         }
+//     }
+// }
 
 function crearPublicacion(publicacion){
     if(publicacion.creador === null){

@@ -31,7 +31,7 @@ export function register(user){
 
 
 // Intento registro con JWT
-// export function register(user){
+// async function register(user){
 //     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
 //     if(user.name.length > 32){
 //         console.log("Su usuario no puede tener más de 32 caracteres")
@@ -49,10 +49,9 @@ export function register(user){
 //     user.admin = false;
 //     lista.push({...user});
 //     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-//     const mensaje = await new jose.SignJWT(({id:user.id, admin:user.admin})).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
-//     console.log(mensaje);
+//     const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+//     console.log({JWT:mensaje, id:user.id, admin:user.admin});
 //     return {JWT:mensaje, id:user.id, admin:user.admin};
-    
 //     }
 // }
 

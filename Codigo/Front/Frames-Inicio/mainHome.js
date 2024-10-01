@@ -87,6 +87,7 @@ function Register() {
         alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
     } else {
         postData("register", {name:UserName, password: UserPassword}, (data) => {
+            console.log(data);
             if(data.id !== null){
                 UserShown.textContent = `${UserName}`;
                 userFrame.style.display = "none";

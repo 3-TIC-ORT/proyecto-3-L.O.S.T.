@@ -151,8 +151,8 @@ const overlay= document.querySelector("[data-overlay]")
         modal.showModal();
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("userId")), (lista => {
             if(lista === []) {
-                const h1 = `<h1>Sin notificaciones</h1>`
-                document.querySelector("dialog").innerHTML = h1;
+                const h1 = `<h1>Sin notificaciones</h1>`;
+                document.querySelector("dialog").innerHTML += h1;
             } else {
                 lista.forEach(noti => {
                     const markup =     

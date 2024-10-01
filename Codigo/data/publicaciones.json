@@ -12,5 +12,82 @@
     "id": 0,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "titulo": "dssd",
+    "ubicacion": "sdsd",
+    "descripcion": "ds",
+    "dejado": "dss",
+    "hora": "dssdds",
+    "tipo": "perdido",
+    "creador": 2,
+    "id": 1,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "Hola",
+    "ubicacion": "dsods",
+    "descripcion": "dsds",
+    "dejado": "dssd",
+    "hora": "sdsd",
+    "tipo": "perdido",
+    "creador": 2,
+    "id": 2,
+    "comentarios": [
+      {
+        "user": 2,
+        "comm": "Hola",
+        "userName": "usdiaol"
+      },
+      {
+        "user": 2,
+        "comm": "Feli",
+        "userName": "usdiaol"
+      },
+      {
+        "user": 2,
+        "comm": "Sos un boludo",
+        "userName": "usdiaol"
+      },
+      {
+        "user": 2,
+        "comm": "SIOdad",
+        "userName": "usdiaol"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "sdsd",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "creador": 2,
+    "id": 3,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "titulo": "Hola",
+    "ubicacion": "sd",
+    "descripcion": "ds",
+    "dejado": "sd",
+    "hora": "ds",
+    "tipo": "encontrado",
+    "creador": 2,
+    "id": 4,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

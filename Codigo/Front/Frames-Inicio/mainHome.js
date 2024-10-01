@@ -147,9 +147,24 @@ const modal= document.querySelector("[data-modal]")
 const overlay= document.querySelector("[data-overlay]")
 
 
-    document.querySelector("[data-open-modal]").addEventListener("click",() =>{
-        modal.showModal()
-    })
+    document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
+        modal.showModal();
+        postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("userId")), (lista => {
+            if(lista === []) {
+                const h1 = `<h1>Sin notificaciones</h1>`
+                document.querySelector("dialog").innerHTML = h1;
+            } else {
+                lista.forEach(noti => {
+                    const markup =     
+                    ` <div> 
+                          <h5>${noti.commenter}</h5>
+                          <small>ha comentado "${noti.text}"</small>
+                      </div>`;
+                    document.querySelector("dialog").innerHTML += markup;
+                });
+            }
+        })
+    )})
 
     modal.addEventListener ("click", e => {
         const dialogDimensions = modal.getBoundingClientRect()
@@ -161,10 +176,7 @@ const overlay= document.querySelector("[data-overlay]")
         ) {
             modal.close()
         }
-    })
-    
- postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("userId")), (noti) => {
-     
- } )
+    }) 
+
 
  

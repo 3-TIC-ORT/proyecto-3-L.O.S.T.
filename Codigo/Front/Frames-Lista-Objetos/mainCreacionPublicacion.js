@@ -33,6 +33,7 @@ getData();
 
 const form = document.querySelector(`form`)
 form.addEventListener(`submit`, (e) => {
+    let params = new URLSearchParams(document.location.search);
     e.preventDefault();
     formulario = e.target;
     //Que haya imagen predeterminada
@@ -47,7 +48,6 @@ form.addEventListener(`submit`, (e) => {
     publicacion.tipo = JSON.parse(localStorage.getItem("tipo"));
     let usuario = JSON.parse(localStorage.getItem("userId"));
     publicacion.creador = usuario;
-    window.location.href = "indexObjsList.html";
     if (params.get("editado")) {
         postData("editarPublicacion", publicacion);
     } else {
@@ -56,6 +56,7 @@ form.addEventListener(`submit`, (e) => {
                 alert("Debes estar logeado para poder crear una publicación")
             }
         });
+    window.location.href = "indexObjsList.html";
     }
     localStorage.removeItem("editado");
 })

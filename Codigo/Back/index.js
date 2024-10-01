@@ -174,7 +174,7 @@ function mostrarNotificaciones(user){
     let listita = [];
     notificaciones.forEach(element => {
         if(element.id === user){
-            listita.push(element.text);
+            listita.push(element);
         }
     });
     return listita;

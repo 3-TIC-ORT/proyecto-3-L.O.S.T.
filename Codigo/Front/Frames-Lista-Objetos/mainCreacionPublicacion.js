@@ -21,6 +21,9 @@ function getData () {
                 form.description.value = p.descripcion;
                 form.placeLeft.value = p.dejado;
                 form.time.value = p.hora;
+                const foto = document.createElement("img")
+                foto.src = p.imagen
+                document.querySelector("body").appendChild(foto);
                 //quizá usar URL params también
                 localStorage.setItem("tipo", JSON.stringify(p.tipo));
                 localStorage.setItem("userId", JSON.stringify(p.creador));

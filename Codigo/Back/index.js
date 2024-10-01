@@ -50,31 +50,10 @@ export function register(user){
 //     lista.push({...user});
 //     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
 //     const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
-//     console.log({JWT:mensaje, id:user.id, admin:user.admin});
 //     return {JWT:mensaje, id:user.id, admin:user.admin};
 //     }
 // }
 
-export function login(user){
-    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
-    for(let i = 0; i < usuarios.length; i++){
-        if(user.name === usuarios[i].name){
-            user.id = usuarios[i].id
-        }
-    }
-    if (user.id === null || user.id === undefined){
-        return {id:null, inf:"Invalid"};
-    } else {
-        if(user.password === usuarios[user.id].password){
-            return {id:user.id, admin:usuarios[user.id].admin};
-        } else{
-            return {id:null, inf:"Invalid"};
-        }
-    }
-}
-
-
-// Intento Login JWT
 // export function login(user){
 //     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
 //     for(let i = 0; i < usuarios.length; i++){
@@ -86,14 +65,34 @@ export function login(user){
 //         return {id:null, inf:"Invalid"};
 //     } else {
 //         if(user.password === usuarios[user.id].password){
-//             // return {id:user.id, admin:usuarios[user.id].admin};
-//             const mensaje = new jose.SignJWT(({id:user.id, admin:usuarios[user.id].admin})).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
-//             return mensaje;
+//             return {id:user.id, admin:usuarios[user.id].admin};
 //         } else{
 //             return {id:null, inf:"Invalid"};
 //         }
 //     }
 // }
+
+
+// Intento Login JWT
+async function login(user){
+    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
+    for(let i = 0; i < usuarios.length; i++){
+        if(user.name === usuarios[i].name){
+            user.id = usuarios[i].id
+        }
+    }
+    if (user.id === null || user.id === undefined){
+        return {id:null, inf:"Invalid"};
+    } else {
+        if(user.password === usuarios[user.id].password){
+            const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+            return {JWT:mensaje, id:user.id, admin:usuarios[user.id].admin};
+            
+        } else{
+            return {id:null, inf:"Invalid"};
+        }
+    }
+}
 
 function crearPublicacion(publicacion){
     if(publicacion.creador === null){

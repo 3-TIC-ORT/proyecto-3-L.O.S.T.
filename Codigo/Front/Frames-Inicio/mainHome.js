@@ -151,7 +151,7 @@ const overlay= document.querySelector("[data-overlay]")
 
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
-        postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("userId")), (lista => {
+        postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
             if(lista.length === 0) {
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.querySelector("dialog").innerHTML += h1;

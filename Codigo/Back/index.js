@@ -120,24 +120,26 @@ function cargarPublicaciones(data){
     return van;
 }
 
-function comentar(data){
+async function comentar(data){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", "utf-8"));
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
-    let comentario = {user:data.user, comm:data.comm, userName:usuarios[data.user].name};
+    const { payload, protectedHeader } = await jose.jwtVerify(data.JWT, claveSecreta);
+    let comentario = {user:payload.id, comm:data.comm, userName:usuarios[payload.id].name};
     lista[data.id].comentarios.push({...comentario});
     fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-    let notificacion = {id:lista[data.id].creador, commenter:usuarios[data.user].name, text:comentario.comm, publicacion:data.id};
+    let notificacion = {id:lista[data.id].creador, commenter:usuarios[payload.id].name, text:comentario.comm, publicacion:data.id};
     notificaciones.push({...notificacion});
     fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
     return true;
 }
 
-function mostrarNotificaciones(user){
+async function mostrarNotificaciones(JWT){
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", 'utf-8'));
     let listita = [];
+    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
     notificaciones.forEach(element => {
-        if(element.id === user){
+        if(element.id === payload.id){
             listita.push(element);
         }
     });

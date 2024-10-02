@@ -48,7 +48,7 @@ function Comentar(){
         document.getElementById("coment-box").innerHTML += container;
         comentario.comm = document.getElementById("InputComentario").value;
         comentario.id = JSON.parse(localStorage.getItem("publicacionId"));
-        comentario.user = JSON.parse(localStorage.getItem("userId"));
+        comentario.JWT = JSON.parse(localStorage.getItem("JWT"));
         postData("comentar", comentario);
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);

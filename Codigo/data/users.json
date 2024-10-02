@@ -3,7 +3,7 @@
     "name": "Felipe",
     "password": "DJSjhakdv8a980",
     "id": 0,
-    "admin": false
+    "admin": true
   },
   {
     "name": "Holadwaidb",
@@ -99,6 +99,30 @@
     "name": "dawdAHDwahjdbaw",
     "password": "dadwWd123",
     "id": 16,
+    "admin": false
+  },
+  {
+    "name": "DWuidwadwah",
+    "password": "dwadbwajhDW123",
+    "id": 17,
+    "admin": false
+  },
+  {
+    "name": "dwaDNAWJKdnjaw",
+    "password": "dwaadkbw123dwAW",
+    "id": 18,
+    "admin": false
+  },
+  {
+    "name": "AUIDHuiawdhawd",
+    "password": "dnnwajkAWJ12KDN",
+    "id": 19,
+    "admin": false
+  },
+  {
+    "name": "Hodlawdwaa",
+    "password": "dwajbdwhajbdwDWD2113",
+    "id": 20,
     "admin": false
   }
 ]

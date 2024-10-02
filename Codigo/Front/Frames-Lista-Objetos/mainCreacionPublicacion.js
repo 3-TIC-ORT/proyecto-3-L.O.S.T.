@@ -53,9 +53,9 @@ form.addEventListener(`submit`, (e) => {
     let usuario = JSON.parse(localStorage.getItem("userId"));
     publicacion.creador = usuario;
     if (params.get("editado")) {
-        postData("editarPublicacion", publicacion);
+        postData("editarPublicacion", {publicacion: publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))});
     } else {
-        postData("crearPublicacion", publicacion, (retorno) => {
+        postData("crearPublicacion", {publicacion:publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))}, (retorno) => {
             if (retorno === false) {
                 alert("Debes estar logeado para poder crear una publicación")
             }

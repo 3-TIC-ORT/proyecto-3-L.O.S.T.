@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "tipoImg": "image/jpeg",
+    "categoria": "vestimenta",
+    "titulo": "Franquito",
+    "ubicacion": "wjdkand",
+    "descripcion": "bdwhbwdajbdw",
+    "dejado": "dwbhjaabdwjabdw",
+    "hora": "wbhjwda",
+    "tipo": "perdido",
+    "creador": 20,
+    "id": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "dwadbhjjjawdbwda",
+    "ubicacion": "hwjdbajdwbhajd",
+    "descripcion": "jhdwbhjadhjbw",
+    "dejado": "hbjwjbhdahbjadajhbw",
+    "hora": "hjbjhdhjwbad",
+    "tipo": "encontrado",
+    "creador": 20,
+    "id": 1,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "image/avif",
+    "categoria": "vestimenta",
+    "titulo": "Hoolas",
+    "ubicacion": "duiwahduwihd",
+    "descripcion": "uhidwhwAUIDHW",
+    "dejado": "IUWDHUwiuwdwiuh",
+    "hora": "hiwdiuwa",
+    "tipo": "encontrado",
+    "creador": 20,
+    "id": 2,
+    "comentarios": [],
+    "cumplio": false
+  }
+]

@@ -54,14 +54,16 @@ async function login(user){
     }
 }
 
-function crearPublicacion(publicacion){
-    if(publicacion.creador === null){
+async function crearPublicacion({publicacion, JWT}){
+    if(publicacion.creador === null || JWT === undefined){
         return false;
     }
     let tipoImg = publicacion.tipoImg.split("/").pop();
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     publicacion.id = lista.length;
     publicacion.tipoImg = tipoImg;
+    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta)
+    publicacion.creador = payload.id;
     fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
     publicacion.comentarios = [];
     publicacion.cumplio = false;
@@ -71,14 +73,17 @@ function crearPublicacion(publicacion){
     return true;
 }
 
-function editarPublicacion(data){
+async function editarPublicacion({publicacion, JWT}){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
-    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
-    if((data.user.id === lista[data.publicacion.id].creador || usuarios[data.user.id].admin === true) && lista[data.publicacion.id] != null){
-        lista[data.publicacion.id] = ({...(data.publicacion)});
+    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
+    if((payload.id === lista[publicacion.id].creador || payload.admin === true) && lista[publicacion.id] != null){
+        delete publicacion.imagen;
+        lista[publicacion.id] = ({...publicacion});
         fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
+        console.log("SI");
         return true;
     } else{
+        console.log("NO");
         return false;
     } 
 }

@@ -44,5 +44,9 @@ function Back() {
 function Enter(publicacion) {
     //publicacion.target.parentNode.id agarra el id del "article", osea la publicacion
     localStorage.setItem("publicacionId", publicacion.target.parentNode.id);
-    window.location.href = `indexPublicacion.html?pId=${publicacion.target.parentNode.id}`;
+    if(publicacion.target.parentNode.id === "") {
+        window.location.href = `indexPublicacion.html?pId=${publicacion.target.parentNode.parentNode.id}`;
+    } else {
+        window.location.href = `indexPublicacion.html?pId=${publicacion.target.parentNode.id}`;
+    }
 } 

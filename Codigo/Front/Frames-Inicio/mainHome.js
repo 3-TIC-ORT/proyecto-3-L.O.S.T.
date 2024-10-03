@@ -199,8 +199,11 @@ function reDirect(event) {
     //corto la parte de "pub-" porque las publicaciones solo agarran número, y que así el DataLoader me agarre los datos
 
     //POR VER
-    const clickedDiv = event.target.parentNode;
+    let clickedDiv = event.target.parentNode;
+    if (clickedDiv.id === "") {
+        clickedDiv = event.target
+    }
     console.log(clickedDiv);
-    //window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${clickedDiv.id.split("-").pop()}`
+    window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${clickedDiv.id.split("-").pop()}`
 }
  

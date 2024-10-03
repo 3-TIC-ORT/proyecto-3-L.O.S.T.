@@ -25,5 +25,33 @@
     "commenter": "SantinoRua",
     "text": "Pene",
     "publicacion": 4
+  },
+  {
+    "type": "comentario",
+    "id": 23,
+    "commenter": "Pepo",
+    "text": "Épico pillama",
+    "publicacion": 5
+  },
+  {
+    "type": "comentario",
+    "id": 23,
+    "commenter": "Pepo",
+    "text": "Hola",
+    "publicacion": 5
+  },
+  {
+    "type": "comentario",
+    "id": 23,
+    "commenter": "Pepo",
+    "text": "Lo encontré",
+    "publicacion": 5
+  },
+  {
+    "type": "comentario",
+    "id": 23,
+    "commenter": "Pepo",
+    "text": "Almohada épica",
+    "publicacion": 6
   }
 ]

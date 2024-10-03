@@ -1,19 +1,5 @@
 [
   {
-    "tipoImg": "image/jpeg",
-    "categoria": "vestimenta",
-    "titulo": "Franquito",
-    "ubicacion": "wjdkand",
-    "descripcion": "bdwhbwdajbdw",
-    "dejado": "dwbhjaabdwjabdw",
-    "hora": "wbhjwda",
-    "tipo": "perdido",
-    "creador": 20,
-    "id": 0,
-    "comentarios": [],
-    "cumplio": false
-  },
-  {
     "tipoImg": "jpeg",
     "categoria": "vestimenta",
     "titulo": "dwadbhjjjawdbwda",
@@ -88,6 +74,56 @@
         "user": 22,
         "comm": "Pene",
         "userName": "SantinoRua"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "PILLAMA TIBURÓN",
+    "ubicacion": "es azul",
+    "descripcion": "no se ",
+    "dejado": "no se 2",
+    "hora": "no se 3",
+    "tipo": "perdido",
+    "creador": 23,
+    "id": 5,
+    "comentarios": [
+      {
+        "user": 23,
+        "comm": "Épico pillama",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "Hola",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "Lo encontré",
+        "userName": "Pepo"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "Almohada",
+    "ubicacion": "me gusta dormir",
+    "descripcion": "anda a saber que hagta acá",
+    "dejado": "me estoy volviendo loco",
+    "hora": "xd",
+    "tipo": "encontrado",
+    "creador": 23,
+    "id": 6,
+    "comentarios": [
+      {
+        "user": 23,
+        "comm": "Almohada épica",
+        "userName": "Pepo"
       }
     ],
     "cumplio": false

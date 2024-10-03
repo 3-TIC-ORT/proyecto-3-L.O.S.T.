@@ -163,15 +163,20 @@ const overlay= document.querySelector("[data-overlay]")
             } else {
                 lista.forEach(noti => {
                     const markup =     
-                    ` <div id=${noti.publicacion}> 
+                    ` <div id="pub-${noti.publicacion}"> 
                           <h5>${noti.commenter}:</h5>
                           <small>Ha comentado "${noti.text}"</small>
                       </div>`;
                 document.querySelector("dialog").innerHTML += markup;
-                document.querySelectorAll(`#${noti.publicacion}`).forEach(div => {
-                    div.addEventListener("click", reDirect);
-                })
+
                 });
+                lista.forEach(noti => {
+                    //Por como funciona querySelector le tuve que agregar un cacho de string extra, ya que querySelector no puede agarrar números sueltos.
+                    document.querySelectorAll(`#pub-${noti.publicacion}`).forEach(div => {
+                        //Hay que revisar esto
+                       div.addEventListener("click", reDirect);
+                })
+              })
             }
         })
     )})
@@ -189,8 +194,13 @@ const overlay= document.querySelector("[data-overlay]")
         }
     }) 
 
-function reDirect(publicacionId) {
-    window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${publicacionId.currentTarget.id}`
-    //Falta agregar que lo pueda agarrar el dataLoader
+function reDirect(event) {
+    //No se por qué, pero si clickeas entre el espacio de los h5 y los small te agarra el dialog
+    //corto la parte de "pub-" porque las publicaciones solo agarran número, y que así el DataLoader me agarre los datos
+
+    //POR VER
+    const clickedDiv = event.target.parentNode;
+    console.log(clickedDiv);
+    //window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${clickedDiv.id.split("-").pop()}`
 }
  

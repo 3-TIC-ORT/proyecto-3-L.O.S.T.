@@ -136,5 +136,11 @@
     "password": "Megustaelpene123",
     "id": 22,
     "admin": false
+  },
+  {
+    "name": "Pepo",
+    "password": "Limon1ymanzana2",
+    "id": 23,
+    "admin": false
   }
 ]

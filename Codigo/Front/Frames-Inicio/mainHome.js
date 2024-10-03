@@ -7,7 +7,12 @@ let CS = document.getElementById("CS");
 
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
-function ShowUsername() {
+function iSettings() {
+    localStorage.removeItem("publicaciones");
+    //para hacer notificaciones le mando a santi que quiero todas las publicacioness
+    postData("cargarPublicaciones", "all", (data) => {
+        localStorage.setItem("publicaciones", JSON.stringify(data))
+    })
     localStorage.removeItem("tipo");
     if (JSON.parse(localStorage.getItem("userName")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
@@ -21,7 +26,7 @@ function ShowUsername() {
     }
 }
 
-ShowUsername();
+iSettings();
 
 //Te mueve a la lista de objetos encontrados o perdidos
 
@@ -162,8 +167,10 @@ const overlay= document.querySelector("[data-overlay]")
                           <h5>${noti.commenter}:</h5>
                           <small>Ha comentado "${noti.text}"</small>
                       </div>`;
-                    // document.getElementById(noti.publicacion).addEventListener("click", reDirect)
-                    document.querySelector("dialog").innerHTML += markup;
+                document.querySelector("dialog").innerHTML += markup;
+                document.querySelectorAll(`#${noti.publicacion}`).forEach(div => {
+                    div.addEventListener("click", reDirect);
+                })
                 });
             }
         })
@@ -183,6 +190,7 @@ const overlay= document.querySelector("[data-overlay]")
     }) 
 
 function reDirect(publicacionId) {
-    console.log(publicacionId)
+    window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${publicacionId.currentTarget.id}`
+    //Falta agregar que lo pueda agarrar el dataLoader
 }
  

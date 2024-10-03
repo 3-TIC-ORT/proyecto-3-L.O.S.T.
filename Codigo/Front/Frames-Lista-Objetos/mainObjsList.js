@@ -1,6 +1,6 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 function LoadPosts(postList) {
-    localStorage.removeItem("publicacionId");   
+    localStorage.removeItem("publicaciones"); 
     if(JSON.parse(localStorage.getItem("tipo")) === "encontrado") {
         document.getElementById("title").textContent = "Objetos Perdidos"
     } else {
@@ -21,7 +21,6 @@ function LoadPosts(postList) {
         document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoDown);
         nuevoDown.appendChild(Downtxt);
-        
     }
     //Una vez cargadas las publicaciones, le agrego el EventListener a cada publicación.
     document.querySelectorAll("article").forEach(article => {
@@ -39,12 +38,11 @@ function Add() {
 //Ir para atrás
 function Back() {
     window.location.href = "../Frames-Inicio/indexHome.html";
-    localStorage.removeItem("publicaciones");
 } document.getElementById("Flecha").addEventListener("click", Back);
 
 //Te permite entrar a cada publicación
 function Enter(publicacion) {
     //publicacion.target.parentNode.id agarra el id del "article", osea la publicacion
     localStorage.setItem("publicacionId", publicacion.target.parentNode.id);
-    window.location.href = "indexPublicacion.html";
+    window.location.href = `indexPublicacion.html?pId=${publicacion.target.parentNode.id}`;
 } 

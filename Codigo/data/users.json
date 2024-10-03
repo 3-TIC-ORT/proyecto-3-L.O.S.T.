@@ -130,5 +130,11 @@
     "password": "dwadhwiDWAUUID123",
     "id": 21,
     "admin": false
+  },
+  {
+    "name": "SantinoRua",
+    "password": "Megustaelpene123",
+    "id": 22,
+    "admin": false
   }
 ]

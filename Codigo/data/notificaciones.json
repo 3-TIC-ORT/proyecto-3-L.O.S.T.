@@ -4,5 +4,26 @@
     "commenter": "HAOADwakdw",
     "text": "Hola",
     "publicacion": 3
+  },
+  {
+    "type": "comentario",
+    "id": 22,
+    "commenter": "SantinoRua",
+    "text": "Hola bebe",
+    "publicacion": 4
+  },
+  {
+    "type": "comentario",
+    "id": 20,
+    "commenter": "SantinoRua",
+    "text": "sddssd",
+    "publicacion": 2
+  },
+  {
+    "type": "comentario",
+    "id": 22,
+    "commenter": "SantinoRua",
+    "text": "Pene",
+    "publicacion": 4
   }
 ]

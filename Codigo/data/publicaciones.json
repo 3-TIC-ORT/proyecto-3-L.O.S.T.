@@ -38,7 +38,13 @@
     "tipo": "encontrado",
     "creador": 20,
     "id": 2,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 22,
+        "comm": "sddssd",
+        "userName": "SantinoRua"
+      }
+    ],
     "cumplio": false
   },
   {
@@ -57,6 +63,31 @@
         "user": 21,
         "comm": "Hola",
         "userName": "HAOADwakdw"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "paraguas",
+    "titulo": "TEST",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "creador": 22,
+    "id": 4,
+    "comentarios": [
+      {
+        "user": 22,
+        "comm": "Hola bebe",
+        "userName": "SantinoRua"
+      },
+      {
+        "user": 22,
+        "comm": "Pene",
+        "userName": "SantinoRua"
       }
     ],
     "cumplio": false

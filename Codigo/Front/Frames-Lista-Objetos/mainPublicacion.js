@@ -3,7 +3,9 @@
 //Hace que se muestre todo en pantallas: imagen, comentarios, descripcion, titulo, entre mas cosas.
 
 function DataLoader () {
-    let publicacionId = JSON.parse(localStorage.getItem("publicacionId"));
+    let params = new URLSearchParams(document.location.search);
+    //no se por qué, pero el parseInt no va
+    let publicacionId = Number(params.get("pId"));
     let publicaciones = JSON.parse(localStorage.getItem("publicaciones"));
     for (i = 0; i < publicaciones.length; i++) {
         if(publicaciones[i].id === publicacionId) {
@@ -55,13 +57,5 @@ function Comentar(){
 
 
 function Editar () {
-    // NO ENTIENDO NADA 
-    // const params = new URLSearchParams(window.location.search);
-    // console.log(params.get("editado"))
-    // let params = new URLSearchParams(window.location.search)
-    // params.set("editado", true);
-    // params.get("editado")   
-    // params.set(`indexCreacionPublicacion?editado=pene`)
-    // window.location.href = new URLSearchParams(`indexCreacionPublicacion.html?editado=true`)
-    window.location.href = `indexCreacionPublicacion.html?editado=true`
+    window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}editado=true`
 } document.getElementById("editar").addEventListener("click", Editar);

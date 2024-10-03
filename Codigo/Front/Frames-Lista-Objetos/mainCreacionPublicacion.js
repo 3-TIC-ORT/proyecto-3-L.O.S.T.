@@ -9,7 +9,7 @@ let publicacion = {}
  
 function getData () {
     let params = new URLSearchParams(document.location.search);
-    if (params.get( "editado")){
+    if (params.get("editado")){
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === JSON.parse(localStorage.getItem("publicacionId"))){
                 publicacion = p;
@@ -24,7 +24,6 @@ function getData () {
                 const foto = document.createElement("img")
                 foto.src = p.imagen
                 document.querySelector("body").appendChild(foto);
-                //quizá usar URL params también
                 localStorage.setItem("tipo", JSON.stringify(p.tipo));
                 localStorage.setItem("userId", JSON.stringify(p.creador));
             }

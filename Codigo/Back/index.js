@@ -109,13 +109,15 @@ function cargarPublicaciones(data){
                 van.push({...lista[i]})
             }
         }
-    } else {
+    } else if(data === "encontrado"){
         for(let i = 0; i < lista.length; i++){
             if(lista[i].tipo === "perdido" && lista[i].cumplio === false){
                 van.push({...lista[i]})
             }
             
         }
+    } else {
+        van = lista;
     }
     return van;
 }

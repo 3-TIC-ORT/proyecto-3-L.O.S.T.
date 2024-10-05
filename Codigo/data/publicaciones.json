@@ -1,34 +1,55 @@
 [
   {
-    "tipoImg": "jpeg",
+    "tipoImg": "image/webp",
     "categoria": "vestimenta",
-    "titulo": "dwadbhjjjawdbwda",
-    "ubicacion": "hwjdbajdwbhajd",
-    "descripcion": "jhdwbhjadhjbw",
-    "dejado": "hbjwjbhdahbjadajhbw",
-    "hora": "hjbjhdhjwbad",
+    "titulo": "Pene",
+    "ubicacion": "Osmani Garcia La fábrica de éxitos La fábrica de éxitos Le voy a hacer historia a Pitbull y a Sensat",
+    "descripcion": "Yuli la mesa está servida La sopa está caliente No hay ni pa’ azorar las moscas",
+    "dejado": "Míster Todo El Mundo El Taxi Sensato del patio Osmani Garcia Queremos darle una bienvenida A todas l",
+    "hora": "Yo la conocí en un taxi, en ca",
     "tipo": "encontrado",
-    "creador": 20,
-    "id": 1,
-    "comentarios": [],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "image/avif",
-    "categoria": "vestimenta",
-    "titulo": "Hoolas",
-    "ubicacion": "duiwahduwihd",
-    "descripcion": "uhidwhwAUIDHW",
-    "dejado": "IUWDHUwiuwdwiuh",
-    "hora": "hiwdiuwa",
-    "tipo": "encontrado",
-    "creador": 20,
-    "id": 2,
+    "creador": 23,
+    "id": 0,
     "comentarios": [
       {
-        "user": 22,
-        "comm": "sddssd",
-        "userName": "SantinoRua"
+        "user": 23,
+        "comm": "Lo paro con una mano, lo paro que yo la vi Cho cho chofer pare el taxi Cho cho cho cho chofer pare el taxi",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "Ella está pa’ un accidente No me importa si está crazy No me importa si hace vino por ahí",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "HOla",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "HOla",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "HOla",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "HOla",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "HOla",
+        "userName": "Pepo"
+      },
+      {
+        "user": 23,
+        "comm": "HOla",
+        "userName": "Pepo"
       }
     ],
     "cumplio": false
@@ -36,96 +57,15 @@
   {
     "tipoImg": "jpeg",
     "categoria": "vestimenta",
-    "titulo": "F1 goat",
-    "ubicacion": "diwaahdiw",
-    "descripcion": "hiuIUWdha",
-    "dejado": "hduiwahiudwa|",
-    "hora": "iuwdadw",
-    "tipo": "encontrado",
-    "creador": 21,
-    "id": 3,
-    "comentarios": [
-      {
-        "user": 21,
-        "comm": "Hola",
-        "userName": "HAOADwakdw"
-      }
-    ],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "png",
-    "categoria": "paraguas",
-    "titulo": "TEST",
-    "ubicacion": "",
+    "titulo": "PITBULL?",
+    "ubicacion": "CHO CHO ",
     "descripcion": "",
     "dejado": "",
     "hora": "",
     "tipo": "perdido",
-    "creador": 22,
-    "id": 4,
-    "comentarios": [
-      {
-        "user": 22,
-        "comm": "Hola bebe",
-        "userName": "SantinoRua"
-      },
-      {
-        "user": 22,
-        "comm": "Pene",
-        "userName": "SantinoRua"
-      }
-    ],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "vestimenta",
-    "titulo": "PILLAMA TIBURÓN",
-    "ubicacion": "es azul",
-    "descripcion": "no se ",
-    "dejado": "no se 2",
-    "hora": "no se 3",
-    "tipo": "perdido",
     "creador": 23,
-    "id": 5,
-    "comentarios": [
-      {
-        "user": 23,
-        "comm": "Épico pillama",
-        "userName": "Pepo"
-      },
-      {
-        "user": 23,
-        "comm": "Hola",
-        "userName": "Pepo"
-      },
-      {
-        "user": 23,
-        "comm": "Lo encontré",
-        "userName": "Pepo"
-      }
-    ],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "vestimenta",
-    "titulo": "Almohada",
-    "ubicacion": "me gusta dormir",
-    "descripcion": "anda a saber que hagta acá",
-    "dejado": "me estoy volviendo loco",
-    "hora": "xd",
-    "tipo": "encontrado",
-    "creador": 23,
-    "id": 6,
-    "comentarios": [
-      {
-        "user": 23,
-        "comm": "Almohada épica",
-        "userName": "Pepo"
-      }
-    ],
+    "id": 1,
+    "comentarios": [],
     "cumplio": false
   }
 ]

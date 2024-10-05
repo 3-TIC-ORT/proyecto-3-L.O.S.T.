@@ -115,8 +115,14 @@ body > .Mder > .coment > section {
 
 body > .Mder > .coment > section > article {
     width: 100%;
-    height: 15vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+body > .Mder > .coment > section > article > p {
+    word-wrap: break-word;
+    width: 100%;
+    height: auto;
 }

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POST CREATION/EDIT</title>
+    <title>CREACIÓN/EDICIÓN PUBLICACIÓN</title>
 </head>
 <body>
     <form action="submit">
-        <input type="file" name="img" accept="image/*" >
+        <input type="file" name="img" accept="image/*" size="2000000000" >
         <select name="category" required>
             <option value="vestimenta">vestimenta</option>
             <option value="paraguas">paraguas</option>
@@ -19,11 +19,11 @@
             <option value="productos-electronicos">productos electrónicos</option>
             <option value="otros">otros</option>
         </select>
-        <input type="text" name="title" >
-        <input type="text" name="location" >
-        <input type="text" name= "description" >
-        <input type="text" name="placeLeft" >
-        <input type="text" name="time">
+        <input type="text" name="title" maxlength="50" >
+        <input type="text" name="location" maxlength="100">
+        <input type="text" name= "description" maxlength="1000">
+        <input type="text" name="placeLeft" maxlength="100">
+        <input type="text" name="time" maxlength="30">
         <input type="submit" id = "submit">
     </form>
 </body>

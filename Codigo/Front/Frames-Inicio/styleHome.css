@@ -326,12 +326,31 @@ dialog{
     position: absolute;
     left: 77%;
     width: 15vw;
-    transform: translateY(40%);
+    max-height: 40vh;
+    transform: translateY(40%); 
     margin: 0;
 }
 
-dialog > h5 {
+dialog > div {
+    display: flex;
+    flex-flow: column;
+    transition: background-color 1s;
+    width: 100%;
+    height: auto;
+}
+
+dialog > :hover {
+    background-color: #05B0E5;
+}
+
+dialog > div > h5 {
     margin: 0;
-    padding: 0;
+    padding: 0.5vh;
+    width: 100%;
+}
+
+dialog > div > small {
+    width: 100%;
+    word-wrap: break-word;
 }
 

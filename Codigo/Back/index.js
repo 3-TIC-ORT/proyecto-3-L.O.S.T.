@@ -77,6 +77,8 @@ async function editarPublicacion({publicacion, JWT}){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
     if((payload.id === lista[publicacion.id].creador || payload.admin === true) && lista[publicacion.id] != null){
+        let tipoImg = publicacion.tipoImg.split("/").pop();
+        publicacion.tipoImg = tipoImg;
         delete publicacion.imagen;
         lista[publicacion.id] = ({...publicacion});
         fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));

@@ -49,13 +49,16 @@ function Comentar(){
             </article>`;
         document.getElementById("coment-box").innerHTML += container;
         comentario.comm = document.getElementById("InputComentario").value;
-        comentario.id = JSON.parse(localStorage.getItem("publicacionId"));
+        comentario.id = Number(new URLSearchParams(document.location.search).get("pId"));
         comentario.JWT = JSON.parse(localStorage.getItem("JWT"));
+        console.log(`1` , comentario)
         postData("comentar", comentario);
+        document.getElementById("InputComentario").value = "";
+        console.log(`2` , comentario)
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);
 
 
 function Editar () {
-    window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}editado=true`
+    window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}&editado=true`
 } document.getElementById("editar").addEventListener("click", Editar);

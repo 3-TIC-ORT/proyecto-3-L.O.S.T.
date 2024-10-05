@@ -11,7 +11,7 @@ function getData () {
     let params = new URLSearchParams(document.location.search);
     if (params.get("editado")){
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
-            if (p.id === JSON.parse(localStorage.getItem("publicacionId"))){
+            if (p.id === Number(params.get("pId"))){
                 publicacion = p;
                 const form = document.querySelector(`form`)
                 //falta que hacer con la imagen
@@ -21,8 +21,8 @@ function getData () {
                 form.description.value = p.descripcion;
                 form.placeLeft.value = p.dejado;
                 form.time.value = p.hora;
-                const foto = document.createElement("img")
-                foto.src = p.imagen
+                const foto = document.createElement("img");
+                foto.src = `../../data/imgs/${p.id}.${p.tipoImg}`
                 document.querySelector("body").appendChild(foto);
                 localStorage.setItem("tipo", JSON.stringify(p.tipo));
                 localStorage.setItem("userId", JSON.stringify(p.creador));
@@ -40,8 +40,13 @@ form.addEventListener(`submit`, (e) => {
     formulario = e.target;
     //Que haya imagen predeterminada
     //Hacer de que haya también la opción de no mandar imagen y que no se crashee
-    publicacion.imagen = formulario.img.files[0];
-    publicacion.tipoImg = formulario.img.files[0].type;
+    if (formulario.img.files[0] === undefined && !params.get("editado")) {
+        publicacion.imagen = "../../data/imgs/Default.png";
+        publicacion.tipoImg = "image/png"
+    } else {
+        publicacion.imagen = formulario.img.files[0];
+        publicacion.tipoImg = formulario.img.files[0].type;
+    }
     publicacion.categoria = formulario.category.value;
     publicacion.titulo = formulario.title.value;
     publicacion.ubicacion = formulario.location.value;

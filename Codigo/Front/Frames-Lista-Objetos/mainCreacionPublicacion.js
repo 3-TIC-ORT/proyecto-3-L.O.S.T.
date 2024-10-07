@@ -14,13 +14,14 @@ function getData () {
             if (p.id === Number(params.get("pId"))){
                 publicacion = p;
                 const form = document.querySelector(`form`)
-                //falta que hacer con la imagen
                 form.category.value = p.categoria;
                 form.title.value = p.titulo;
                 form.location.value = p.ubicacion;
                 form.description.value = p.descripcion;
                 form.placeLeft.value = p.dejado;
                 form.time.value = p.hora;
+                // Me parece que para hacer lo de la imagen hay que modificar el back o como se guardan las publicaciones, porque no tengo acceso a la información de la imagen...
+                //no anda
                 const foto = document.createElement("img");
                 foto.src = `../../data/imgs/${p.id}.${p.tipoImg}`
                 document.querySelector("body").appendChild(foto);
@@ -64,6 +65,6 @@ form.addEventListener(`submit`, (e) => {
                 alert("Debes estar logeado para poder crear una publicación")
             }
         });
-    window.location.href = "indexObjsList.html";
     }
+    window.location.href = "indexObjsList.html";
 })

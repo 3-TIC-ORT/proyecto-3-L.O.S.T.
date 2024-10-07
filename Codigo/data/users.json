@@ -142,5 +142,11 @@
     "password": "Limon1ymanzana2",
     "id": 23,
     "admin": false
+  },
+  {
+    "name": "sergio",
+    "password": "Azcu1264",
+    "id": 24,
+    "admin": false
   }
 ]

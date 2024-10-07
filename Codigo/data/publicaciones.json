@@ -67,5 +67,67 @@
     "id": 1,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "otros",
+    "titulo": "",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "creador": 24,
+    "id": 2,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "svg+xml",
+    "categoria": "vestimenta",
+    "titulo": "",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "creador": 24,
+    "id": 3,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "mochilas",
+    "titulo": "Mi mochbila",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "creador": 24,
+    "id": 4,
+    "comentarios": [
+      {
+        "user": 24,
+        "comm": "Sos un gil que lo perdiste",
+        "userName": "sergio"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "PIJAMA EL REGRESO",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "creador": 23,
+    "id": 5,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

@@ -54,5 +54,12 @@
     "commenter": "Pepo",
     "text": "HOla",
     "publicacion": 0
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "Sos un gil que lo perdiste",
+    "publicacion": 4
   }
 ]

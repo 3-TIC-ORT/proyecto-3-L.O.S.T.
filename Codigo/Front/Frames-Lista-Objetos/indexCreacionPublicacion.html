@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CREACIÓN/EDICIÓN PUBLICACIÓN</title>
+    <link rel="stylesheet" href="CreacionPublicacion.css">
 </head>
 <body>
     <form action="submit">
-        <input type="file" name="img" accept="image/*" size="2000000000" >
+        <input type="file" name="img" accept="image/*" size="2000000000" class="img" >
         <select name="category" required>
             <option value="vestimenta">vestimenta</option>
             <option value="paraguas">paraguas</option>
@@ -31,12 +32,3 @@
 <script src="../socket.js"></script>
 <script src="mainCreacionPublicacion.js"></script>
 </html>
-
-<style>
-    form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-</style>

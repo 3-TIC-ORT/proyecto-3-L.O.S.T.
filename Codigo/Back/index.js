@@ -132,7 +132,7 @@ async function comentar(data){
     let comentario = {user:payload.id, comm:data.comm, userName:usuarios[payload.id].name};
     lista[data.id].comentarios.push({...comentario});
     fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-    let notificacion = {type: "comentario", id:lista[data.id].creador, commenter:usuarios[payload.id].name, text:comentario.comm, publicacion:data.id};
+    let notificacion = {type: "comentario", id:lista[data.id].creador, commenter:usuarios[payload.id].name, text:comentario.comm, publicacion:data.id, leido: false};
     notificaciones.push({...notificacion});
     fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
     return true;
@@ -161,6 +161,16 @@ async function mostrarNotificaciones(JWT){
     return listita;
 }
 
+async function notificacionesLeidas(JWT){
+    let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", 'utf-8'));
+    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
+    for(let i = 0; i<notificaciones.length; i++){
+        if(payload.id === notificaciones[i].id){
+            notificaciones[i].leido = true
+        }
+    }
+}
+
 
 // On Events
 onEvent("register", register);
@@ -172,6 +182,7 @@ onEvent("cargarPublicaciones", cargarPublicaciones);
 onEvent("comentar", comentar);
 onEvent("botonEncontre", botonEncontre);
 onEvent("mostrarNotificaciones", mostrarNotificaciones);
+onEvent("notificacionesLeidas", notificacionesLeidas)
 
 
 import * as url from 'node:url';

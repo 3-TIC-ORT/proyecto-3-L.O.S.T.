@@ -74,14 +74,16 @@ async function crearPublicacion({publicacion, JWT}){
 }
 
 async function editarPublicacion({publicacion, JWT}){
+    console.log(publicacion.imagen != false)
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
     if((payload.id === lista[publicacion.id].creador || payload.admin === true) && lista[publicacion.id] != null){
-        if(publicacion.imagen !== false){
+        if(publicacion.imagen != false){
             console.log("Hola")
             let tipoImg = publicacion.tipoImg.split("/").pop();
             publicacion.tipoImg = tipoImg;
-            fs.writeFileSync(`${publicacion.id}.${tipoImg}`, publicacion.imagen)
+            console.log
+            fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
         } else{
             publicacion.tipoImg = lista[publicacion.id].tipoImg
         }
@@ -175,6 +177,7 @@ async function notificacionesLeidas(JWT){
             notificaciones[i].leido = true;
         }
     }
+    fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones))
 }
 
 

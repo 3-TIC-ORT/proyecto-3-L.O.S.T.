@@ -97,9 +97,9 @@
     "cumplio": false
   },
   {
-    "tipoImg": "png",
+    "tipoImg": "jpeg",
     "categoria": "mochilas",
-    "titulo": "TU hol",
+    "titulo": "F1 GOAT",
     "ubicacion": "",
     "descripcion": "",
     "dejado": "",
@@ -116,6 +116,16 @@
       {
         "user": 24,
         "comm": "hOLA",
+        "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "Hola",
+        "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "Chau",
         "userName": "sergio"
       }
     ],

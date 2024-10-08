@@ -1,72 +1,18 @@
 [
   {
     "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "Lo paro con una mano, lo paro que yo la vi Cho cho chofer pare el taxi Cho cho cho cho chofer pare el taxi",
-    "publicacion": 0
-  },
-  {
-    "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "Ella está pa’ un accidente No me importa si está crazy No me importa si hace vino por ahí",
-    "publicacion": 0
-  },
-  {
-    "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "HOla",
-    "publicacion": 0
-  },
-  {
-    "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "HOla",
-    "publicacion": 0
-  },
-  {
-    "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "HOla",
-    "publicacion": 0
-  },
-  {
-    "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "HOla",
-    "publicacion": 0
-  },
-  {
-    "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "HOla",
-    "publicacion": 0
-  },
-  {
-    "type": "comentario",
-    "id": 23,
-    "commenter": "Pepo",
-    "text": "HOla",
-    "publicacion": 0
+    "id": 24,
+    "commenter": "sergio",
+    "text": "Hola",
+    "publicacion": 4,
+    "leido": false
   },
   {
     "type": "comentario",
     "id": 24,
     "commenter": "sergio",
-    "text": "Sos un gil que lo perdiste",
-    "publicacion": 4
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "hOLA",
-    "publicacion": 4
+    "text": "Chau",
+    "publicacion": 4,
+    "leido": false
   }
 ]

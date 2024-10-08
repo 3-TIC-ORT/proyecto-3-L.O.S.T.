@@ -27,7 +27,6 @@ function iSettings() {
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.querySelector("dialog").innerHTML += h1;
             } else {
-                bell.src = `../Imgs/bell-true.png`
                 lista.forEach(noti => {
                     const markup =     
                     ` <div id="pub-${noti.publicacion}"> 
@@ -35,7 +34,11 @@ function iSettings() {
                           <small>Ha comentado "${noti.text}"</small>
                       </div>`;
                 document.querySelector("dialog").innerHTML += markup;
-
+                if (noti.leido === true) {
+                    bell.src = `../Imgs/bell-true.png`;
+                } else {
+                    bell.src = `../Imgs/bell-false.png`;
+                }
                 });
                 lista.forEach(noti => {
                     //Por como funciona querySelector le tuve que agregar un cacho de string extra, ya que querySelector no puede agarrar números sueltos.

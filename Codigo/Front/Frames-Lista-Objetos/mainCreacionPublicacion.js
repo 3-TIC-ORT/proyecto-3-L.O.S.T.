@@ -46,12 +46,7 @@ form.addEventListener(`submit`, (e) => {
         publicacion.tipoImg = "image/png"
     } else {
         publicacion.imagen = formulario.img.files[0];
-        if (publicacion.imagen === undefined) {
-            let img = document.querySelector("img").src
-            console.log(img);
-        } else {
-            publicacion.tipoImg = formulario.img.files[0].type;
-        }
+        publicacion.tipoImg = formulario.img.files[0].type;
     }
     publicacion.categoria = formulario.category.value;
     publicacion.titulo = formulario.title.value;
@@ -63,6 +58,10 @@ form.addEventListener(`submit`, (e) => {
     let usuario = JSON.parse(localStorage.getItem("userId"));
     publicacion.creador = usuario;
     if (params.get("editado")) {
+        if (publicacion.imagen === undefined) {
+            publicacion.imagen = false;
+            publicacion.tipoImg = false;
+        }
         postData("editarPublicacion", {publicacion: publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))});
     } else {
         postData("crearPublicacion", {publicacion:publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))}, (retorno) => {

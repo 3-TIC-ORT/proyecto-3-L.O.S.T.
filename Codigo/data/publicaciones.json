@@ -93,7 +93,38 @@
     "tipo": "encontrado",
     "creador": 24,
     "id": 3,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 24,
+        "comm": "yuuftyfytfyyt",
+        "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "sssds",
+        "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "",
+        "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "xd",
+        "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "OISDa",
+        "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "SIdnad",
+        "userName": "sergio"
+      }
+    ],
     "cumplio": false
   },
   {

@@ -1,18 +1,1 @@
-[
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "Hola",
-    "publicacion": 4,
-    "leido": false
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "Chau",
-    "publicacion": 4,
-    "leido": false
-  }
-]
+[]

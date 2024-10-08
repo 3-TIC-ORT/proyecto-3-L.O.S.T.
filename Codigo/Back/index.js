@@ -177,7 +177,7 @@ async function notificacionesLeidas(JWT){
             notificaciones[i].leido = true;
         }
     }
-    fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones))
+    fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
 }
 
 

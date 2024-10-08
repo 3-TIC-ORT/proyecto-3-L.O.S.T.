@@ -8,6 +8,7 @@ let CS = document.getElementById("CS");
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
 function iSettings() {
+    console.log("pepe")
     localStorage.removeItem("publicaciones");
     //para hacer notificaciones le mando a santi que quiero todas las publicacioness
     postData("cargarPublicaciones", "all", (data) => {
@@ -27,6 +28,7 @@ function iSettings() {
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.querySelector("dialog").innerHTML += h1;
             } else {
+                let bellringing = false
                 lista.forEach(noti => {
                     const markup =     
                     ` <div id="pub-${noti.publicacion}"> 
@@ -34,12 +36,15 @@ function iSettings() {
                           <small>Ha comentado "${noti.text}"</small>
                       </div>`;
                 document.querySelector("dialog").innerHTML += markup;
-                if (noti.leido === true) {
-                    bell.src = `../Imgs/bell-true.png`;
-                } else {
-                    bell.src = `../Imgs/bell-false.png`;
+                if (noti.leido === false) {
+                    bellringing = true
                 }
                 });
+                if (bellringing === true){
+                    bell.src = `../Imgs/bell-true.png`
+                } else{
+                    bell.src = `../Imgs/bell-false.png`
+                }
                 lista.forEach(noti => {
                     //Por como funciona querySelector le tuve que agregar un cacho de string extra, ya que querySelector no puede agarrar números sueltos.
                     document.querySelectorAll(`#pub-${noti.publicacion}`).forEach(div => {
@@ -128,7 +133,7 @@ function Register() {
                 userFrame.style.display = "none";
                 logIn.style.display = "none";
                 CS.style.display = "flex"
-                bell.style.display = "flex"
+                bell.style.display = "flex";
                 SetId({id:data.id, name:UserName, admin: data.admin, JWT:data.JWT})
             } else{
                 alert(data.inf);
@@ -143,6 +148,7 @@ function SetId({id, name, admin, JWT}) {
     localStorage.setItem("userName", JSON.stringify(name));
     localStorage.setItem("admin", JSON.stringify(admin));
     localStorage.setItem("JWT", JSON.stringify(JWT));
+    iSettings()
 }
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
@@ -176,6 +182,7 @@ function LogOut() {
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
     UserShown.textContent = "Anónimo"
+    document.querySelector("dialog").innerHTML = "";
 } document.getElementById("CS").addEventListener("click", LogOut);
 
 //La función de notificaciones debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
@@ -186,6 +193,7 @@ const overlay= document.querySelector("[data-overlay]")
 
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
+        postData("notificacionesLeidas", JSON.parse(localStorage.getItem("JWT")));
 })
 
     modal.addEventListener ("click", e => {
@@ -203,10 +211,6 @@ const overlay= document.querySelector("[data-overlay]")
     }) 
 
 function reDirect(event) {
-    //No se por qué, pero si clickeas entre el espacio de los h5 y los small te agarra el dialog
-    //corto la parte de "pub-" porque las publicaciones solo agarran número, y que así el DataLoader me agarre los datos
-
-    //POR VER
     let clickedDiv = event.target.parentNode;
     if (clickedDiv.id === "") {
         clickedDiv = event.target

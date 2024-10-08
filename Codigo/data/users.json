@@ -226,5 +226,11 @@
     "password": "wAHUDwadihw123",
     "id": 37,
     "admin": false
+  },
+  {
+    "name": "Martin",
+    "password": "SIODIfb79v9",
+    "id": 38,
+    "admin": false
   }
 ]

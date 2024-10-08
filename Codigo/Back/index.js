@@ -78,9 +78,10 @@ async function editarPublicacion({publicacion, JWT}){
     const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
     if((payload.id === lista[publicacion.id].creador || payload.admin === true) && lista[publicacion.id] != null){
         if(publicacion.imagen !== false){
+            console.log("Hola")
             let tipoImg = publicacion.tipoImg.split("/").pop();
             publicacion.tipoImg = tipoImg;
-            fs.writeFileSync(`${publicacion.id}.${tipoImg}`)
+            fs.writeFileSync(`${publicacion.id}.${tipoImg}`, publicacion.imagen)
         } else{
             publicacion.tipoImg = lista[publicacion.id].tipoImg
         }

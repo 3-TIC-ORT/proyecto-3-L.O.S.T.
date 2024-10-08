@@ -14,12 +14,38 @@ function iSettings() {
         localStorage.setItem("publicaciones", JSON.stringify(data))
     })
     localStorage.removeItem("tipo");
-    if (JSON.parse(localStorage.getItem("userName")) !== null) {
+    if (JSON.parse(localStorage.getItem("userId")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
         logIn.style.display = "none";
         CS.style.display = "flex"
         bell.style.display = "flex"
+        postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
+            if(lista.length === 0) {
+                bell.src = `../Imgs/bell-false.png`
+                const h1 = `<h1>Sin notificaciones</h1>`;
+                document.querySelector("dialog").innerHTML += h1;
+            } else {
+                bell.src = `../Imgs/bell-true.png`
+                lista.forEach(noti => {
+                    const markup =     
+                    ` <div id="pub-${noti.publicacion}"> 
+                          <h5>${noti.commenter}:</h5>
+                          <small>Ha comentado "${noti.text}"</small>
+                      </div>`;
+                document.querySelector("dialog").innerHTML += markup;
+
+                });
+                lista.forEach(noti => {
+                    //Por como funciona querySelector le tuve que agregar un cacho de string extra, ya que querySelector no puede agarrar números sueltos.
+                    document.querySelectorAll(`#pub-${noti.publicacion}`).forEach(div => {
+                        //Hay que revisar esto
+                       div.addEventListener("click", reDirect);
+                })
+              })
+            }
+        })
+    )
     }
     else{
         UserShown.textContent = "Anónimo"
@@ -156,30 +182,8 @@ const overlay= document.querySelector("[data-overlay]")
 
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
-        postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
-            if(lista.length === 0) {
-                const h1 = `<h1>Sin notificaciones</h1>`;
-                document.querySelector("dialog").innerHTML += h1;
-            } else {
-                lista.forEach(noti => {
-                    const markup =     
-                    ` <div id="pub-${noti.publicacion}"> 
-                          <h5>${noti.commenter}:</h5>
-                          <small>Ha comentado "${noti.text}"</small>
-                      </div>`;
-                document.querySelector("dialog").innerHTML += markup;
-
-                });
-                lista.forEach(noti => {
-                    //Por como funciona querySelector le tuve que agregar un cacho de string extra, ya que querySelector no puede agarrar números sueltos.
-                    document.querySelectorAll(`#pub-${noti.publicacion}`).forEach(div => {
-                        //Hay que revisar esto
-                       div.addEventListener("click", reDirect);
-                })
-              })
-            }
-        })
-    )})
+        SetId();
+})
 
     modal.addEventListener ("click", e => {
         const dialogDimensions = modal.getBoundingClientRect()
@@ -191,6 +195,7 @@ const overlay= document.querySelector("[data-overlay]")
         ) {
             modal.close()
             document.querySelector("dialog").innerHTML = ``;
+            bell.src = `../Imgs/bell-false.png`
         }
     }) 
 

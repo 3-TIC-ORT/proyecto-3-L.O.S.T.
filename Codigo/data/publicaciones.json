@@ -112,6 +112,11 @@
         "user": 24,
         "comm": "Sos un gil que lo perdiste",
         "userName": "sergio"
+      },
+      {
+        "user": 24,
+        "comm": "hOLA",
+        "userName": "sergio"
       }
     ],
     "cumplio": false

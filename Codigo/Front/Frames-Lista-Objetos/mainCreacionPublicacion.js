@@ -46,7 +46,12 @@ form.addEventListener(`submit`, (e) => {
         publicacion.tipoImg = "image/png"
     } else {
         publicacion.imagen = formulario.img.files[0];
-        publicacion.tipoImg = formulario.img.files[0].type;
+        if (publicacion.imagen === undefined) {
+            let img = document.querySelector("img").src
+            console.log(img);
+        } else {
+            publicacion.tipoImg = formulario.img.files[0].type;
+        }
     }
     publicacion.categoria = formulario.category.value;
     publicacion.titulo = formulario.title.value;

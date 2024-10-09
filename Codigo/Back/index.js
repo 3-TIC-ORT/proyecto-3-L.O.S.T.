@@ -26,7 +26,7 @@ async function register(user){
     user.admin = false;
     lista.push({...user});
     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-    const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+    const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2s").sign(claveSecreta);
     return {JWT:mensaje, id:user.id, admin:user.admin};
     }
 }
@@ -45,7 +45,7 @@ async function login(user){
         return {id:null, inf:"Invalid"};
     } else {
         if(user.password === usuarios[user.id].password){
-            const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).sign(claveSecreta);
+            const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2s").sign(claveSecreta);
             return {JWT:mensaje, id:user.id, admin:usuarios[user.id].admin};
             
         } else{
@@ -58,44 +58,61 @@ async function crearPublicacion({publicacion, JWT}){
     if(publicacion.creador === null || JWT === undefined){
         return false;
     }
-    let tipoImg = publicacion.tipoImg.split("/").pop();
-    let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
-    publicacion.id = lista.length;
-    publicacion.tipoImg = tipoImg;
-    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta)
-    publicacion.creador = payload.id;
-    fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
-    publicacion.comentarios = [];
-    publicacion.cumplio = false;
-    delete publicacion.imagen;
-    lista.push({...publicacion});
-    fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-    return true;
+    try {
+        const { payload, protectedHeader} = await jose.jwtVerify(JWT, claveSecreta);
+        let tipoImg = publicacion.tipoImg.split("/").pop();
+        let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
+        publicacion.id = lista.length;
+        publicacion.tipoImg = tipoImg;
+        publicacion.creador = payload.id;
+        fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
+        publicacion.comentarios = [];
+        publicacion.cumplio = false;
+        delete publicacion.imagen;
+        lista.push({...publicacion});
+        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
+        return true;
+    } catch(err){
+        if (err.code === 'ERR_JWT_EXPIRED') {
+            return "expirado"
+        } else{
+            console.log(err)
+            return err;
+        }
+    }
+    
 }
 
 async function editarPublicacion({publicacion, JWT}){
     console.log(publicacion.imagen != false)
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
-    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
-    if((payload.id === lista[publicacion.id].creador || payload.admin === true) && lista[publicacion.id] != null){
-        if(publicacion.imagen != false){
-            console.log("Hola")
-            let tipoImg = publicacion.tipoImg.split("/").pop();
-            publicacion.tipoImg = tipoImg;
-            console.log
-            fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
+    try{
+        const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
+        if((payload.id === lista[publicacion.id].creador || payload.admin === true) && lista[publicacion.id] != null){
+            if(publicacion.imagen != false){
+                console.log("Hola")
+                let tipoImg = publicacion.tipoImg.split("/").pop();
+                publicacion.tipoImg = tipoImg;
+                console.log
+                fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
+            } else{
+                publicacion.tipoImg = lista[publicacion.id].tipoImg
+            }
+            delete publicacion.imagen;
+            lista[publicacion.id] = ({...publicacion});
+            fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
+            return true;
         } else{
-            publicacion.tipoImg = lista[publicacion.id].tipoImg
+            return false;
         }
-        delete publicacion.imagen;
-        lista[publicacion.id] = ({...publicacion});
-        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-        console.log("SI");
-        return true;
-    } else{
-        console.log("NO");
-        return false;
-    } 
+    } catch(err){
+        if (err.code === 'ERR_JWT_EXPIRED') {
+            return "expirado"
+        } else{
+            console.log(err)
+            return err;
+        }
+    }
 }
 
 function terminarPublicacion(propuesta){
@@ -136,14 +153,23 @@ async function comentar(data){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", "utf-8"));
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
-    const { payload, protectedHeader } = await jose.jwtVerify(data.JWT, claveSecreta);
-    let comentario = {user:payload.id, comm:data.comm, userName:usuarios[payload.id].name};
-    lista[data.id].comentarios.push({...comentario});
-    fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-    let notificacion = {type: "comentario", id:lista[data.id].creador, commenter:usuarios[payload.id].name, text:comentario.comm, publicacion:data.id, leido: false};
-    notificaciones.push({...notificacion});
-    fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
-    return true;
+    try{
+        const { payload, protectedHeader } = await jose.jwtVerify(data.JWT, claveSecreta);
+        let comentario = {user:payload.id, comm:data.comm, userName:usuarios[payload.id].name};
+        lista[data.id].comentarios.push({...comentario});
+        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
+        let notificacion = {type: "comentario", id:lista[data.id].creador, commenter:usuarios[payload.id].name, text:comentario.comm, publicacion:data.id, leido: false};
+        notificaciones.push({...notificacion});
+        fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
+        return true;
+    } catch(err){
+        if (err.code === 'ERR_JWT_EXPIRED') {
+            return "expirado"
+        } else{
+            console.log(err)
+            return err;
+        }
+    }
 }
 
 async function botonEncontre({JWT, publicacionId, text}){
@@ -160,24 +186,43 @@ async function botonEncontre({JWT, publicacionId, text}){
 async function mostrarNotificaciones(JWT){
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", 'utf-8'));
     let listita = [];
-    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
-    notificaciones.forEach(element => {
-        if(element.id === payload.id){
-            listita.push(element);
+    try{
+        const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
+        notificaciones.forEach(element => {
+            if(element.id === payload.id){
+                listita.push(element);
+            }
+        });
+        return listita;
+    } catch(err){
+        if (err.code === 'ERR_JWT_EXPIRED') {
+            return "expirado"
+        } else{
+            console.log(err)
+            return false;
         }
-    });
-    return listita;
+    }
 }
 
 async function notificacionesLeidas(JWT){
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", 'utf-8'));
-    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
-    for(let i = 0; i<notificaciones.length; i++){
-        if(payload.id === notificaciones[i].id){
-            notificaciones[i].leido = true;
+    try{
+        const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
+        for(let i = 0; i<notificaciones.length; i++){
+            if(payload.id === notificaciones[i].id){
+                notificaciones[i].leido = true;
+            }
+        }
+        fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
+        return true;
+    } catch(err){
+        if (err.code === 'ERR_JWT_EXPIRED') {
+            return "expirado"
+        } else{
+            console.log(err)
+            return false;
         }
     }
-    fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones))
 }
 
 

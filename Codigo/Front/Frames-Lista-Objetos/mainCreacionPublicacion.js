@@ -62,13 +62,39 @@ form.addEventListener(`submit`, (e) => {
             publicacion.imagen = false;
             publicacion.tipoImg = false;
         }
-        postData("editarPublicacion", {publicacion: publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))});
+        postData("editarPublicacion", {publicacion: publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))},(retorno)=>{
+            if (retorno === false) {
+                alert("No eres el dueño de esta publicación")
+            } else if(retorno === "expirado"){
+                alert("Has tardado mucho tiempo, debes volver a logearte")
+                localStorage.removeItem("admin")
+                localStorage.removeItem("userId");
+                localStorage.removeItem("userName");
+                localStorage.removeItem("JWT");
+                window.location.href = "../Frames-Inicio/indexHome.html";
+            } else if(retorno === true){
+                window.location.href = "indexObjsList.html";
+            } else{
+                console.log(retorno);
+            }
+        });
     } else {
         postData("crearPublicacion", {publicacion:publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))}, (retorno) => {
             if (retorno === false) {
                 alert("Debes estar logeado para poder crear una publicación")
+            } else if(retorno === "expirado"){
+                alert("Has tardado mucho tiempo, debes volver a logearte")
+                localStorage.removeItem("admin")
+                localStorage.removeItem("userId");
+                localStorage.removeItem("userName");
+                localStorage.removeItem("JWT");
+                window.location.href = "../Frames-Inicio/indexHome.html";
+            } else if(retorno === true){
+                window.location.href = "indexObjsList.html";
+            } else{
+                console.log(retorno);
             }
         });
     }
-    window.location.href = "indexObjsList.html";
+    
 })

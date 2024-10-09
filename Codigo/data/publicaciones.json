@@ -144,5 +144,19 @@
     "id": 5,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "F12312321312",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "creador": 48,
+    "id": 6,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

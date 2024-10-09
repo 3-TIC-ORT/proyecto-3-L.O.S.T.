@@ -52,9 +52,22 @@ function Comentar(){
         comentario.id = Number(new URLSearchParams(document.location.search).get("pId"));
         comentario.JWT = JSON.parse(localStorage.getItem("JWT"));
         console.log(`1` , comentario)
-        postData("comentar", comentario);
-        document.getElementById("InputComentario").value = "";
-        console.log(`2` , comentario)
+        postData("comentar", comentario, (retorno)=>{
+            if(retorno === true){
+                document.getElementById("InputComentario").value = "";
+                console.log(`2` , comentario)
+            } else if(retorno === "expirado"){
+                alert("Has tardado mucho tiempo, debes volver a logearte")
+                localStorage.removeItem("admin")
+                localStorage.removeItem("userId");
+                localStorage.removeItem("userName");
+                localStorage.removeItem("JWT");
+                window.location.href = "../Frames-Inicio/indexHome.html";
+            } else{
+                console.log(retorno);
+            }
+        });
+        
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);
 

@@ -21,7 +21,16 @@ function iSettings() {
         CS.style.display = "flex"
         bell.style.display = "flex"
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
-            if(lista.length === 0) {
+            if(lista === "expirado"){
+                alert("Has tardado mucho tiempo, debes volver a logearte")
+                localStorage.removeItem("admin")
+                localStorage.removeItem("userId");
+                localStorage.removeItem("userName");
+                localStorage.removeItem("JWT");
+                window.location.href = "../Frames-Inicio/indexHome.html";
+            } else if(lista === false){
+                alert("Hubo un error")
+            } else if(lista.length === 0) {
                 //El problema es que cuando volves a la página, los comentarios que ya viste te aparecen como nuevos. Mi idea es con una lista que guarde las notificaciones leídas, quizás se pueda hacer.
                 bell.src = `../Imgs/bell-false.png`
                 const h1 = `<h1>Sin notificaciones</h1>`;

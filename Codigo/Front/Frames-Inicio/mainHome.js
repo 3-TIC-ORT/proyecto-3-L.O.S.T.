@@ -8,7 +8,6 @@ let CS = document.getElementById("CS");
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
 function iSettings() {
-    console.log("pepe")
     localStorage.removeItem("publicaciones");
     //para hacer notificaciones le mando a santi que quiero todas las publicacioness
     postData("cargarPublicaciones", "all", (data) => {

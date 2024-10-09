@@ -30,28 +30,34 @@ function iSettings() {
                 document.querySelector("dialog").innerHTML += h1;
             } else {
                 let bellringing = false
+                let i = 0;
                 lista.forEach(noti => {
                     const markup =     
-                    ` <div id="pub-${noti.publicacion}"> 
+                    ` <div id="pub${i}-${noti.publicacion}"> 
                           <h5>${noti.commenter}:</h5>
                           <small>Ha comentado "${noti.text}"</small>
                       </div>`;
                 document.querySelector("dialog").innerHTML += markup;
                 if (noti.leido === false) {
+                    //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
+                    document.getElementById(`pub${i}-${noti.publicacion}`).style.backgroundColor = "yellow"
                     bellringing = true
                 }
+                i++;
                 });
                 if (bellringing === true){
                     bell.src = `../Imgs/bell-true.png`
                 } else{
                     bell.src = `../Imgs/bell-false.png`
                 }
+                i = 0;
                 lista.forEach(noti => {
                     //Por como funciona querySelector le tuve que agregar un cacho de string extra, ya que querySelector no puede agarrar números sueltos.
-                    document.querySelectorAll(`#pub-${noti.publicacion}`).forEach(div => {
+                    document.querySelectorAll(`#pub${i}-${noti.publicacion}`).forEach(div => {
                         //Hay que revisar esto
                        div.addEventListener("click", reDirect);
                 })
+                i++
               })
             }
         })
@@ -207,6 +213,7 @@ const overlay= document.querySelector("[data-overlay]")
         ) {
             modal.close()
             bell.src = `../Imgs/bell-false.png`
+            iSettings()
         }
     }) 
 

@@ -3,9 +3,8 @@ let publicacion = {}
 //publicacion guarda todos los inputs que pone el creador.
 // publicacion.creador tiene que ser el usuario q lo creó.
 
-//La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back.
-
-//Falta función de relleno de datos de la publicación que queres editar.
+//La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back
+//Falta poner límite de size en imagen y hacer de que si no mandas imagen, que te deje enviar igual.
  
 function getData () {
     let params = new URLSearchParams(document.location.search);
@@ -20,8 +19,6 @@ function getData () {
                 form.description.value = p.descripcion;
                 form.placeLeft.value = p.dejado;
                 form.time.value = p.hora;
-                // Me parece que para hacer lo de la imagen hay que modificar el back o como se guardan las publicaciones, porque no tengo acceso a la información de la imagen...
-                //no anda
                 const foto = document.createElement("img");
                 foto.src = `../../data/imgs/${p.id}.${p.tipoImg}`
                 document.querySelector("body").appendChild(foto);
@@ -42,7 +39,7 @@ form.addEventListener(`submit`, (e) => {
     //Que haya imagen predeterminada
     //Hacer de que haya también la opción de no mandar imagen y que no se crashee
     if (formulario.img.files[0] === undefined && !params.get("editado")) {
-        publicacion.imagen = "../../data/imgs/Default.png";
+        publicacion.imagen = false;
         publicacion.tipoImg = "image/png"
     } else {
         publicacion.imagen = formulario.img.files[0];

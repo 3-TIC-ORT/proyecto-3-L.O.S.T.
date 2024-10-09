@@ -211,7 +211,20 @@ const overlay= document.querySelector("[data-overlay]")
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
         bell.src = `../Imgs/bell-false.png`
-        postData("notificacionesLeidas", JSON.parse(localStorage.getItem("JWT")));
+        postData("notificacionesLeidas", JSON.parse(localStorage.getItem("JWT")), (retorno)=>{
+            if(retorno === true){
+            } else if (retorno === "expirado"){
+                alert("Has tardado mucho tiempo, debes volver a logearte")
+                localStorage.removeItem("admin")
+                localStorage.removeItem("userId");
+                localStorage.removeItem("userName");
+                localStorage.removeItem("JWT");
+                window.location.href = "../Frames-Inicio/indexHome.html";
+            } else{
+                alert("Hubo un error");
+                console.log(retorno);
+            }
+        });
 })
 
     modal.addEventListener ("click", e => {

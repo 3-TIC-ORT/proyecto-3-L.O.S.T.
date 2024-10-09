@@ -26,7 +26,7 @@ async function register(user){
     user.admin = false;
     lista.push({...user});
     fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-    const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2s").sign(claveSecreta);
+    const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2d").sign(claveSecreta);
     return {JWT:mensaje, id:user.id, admin:user.admin};
     }
 }
@@ -45,7 +45,7 @@ async function login(user){
         return {id:null, inf:"Invalid"};
     } else {
         if(user.password === usuarios[user.id].password){
-            const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2s").sign(claveSecreta);
+            const mensaje = await new jose.SignJWT({id:user.id, admin:usuarios[user.id].admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2d").sign(claveSecreta);
             return {JWT:mensaje, id:user.id, admin:usuarios[user.id].admin};
             
         } else{
@@ -220,7 +220,7 @@ async function notificacionesLeidas(JWT){
             return "expirado"
         } else{
             console.log(err)
-            return false;
+            return err;
         }
     }
 }

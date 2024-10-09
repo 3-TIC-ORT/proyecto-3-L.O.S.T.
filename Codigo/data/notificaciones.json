@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "Chavales",
+    "publicacion": 4,
+    "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "Pene",
+    "publicacion": 4,
+    "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "Sdads",
+    "publicacion": 4,
+    "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "dssd",
+    "publicacion": 4,
+    "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "Xd",
+    "publicacion": 4,
+    "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 39,
+    "commenter": "Felipeyh",
+    "text": "Épica almohada",
+    "publicacion": 6,
+    "leido": true
+  }
+]

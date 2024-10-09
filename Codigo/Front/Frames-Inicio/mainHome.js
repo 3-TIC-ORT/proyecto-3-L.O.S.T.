@@ -22,6 +22,7 @@ function iSettings() {
         CS.style.display = "flex"
         bell.style.display = "flex"
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
+            document.querySelector("dialog").innerHTML = ``;
             if(lista.length === 0) {
                 //El problema es que cuando volves a la página, los comentarios que ya viste te aparecen como nuevos. Mi idea es con una lista que guarde las notificaciones leídas, quizás se pueda hacer.
                 bell.src = `../Imgs/bell-false.png`
@@ -205,7 +206,6 @@ const overlay= document.querySelector("[data-overlay]")
             e.clientY > dialogDimensions.bottom 
         ) {
             modal.close()
-            document.querySelector("dialog").innerHTML = ``;
             bell.src = `../Imgs/bell-false.png`
         }
     }) 

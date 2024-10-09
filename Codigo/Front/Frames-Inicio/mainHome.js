@@ -22,12 +22,12 @@ function iSettings() {
         CS.style.display = "flex"
         bell.style.display = "flex"
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
-            document.querySelector("dialog").innerHTML = ``;
+            document.getElementById("notification-box").innerHTML = ``;
             if(lista.length === 0) {
                 //El problema es que cuando volves a la página, los comentarios que ya viste te aparecen como nuevos. Mi idea es con una lista que guarde las notificaciones leídas, quizás se pueda hacer.
                 bell.src = `../Imgs/bell-false.png`
                 const h1 = `<h1>Sin notificaciones</h1>`;
-                document.querySelector("dialog").innerHTML += h1;
+                document.getElementById("notification-box").innerHTML += h1;
             } else {
                 let bellringing = false
                 let i = 0;
@@ -37,11 +37,11 @@ function iSettings() {
                           <h5>${noti.commenter}:</h5>
                           <small>Ha comentado "${noti.text}"</small>
                       </div>`;
-                document.querySelector("dialog").innerHTML += markup;
-                document.getElementById(`pub${i}-${noti.publicacion}`).style.classList = ""
+                document.getElementById("notification-box").innerHTML += markup;
+                document.getElementById(`pub${i}-${noti.publicacion}`).classList.remove("newNotification")
                 if (noti.leido === false) {
                     //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
-                    document.getElementById(`pub${i}-${noti.publicacion}`).style.classList = "newNotification"
+                    document.getElementById(`pub${i}-${noti.publicacion}`).classList.add("newNotification")
                     bellringing = true
                 }
                 i++;
@@ -190,7 +190,7 @@ function LogOut() {
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
     UserShown.textContent = "Anónimo"
-    document.querySelector("dialog").innerHTML = "";
+    document.getElementById("notification-box").innerHTML = "";
 } document.getElementById("CS").addEventListener("click", LogOut);
 
 //La función de notificaciones debería hacer que cuando apretas la campanita se te abra una caja con las notificaciones.
@@ -201,6 +201,7 @@ const overlay= document.querySelector("[data-overlay]")
 
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
+        bell.src = `../Imgs/bell-false.png`
         postData("notificacionesLeidas", JSON.parse(localStorage.getItem("JWT")));
 })
 
@@ -213,14 +214,13 @@ const overlay= document.querySelector("[data-overlay]")
             e.clientY > dialogDimensions.bottom 
         ) {
             modal.close()
-            bell.src = `../Imgs/bell-false.png`
             iSettings()
         }
     }) 
 
 function reDirect(event) {
     let clickedDiv = event.target.parentNode;
-    if (clickedDiv.id === "") {
+    if (clickedDiv.id === "notification-box") {
         clickedDiv = event.target
     }
     console.log(clickedDiv);

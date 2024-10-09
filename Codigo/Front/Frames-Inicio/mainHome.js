@@ -38,9 +38,10 @@ function iSettings() {
                           <small>Ha comentado "${noti.text}"</small>
                       </div>`;
                 document.querySelector("dialog").innerHTML += markup;
+                document.getElementById(`pub${i}-${noti.publicacion}`).style.classList = ""
                 if (noti.leido === false) {
                     //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
-                    document.getElementById(`pub${i}-${noti.publicacion}`).style.backgroundColor = "yellow"
+                    document.getElementById(`pub${i}-${noti.publicacion}`).style.classList = "newNotification"
                     bellringing = true
                 }
                 i++;

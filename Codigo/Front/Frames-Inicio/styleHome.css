@@ -354,3 +354,6 @@ dialog > div > small {
     word-wrap: break-word;
 }
 
+.newNotification {
+    background-color: yellow;
+}

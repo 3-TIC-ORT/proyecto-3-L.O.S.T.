@@ -126,5 +126,29 @@
     "text": "Nuevooo",
     "publicacion": 4,
     "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "pene",
+    "publicacion": 4,
+    "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "ËPico",
+    "publicacion": 4,
+    "leido": true
+  },
+  {
+    "type": "comentario",
+    "id": 24,
+    "commenter": "sergio",
+    "text": "sds",
+    "publicacion": 4,
+    "leido": true
   }
 ]

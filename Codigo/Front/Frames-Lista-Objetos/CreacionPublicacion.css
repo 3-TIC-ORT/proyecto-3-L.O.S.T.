@@ -1,5 +1,4 @@
 :root {
-    --nacho--: red;
     --gris--: grey;
     ---blanco--:white;
     --azul--:rgb(66, 167, 201);
@@ -85,12 +84,18 @@ header{
     justify-content: center;
 }
 
-.einput >input{
+.einput > input{
   width:8vw ;
   height: 6vh;
   background-color: var(--gris--);
   border-radius:2vh ;
-  border:none
+  cursor: pointer;
+  border:none;
+  transition: background-color 1s;
+}
+
+.einput > input:hover {
+    background-color: var(--azul--);
 }
 body{
     background: linear-gradient(to bottom, var(--azul--), var(---blanco--)); /* Degradado de arriba (azul) a abajo (blanco) */
@@ -132,7 +137,7 @@ header{
     width: 300px; 
     height: 100px; 
   
-    font-size: 20px; 
+    font-size: 30px; 
     cursor: pointer;
     color: var(---blanco--); 
 }
@@ -143,3 +148,4 @@ header{
     align-items: center;
     background-color: var(--gris--);
 }
+

@@ -1,12 +1,43 @@
 :root {
-    --gris--: grey;
-    ---blanco--:white;
-    --azul--:rgb(66, 167, 201);
+    --gris: grey;
+    --blanco:white;
+    --azul:rgb(66, 167, 201);
+    --azulOscuro: #134B70;
+    --slightlyWhite: #EEEEEE;
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+body{
+    background: linear-gradient(to bottom, var(--azulOscuro), var(--slightlyWhite)); /* Degradado de arriba (azul) a abajo (blanco) */
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    width: 43vw;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1{
+    display: inline-block;     
+    border-bottom: 2px solid var(--blanco); 
+    color: var(--blanco);
+}
+
+main{
+    display: flex;
+    height: 85vh;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
 }
 
 form {
@@ -33,7 +64,7 @@ select{
     flex-direction: column-reverse;
     font-size: 20px;
     border-radius: 2vh;
-    background-color: var(---blanco--);
+    background-color: var(--blanco);
     border: none;
 }
 
@@ -65,15 +96,9 @@ form > div > div{
     align-items: center;
     width: 35vw;
     height: 70vh;
-    background-color: var(--gris--);
+    border-radius: 1rem;
+    background-color: var(--gris);
     
-}
-main{
-    display: flex;
-    height: 85vh;
-    align-items: center;
-    justify-content: center;
-    width:100vw;
 }
 
 header{
@@ -87,7 +112,7 @@ header{
 .einput > input{
   width:8vw ;
   height: 6vh;
-  background-color: var(--gris--);
+  background-color: var(--gris);
   border-radius:2vh ;
   cursor: pointer;
   border:none;
@@ -95,57 +120,19 @@ header{
 }
 
 .einput > input:hover {
-    background-color: var(--azul--);
-}
-body{
-    background: linear-gradient(to bottom, var(--azul--), var(---blanco--)); /* Degradado de arriba (azul) a abajo (blanco) */
-    width: 100vw;
-    height: 100vh;
+    background-color: var(--azul);
 }
 
 input[name="description"] {
   padding: 4vh;
   text-align: start;
   width: 46vw;
- }
-
-h1{
-    display: inline-block;     
-    border-bottom: 2px solid var(---blanco--); 
-    color: var(---blanco--);
 }
-
-main{
-    display: flex;
-    height: 85vh;
-    align-items: center;
-    justify-content: center;
-    width:100vw;
-}
-
-header{
-    display: flex;
-    width: 43vw;
-    height: 8vh;
-    align-items: center;
-    justify-content: center;
-}
-
 
 .filecontainer input[type="file"] {
-    display: inline-block;
-    width: 300px; 
-    height: 100px; 
-  
-    font-size: 30px; 
-    cursor: pointer;
-    color: var(---blanco--); 
-}
-
-.filecontainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--gris--);
+    width: 100%; 
+    height: 100%; 
+    font-size: 0;
+    cursor: pointer;
 }
-

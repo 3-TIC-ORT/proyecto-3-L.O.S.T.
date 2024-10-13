@@ -450,5 +450,37 @@
       }
     ],
     "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "ubicacion": "Nacho",
+    "descripcion": "EXPULSADOOOOOOOO",
+    "dejado": "hoy",
+    "hora": "en la 11 14",
+    "tipo": "perdido",
+    "creador": 23,
+    "id": 7,
+    "comentarios": [
+      {
+        "user": 23,
+        "comm": "La pagina épica",
+        "userName": "Pepo"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "ubicacion": "Feli en su prime?",
+    "descripcion": "Creo que no estaba en su prime",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "creador": 23,
+    "id": 8,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

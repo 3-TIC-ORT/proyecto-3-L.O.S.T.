@@ -3,7 +3,6 @@ body{
     grid-template: 1fr / 40vw 60vw;
     width: 100%;
     height: auto;
-    background-color: rgb(95, 90, 87);  
 }
 
 * {
@@ -12,8 +11,9 @@ body{
 }
 
 .Mizq {
-    width: 40%;
-    height: 100%;
+    width: 80%;
+    height: 90vh;
+    
 }
 
 img{
@@ -26,19 +26,20 @@ img{
     font-size: 7vh;
 }
 
-.Mizq > div {
+.lugar, .fecha, .dejado {
     display: flex;
-    width: 40vw;
-    height: 10vh;
-    background-color: rgb(116, 115, 114);
+    width: 55vw;
+    height: 4vh;
+    background-color: #C5C9ED;
     margin-top: 2.5vh;
     padding-top: 2.5vh;
     align-items: center;
     font-size: 3vh;
+    border-radius: 1vh;
 }
 
 .Mder {
-    width: 60%;
+    width: 90%;
     height: auto;
     display: flex;
     justify-self: center;
@@ -46,6 +47,7 @@ img{
     align-items: center;
     box-sizing: border-box;
     padding-bottom: 0vh;
+    gap: 3vh;
 }
 
 .titulo{
@@ -55,21 +57,21 @@ img{
     text-align: center;
     width: 55vw;
     height: 13vh;
-    background-color: rgb(116, 115, 114);
+    background-color: #54555F;
     font-size: 6vh;
     
     
 }
 
 .descr{
-    width: 27vw;
-    height: 43vh;
-    background-color: rgb(161, 168, 153);
+    width: 55vw;
+    height: 11vh;
+    background-color: #C5C9ED;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: flex-start¿;
     font-size: 4vh;
-    
+    border-radius: 1vh;
 }
 
 .coment{
@@ -111,6 +113,7 @@ body > .Mder > .coment > section {
     height: 80%;
     box-sizing: border-box;
     padding: 5vh 5vw;
+    justify-content: end;
 }
 
 body > .Mder > .coment > section > article {
@@ -125,4 +128,20 @@ body > .Mder > .coment > section > article > p {
     word-wrap: break-word;
     width: 100%;
     height: auto;
+}
+
+body{
+    background: linear-gradient(to bottom, blue, white);
+    height:100vh;
+}
+.identificacionencontrado{
+    display: flex;
+    background-color: #526E82;
+    width: 40vw;
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vh;
+    font-size: 4vh;
+    
 }

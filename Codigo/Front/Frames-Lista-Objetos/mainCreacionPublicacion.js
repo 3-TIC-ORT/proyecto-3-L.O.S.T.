@@ -91,7 +91,7 @@ form.addEventListener(`submit`, (e) => {
                 localStorage.removeItem("JWT");
                 window.location.href = "../Frames-Inicio/indexHome.html";
             } else if(retorno === true){
-                //window.location.href = "indexObjsList.html";
+                window.location.href = "indexObjsList.html";
             } else{
                 console.log(retorno);
             }

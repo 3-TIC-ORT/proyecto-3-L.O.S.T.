@@ -115,16 +115,28 @@ async function editarPublicacion({publicacion, JWT}){
     }
 }
 
-function terminarPublicacion(propuesta){
+async function terminarPublicacion({id, JWT}){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json"));
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
-    if(lista[propuesta.id].creador === propuesta.user || usuarios[propuesta.user].admin === true){
-        lista[propuesta.id].cumplio = true;
-        fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2))
-        return true;
-    } else{
-        return false;
-    }
+    try{
+        const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta)
+        if(lista[id].creador === payload.id || payload.admin === true){
+            lista[id].cumplio = true;
+            fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2))
+            return true;
+        } else{
+            return false;
+        }
+    } catch(err){
+        if (err.code === 'ERR_JWT_EXPIRED') {
+            return "expirado"
+        } else{
+            console.log(err)
+            return err;
+        }
+    } 
+    
+    
 }
 
 function cargarPublicaciones(data){
@@ -176,11 +188,21 @@ async function botonEncontre({JWT, publicacionId, text}){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", "utf-8"));
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
-    const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
-    let notificacion = {type: lista[publicacionId].tipo, id:lista[publicacionId].creador, commenter:usuarios[payload.id].name, text:text, publicacion:publicacionId};
-    notificaciones.push({...notificacion});
-    fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
-    return true;
+    try{
+        const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
+        let notificacion = {type: lista[publicacionId].tipo, id:lista[publicacionId].creador, commenter:usuarios[payload.id].name, text:text, publicacion:publicacionId};
+        notificaciones.push({...notificacion});
+        fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
+        return true;
+    } catch(err){
+        if (err.code === 'ERR_JWT_EXPIRED') {
+            return "expirado"
+        } else{
+            console.log(err)
+            return err;
+        }
+    }
+    
 }
 
 async function mostrarNotificaciones(JWT){

@@ -46,10 +46,6 @@ form {
     gap: 2vw;
 }
 
-input[name="img"] {
-   display: flex;
-}
-
 .campos{
     display: flex;
     flex-direction: column;
@@ -117,6 +113,7 @@ header{
   cursor: pointer;
   border:none;
   transition: background-color 1s;
+  color: var(--blanco);
 }
 
 .einput > input:hover {
@@ -130,9 +127,16 @@ input[name="description"] {
 }
 
 .filecontainer input[type="file"] {
-    display: flex;
     width: 100%; 
     height: 100%; 
     font-size: 0;
     cursor: pointer;
+}
+
+.filecontainer input[type="file"]:focus {
+    color: var(--gris);
+}
+
+.filecontainer input[type="file"] {
+    color: var(--gris);
 }

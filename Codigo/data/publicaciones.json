@@ -482,5 +482,19 @@
     "id": 8,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "productos-electronicos",
+    "titulo": "Hola test",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "creador": 24,
+    "id": 9,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

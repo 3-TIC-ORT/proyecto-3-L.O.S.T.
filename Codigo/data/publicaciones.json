@@ -10,7 +10,8 @@
     "tipo": "perdido",
     "creador": 24,
     "id": 0,
-    "comentarios": [],
+    "comentarios": [
+    ],
     "cumplio": false
   }
 ]

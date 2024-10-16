@@ -6,15 +6,15 @@ function DataLoader () {
     let params = new URLSearchParams(document.location.search);
     let publicacionId = Number(params.get("pId"));
     let publicaciones = JSON.parse(localStorage.getItem("publicaciones"));
-    for (i = 0; i < publicaciones.length; i++) {
+    for (let i = 0; i < publicaciones.length; i++) {
         if(publicaciones[i].id === publicacionId) {
-            document.getElementById("titulo").textContent = publicaciones[i].titulo
-            document.getElementById("descripcion").textContent = publicaciones[i].descripcion
+            document.getElementById("titulo").textContent = publicaciones[i].titulo;
+            document.getElementById("descripcion").textContent = publicaciones[i].descripcion;
             document.getElementById("fecha").textContent = publicaciones[i].hora;
             document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
             document.getElementById("dejado").textContent = publicaciones[i].dejado;
             document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`
-            for (a = 0; a < publicaciones[i].comentarios.length; a++) {
+            for (let a = 0; a < publicaciones[i].comentarios.length; a++) {
                 const comentario = 
                 `<article>
                     <h4>${publicaciones[i].comentarios[a].userName}</h4>
@@ -22,7 +22,6 @@ function DataLoader () {
                 </article>`;
                 document.getElementById("coment-box").innerHTML += comentario;
             }
-            // Falta poner admin
             let propuesta = {
                 JWT: JSON.parse(localStorage.getItem("JWT")),
                 id: Number(params.get("pId"))
@@ -59,8 +58,8 @@ function DataLoader () {
                 encontre.id = "encontre";
                 encontre.textContent = "Fue encontrado"
                 encontre.addEventListener("click", (e => {
-                    postData("botonEncontrar", propuesta, (e => {
-                    }))
+                    let dialog = document.createElement("dialog");
+                    postData("botonEncontrar", propuesta)
                 }))
 
             }

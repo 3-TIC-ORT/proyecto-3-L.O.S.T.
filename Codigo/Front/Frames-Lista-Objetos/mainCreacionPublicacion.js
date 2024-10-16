@@ -5,6 +5,8 @@ let publicacion = {}
 function getData () {
     let params = new URLSearchParams(document.location.search);
     if (params.get("editado")){
+        let h1 = document.querySelector("h1");
+        h1.textContent = "Edición de Publicación"
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === Number(params.get("pId"))){
                 publicacion = p;
@@ -58,8 +60,7 @@ form.addEventListener(`submit`, (e) => {
     publicacion.dejado = formulario.placeLeft.value;
     publicacion.hora = formulario.time.value;
     publicacion.tipo = JSON.parse(localStorage.getItem("tipo"));
-    if (params.get("editado") ) {
-        publicacion.id = Number(params.get("pId"))
+    if (params.get("editado") ) { 
         console.log(publicacion)
         if (formulario.img.files[0] === undefined) {
             publicacion.imagen = false;

@@ -3,6 +3,7 @@
 function getData () {
     let params = new URLSearchParams(document.location.search);
     if (params.get("editado")){
+        let publicacion;
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === Number(params.get("pId"))){
                 publicacion = p;
@@ -65,6 +66,7 @@ form.addEventListener(`submit`, (e) => {
         }
 // (Hecho por Santi porque no me deja actualizar el código con JWT, y porque es un ansioso de mierda) La siguientes funciones es lo que comprueba con el back si es que el usuario precisa re-loggearse a su cuenta
         postData("editarPublicacion", {publicacion: publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))},(retorno)=>{
+            console.log(publicacion)
             if (retorno === false) {
                 alert("No eres el dueño de esta publicación")
             } else if(retorno === "expirado"){

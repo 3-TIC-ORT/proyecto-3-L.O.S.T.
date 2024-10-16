@@ -24,11 +24,46 @@ function DataLoader () {
                 document.getElementById("coment-box").innerHTML += comentario;
             }
             // Falta poner admin
+            let propuesta = {
+                JWT: JSON.parse(localStorage.getItem("JWT")),
+                id: Number(params.get("pId"))
+            }
             if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador || JSON.parse(localStorage.getItem("admin")) === true) {
                 let editar = document.createElement("button");
-                editar.id = "editar"
+                editar.id = "editar";
                 editar.textContent = "Editar";
                 document.getElementById("titulo").appendChild(editar);
+                let terminar = document.createElement("button")
+                terminar.id = "terminar";
+                terminar.textContent = `Terminar publicación`
+                terminar.addEventListener("click", (e => {
+                    postData("terminaPublicacion", propuesta, (e) => {
+                        if (e === false) {
+                            alert("No tienes permiso para realizar esta acciónn")
+                        } else if (e === "expirado") {
+                            alert("Has tardado mucho tiempo, debes volver a logearte")
+                                localStorage.removeItem("admin")
+                                localStorage.removeItem("userId");
+                                localStorage.removeItem("userName");
+                                localStorage.removeItem("JWT");
+                                window.location.href = "../Frames-Inicio/indexHome.html";
+                        } else if (e === true) {
+                            window.location.href = "../Frames-Inicio/indexObjsList.html";
+                        } else {
+                            alert("Hubo un error")
+                            console.log(e);
+                        }
+                    })
+                }))
+            } else {
+                let encontre = document.createElement("button");
+                encontre.id = "encontre";
+                encontre.textContent = "Fue encontrado"
+                encontre.addEventListener("click", (e => {
+                    postData("botonEncontrar", propuesta, (e => {
+                    }))
+                }))
+
             }
         }
     }

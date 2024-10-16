@@ -485,12 +485,19 @@
   },
   {
     "tipoImg": "png",
+<<<<<<< HEAD
     "categoria": "utiles-escolares",
     "ubicacion": "Nacho",
+=======
+    "categoria": "productos-electronicos",
+    "titulo": "Hola test",
+    "ubicacion": "",
+>>>>>>> 41229f23e6d06f31b2d5914069ff6c3f33927d84
     "descripcion": "",
     "dejado": "",
     "hora": "",
     "tipo": "perdido",
+<<<<<<< HEAD
     "creador": 42,
     "id": 9,
     "comentarios": [],
@@ -539,5 +546,11 @@
       }
     ],
     "cumplio": false
+=======
+    "creador": 24,
+    "id": 9,
+    "comentarios": [],
+    "cumplio": false
+>>>>>>> 41229f23e6d06f31b2d5914069ff6c3f33927d84
   }
 ]

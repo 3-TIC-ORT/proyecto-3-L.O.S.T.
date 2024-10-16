@@ -32,6 +32,7 @@ let publicacion = {}
 //Falta poner límite de size en imagen y hacer de que si no mandas imagen, que te deje enviar igual.
 
 const form = document.querySelector(`form`)
+console.log("hola")
 form.addEventListener(`submit`, (e) => {
     let params = new URLSearchParams(document.location.search);
     e.preventDefault();

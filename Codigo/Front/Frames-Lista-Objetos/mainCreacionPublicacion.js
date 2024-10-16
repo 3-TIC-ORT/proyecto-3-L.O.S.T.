@@ -1,9 +1,12 @@
 //La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back
 
+let publicacion = {}
+
 function getData () {
     let params = new URLSearchParams(document.location.search);
     if (params.get("editado")){
-        let publicacion;
+        let h1 = document.querySelector("h1");
+        h1.textContent = "Edición de Publicación"
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === Number(params.get("pId"))){
                 publicacion = p;
@@ -25,8 +28,6 @@ function getData () {
 }
 
 getData();
-
-let publicacion = {}
 
 //publicacion guarda todos los inputs que pone el creador.
 // publicacion.creador tiene que ser el usuario q lo creó.
@@ -57,8 +58,7 @@ form.addEventListener(`submit`, (e) => {
     publicacion.dejado = formulario.placeLeft.value;
     publicacion.hora = formulario.time.value;
     publicacion.tipo = JSON.parse(localStorage.getItem("tipo"));
-    if (params.get("editado") ) {
-        publicacion.id = Number.params.get("pId")
+    if (params.get("editado") ) { 
         console.log(publicacion)
         if (publicacion.imagen === undefined) {
             publicacion.imagen = false;

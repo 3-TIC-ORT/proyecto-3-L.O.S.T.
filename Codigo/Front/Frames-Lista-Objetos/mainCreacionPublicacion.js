@@ -57,9 +57,9 @@ form.addEventListener(`submit`, (e) => {
     publicacion.dejado = formulario.placeLeft.value;
     publicacion.hora = formulario.time.value;
     publicacion.tipo = JSON.parse(localStorage.getItem("tipo"));
-    let usuario = JSON.parse(localStorage.getItem("userId"));
-    publicacion.creador = usuario;
     if (params.get("editado") ) {
+        publicacion.id = Number.params.get("pId")
+        console.log(publicacion)
         if (publicacion.imagen === undefined) {
             publicacion.imagen = false;
             publicacion.tipoImg = false;

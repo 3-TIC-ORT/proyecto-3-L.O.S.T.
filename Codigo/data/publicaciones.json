@@ -11,6 +11,11 @@
     "creador": 24,
     "id": 0,
     "comentarios": [
+      {
+        "user": 24,
+        "comm": "s",
+        "userName": "sergio"
+      }
     ],
     "cumplio": false
   }

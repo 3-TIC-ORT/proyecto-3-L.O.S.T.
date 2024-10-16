@@ -21,6 +21,7 @@ function iSettings() {
         CS.style.display = "flex"
         bell.style.display = "flex"
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
+            document.getElementById("notification-box").innerHTML = ``;
             if(lista === "expirado"){
                 alert("Has tardado mucho tiempo, debes volver a logearte")
                 localStorage.removeItem("admin")
@@ -31,29 +32,26 @@ function iSettings() {
             } else if(lista === false){
                 alert("Hubo un error")
             } else if(lista.length === 0) {
-                document.getElementById("notification-box").innerHTML = ``;
                 //El problema es que cuando volves a la página, los comentarios que ya viste te aparecen como nuevos. Mi idea es con una lista que guarde las notificaciones leídas, quizás se pueda hacer.
                 bell.src = `../Imgs/bell-false.png`
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.getElementById("notification-box").innerHTML += h1;
             } else {
                 let bellringing = false
-                let i = 0;
-                lista.forEach(noti => {
+                for (let i = 0; i < lista.length; i++) {
                     const markup =     
-                    ` <div id="pub${i}-${noti.publicacion}"> 
-                          <h5>${noti.commenter}:</h5>
-                          <small>Ha comentado "${noti.text}"</small>
+                    ` <div id="pub${i}-${lista[i].publicacion}"> 
+                          <h5>${lista[i].commenter}:</h5>
+                          <small>Ha comentado "${lista[i].text}"</small>
                       </div>`;
                 document.getElementById("notification-box").innerHTML += markup;
-                document.getElementById(`pub${i}-${noti.publicacion}`).classList.remove("newNotification")
-                if (noti.leido === false) {
+                document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification")
+                if (lista[i].leido === false) {
                     //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
-                    document.getElementById(`pub${i}-${noti.publicacion}`).classList.add("newNotification")
+                    document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.add("newNotification")
                     bellringing = true
                 }
-                i++;
-                });
+                }
                 if (bellringing === true){
                     bell.src = `../Imgs/bell-true.png`
                 } else{

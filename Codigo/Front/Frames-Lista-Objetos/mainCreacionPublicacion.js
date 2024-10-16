@@ -1,9 +1,10 @@
 //La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back
 
+let publicacion = {}
+
 function getData () {
     let params = new URLSearchParams(document.location.search);
     if (params.get("editado")){
-        let publicacion;
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === Number(params.get("pId"))){
                 publicacion = p;
@@ -26,7 +27,7 @@ function getData () {
 
 getData();
 
-let publicacion = {}
+
 
 //publicacion guarda todos los inputs que pone el creador.
 // publicacion.creador tiene que ser el usuario q lo creó.
@@ -46,7 +47,7 @@ form.addEventListener(`submit`, (e) => {
         publicacion.imagen = false;
         console.log(formulario.img.files[0])
         publicacion.tipoImg = "image/png"
-    } else {
+    } else if(!params.get("editado")) {
         publicacion.imagen = formulario.img.files[0];
         publicacion.tipoImg = formulario.img.files[0].type;
     }
@@ -58,11 +59,14 @@ form.addEventListener(`submit`, (e) => {
     publicacion.hora = formulario.time.value;
     publicacion.tipo = JSON.parse(localStorage.getItem("tipo"));
     if (params.get("editado") ) {
-        publicacion.id = Number.params.get("pId")
+        publicacion.id = Number(params.get("pId"))
         console.log(publicacion)
-        if (publicacion.imagen === undefined) {
+        if (formulario.img.files[0] === undefined) {
             publicacion.imagen = false;
             publicacion.tipoImg = false;
+        } else{
+            publicacion.imagen = formulario.img.files[0];
+            publicacion.tipoImg = formulario.img.files[0].type;
         }
 // (Hecho por Santi porque no me deja actualizar el código con JWT, y porque es un ansioso de mierda) La siguientes funciones es lo que comprueba con el back si es que el usuario precisa re-loggearse a su cuenta
         postData("editarPublicacion", {publicacion: publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))},(retorno)=>{

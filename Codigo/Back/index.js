@@ -55,7 +55,7 @@ async function login(user){
 }
 
 async function crearPublicacion({publicacion, JWT}){
-    if(publicacion.creador === null || JWT === undefined){
+    if(JWT === undefined){
         return false;
     }
     try {
@@ -94,7 +94,7 @@ async function crearPublicacion({publicacion, JWT}){
 }
 
 async function editarPublicacion({publicacion, JWT}){
-    console.log(publicacion.imagen != false)
+    console.log(publicacion.imagen)
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     try{
         const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);

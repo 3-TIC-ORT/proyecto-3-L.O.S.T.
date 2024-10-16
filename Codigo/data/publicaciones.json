@@ -1,22 +1,16 @@
 [
   {
-    "tipoImg": "png",
+    "tipoImg": "jpeg",
     "categoria": "cuaderno/carpeta",
-    "titulo": "Holacomoteva",
+    "titulo": "Hodawhudwad1234dawdwad",
     "ubicacion": "",
     "descripcion": "",
     "dejado": "",
     "hora": "",
-    "tipo": "perdido",
-    "creador": 24,
+    "tipo": "encontrado",
     "id": 0,
-    "comentarios": [
-      {
-        "user": 24,
-        "comm": "s",
-        "userName": "sergio"
-      }
-    ],
+    "creador": 24,
+    "comentarios": [],
     "cumplio": false
   }
 ]

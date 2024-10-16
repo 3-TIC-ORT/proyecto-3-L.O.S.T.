@@ -60,12 +60,22 @@ async function crearPublicacion({publicacion, JWT}){
     }
     try {
         const { payload, protectedHeader} = await jose.jwtVerify(JWT, claveSecreta);
-        let tipoImg = publicacion.tipoImg.split("/").pop();
+        
         let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
         publicacion.id = lista.length;
-        publicacion.tipoImg = tipoImg;
+        
         publicacion.creador = payload.id;
-        fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
+        if(publicacion.imagen === false){
+            fs.copyFileSync(`Codigo/data/imgs/Default.png`, `${publicacion.id}.png`)
+            publicacion.tipoImg = "png"
+
+        }else{
+            let tipoImg = publicacion.tipoImg.split("/").pop();
+            publicacion.tipoImg = tipoImg;
+            fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
+            
+        }
+        
         publicacion.comentarios = [];
         publicacion.cumplio = false;
         delete publicacion.imagen;

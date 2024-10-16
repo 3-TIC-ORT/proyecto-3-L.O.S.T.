@@ -1,8 +1,8 @@
 [
   {
     "tipoImg": "png",
-    "categoria": "mochilas",
-    "titulo": "Funciona chavales?",
+    "categoria": "cuaderno/carpeta",
+    "titulo": "Holacomoteva",
     "ubicacion": "",
     "descripcion": "",
     "dejado": "",
@@ -10,152 +10,7 @@
     "tipo": "perdido",
     "creador": 24,
     "id": 0,
-    "comentarios": [
-      {
-        "user": 24,
-        "comm": "dssd",
-        "userName": "sergio"
-      }
-    ],
-    "cumplio": false
-<<<<<<< HEAD
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "vestimenta",
-    "titulo": "PIJAMA EL REGRESO",
-    "ubicacion": "",
-    "descripcion": "",
-    "dejado": "",
-    "hora": "",
-    "tipo": "perdido",
-    "creador": 23,
-    "id": 5,
     "comentarios": [],
     "cumplio": false
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "vestimenta",
-    "titulo": "Almohada",
-    "ubicacion": "",
-    "descripcion": "",
-    "dejado": "",
-    "hora": "",
-    "tipo": "perdido",
-    "creador": 39,
-    "id": 6,
-    "comentarios": [
-      {
-        "user": 39,
-        "comm": "Épica almohada",
-        "userName": "Felipeyh"
-      }
-    ],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "png",
-    "categoria": "vestimenta",
-    "ubicacion": "Nacho",
-    "descripcion": "EXPULSADOOOOOOOO",
-    "dejado": "hoy",
-    "hora": "en la 11 14",
-    "tipo": "perdido",
-    "creador": 23,
-    "id": 7,
-    "comentarios": [
-      {
-        "user": 23,
-        "comm": "La pagina épica",
-        "userName": "Pepo"
-      }
-    ],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "png",
-    "categoria": "vestimenta",
-    "ubicacion": "Feli en su prime?",
-    "descripcion": "Creo que no estaba en su prime",
-    "dejado": "",
-    "hora": "",
-    "tipo": "encontrado",
-    "creador": 23,
-    "id": 8,
-    "comentarios": [],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "png",
-<<<<<<< HEAD
-    "categoria": "utiles-escolares",
-    "ubicacion": "Nacho",
-=======
-    "categoria": "productos-electronicos",
-    "titulo": "Hola test",
-    "ubicacion": "",
->>>>>>> 41229f23e6d06f31b2d5914069ff6c3f33927d84
-    "descripcion": "",
-    "dejado": "",
-    "hora": "",
-    "tipo": "perdido",
-<<<<<<< HEAD
-    "creador": 42,
-    "id": 9,
-    "comentarios": [],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "png",
-    "categoria": "utiles-escolares",
-    "ubicacion": "Nacho",
-    "descripcion": "",
-    "dejado": "",
-    "hora": "",
-    "tipo": "perdido",
-    "creador": 42,
-    "id": 10,
-    "comentarios": [
-      {
-        "user": 42,
-        "comm": "dssdds",
-        "userName": "Nachito"
-      },
-      {
-        "user": 42,
-        "comm": "dsdsds",
-        "userName": "Nachito"
-      },
-      {
-        "user": 42,
-        "comm": "dsds",
-        "userName": "Nachito"
-      },
-      {
-        "user": 42,
-        "comm": "",
-        "userName": "Nachito"
-      },
-      {
-        "user": 42,
-        "comm": "",
-        "userName": "Nachito"
-      },
-      {
-        "user": 42,
-        "comm": "",
-        "userName": "Nachito"
-      }
-    ],
-    "cumplio": false
-=======
-    "creador": 24,
-    "id": 9,
-    "comentarios": [],
-    "cumplio": false
->>>>>>> 41229f23e6d06f31b2d5914069ff6c3f33927d84
-=======
->>>>>>> 73448a6656ba1cecde9e9a32b4a186ea15e9e42c
   }
 ]

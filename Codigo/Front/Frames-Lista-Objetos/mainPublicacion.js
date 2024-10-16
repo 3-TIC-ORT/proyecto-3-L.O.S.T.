@@ -4,7 +4,6 @@
 
 function DataLoader () {
     let params = new URLSearchParams(document.location.search);
-    //no se por qué, pero el parseInt no va
     let publicacionId = Number(params.get("pId"));
     let publicaciones = JSON.parse(localStorage.getItem("publicaciones"));
     for (i = 0; i < publicaciones.length; i++) {
@@ -32,7 +31,7 @@ function DataLoader () {
                 let editar = document.createElement("button");
                 editar.id = "editar";
                 editar.textContent = "Editar";
-                document.getElementById("titulo").appendChild(editar);
+                document.querySelector("body").appendChild(editar);
                 let terminar = document.createElement("button")
                 terminar.id = "terminar";
                 terminar.textContent = `Terminar publicación`

@@ -7,6 +7,7 @@ function getData () {
     if (params.get("editado")){
         let h1 = document.querySelector("h1");
         h1.textContent = "Edición de Publicación"
+        
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === Number(params.get("pId"))){
                 publicacion = p;
@@ -17,13 +18,18 @@ function getData () {
                 form.description.value = p.descripcion;
                 form.placeLeft.value = p.dejado;
                 form.time.value = p.hora;
+                // Falta ver esto, si hacer un elemento img o meterlo como background img del filecontainer
                 const foto = document.createElement("img");
                 foto.src = `../../data/imgs/${p.id}.${p.tipoImg}`
-                document.querySelector("body").appendChild(foto);
-                localStorage.setItem("tipo", JSON.stringify(p.tipo));
-                localStorage.setItem("userId", JSON.stringify(p.creador));
+                foto.style.width = "100%"
+                foto.style.height = "100%"
+                document.getElementById("filecontainer").appendChild(foto);
             }
         })
+    } else {
+        // Falt hacer de que aparezca la imagen de subir archivo
+        let fileUploader = document.getElementById("fileUploader");
+        fileUploader.style.opacity = 0;
     }
 }
 
@@ -59,7 +65,6 @@ form.addEventListener(`submit`, (e) => {
     publicacion.descripcion = formulario.description.value;
     publicacion.dejado = formulario.placeLeft.value;
     publicacion.hora = formulario.time.value;
-    publicacion.tipo = JSON.parse(localStorage.getItem("tipo"));
     if (params.get("editado") ) { 
         console.log(publicacion)
         if (formulario.img.files[0] === undefined) {
@@ -88,6 +93,7 @@ form.addEventListener(`submit`, (e) => {
             }
         });
     } else {
+        publicacion.tipo = JSON.parse(localStorage.getItem("tipo"));
         postData("crearPublicacion", {publicacion:publicacion, JWT: JSON.parse(localStorage.getItem("JWT"))}, (retorno) => {
             if (retorno === false) {
                 alert("Debes estar logeado para poder crear una publicación")

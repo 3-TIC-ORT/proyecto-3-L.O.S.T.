@@ -30,7 +30,10 @@ function DataLoader () {
                 let editar = document.createElement("button");
                 editar.id = "editar";
                 editar.textContent = "Editar";
-                document.querySelector("body").appendChild(editar);
+                document.querySelector("header").appendChild(editar);
+                document.getElementById("quitPublicacion").addEventListener("click", () => {
+                    window.location.href = "indexObjsList.html"
+                })
                 let terminar = document.createElement("button")
                 terminar.id = "terminar";
                 terminar.textContent = `Terminar publicación`
@@ -59,6 +62,7 @@ function DataLoader () {
                 encontre.textContent = "Fue encontrado"
                 encontre.addEventListener("click", (e => {
                     let dialog = document.createElement("dialog");
+                    //falta dialog que te aparezca y te permita escribir las cosas que quieras decirle al creador
                     postData("botonEncontrar", propuesta)
                 }))
 

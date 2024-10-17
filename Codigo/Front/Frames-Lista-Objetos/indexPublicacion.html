@@ -6,44 +6,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creación publicación</title>
+    <title>Publicacion</title>
 </head>
 <body>
-  
-    <section class="Mizq">
-        <div class="EspacioMizq">
-            <h1 class="vizualicacion"> Visualización de publicacion</h1>
-            <img id="foto" src="" alt="">
-           <div class="identificacionencontrado">
-               <h1>Fue encontrado</h1>
-           </div>
-        </div>
-       
-    
-    </section>
-
-    <section class="Mder">
-            <div class="titulo" id="titulo"></div>
-            <div class="fecha" id="fecha"></div>
-            <div class="lugar" id="lugar"></div>
-            <div class="dejado" id="dejado"></div>
-            <div class="descr" id="descripcion"></div>
+    <main>
+        <section class="Mizq">
+                <h1 class="visualizacion"> Visualización de publicación</h1>
+                <img id="foto" src="" alt="">
+                <div class="identificacionEncontrado">
+                   <h1>Fue encontrado</h1>
+                </div>
            
-    </section>
-
-    <div id="comenta" class="coment">
-        <span style="color:rgb(0, 0, 0)">Comentarios</span>
+        
+        </section>
+        <section class="Mder">
+                <header>
+                    <img id="quitPublicacion" src="../Imgs/quit-publicacion.png" alt="Para atrás">
+                </header>
+                <div class="titulo" id="titulo"></div>
+                <div class="fecha" id="fecha"></div>
+                <div class="lugar" id="lugar"></div>
+                <div class="dejado" id="dejado"></div>
+                <div class="descr" id="descripcion"></div>
+               
+        </section>
+    </main>
+    <nav class="coments">
+        <span>Comentarios</span>
         <div class="input-but">
             <input id="InputComentario" class="InputComentario" type="text" placeholder="Escribe algo aquí" maxlength="300"/>
-            <button id="enviar" class="boti">Enviar</button>
+            <button id="enviar">Enviar</button>
         </div>
         <section id="coment-box">
-
         </section>
-    </div>
+    </nav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="../socket.js"></script>
     <script src="mainPublicacion.js"></script>
 </body>
-
 </html>

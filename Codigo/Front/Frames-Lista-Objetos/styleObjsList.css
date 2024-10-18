@@ -22,9 +22,17 @@ header {
 main{
     display: flex;
     justify-content: center;
-    align-items: flex-end; 
+    padding-top: 5vh;
     height: 90%;
     width: 100%;
+}
+
+ul{
+    height: 20vh;
+}
+
+li{
+    cursor: pointer;
 }
 
 .ObjectsList {

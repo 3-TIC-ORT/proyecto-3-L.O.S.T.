@@ -1,114 +1,11 @@
 [
   {
     "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "s",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "s",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "sds",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "dsd",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "dsds",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "Pene",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "hola",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "Xd",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "sergio",
-    "text": "Holas",
-    "publicacion": 0,
-    "leido": true
-  },
-  {
-    "type": "comentario",
     "id": 43,
-    "commenter": "Joaco",
-    "text": "Que simio wacho",
-    "publicacion": 1,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 43,
-    "commenter": "Joaco",
-    "text": "Pene",
-    "publicacion": 3,
-    "leido": true
-  },
-  {
-    "type": "comentario",
-    "id": 43,
-    "commenter": "Joaco",
-    "text": "Xd",
-    "publicacion": 3,
-    "leido": false
-  },
-  {
-    "type": "comentario",
-    "id": 24,
-    "commenter": "Joaco",
-    "text": "sddsdsasdsd",
+    "commenter": "Holas",
+    "text": "ADHIgwdyagdauguwd",
     "publicacion": 0,
-    "leido": false
+    "leido": true,
+    "eliminado": false
   }
 ]

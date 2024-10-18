@@ -9,116 +9,52 @@
     "hora": "",
     "tipo": "encontrado",
     "id": 0,
-    "creador": 24,
+    "creador": 43,
     "comentarios": [
       {
-        "user": 24,
-        "comm": "s",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "sds",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "dsd",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "dsds",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "Pene",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "hola",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "Xd",
-        "userName": "sergio"
-      },
-      {
-        "user": 24,
-        "comm": "Holas",
-        "userName": "sergio"
-      },
-      {
         "user": 43,
-        "comm": "sddsdsasdsd",
-        "userName": "Joaco"
+        "comm": "ADHIgwdyagdauguwd",
+        "userName": "Holas"
       }
     ],
     "cumplio": false
   },
   {
-    "tipoImg": "png",
-    "categoria": "paraguas",
-    "titulo": "El Facha",
-    "ubicacion": "En el culo del Benji",
-    "descripcion": "Simio caucasico que debora porongas",
-    "dejado": "En preceptoria",
-    "hora": "7:17 pm",
+    "tipoImg": "jpeg",
+    "categoria": "accesorios",
+    "titulo": "f1",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
     "tipo": "perdido",
     "id": 1,
     "creador": 43,
     "comentarios": [
       {
         "user": 43,
-        "comm": "Que simio wacho",
-        "userName": "Joaco"
+        "comm": "Holadawdawwdadwa",
+        "userName": "Holas"
       }
     ],
-    "cumplio": true
+    "cumplio": false
   },
   {
-    "tipoImg": "png",
-    "categoria": "paraguas",
-    "titulo": "El Facha_L",
-    "ubicacion": "En el culo del Benji",
-    "descripcion": "Simio caucasico que debora porongas",
-    "dejado": "En preceptoria",
-    "hora": "7:17 pm",
-    "tipo": "encontrado",
-    "id": 2,
-    "creador": 43,
-    "comentarios": [],
-    "cumplio": true
-  },
-  {
-    "tipoImg": "png",
-    "categoria": "otros",
-    "titulo": "Fede",
-    "ubicacion": "Lo encontré en el aula 205",
-    "descripcion": "El mas tiquero",
-    "dejado": "En la biblioteca",
-    "hora": "10:10am",
+    "tipoImg": "jpeg",
+    "categoria": "útiles escolares",
+    "titulo": "dawdwadaw",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
     "tipo": "perdido",
-    "id": 3,
+    "id": 2,
     "creador": 43,
     "comentarios": [
       {
         "user": 43,
-        "comm": "Pene",
-        "userName": "Joaco"
-      },
-      {
-        "user": 43,
-        "comm": "Xd",
-        "userName": "Joaco"
+        "comm": "dhawuihduawi",
+        "userName": "Holas"
       }
     ],
     "cumplio": false

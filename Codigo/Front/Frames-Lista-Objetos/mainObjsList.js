@@ -4,13 +4,13 @@ let filtro = {
     paraguas: true,
     accesorios: true,
     mochilas: true,
-    cuaderno_carpeta: true,
-    utiles_escolares: true,
-    productos_electronicos: true,
+    "cuaderno/carpeta": true,
+    "útiles escolares": true,
+    "productos electrónicos": true,
     otros: true
 }
 function LoadPosts(listaCompleta) {
-    // document.getElementById("ObjectsList").innerHTML = "";
+    document.getElementById("ObjectsList").innerHTML = "";
     let addNav = document.createElement("nav");
     addNav.classList.add("create");
     addNav.id = "create";
@@ -79,3 +79,15 @@ function Enter(publicacion) {
         window.location.href = `indexPublicacion.html?pId=${publicacion.target.parentNode.id}`;
     }
 } 
+
+function Filtrar(event){
+    filtro[event.target.textContent.toLowerCase()] = !filtro[event.target.textContent.toLowerCase()]
+    if(event.target.style.opacity == 0.5){
+        event.target.style.opacity = 1
+    } else{
+        event.target.style.opacity = 0.5
+    }
+    
+    
+    fetchData("cargarPublicaciones", LoadPosts);
+} document.getElementById("filtros").addEventListener("click", Filtrar)

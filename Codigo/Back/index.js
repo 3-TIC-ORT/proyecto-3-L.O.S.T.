@@ -127,12 +127,18 @@ async function editarPublicacion({publicacion, JWT}){
 
 async function terminarPublicacion({id, JWT}){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json"));
-    let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json"));
+    let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", "utf-8"));
     try{
         const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta)
         if(lista[id].creador === payload.id || payload.admin === true){
             lista[id].cumplio = true;
             fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2))
+            for(let i = 0; i < notificaciones.length; i++){
+                if(notificaciones[i].publicacion === id){
+                    notificaciones[i].eliminado = true;
+                }
+            }
+            fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
             return true;
         } else{
             return false;
@@ -169,7 +175,7 @@ async function comentar(data){
         let comentario = {user:payload.id, comm:data.comm, userName:usuarios[payload.id].name};
         lista[data.id].comentarios.push({...comentario});
         fs.writeFileSync("Codigo/data/publicaciones.json", JSON.stringify(lista, null, 2));
-        let notificacion = {type: "comentario", id:lista[data.id].creador, commenter:usuarios[payload.id].name, text:comentario.comm, publicacion:data.id, leido: false};
+        let notificacion = {type: "comentario", id:lista[data.id].creador, commenter:usuarios[payload.id].name, text:comentario.comm, publicacion:data.id, leido: false, eliminado:false};
         notificaciones.push({...notificacion});
         fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
         return true;
@@ -210,7 +216,7 @@ async function mostrarNotificaciones(JWT){
     try{
         const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
         notificaciones.forEach(element => {
-            if(element.id === payload.id){
+            if(element.id === payload.id && element.eliminado === false){
                 listita.push(element);
             }
         });

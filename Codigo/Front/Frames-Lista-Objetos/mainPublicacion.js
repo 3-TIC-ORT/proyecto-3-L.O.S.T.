@@ -81,31 +81,36 @@ function Comentar(){
     if(JSON.parse(localStorage.getItem("userId")) === null) {
         alert("Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente")
     } else {
-        const container =
-            `<article>
-                <h4>${JSON.parse(localStorage.getItem("userName"))}</h4>
-                <p>${document.getElementById("InputComentario").value}</p>
-            </article>`;
-        document.getElementById("coment-box").innerHTML += container;
-        comentario.comm = document.getElementById("InputComentario").value;
-        comentario.id = Number(new URLSearchParams(document.location.search).get("pId"));
-        comentario.JWT = JSON.parse(localStorage.getItem("JWT"));
-        console.log(`1` , comentario)
-        postData("comentar", comentario, (retorno)=>{
-            if(retorno === true){
-                document.getElementById("InputComentario").value = "";
-                console.log(`2` , comentario)
-            } else if(retorno === "expirado"){
-                alert("Has tardado mucho tiempo, debes volver a logearte")
-                localStorage.removeItem("admin")
-                localStorage.removeItem("userId");
-                localStorage.removeItem("userName");
-                localStorage.removeItem("JWT");
-                window.location.href = "../Frames-Inicio/indexHome.html";
-            } else{
-                console.log(retorno);
-            }
-        });
+        if(document.getElementById("InputComentario").value === ""){
+            alert("No puedes enviar un comentario vacío")
+        } else{
+            const container =
+                `<article>
+                    <h4>${JSON.parse(localStorage.getItem("userName"))}</h4>
+                    <p>${document.getElementById("InputComentario").value}</p>
+                </article>`;
+            document.getElementById("coment-box").innerHTML += container;
+            comentario.comm = document.getElementById("InputComentario").value;
+            comentario.id = Number(new URLSearchParams(document.location.search).get("pId"));
+            comentario.JWT = JSON.parse(localStorage.getItem("JWT"));
+            console.log(`1` , comentario)
+            postData("comentar", comentario, (retorno)=>{
+                if(retorno === true){
+                    document.getElementById("InputComentario").value = "";
+                    console.log(`2` , comentario)
+                } else if(retorno === "expirado"){
+                    alert("Has tardado mucho tiempo, debes volver a logearte")
+                    localStorage.removeItem("admin")
+                    localStorage.removeItem("userId");
+                    localStorage.removeItem("userName");
+                    localStorage.removeItem("JWT");
+                    window.location.href = "../Frames-Inicio/indexHome.html";
+                } else{
+                    console.log(retorno);
+                }
+            });
+        }
+        
         
     }
 } document.getElementById("enviar").addEventListener("click", Comentar);

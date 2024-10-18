@@ -31,9 +31,9 @@ function DataLoader () {
                 editar.id = "editar";
                 editar.textContent = "Editar";
                 document.querySelector("header").appendChild(editar);
-                document.getElementById("quitPublicacion").addEventListener("click", () => {
-                    window.location.href = "indexObjsList.html"
-                })
+                document.getElementById("editar").addEventListener("click", () => {
+                    window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}&editado=true` 
+                });
                 let terminar = document.createElement("button")
                 document.getElementById("propuesta").appendChild(terminar)
                 terminar.id = "terminar";
@@ -113,9 +113,8 @@ function Comentar(){
         
         
     }
-} document.getElementById("enviar").addEventListener("click", Comentar);
+} document.getElementById("enviar").addEventListener("click", Comentar); 
 
-
-function Editar () {
-    window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}&editado=true`
-} document.getElementById("editar").addEventListener("click", Editar);
+document.getElementById("quitPublicacion").addEventListener("click", () => {
+    window.location.href = "indexObjsList.html"
+})

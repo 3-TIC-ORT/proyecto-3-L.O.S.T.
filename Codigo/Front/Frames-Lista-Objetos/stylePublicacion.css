@@ -1,6 +1,5 @@
 :root {
     --grey: rgb(161, 168, 153);
-    --violet: #C5C9ED;
     --blue: #3B7DF9;
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
@@ -24,6 +23,7 @@ body{
 .visualizacion{
     display: flex;
     text-decoration: underline;
+    text-underline-offset: 0.7rem;
     text-decoration-color: white;
     color: white;
     justify-content: start;
@@ -98,31 +98,30 @@ main {
     width: 55vw;
     height: 13vh;
     text-decoration: underline;
+    text-underline-offset: 0.7rem;
     color: white;
     font-size: 3rem;
 }
 
-.lugar, .fecha, .dejado {
-    display: flex;
+.lugar, .fecha, .dejado, .descr {
     width: 55vw;
-    height: 7vh;
-    background-color: var(--violet);
+    display: flex;
     align-items:flex-start;
-    font-size: 3vh;
-    border-radius: 1vh;
-    justify-content: start;
+    justify-content: flex-start;
     color: black;
+    background-color: var(--slightlyWhite);
+    border-radius: 1vw;
+    font-size: 2.5rem;
+    box-sizing: border-box;
+    padding: 1vh 1vw
+}
+
+.lugar, .fecha, .dejado {
+    height: 7vh;
 }
 
 .descr{
-    width: 55vw;
     height: 19vh;
-    background-color: var(--violet);
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start¿;
-    font-size: 2.5rem;
-    border-radius: 1vh;
 }
 
 .coments{

@@ -262,5 +262,11 @@
     "password": "123dAWwdaw3",
     "id": 43,
     "admin": false
+  },
+  {
+    "name": "Mate",
+    "password": "PeneRico123",
+    "id": 44,
+    "admin": false
   }
 ]

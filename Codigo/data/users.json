@@ -256,5 +256,11 @@
     "password": "Naicjjopiou79890'",
     "id": 42,
     "admin": false
+  },
+  {
+    "name": "Holas",
+    "password": "123dAWwdaw3",
+    "id": 43,
+    "admin": false
   }
 ]

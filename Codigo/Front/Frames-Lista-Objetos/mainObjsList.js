@@ -1,5 +1,35 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
-function LoadPosts(postList) {
+let filtro = {
+    vestimenta: true,
+    paraguas: true,
+    accesorios: true,
+    mochilas: true,
+    cuaderno_carpeta: true,
+    utiles_escolares: true,
+    productos_electronicos: true,
+    otros: true
+}
+function LoadPosts(listaCompleta) {
+    // document.getElementById("ObjectsList").innerHTML = "";
+    let addNav = document.createElement("nav");
+    addNav.classList.add("create");
+    addNav.id = "create";
+    let addH1 = document.createElement("h1");
+    addH1.textContent = "+";
+    let addSpan = document.createElement("span");
+    addSpan.classList.add("addtxt");
+    addSpan.textContent = "Agregar Objeto";
+    addNav.appendChild(addH1)   
+    addNav.appendChild(addSpan)
+    document.getElementById("ObjectsList").appendChild(addNav)
+    addNav.addEventListener("click", Add)
+    let postList = [];
+    for(let i = 0; i < listaCompleta.length; i++){
+        if(listaCompleta[i].tipo !== JSON.parse(localStorage.getItem("tipo")) && filtro[listaCompleta[i].categoria]){
+            postList.push(listaCompleta[i]);
+        }
+    }
+    
     localStorage.removeItem("publicaciones"); 
     if(JSON.parse(localStorage.getItem("tipo")) === "encontrado") {
         document.getElementById("title").textContent = "Objetos Perdidos"
@@ -28,12 +58,12 @@ function LoadPosts(postList) {
     })
     localStorage.setItem("publicaciones", JSON.stringify(postList));
 }
-postData("cargarPublicaciones", JSON.parse(localStorage.getItem("tipo")), LoadPosts);
+fetchData("cargarPublicaciones", LoadPosts);
 
 // Para agregar publicación
 function Add() {
     window.location.href = "indexCreacionPublicacion.html";
- } document.getElementById("create").addEventListener("click", Add)
+} 
 
 //Ir para atrás
 function Back() {

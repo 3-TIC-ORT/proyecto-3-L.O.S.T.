@@ -149,24 +149,13 @@ async function terminarPublicacion({id, JWT}){
     
 }
 
-function cargarPublicaciones(data){
+function cargarPublicaciones(){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let van = [];
-    if(data === "perdido"){
-        for(let i = 0; i < lista.length; i++){
-            if(lista[i].tipo === "encontrado" && lista[i].cumplio === false){
-                van.push({...lista[i]})
-            }
-        }
-    } else if(data === "encontrado"){
-        for(let i = 0; i < lista.length; i++){
-            if(lista[i].tipo === "perdido" && lista[i].cumplio === false){
-                van.push({...lista[i]})
-            }
-            
-        }
-    } else {
-        van = lista;
+    for(let i = 0; i < lista.length; i++){
+        if(lista[i].cumplio === false){
+            van.push({...lista[i]})
+        }   
     }
     return van;
 }

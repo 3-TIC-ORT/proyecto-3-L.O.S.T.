@@ -1,13 +1,18 @@
-//La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back
+
+//publicacion guarda todos los inputs que pone el creador.
 
 let publicacion = {}
 
 function getData () {
     let params = new URLSearchParams(document.location.search);
+    let fileContainer = document.getElementById("filecontainer");
     if (params.get("editado")){
-        let h1 = document.querySelector("h1");
-        h1.textContent = "Edición de Publicación"
-        
+        document.querySelector("h1").textContent = "Edición de Publicación";
+        document.querySelector("#submit").value = "Aplicar cambios";
+        let editImg = document.createElement("img");
+        editImg.classList.add("editImg")
+        fileContainer.appendChild(editImg)
+        editImg.src = "../Imgs/change-image.png"
         JSON.parse(localStorage.getItem("publicaciones")).forEach((p)=>{
             if (p.id === Number(params.get("pId"))){
                 publicacion = p;
@@ -23,23 +28,18 @@ function getData () {
                 foto.src = `../../data/imgs/${p.id}.${p.tipoImg}`
                 foto.style.width = "100%"
                 foto.style.height = "100%"
-                document.getElementById("filecontainer").appendChild(foto);
+                fileContainer.appendChild(foto);
             }
         })
-    } else {
-        // Falt hacer de que aparezca la imagen de subir archivo
-        let fileUploader = document.getElementById("fileUploader");
-        fileUploader.style.opacity = 0;
     }
 }
 
 getData();
 
 
+//Falta poner límite de size en imagen
+//La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back
 
-//publicacion guarda todos los inputs que pone el creador.
-// publicacion.creador tiene que ser el usuario q lo creó.
-//Falta poner límite de size en imagen y hacer de que si no mandas imagen, que te deje enviar igual.
 
 const form = document.querySelector(`form`)
 console.log("hola")
@@ -47,11 +47,7 @@ form.addEventListener(`submit`, (e) => {
     let params = new URLSearchParams(document.location.search);
     e.preventDefault();
     formulario = e.target;
-    //Que haya imagen predeterminada
-    //Hacer de que haya también la opción de no mandar imagen y que no se crashee
     if (formulario.img.files[0] === undefined && !params.get("editado")) {
-        //Tengo que encontrar alguna manera de que el submit ignore el campo del input img, para que así me deje submittear
-        // formulario.img.files[0] = ``
         publicacion.imagen = false;
         console.log(formulario.img.files[0])
         publicacion.tipoImg = "image/png"
@@ -87,7 +83,11 @@ form.addEventListener(`submit`, (e) => {
                 localStorage.removeItem("JWT");
                 window.location.href = "../Frames-Inicio/indexHome.html";
             } else if(retorno === true){
-                window.location.href = "indexObjsList.html";
+                fetchData("cargarPublicaciones", (data) => {
+                    localStorage.removeItem("publicaciones");
+                    localStorage.setItem("publicaciones", JSON.stringify(data));
+                })
+                window.location.href = `indexPublicacion.html?pId=${params.get("pId")}`;
             } else{
                 console.log(retorno);
             }

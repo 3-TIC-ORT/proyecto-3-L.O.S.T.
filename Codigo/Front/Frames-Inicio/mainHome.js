@@ -207,7 +207,7 @@ const overlay= document.querySelector("[data-overlay]")
 
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
-        bell.src = `../Imgs/bell-false.png`
+        bell.src = `../Imgs/bell-open.png`
         postData("notificacionesLeidas", JSON.parse(localStorage.getItem("JWT")), (retorno)=>{
             if(retorno === true){
             } else if (retorno === "expirado"){
@@ -233,6 +233,7 @@ const overlay= document.querySelector("[data-overlay]")
             e.clientY > dialogDimensions.bottom 
         ) {
             modal.close()
+            bell.src = `../Imgs/bell-false.png`
             iSettings()
         }
     }) 

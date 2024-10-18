@@ -35,10 +35,11 @@ function DataLoader () {
                     window.location.href = "indexObjsList.html"
                 })
                 let terminar = document.createElement("button")
+                document.getElementById("propuesta").appendChild(terminar)
                 terminar.id = "terminar";
                 terminar.textContent = `Terminar publicación`
-                terminar.addEventListener("click", (e => {
-                    postData("terminaPublicacion", propuesta, (e) => {
+                terminar.addEventListener("click", () => {
+                    postData("terminarPublicacion", propuesta, (e) => {
                         if (e === false) {
                             alert("No tienes permiso para realizar esta acciónn")
                         } else if (e === "expirado") {
@@ -49,22 +50,23 @@ function DataLoader () {
                                 localStorage.removeItem("JWT");
                                 window.location.href = "../Frames-Inicio/indexHome.html";
                         } else if (e === true) {
-                            window.location.href = "../Frames-Inicio/indexObjsList.html";
+                            window.location.href = "indexObjsList.html";
                         } else {
                             alert("Hubo un error")
                             console.log(e);
                         }
                     })
-                }))
+                })
             } else {
-                let encontre = document.createElement("button");
-                encontre.id = "encontre";
-                encontre.textContent = "Fue encontrado"
-                encontre.addEventListener("click", (e => {
+                let encontrado = document.createElement("button");
+                document.getElementById("propuesta").appendChild(encontrado)
+                encontrado.id = "encontrado";
+                encontrado.textContent = "Fue encontrado"
+                encontrado.addEventListener("click", () => {
                     let dialog = document.createElement("dialog");
                     //falta dialog que te aparezca y te permita escribir las cosas que quieras decirle al creador
                     postData("botonEncontrar", propuesta)
-                }))
+                })
 
             }
         }

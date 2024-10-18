@@ -21,12 +21,10 @@ body{
 }
 
 .visualizacion{
-    display: flex;
     text-decoration: underline;
     text-underline-offset: 0.7rem;
     text-decoration-color: white;
     color: white;
-    justify-content: start;
 }
 
 header {
@@ -153,7 +151,7 @@ main {
     font-size: 1.5rem;
     padding: 0 1vw;
     border-radius: 1vh;
-    border: 0.3rem solid var(--grey);
+    border: 0.2rem solid var(--grey);
     text-align: start;
 } 
 

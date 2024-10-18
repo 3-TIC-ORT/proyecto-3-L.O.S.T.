@@ -22,14 +22,14 @@ header{
     width: 43vw;
     height: 8vh;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 
-h1{
-    display: inline-block;     
-    border-bottom: 2px solid var(--blanco); 
+h1{  
     color: var(--blanco);
+    text-decoration: underline; 
+    text-underline-offset: 0.7rem;
 }
 
 main{
@@ -50,9 +50,6 @@ form {
     display: flex;
     flex-direction: column;
     width: 51vw;
-    gap: 1vh;
-    border: 2vw ;
-    border: none;
 }
 
 select{
@@ -64,25 +61,20 @@ select{
     border: none;
 }
 
-form > div > div{
+.tamaños {
     display: flex;
-    flex-direction: column  ;
-    gap: 6vh;
+    flex-direction: column;
+    gap: 6.5vh;
     height: 50vh;
-}
-
-.inputs > input{
-  display: flex;
 }
 
 .tamaños >input{
     display: flex;
-    height: 8vh;
-    width:50vw;;
-    font-size: 20px;
-    border-radius: 2VH;
+    font-size: 1.5rem;
+    border-radius: 2vh;
     border: none;
-    padding: 1vh;
+    box-sizing: border-box;
+    padding: 1vh 1vw;
 }
 
 .filecontainer{
@@ -109,14 +101,6 @@ form > div > div{
     left: 37.5vw;
 }
 
-header{
-    display: flex;
-    width: 43vw;
-    height: 8%;
-    align-items: center;
-    justify-content: center;
-}
-
 .einput > input{
   width:8vw ;
   height: 6vh;
@@ -134,8 +118,4 @@ header{
 
 input[name="description"] {
   padding: 4vh;
-  text-align: start;
-  width: 46vw;
 }
-
-

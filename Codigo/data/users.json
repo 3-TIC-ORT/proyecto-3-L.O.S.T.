@@ -268,5 +268,11 @@
     "password": "PeneRico123",
     "id": 44,
     "admin": false
+  },
+  {
+    "name": "Fede",
+    "password": "CoolFede97",
+    "id": 45,
+    "admin": false
   }
 ]

@@ -339,7 +339,7 @@
     "categoria": "mochilas",
     "titulo": "Fede",
     "ubicacion": "En mi ano",
-    "descripcion": "El más lindo",
+    "descripcion": "skibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibid",
     "dejado": "En mi pirulín",
     "hora": "10pm",
     "tipo": "encontrado",
@@ -380,6 +380,16 @@
         "user": 44,
         "comm": "s",
         "userName": "Mate"
+      },
+      {
+        "user": 44,
+        "comm": "ds",
+        "userName": "Mate"
+      },
+      {
+        "user": 44,
+        "comm": "ds",
+        "userName": "Mate"
       }
     ],
     "cumplio": false
@@ -410,8 +420,27 @@
         "user": 46,
         "comm": "Dsd",
         "userName": "Martín"
+      },
+      {
+        "user": 23,
+        "comm": "sdsddssd",
+        "userName": "Pepo"
       }
     ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "mochilas",
+    "titulo": "Mochila Power Rangers",
+    "ubicacion": "En el labo 2",
+    "descripcion": "En esta épica pelea, una de las mochilas azules se pierde en el caos del conflicto. Cuando la misma desaparece de nuestra vista, nos precipitamos ante la duda de su ubicación, y por ende comenzamos a intentar deducir su paradero. En cuanto la disputa comenzó, surgieron distintas ideas; que una rata se lo llevó, o que Feli decidió comersela en cuanto vió la oportunidad. Finalmente, todos nos dimos cuenta que Nacho se la había robado, llevandosela a su escondite.",
+    "dejado": "Lo dejé en la biblioteca",
+    "hora": "Lo encontré a las 12am",
+    "tipo": "perdido",
+    "id": 5,
+    "creador": 44,
+    "comentarios": [],
     "cumplio": false
   }
 ]

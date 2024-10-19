@@ -274,5 +274,11 @@
     "password": "CoolFede97",
     "id": 45,
     "admin": false
+  },
+  {
+    "name": "Martín",
+    "password": "Uwu123Onichan",
+    "id": 46,
+    "admin": false
   }
 ]

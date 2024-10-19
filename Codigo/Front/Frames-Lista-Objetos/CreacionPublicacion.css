@@ -1,5 +1,5 @@
 :root {
-    --gris: grey;
+    --gris:#C4C4C4;
     --blanco:white;
     --azul:rgb(66, 167, 201);
     --azulOscuro: #134B70;
@@ -81,6 +81,8 @@ select{
     width: 35vw;
     height: 70vh;
     border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: var(--gris);
 }
 

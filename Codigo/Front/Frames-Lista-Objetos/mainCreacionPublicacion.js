@@ -31,6 +31,9 @@ function getData () {
                 fileContainer.appendChild(foto);
             }
         })
+    } else {
+        fileContainer.style.backgroundImage = "url(../Imgs/Upload-img.png)"
+        fileContainer.style.backgroundSize = "cover"
     }
 }
 

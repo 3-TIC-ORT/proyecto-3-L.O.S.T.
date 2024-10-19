@@ -22,10 +22,6 @@ function DataLoader () {
                 </article>`;
                 document.getElementById("coment-box").innerHTML += comentario;
             }
-            let propuesta = {
-                JWT: JSON.parse(localStorage.getItem("JWT")),
-                id: Number(params.get("pId"))
-            }
             if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador || JSON.parse(localStorage.getItem("admin")) === true) {
                 let editar = document.createElement("button");
                 editar.id = "editar";
@@ -34,6 +30,10 @@ function DataLoader () {
                 document.getElementById("editar").addEventListener("click", () => {
                     window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}&editado=true` 
                 });
+                let propuesta = {
+                    JWT: JSON.parse(localStorage.getItem("JWT")),
+                    id: Number(params.get("pId"))
+                }
                 let terminar = document.createElement("button")
                 document.getElementById("propuesta").appendChild(terminar)
                 terminar.id = "terminar";
@@ -58,16 +58,60 @@ function DataLoader () {
                     })
                 })
             } else {
+                let propuesta = {
+                    JWT: JSON.parse(localStorage.getItem("JWT")),
+                    publicacionId: publicacionId
+                }
+                let dialog = document.createElement("dialog");
+                let form = document.createElement("form")
+                let input = document.createElement("input");
+                input.type = "text"
+                input.name = "text"
+                let submit = document.createElement("input")
+                submit.type = "submit"
+                submit.name = "submit"
+                submit.value = "Enviar"
+                document.querySelector("body").appendChild(dialog)
+                dialog.appendChild(form)
+                form.appendChild(submit)
+                form.appendChild(input)
+                submit.addEventListener("click", (e) => {
+                    e.preventDefault()
+                    propuesta.text = input.value
+                    postData("botonEncontre", propuesta, (retorno)=>{
+                        console.log(retorno)
+                        if(retorno === true){
+                            dialog.close()
+                        } else if (retorno === "expirado"){
+                            alert("Has tardado mucho tiempo, debes volver a logearte")
+                            localStorage.removeItem("admin")
+                            localStorage.removeItem("userId");
+                            localStorage.removeItem("userName");
+                            localStorage.removeItem("JWT");
+                        } else{
+                            alert("Hubo un error");
+                            console.log(retorno);
+                        }
+                    });
+                })
+                dialog.addEventListener ("click", (e) => {
+                    const dialogDimensions = dialog.getBoundingClientRect()
+                    if (
+                        e.clientX < dialogDimensions.left ||
+                        e.clientX > dialogDimensions.right ||
+                        e.clientY < dialogDimensions.top ||
+                        e.clientY > dialogDimensions.bottom 
+                    ) {
+                        dialog.close()
+                    }
+                })
                 let encontrado = document.createElement("button");
                 document.getElementById("propuesta").appendChild(encontrado)
                 encontrado.id = "encontrado";
                 encontrado.textContent = "Fue encontrado"
                 encontrado.addEventListener("click", () => {
-                    let dialog = document.createElement("dialog");
-                    //falta dialog que te aparezca y te permita escribir las cosas que quieras decirle al creador
-                    postData("botonEncontrar", propuesta)
-                })
-
+                    dialog.showModal();;
+                    }) 
             }
         }
     }

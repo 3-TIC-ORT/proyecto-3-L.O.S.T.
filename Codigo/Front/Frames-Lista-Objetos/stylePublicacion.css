@@ -224,3 +224,31 @@ body > .Mder > .coments > section > article > p {
     width:17vw;
     border: none;
 } 
+
+dialog {
+    position: absolute;
+    width: 30vw;
+    height: 40vh;
+    transform: translateY(15em) translateX(40em);
+}
+
+dialog > form {
+    width: 100%;
+    height: 100%;
+    background: var(--slightlyWhite);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+dialog > form > input[type="submit"] {
+    width: 4vw;
+    height: 3vh;
+}
+
+dialog > form > input{
+    width: 20vw;
+    height: 3vh;
+}

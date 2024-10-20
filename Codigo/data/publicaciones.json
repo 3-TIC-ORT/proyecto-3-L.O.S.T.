@@ -425,6 +425,11 @@
         "user": 23,
         "comm": "sdsddssd",
         "userName": "Pepo"
+      },
+      {
+        "user": 47,
+        "comm": "Holas",
+        "userName": "Pene"
       }
     ],
     "cumplio": false
@@ -442,5 +447,59 @@
     "creador": 44,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "mochilas",
+    "titulo": "Mochila",
+    "ubicacion": "En el baño de hombres",
+    "descripcion": "Blanca, negra, y de ADIDAS",
+    "dejado": "en la oficina de la preceptora",
+    "hora": "a las 3pm",
+    "tipo": "perdido",
+    "id": 6,
+    "creador": 24,
+    "comentarios": [
+      {
+        "user": 24,
+        "comm": "Ahí lo recibi",
+        "userName": "sergio"
+      }
+    ],
+    "cumplio": true
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "mochilas",
+    "titulo": "KDjsklAOFJkladagfasdfa",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 7,
+    "creador": 24,
+    "comentarios": [
+      {
+        "user": 24,
+        "comm": "Hola",
+        "userName": "sergio"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "mochilas",
+    "titulo": "Mochila",
+    "ubicacion": "",
+    "descripcion": "Es gris",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 8,
+    "creador": 24,
+    "comentarios": [],
+    "cumplio": true
   }
 ]

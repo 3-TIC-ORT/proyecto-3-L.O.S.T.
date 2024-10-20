@@ -14,7 +14,7 @@ function iSettings() {
         localStorage.setItem("publicaciones", JSON.stringify(data))
     })
     localStorage.removeItem("tipo");
-    if (JSON.parse(localStorage.getItem("userId")) !== null) {
+    if (JSON.parse(localStorage.getItem("JWT")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
         logIn.style.display = "none";

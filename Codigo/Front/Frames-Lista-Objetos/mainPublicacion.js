@@ -110,7 +110,11 @@ function DataLoader () {
                 encontrado.id = "encontrado";
                 encontrado.textContent = "Fue encontrado"
                 encontrado.addEventListener("click", () => {
-                    dialog.showModal();;
+                    if (JSON.parse(localStorage.getItem("JWT")) === null) {
+                        alert("Para hacer esta acción necesita haberse iniciado sesión o registrado anteriormente")
+                    } else {
+                        dialog.showModal();; 
+                    }
                     }) 
             }
         }
@@ -122,7 +126,7 @@ DataLoader();
 //Creo el comentario, lo guarda, lo displayea y despues le manda el comentario al back.
 function Comentar(){
     let comentario = {}
-    if(JSON.parse(localStorage.getItem("userId")) === null) {
+    if(JSON.parse(localStorage.getItem("JWT")) === null) {
         alert("Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente")
     } else {
         if(document.getElementById("InputComentario").value === ""){

@@ -62,7 +62,11 @@ fetchData("cargarPublicaciones", LoadPosts);
 
 // Para agregar publicación
 function Add() {
-    window.location.href = "indexCreacionPublicacion.html";
+    if (JSON.parse(localStorage.getItem("JWT")) === null) {
+        alert("Para hacer esta acción necesita haberse iniciado sesión o registrado anteriormente")
+    } else {
+        window.location.href = "indexCreacionPublicacion.html";
+    }
 } 
 
 //Ir para atrás

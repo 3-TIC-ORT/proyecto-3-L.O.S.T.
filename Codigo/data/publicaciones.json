@@ -330,6 +330,11 @@
         "user": 43,
         "comm": "dwadwad",
         "userName": "Holas"
+      },
+      {
+        "user": 44,
+        "comm": "Pene",
+        "userName": "Mate"
       }
     ],
     "cumplio": false
@@ -390,6 +395,11 @@
         "user": 44,
         "comm": "ds",
         "userName": "Mate"
+      },
+      {
+        "user": 44,
+        "comm": "Probando probando?",
+        "userName": "Mate"
       }
     ],
     "cumplio": false
@@ -445,7 +455,13 @@
     "tipo": "perdido",
     "id": 5,
     "creador": 44,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 44,
+        "comm": "Primer comentario",
+        "userName": "Mate"
+      }
+    ],
     "cumplio": false
   },
   {

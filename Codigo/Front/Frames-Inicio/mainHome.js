@@ -32,25 +32,27 @@ function iSettings() {
             } else if(lista === false){
                 alert("Hubo un error")
             } else if(lista.length === 0) {
-                //El problema es que cuando volves a la página, los comentarios que ya viste te aparecen como nuevos. Mi idea es con una lista que guarde las notificaciones leídas, quizás se pueda hacer.
                 bell.src = `../Imgs/bell-false.png`
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.getElementById("notification-box").innerHTML += h1;
             } else {
                 let bellringing = false
                 for (let i = 0; i < lista.length; i++) {
-                    const markup =     
-                    ` <div id="pub${i}-${lista[i].publicacion}"> 
-                          <h5>${lista[i].commenter}:</h5>
-                          <small>Ha comentado "${lista[i].text}"</small>
-                      </div>`;
-                document.getElementById("notification-box").innerHTML += markup;
-                document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification")
-                if (lista[i].leido === false) {
-                    //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
-                    document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.add("newNotification")
-                    bellringing = true
-                }
+                    //Falta el if para corroborar si es comentario o de "fue encontrado"
+                    if (lista[i].commenter !== JSON.parse(localStorage.getItem("userName"))) {
+                        const markup =     
+                        ` <div id="pub${i}-${lista[i].publicacion}"> 
+                              <h5>${lista[i].commenter}:</h5>
+                              <small>Ha comentado "${lista[i].text}"</small>
+                          </div>`;
+                    document.getElementById("notification-box").innerHTML += markup;
+                    document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification")
+                    if (lista[i].leido === false) {
+                        //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
+                        document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.add("newNotification")
+                        bellringing = true
+                    }
+                    }
                 }
                 if (bellringing === true){
                     bell.src = `../Imgs/bell-true.png`

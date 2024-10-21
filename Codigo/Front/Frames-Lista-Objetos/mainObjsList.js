@@ -91,7 +91,5 @@ function Filtrar(event){
     } else{
         event.target.style.opacity = 0.5
     }
-    
-    
     fetchData("cargarPublicaciones", LoadPosts);
 } document.getElementById("filtros").addEventListener("click", Filtrar)

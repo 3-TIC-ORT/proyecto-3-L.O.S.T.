@@ -195,7 +195,7 @@ async function botonEncontre({JWT, publicacionId, text}){
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
     try{
         const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
-        let notificacion = {type: lista[publicacionId].tipo, id:lista[publicacionId].creador, commenter:usuarios[payload.id].name, text:text, publicacion:publicacionId, eliminado: false};
+        let notificacion = {type: lista[publicacionId].tipo, id:lista[publicacionId].creador, commenter:usuarios[payload.id].name, text:text, publicacion:publicacionId, leido: false, eliminado: false};
         notificaciones.push({...notificacion});
         fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
         return true;

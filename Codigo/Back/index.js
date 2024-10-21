@@ -189,13 +189,13 @@ async function comentar(data){
     }
 }
 
-async function botonEncontre({JWT, publicacionId, text}){
+async function botonEncontre({JWT, id, text}){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", "utf-8"));
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
     try{
         const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
-        let notificacion = {type: lista[publicacionId].tipo, id:lista[publicacionId].creador, commenter:usuarios[payload.id].name, text:text, publicacion:publicacionId, leido: false, eliminado: false};
+        let notificacion = {type: lista[id].tipo, id:lista[id].creador, commenter:usuarios[payload.id].name, text:text, publicacion:id, leido: false, eliminado: false};
         notificaciones.push({...notificacion});
         fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
         return true;

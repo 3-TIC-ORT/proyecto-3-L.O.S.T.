@@ -22,6 +22,10 @@ function DataLoader () {
                 </article>`;
                 document.getElementById("coment-box").innerHTML += comentario;
             }
+            let propuesta = {
+                JWT: JSON.parse(localStorage.getItem("JWT")),
+                id: publicacionId
+            }
             if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador || JSON.parse(localStorage.getItem("admin")) === true) {
                 let editar = document.createElement("button");
                 editar.id = "editar";
@@ -30,10 +34,6 @@ function DataLoader () {
                 document.getElementById("editar").addEventListener("click", () => {
                     window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}&editado=true` 
                 });
-                let propuesta = {
-                    JWT: JSON.parse(localStorage.getItem("JWT")),
-                    id: Number(params.get("pId"))
-                }
                 let terminar = document.createElement("button")
                 document.getElementById("propuesta").appendChild(terminar)
                 terminar.id = "terminar";
@@ -57,11 +57,7 @@ function DataLoader () {
                         }
                     })
                 })
-            } else {
-                let propuesta = {
-                    JWT: JSON.parse(localStorage.getItem("JWT")),
-                    publicacionId: publicacionId
-                }
+            }  else {
                 let dialog = document.createElement("dialog");
                 let form = document.createElement("form")
                 let input = document.createElement("input");
@@ -108,7 +104,11 @@ function DataLoader () {
                 let encontrado = document.createElement("button");
                 document.getElementById("propuesta").appendChild(encontrado)
                 encontrado.id = "encontrado";
-                encontrado.textContent = "Fue encontrado"
+                if (publicaciones[i].tipo === "encontrado") {
+                    encontrado.textContent = "Es mío"
+                } else {
+                    encontrado.textContent = "Lo encontré"
+                }
                 encontrado.addEventListener("click", () => {
                     if (JSON.parse(localStorage.getItem("JWT")) === null) {
                         alert("Para hacer esta acción necesita haberse iniciado sesión o registrado anteriormente")

@@ -846,5 +846,14 @@
     "publicacion": 3,
     "leido": true,
     "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 46,
+    "commenter": "felipesds",
+    "text": "Hola",
+    "publicacion": 4,
+    "leido": false,
+    "eliminado": false
   }
 ]

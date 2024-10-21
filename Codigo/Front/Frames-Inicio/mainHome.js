@@ -1,6 +1,7 @@
 let userFrame = document.getElementById("user-frame");  
 let UserShown = document.getElementById("user-nameShown")
-let logIn = document.getElementById("LS-SU");
+let logIn = document.getElementById("log-in");
+let signUp = document.getElementById("sign-up");
 let logOut = document.getElementById("log-stuff");
 let bell = document.getElementById("bell");
 let CS = document.getElementById("CS");
@@ -18,6 +19,7 @@ function iSettings() {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
         logIn.style.display = "none";
+        signUp.style.display = "none"
         CS.style.display = "flex"
         bell.style.display = "flex"
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
@@ -93,9 +95,15 @@ function Lost () {
 
 //La función de LS va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
 
-function LS () {
+function LS (event) {
+    // let button = event.target
+    // let dataReciever = document.createElement("nav");
+    // if (button.id = "log-in") {
+    // } else {
+    // }
     userFrame.style.display = "grid";
-} document.getElementById("LS-SU").addEventListener("click", LS);
+} document.getElementById("log-in").addEventListener("click", LS);
+document.getElementById("sign-up").addEventListener("click", LS)
 
 
 //La función BackHome hace que cuando apretes afuera de la caja "main", se muestre el frame de inicio devuelta.
@@ -195,6 +203,7 @@ function LogOut() {
     bell.style.display = "none";
     CS.style.display = "none"
     logIn.style.display = "flex";
+    signUp.style.display = "flex"
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
     UserShown.textContent = "Anónimo"

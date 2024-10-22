@@ -527,5 +527,25 @@
     "creador": 24,
     "comentarios": [],
     "cumplio": true
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "paraguas",
+    "titulo": "dssdsd",
+    "ubicacion": "dsdsds",
+    "descripcion": "Holasdas",
+    "dejado": "dsdssdsd",
+    "hora": "sdddssd",
+    "tipo": "perdido",
+    "id": 9,
+    "creador": 44,
+    "comentarios": [
+      {
+        "user": 44,
+        "comm": "feli panza",
+        "userName": "Mate"
+      }
+    ],
+    "cumplio": false
   }
 ]

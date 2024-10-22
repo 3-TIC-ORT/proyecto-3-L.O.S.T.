@@ -34,7 +34,13 @@ function getData () {
     } else {
         fileContainer.style.backgroundImage = "url(../Imgs/Upload-img.png)"
         fileContainer.style.backgroundSize = "cover"
-    }
+        if(JSON.parse(localStorage.getItem("tipo")) === "perdido") {
+            const form = document.querySelector(`form`);
+            form.location.placeholder = "Información de contacto";
+            form.placeLeft.placeholder = "Último lugar donde se vió";
+            form.time.placeholder = "Hora aproximada en la que se perdió"
+        }
+    }   
 }
 
 getData();

@@ -19,14 +19,14 @@ function iSettings() {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
         logIn.style.display = "none";
-        signUp.style.display = "none"
-        CS.style.display = "flex"
-        bell.style.display = "flex"
+        signUp.style.display = "none";
+        CS.style.display = "flex";
+        bell.style.display = "flex";
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
             document.getElementById("notification-box").innerHTML = ``;
             if(lista === "expirado"){
                 alert("Has tardado mucho tiempo, debes volver a logearte")
-                localStorage.removeItem("admin")
+                localStorage.removeItem("admin");
                 localStorage.removeItem("userId");
                 localStorage.removeItem("userName");
                 localStorage.removeItem("JWT");
@@ -74,9 +74,6 @@ function iSettings() {
         })
     )
     }
-    else{
-        UserShown.textContent = "Anónimo"
-    }
 }
 
 iSettings();
@@ -93,23 +90,34 @@ function Lost () {
     localStorage.setItem("tipo", JSON.stringify("perdido"))
 } document.getElementById("lost").addEventListener("click", Lost);
 
-//La función de LS va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
+//La función de dataBox va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
 
-function LS (event) {
-    // let button = event.target
-    // let dataReciever = document.createElement("nav");
-    // if (button.id = "log-in") {
-    // } else {
-    // }
+function dataBox (event) {
+    let button = event.target
+    let dataReciever = document.getElementsByClassName("LS")[0];
+    let containerReceiver = document.getElementById("LSs")
+    let h1 = document.getElementById("status");
+    if (button.id === "log-in") {
+        dataReciever.id = "FinalLog"
+        h1.textContent = "Inicia sesión"
+        containerReceiver.addEventListener("click", Login)
+    } else {
+        dataReciever.id = "FinalSign"
+        h1.textContent = "Crea tu cuenta"
+        containerReceiver.addEventListener("click", Register)
+
+    }
     userFrame.style.display = "grid";
-} document.getElementById("log-in").addEventListener("click", LS);
-document.getElementById("sign-up").addEventListener("click", LS)
+} document.getElementById("log-in").addEventListener("click", dataBox);
+document.getElementById("sign-up").addEventListener("click", dataBox)
 
 
 //La función BackHome hace que cuando apretes afuera de la caja "main", se muestre el frame de inicio devuelta.
 
 function BackHome () {
     userFrame.style.display = "none";
+    document.getElementById("user-data").value = "";
+    document.getElementById("password-data").value = "";
 } 
 document.getElementsByClassName("a")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("b")[0].addEventListener("click", BackHome);
@@ -117,55 +125,59 @@ document.getElementsByClassName("c")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 
 
-function Login() {
+function Login(e) {
+    e.preventDefault();
     let UserName = document.getElementById("user-data").value;
-    let UserPassword = document.getElementById("password-data").value
-    UserShown = document.getElementById("user-nameShown");
-    if (UserName === "" || UserPassword === ""){
-        alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
-    } else {
-        postData("login", {name:UserName, password: UserPassword}, (data) => {
-            console.log(data);
-            if(data.id !== null){
-                UserShown.textContent = `${UserName}`;
-                userFrame.style.display = "none";
-                logIn.style.display = "none";
-                CS.style.display = "flex"
-                bell.style.display = "flex"
-                SetId({id:data.id, name:UserName, admin:data.admin, JWT:data.JWT})
-            } else{
-                alert(data.inf);
-            }
-        })
-    }
-} document.getElementById("FinalLog").addEventListener("click", Login);
-
-
-
-function Register() {
-    let UserName = document.getElementById("user-data").value;
-    let UserPassword = document.getElementById("password-data").value
-    UserShown = document.getElementById("user-nameShown");
-    if (UserName === "" || UserPassword === ""){
-        alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
-    } else if ((UserName.length > 32||UserPassword.length  > 32 || UserPassword.length < 8 || UserPassword.match(/[a-z]/) == null && UserPassword.includes("ñ") === false || UserPassword.match(/[A-Z]/) == null && UserPassword.includes("Ñ") === false || UserPassword.match(/[0-9]/) == null)) {
-        alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
-    } else {
-        postData("register", {name:UserName, password: UserPassword}, (data) => {
-            if(data.id !== null){
-                UserShown.textContent = `${UserName}`;
-                userFrame.style.display = "none";
-                logIn.style.display = "none";
-                CS.style.display = "flex"
-                bell.style.display = "flex";
-                SetId({id:data.id, name:UserName, admin: data.admin, JWT:data.JWT})
-            } else{
-                alert(data.inf);
-            }
-        })
+    let UserPassword = document.getElementById("password-data").value;
+    if(e.target.id === "FinalLog") {
+        if (UserName === "" || UserPassword === ""){
+            alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+        } else {
+            postData("login", {name:UserName, password: UserPassword}, (data) => {
+                console.log(data);
+                if(data.id !== null){
+                    UserShown.textContent = `${UserName}`;
+                    userFrame.style.display = "none";
+                    logIn.style.display = "none";
+                    CS.style.display = "flex"
+                    bell.style.display = "flex"
+                    SetId({id:data.id, name:UserName, admin:data.admin, JWT:data.JWT})
+                    console.log("hola")
+                } else{
+                    alert(data.inf);
+                }
+            })
+        }
     }
 }
-document.getElementById("FinalSign").addEventListener("click", Register);
+
+
+
+function Register(e) {
+    e.preventDefault();
+    let UserName = document.getElementById("user-data").value;
+    let UserPassword = document.getElementById("password-data").value;
+    if (e.target.id === "FinalSign") {
+        if (UserName === "" || UserPassword === ""){
+            alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+        } else if ((UserName.length > 32||UserPassword.length  > 32 || UserPassword.length < 8 || UserPassword.match(/[a-z]/) == null && UserPassword.includes("ñ") === false || UserPassword.match(/[A-Z]/) == null && UserPassword.includes("Ñ") === false || UserPassword.match(/[0-9]/) == null)) {
+            alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
+        } else {
+            postData("register", {name:UserName, password: UserPassword}, (data) => {
+                if(data.id !== null){
+                    UserShown.textContent = `${UserName}`;
+                    userFrame.style.display = "none";
+                    logIn.style.display = "none";
+                    CS.style.display = "flex"
+                    bell.style.display = "flex";
+                    SetId({id:data.id, name:UserName, admin: data.admin, JWT:data.JWT})
+                } else{
+                    alert(data.inf);
+                }
+            })
+        }
+    }
+}
 
 function SetId({id, name, admin, JWT}) {
     localStorage.setItem("userId", JSON.stringify(id));
@@ -176,7 +188,6 @@ function SetId({id, name, admin, JWT}) {
 }
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
-
 let show = document.getElementById("show");
 let hide = document.getElementById("hide");
 
@@ -190,8 +201,8 @@ function HideShow (event) {
         show.style.display = "none";
         hide.style.display = "block";
     }
-} document.getElementById("hide").addEventListener("click", HideShow);
-document.getElementById("show").addEventListener("click", HideShow);
+} hide.addEventListener("click", HideShow);
+show.addEventListener("click", HideShow);
 
 //Te deslogea de la cuenta y te vuelve al anónimo
 
@@ -206,7 +217,7 @@ function LogOut() {
     signUp.style.display = "flex"
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
-    UserShown.textContent = "Anónimo"
+    UserShown.textContent = "";
     document.getElementById("notification-box").innerHTML = "";
 } document.getElementById("CS").addEventListener("click", LogOut);
 
@@ -257,4 +268,3 @@ function reDirect(event) {
     console.log(clickedDiv);
     window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${clickedDiv.id.split("-").pop()}`
 }
- 

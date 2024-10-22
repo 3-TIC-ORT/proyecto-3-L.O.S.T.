@@ -1,4 +1,7 @@
-    /* Frame Inicio: */
+/* Cosas por arreglar: 
+    -Arreglar font-size para ser responsive
+    -Acortar líneas de código al pedo
+*/
 :root {
     --grey: rgb(161, 168, 153);
     --blue: #3B7DF9;
@@ -10,6 +13,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -30,11 +34,10 @@ header{
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    justify-content: space-between;
     width: 100%;
     height: 15%;
     padding: 2vh;
-    box-sizing: border-box;
+
     margin: 0;
     background-color: aquamarine;
 }
@@ -55,32 +58,24 @@ header{
 
 .user-nameShown{
     display: flex;
-    justify-self: flex-end;
-    padding-right: 1vh;
     font-size: 4vh;
     user-select:none;
 }
 
-.user-bell {
+.user-data {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: auto;
     height: 100%;
-}
-
-.user-bell > .bell::after {
-    display: none;
+    gap: 4%;
 }
 
 #bell{
     display: none;
-    justify-content: flex-end;
     cursor: pointer;
     width: 3.5vw;
     height: 7vh;
-    padding-left: 1vw;
 }
 
 .comentNotis {
@@ -91,9 +86,7 @@ header{
     top: 15vh;
     left: 70vw;
     position: absolute;
-    display: none;
-    box-sizing: border-box;
-    padding: 1vh 1vw 1vh 1vw;
+    padding: 1vh 1vw;
 }
 
 .login-signup {
@@ -192,11 +185,11 @@ header{
     left: 0;
 }
 
-main { /*Caja donde se logea uno */
+#main-data { /*Caja donde se logea uno */
     grid-area: 2 / 2 / 2 / 2;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: #D9D9D9;
     height: 100%;
@@ -257,14 +250,13 @@ main { /*Caja donde se logea uno */
 }
 
 .data {
-    height: 14vh;
+    height: 11vh;
     width: 100%;
     background-color: #636363;
     border: none;
     outline: none;
     color: white;
     font-size: 4vh;
-    box-sizing: border-box;
     padding: 1vh;
 
 }
@@ -304,7 +296,8 @@ main { /*Caja donde se logea uno */
     justify-content: center;
     align-items: center;
     width: 47%;
-    height: 70%;
+    height: 4vw;
+    font-size: 1.5rem;
     background-color: blueviolet;
     user-select: none;
     cursor: pointer;
@@ -314,10 +307,9 @@ main { /*Caja donde se logea uno */
 .LSs {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    height: 15vh;
+    justify-content: center;
+    height: auto;
     width: 100%;
-    font-size: 3vh;
 }
 
 #anonymus {

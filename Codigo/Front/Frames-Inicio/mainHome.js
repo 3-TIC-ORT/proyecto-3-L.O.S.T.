@@ -45,8 +45,16 @@ function iSettings() {
                         const markup =     
                         ` <div id="pub${i}-${lista[i].publicacion}"> 
                               <h5>${lista[i].commenter}:</h5>
-                              <small>Ha comentado "${lista[i].text}"</small>
+                              <small>${lista[i].text}</small>
                           </div>`;
+                          // Falta agregar id, que lo saque para que ande
+                        //   if (lista[i].type === "encontrado") {
+                        //     document.getElementById(`${lista[i].text}`).textContent = lista[i].text
+                        //   } else if (lista[i].type === "perdido") {
+                        //     document.getElementById(`${lista[i].text}`).textContent = lista[i].text
+                        //   } else {
+                        //     document.getElementById(`${lista[i].text}`).textContent = `Ha comentado ${lista[i].text}`
+                        //   }
                     document.getElementById("notification-box").innerHTML += markup;
                     document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification")
                     if (lista[i].leido === false) {

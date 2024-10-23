@@ -864,5 +864,23 @@
     "publicacion": 9,
     "leido": true,
     "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Pene",
+    "publicacion": 3,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 46,
+    "commenter": "Mate",
+    "text": "Pene Rico",
+    "publicacion": 4,
+    "leido": false,
+    "eliminado": false
   }
 ]

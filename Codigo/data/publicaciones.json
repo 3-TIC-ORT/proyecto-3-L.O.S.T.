@@ -344,7 +344,7 @@
     "categoria": "otros",
     "titulo": "Fede",
     "ubicacion": "En mi ano",
-    "descripcion": "skibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibidiskibid",
+    "descripcion": "sdasudhsdhdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsds",
     "dejado": "En mi pirulín",
     "hora": "10pm",
     "tipo": "encontrado",
@@ -405,6 +405,11 @@
         "user": 44,
         "comm": "Penenenenenne",
         "userName": "Mate"
+      },
+      {
+        "user": 44,
+        "comm": "Pene",
+        "userName": "Mate"
       }
     ],
     "cumplio": false
@@ -450,6 +455,11 @@
         "user": 51,
         "comm": "Hola",
         "userName": "felipesds"
+      },
+      {
+        "user": 44,
+        "comm": "Pene Rico",
+        "userName": "Mate"
       }
     ],
     "cumplio": false

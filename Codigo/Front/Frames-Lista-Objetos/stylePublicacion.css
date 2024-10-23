@@ -3,6 +3,7 @@
     --blue: #3B7DF9;
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
+    --focus: #66A0BD;
 }
 
 * {
@@ -168,18 +169,21 @@ main {
     padding: 1.5vh 1.5vw;
 }
 
-.input-but > input{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 7vh;
+.input-but > textarea{
+    height: 20vh;
     width: 100%;
+    resize: none;
     font-size: 1.5rem;
-    padding: 0 1vw;
+    padding: 1vh 1vw;
     border-radius: 1vh;
     border: 0.2rem solid var(--grey);
-    text-align: start;
+    transition: border 0.5s;
 } 
+
+.input-but > textarea:focus {
+    outline: none;
+    border: 0.2rem solid var(--focus);
+}
 
 #enviar{
     display: flex;

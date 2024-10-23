@@ -44,18 +44,18 @@ function iSettings() {
                     if (lista[i].commenter !== JSON.parse(localStorage.getItem("userName"))) {
                         const markup =     
                         ` <div id="pub${i}-${lista[i].publicacion}"> 
-                              <h5>${lista[i].commenter}:</h5>
+                              <h5 id="h5${i}-${lista[i].publicacion}"></h5>
                               <small>${lista[i].text}</small>
                           </div>`;
-                          // Falta agregar id, que lo saque para que ande
-                        //   if (lista[i].type === "encontrado") {
-                        //     document.getElementById(`${lista[i].text}`).textContent = lista[i].text
-                        //   } else if (lista[i].type === "perdido") {
-                        //     document.getElementById(`${lista[i].text}`).textContent = lista[i].text
-                        //   } else {
-                        //     document.getElementById(`${lista[i].text}`).textContent = `Ha comentado ${lista[i].text}`
-                        //   }
-                    document.getElementById("notification-box").innerHTML += markup;
+                          document.getElementById("notification-box").innerHTML += markup;
+                          let tituloPublicacion = JSON.parse(localStorage.getItem("publicaciones"))[lista[i].publicacion].titulo;
+                          if (lista[i].type === "encontrado") {
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha encontrado "${tituloPublicacion}"`
+                          } else if (lista[i].type === "perdido") {
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} es el dueño de "${tituloPublicacion}"`
+                          } else {
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha comentado "${tituloPublicacion}"`
+                          }
                     document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification")
                     if (lista[i].leido === false) {
                         //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo

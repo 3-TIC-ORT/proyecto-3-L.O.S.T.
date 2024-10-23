@@ -338,9 +338,11 @@ dialog::-webkit-scrollbar-thumb {
 dialog > main > div {
     display: flex;
     flex-flow: column;
+    justify-content: center;
     transition: background-color 1s;
     width: 100%;
     height: auto;
+    min-height: 8vh;
 }
 
 dialog > main > div > h5 {

@@ -501,7 +501,7 @@
     "text": "Pene rico",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -510,7 +510,7 @@
     "text": "Hola",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -519,7 +519,7 @@
     "text": "Hola 2",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -528,7 +528,7 @@
     "text": "Pene",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -537,7 +537,7 @@
     "text": "s",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -546,7 +546,7 @@
     "text": "s",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -555,7 +555,7 @@
     "text": "s",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -564,7 +564,7 @@
     "text": "Pene",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -580,7 +580,7 @@
     "id": 44,
     "commenter": "Martín",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -588,7 +588,7 @@
     "id": 44,
     "commenter": "Martín",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -596,7 +596,7 @@
     "id": 44,
     "commenter": "Martín",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -604,7 +604,7 @@
     "id": 44,
     "commenter": "Martín",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -612,7 +612,7 @@
     "id": 44,
     "commenter": "Martín",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -620,7 +620,7 @@
     "id": 44,
     "commenter": "Martín",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -655,7 +655,7 @@
     "id": 44,
     "commenter": "Martín",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -664,7 +664,7 @@
     "commenter": "Martín",
     "text": "Hola",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -673,7 +673,7 @@
     "commenter": "Martín",
     "text": "Xdddddddddddddddddddddd",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -682,7 +682,7 @@
     "commenter": "Martín",
     "text": "SdJADsajdasd",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -691,7 +691,7 @@
     "commenter": "Martín",
     "text": "dsdssd",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -700,7 +700,7 @@
     "commenter": "Martín",
     "text": "sddssd",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -709,7 +709,7 @@
     "commenter": "Martín",
     "text": "Pene",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -718,7 +718,7 @@
     "commenter": "Martín",
     "text": "Pene",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -727,7 +727,7 @@
     "commenter": "Martín",
     "text": "Fachero",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -736,7 +736,7 @@
     "commenter": "Martín",
     "text": "Pene",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -745,7 +745,7 @@
     "commenter": "Martín",
     "text": "Pene",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -754,7 +754,7 @@
     "commenter": "Martín",
     "text": "Pene",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -773,7 +773,7 @@
     "text": "ds",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -782,7 +782,7 @@
     "text": "ds",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -817,7 +817,7 @@
     "commenter": "DSjakLdjasiol",
     "text": "Fue encontrado wacho",
     "publicacion": 3,
-    "eliminado": false,
+    "eliminado": true,
     "leido": true
   },
   {
@@ -845,7 +845,7 @@
     "text": "Probando probando?",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -872,7 +872,7 @@
     "text": "Pene",
     "publicacion": 3,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",

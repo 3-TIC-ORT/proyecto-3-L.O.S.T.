@@ -1,9 +1,10 @@
 :root {
     --grey: rgb(161, 168, 153);
-    --blue: #3B7DF9;
+    --celeste:  #0186BF;
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
     --focus: #66A0BD;
+    --editColor: #3B7DF9;
 }
 
 * {
@@ -19,17 +20,18 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: overlay;
 }
 
 body::-webkit-scrollbar { 
     width: 1.3rem;
-    background-color: var(--azulOscuro);
+    background-color: #ACACAC;
 }
 
 body::-webkit-scrollbar-thumb { 
     border-radius: 2rem; 
     width: 0.8rem;
-    background-color: var(--blue);
+    background-color: #787878;
 }
 
 .visualizacion{
@@ -57,7 +59,7 @@ header {
 }
 
 #editar {
-    background-color: var(--blue);
+    background-color: var(--editColor);
     color: white;
     border: none;
     width: 4vw;
@@ -146,7 +148,7 @@ main {
 
 .descr::-webkit-scrollbar-thumb {
     border-radius: 2rem;
-    background-color: var(--blue);
+    background-color: var(--celeste);
 }
 
 .coments{
@@ -170,7 +172,7 @@ main {
 }
 
 .input-but > textarea{
-    height: 20vh;
+    height: 22vh;
     width: 100%;
     resize: none;
     font-size: 1.5rem;
@@ -191,7 +193,7 @@ main {
     justify-content: center;
     font-size: 2rem;
     border-radius: 2vh;
-    background-color: var(--blue);
+    background-color: var(--celeste);
     cursor: pointer;
     color: white;
 }
@@ -239,7 +241,7 @@ body > .Mder > .coments > section > article > p {
 #terminar, #encontrado{
     width: 100%;
     height: 100%;
-    background-color: #526E82;
+    background-color: var(--celeste);
     border-radius: 2vh;
     border: none;
     cursor: pointer;

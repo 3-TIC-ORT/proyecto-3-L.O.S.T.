@@ -101,7 +101,7 @@ select{
 .tamaños {
     display: flex;
     flex-direction: column;
-    gap: 4vh;
+    gap: 2.5vh;
     height: 50vh;
 }
 

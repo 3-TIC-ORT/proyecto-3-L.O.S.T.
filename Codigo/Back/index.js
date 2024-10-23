@@ -11,7 +11,6 @@ const claveSecreta = new TextEncoder().encode(jose.base64url.encode("Felipe Dani
 async function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
     if(user.name.length > 32){
-        console.log("Su usuario no puede tener más de 32 caracteres")
         return {id:null, inf:"Invalid"}
     } else{
     for(let i = 0; i < lista.length; i++){
@@ -94,16 +93,13 @@ async function crearPublicacion({publicacion, JWT}){
 }
 
 async function editarPublicacion({publicacion, JWT}){
-    console.log(publicacion.imagen)
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     try{
         const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
         if((payload.id === lista[publicacion.id].creador || payload.admin === true) && lista[publicacion.id] != null){
             if(publicacion.imagen != false){
-                console.log("Hola")
                 let tipoImg = publicacion.tipoImg.split("/").pop();
                 publicacion.tipoImg = tipoImg;
-                console.log
                 fs.writeFileSync(`Codigo/data/imgs/${publicacion.id}.${tipoImg}`, publicacion.imagen)
             } else{
                 publicacion.tipoImg = lista[publicacion.id].tipoImg

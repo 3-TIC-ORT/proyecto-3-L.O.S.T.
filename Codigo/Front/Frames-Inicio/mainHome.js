@@ -44,7 +44,7 @@ function iSettings() {
                     if (lista[i].commenter !== JSON.parse(localStorage.getItem("userName"))) {
                         const markup =     
                         ` <div id="pub${i}-${lista[i].publicacion}"> 
-                              <h5 id="h5${i}-${lista[i].publicacion}"></h5>
+                              <h5 id="h5${i}-${lista[i].publicacion}"></h5>                                                         
                               <small>${lista[i].text}</small>
                           </div>`;
                           document.getElementById("notification-box").innerHTML += markup;
@@ -56,10 +56,10 @@ function iSettings() {
                           } else {
                             document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha comentado "${tituloPublicacion}"`
                           }
-                    document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification")
+                    document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification");
                     if (lista[i].leido === false) {
                         //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
-                        document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.add("newNotification")
+                        document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.add("newNotification");
                         bellringing = true
                     }
                     }

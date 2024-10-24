@@ -229,6 +229,25 @@
     "commenter": "sergio",
     "text": "Pene",
     "publicacion": 4,
-    "leido": true
+    "leido": false,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "hOLA",
+    "publicacion": 5,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Matuvelo2",
+    "text": "Épico castor. No se donde está wacho",
+    "publicacion": 10,
+    "leido": true,
+    "eliminado": false
   }
 ]

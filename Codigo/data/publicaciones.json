@@ -77,6 +77,81 @@
     "dejado": "",
     "hora": "",
     "tipo": "encontrado",
+    "id": 4,
+    "creador": 46,
+    "comentarios": [
+      {
+        "user": 46,
+        "comm": "Pene",
+        "userName": "Martín"
+      },
+      {
+        "user": 46,
+        "comm": "SDads",
+        "userName": "Martín"
+      },
+      {
+        "user": 46,
+        "comm": "Dsd",
+        "userName": "Martín"
+      },
+      {
+        "user": 23,
+        "comm": "sdsddssd",
+        "userName": "Pepo"
+      },
+      {
+        "user": 47,
+        "comm": "Holas",
+        "userName": "Pene"
+      },
+      {
+        "user": 51,
+        "comm": "Hola",
+        "userName": "felipesds"
+      },
+      {
+        "user": 44,
+        "comm": "Pene Rico",
+        "userName": "Mate"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "mochilas",
+    "titulo": "Mochila Power Rangers",
+    "ubicacion": "En el labo 2",
+    "descripcion": "En esta épica pelea, una de las mochilas azules se pierde en el caos del conflicto. Cuando la misma desaparece de nuestra vista, nos precipitamos ante la duda de su ubicación, y por ende comenzamos a intentar deducir su paradero. En cuanto la disputa comenzó, surgieron distintas ideas; que una rata se lo llevó, o que Feli decidió comersela en cuanto vió la oportunidad. Finalmente, todos nos dimos cuenta que Nacho se la había robado, llevandosela a su escondite.",
+    "dejado": "Lo dejé en la biblioteca",
+    "hora": "Lo encontré a las 12am",
+    "tipo": "perdido",
+    "id": 5,
+    "creador": 44,
+    "comentarios": [
+      {
+        "user": 44,
+        "comm": "Primer comentario",
+        "userName": "Mate"
+      },
+      {
+        "user": 44,
+        "comm": "hOLA",
+        "userName": "Mate"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "mochilas",
+    "titulo": "Mochila",
+    "ubicacion": "En el baño de hombres",
+    "descripcion": "Blanca, negra, y de ADIDAS",
+    "dejado": "en la oficina de la preceptora",
+    "hora": "a las 3pm",
+    "tipo": "perdido",
     "creador": 24,
     "id": 2,
     "comentarios": [],
@@ -332,6 +407,26 @@
         "user": 39,
         "comm": "Épica almohada",
         "userName": "Felipeyh"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "webp",
+    "categoria": "mochilas",
+    "titulo": "Castor mega épico",
+    "ubicacion": "Encuentrenme en mi cama",
+    "descripcion": "Es un castor que me encontré por ahí. Me gusta mucho",
+    "dejado": "Se vió en las afueras de la ciudad",
+    "hora": "hace unos días",
+    "tipo": "perdido",
+    "id": 10,
+    "creador": 44,
+    "comentarios": [
+      {
+        "user": 55,
+        "comm": "Épico castor. No se donde está wacho",
+        "userName": "Matuvelo2"
       }
     ],
     "cumplio": false

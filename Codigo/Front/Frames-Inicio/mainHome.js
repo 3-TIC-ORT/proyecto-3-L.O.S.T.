@@ -1,6 +1,7 @@
 let userFrame = document.getElementById("user-frame");  
 let UserShown = document.getElementById("user-nameShown")
-let logIn = document.getElementById("LS-SU");
+let logIn = document.getElementById("log-in");
+let signUp = document.getElementById("sign-up");
 let logOut = document.getElementById("log-stuff");
 let bell = document.getElementById("bell");
 let CS = document.getElementById("CS");
@@ -8,23 +9,24 @@ let CS = document.getElementById("CS");
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
 function iSettings() {
-    console.log("pepe")
     localStorage.removeItem("publicaciones");
     //para hacer notificaciones le mando a santi que quiero todas las publicacioness
     postData("cargarPublicaciones", "all", (data) => {
         localStorage.setItem("publicaciones", JSON.stringify(data))
     })
     localStorage.removeItem("tipo");
-    if (JSON.parse(localStorage.getItem("userId")) !== null) {
+    if (JSON.parse(localStorage.getItem("JWT")) !== null) {
         UserShown.textContent = `${JSON.parse(localStorage.getItem("userName"))}`;
         userFrame.style.display = "none";
         logIn.style.display = "none";
-        CS.style.display = "flex"
-        bell.style.display = "flex"
+        signUp.style.display = "none";
+        CS.style.display = "flex";
+        bell.style.display = "flex";
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
+            document.getElementById("notification-box").innerHTML = ``;
             if(lista === "expirado"){
                 alert("Has tardado mucho tiempo, debes volver a logearte")
-                localStorage.removeItem("admin")
+                localStorage.removeItem("admin");
                 localStorage.removeItem("userId");
                 localStorage.removeItem("userName");
                 localStorage.removeItem("JWT");
@@ -32,29 +34,36 @@ function iSettings() {
             } else if(lista === false){
                 alert("Hubo un error")
             } else if(lista.length === 0) {
-                document.getElementById("notification-box").innerHTML = ``;
-                //El problema es que cuando volves a la página, los comentarios que ya viste te aparecen como nuevos. Mi idea es con una lista que guarde las notificaciones leídas, quizás se pueda hacer.
                 bell.src = `../Imgs/bell-false.png`
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.getElementById("notification-box").innerHTML += h1;
             } else {
                 let bellringing = false
-                let i = 0;
-                lista.forEach(noti => {
-                    const markup =     
-                    ` <div id="pub${i}-${noti.publicacion}"> 
-                          <h5>${noti.commenter}:</h5>
-                          <small>Ha comentado "${noti.text}"</small>
-                      </div>`;
-                document.getElementById("notification-box").innerHTML += markup;
-                document.getElementById(`pub${i}-${noti.publicacion}`).classList.remove("newNotification")
-                if (noti.leido === false) {
-                    //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
-                    document.getElementById(`pub${i}-${noti.publicacion}`).classList.add("newNotification")
-                    bellringing = true
+                for (let i = 0; i < lista.length; i++) {
+                    //Falta el if para corroborar si es comentario o de "fue encontrado"
+                    if (lista[i].commenter !== JSON.parse(localStorage.getItem("userName"))) {
+                        const markup =     
+                        ` <div id="pub${i}-${lista[i].publicacion}"> 
+                              <h5 id="h5${i}-${lista[i].publicacion}"></h5>                                                         
+                              <small>${lista[i].text}</small>
+                          </div>`;
+                          document.getElementById("notification-box").innerHTML += markup;
+                          let tituloPublicacion = JSON.parse(localStorage.getItem("publicaciones"))[lista[i].publicacion].titulo;
+                          if (lista[i].type === "encontrado") {
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha encontrado "${tituloPublicacion}"`
+                          } else if (lista[i].type === "perdido") {
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} es el dueño de "${tituloPublicacion}"`
+                          } else {
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha comentado "${tituloPublicacion}"`
+                          }
+                    document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification");
+                    if (lista[i].leido === false) {
+                        //Hace que las notificaciones que no son leidas aparezcan con un fondo amarillo
+                        document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.add("newNotification");
+                        bellringing = true
+                    }
+                    }
                 }
-                i++;
-                });
                 if (bellringing === true){
                     bell.src = `../Imgs/bell-true.png`
                 } else{
@@ -73,9 +82,6 @@ function iSettings() {
         })
     )
     }
-    else{
-        UserShown.textContent = "Anónimo"
-    }
 }
 
 iSettings();
@@ -92,17 +98,34 @@ function Lost () {
     localStorage.setItem("tipo", JSON.stringify("perdido"))
 } document.getElementById("lost").addEventListener("click", Lost);
 
-//La función de LS va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
+//La función de dataBox va a la par que la siguiente función, ya que al hacer que userFrame sea un grid, permite el uso de la función BackHome.
 
-function LS () {
+function dataBox (event) {
+    let button = event.target
+    let dataReciever = document.getElementsByClassName("LS")[0];
+    let containerReceiver = document.getElementById("LSs")
+    let h1 = document.getElementById("status");
+    if (button.id === "log-in") {
+        dataReciever.id = "FinalLog"
+        h1.textContent = "Inicia sesión"
+        containerReceiver.addEventListener("click", Login)
+    } else {
+        dataReciever.id = "FinalSign"
+        h1.textContent = "Crea tu cuenta"
+        containerReceiver.addEventListener("click", Register)
+
+    }
     userFrame.style.display = "grid";
-} document.getElementById("LS-SU").addEventListener("click", LS);
+} document.getElementById("log-in").addEventListener("click", dataBox);
+document.getElementById("sign-up").addEventListener("click", dataBox)
 
 
 //La función BackHome hace que cuando apretes afuera de la caja "main", se muestre el frame de inicio devuelta.
 
 function BackHome () {
     userFrame.style.display = "none";
+    document.getElementById("user-data").value = "";
+    document.getElementById("password-data").value = "";
 } 
 document.getElementsByClassName("a")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("b")[0].addEventListener("click", BackHome);
@@ -110,55 +133,59 @@ document.getElementsByClassName("c")[0].addEventListener("click", BackHome);
 document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 
 
-function Login() {
+function Login(e) {
+    e.preventDefault();
     let UserName = document.getElementById("user-data").value;
-    let UserPassword = document.getElementById("password-data").value
-    UserShown = document.getElementById("user-nameShown");
-    if (UserName === "" || UserPassword === ""){
-        alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
-    } else {
-        postData("login", {name:UserName, password: UserPassword}, (data) => {
-            console.log(data);
-            if(data.id !== null){
-                UserShown.textContent = `${UserName}`;
-                userFrame.style.display = "none";
-                logIn.style.display = "none";
-                CS.style.display = "flex"
-                bell.style.display = "flex"
-                SetId({id:data.id, name:UserName, admin:data.admin, JWT:data.JWT})
-            } else{
-                alert(data.inf);
-            }
-        })
-    }
-} document.getElementById("FinalLog").addEventListener("click", Login);
-
-
-
-function Register() {
-    let UserName = document.getElementById("user-data").value;
-    let UserPassword = document.getElementById("password-data").value
-    UserShown = document.getElementById("user-nameShown");
-    if (UserName === "" || UserPassword === ""){
-        alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
-    } else if ((UserName.length > 32||UserPassword.length  > 32 || UserPassword.length < 8 || UserPassword.match(/[a-z]/) == null && UserPassword.includes("ñ") === false || UserPassword.match(/[A-Z]/) == null && UserPassword.includes("Ñ") === false || UserPassword.match(/[0-9]/) == null)) {
-        alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
-    } else {
-        postData("register", {name:UserName, password: UserPassword}, (data) => {
-            if(data.id !== null){
-                UserShown.textContent = `${UserName}`;
-                userFrame.style.display = "none";
-                logIn.style.display = "none";
-                CS.style.display = "flex"
-                bell.style.display = "flex";
-                SetId({id:data.id, name:UserName, admin: data.admin, JWT:data.JWT})
-            } else{
-                alert(data.inf);
-            }
-        })
+    let UserPassword = document.getElementById("password-data").value;
+    if(e.target.id === "FinalLog") {
+        if (UserName === "" || UserPassword === ""){
+            alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+        } else {
+            postData("login", {name:UserName, password: UserPassword}, (data) => {
+                console.log(data);
+                if(data.id !== null){
+                    UserShown.textContent = `${UserName}`;
+                    userFrame.style.display = "none";
+                    logIn.style.display = "none";
+                    CS.style.display = "flex"
+                    bell.style.display = "flex"
+                    SetId({id:data.id, name:UserName, admin:data.admin, JWT:data.JWT})
+                    console.log("hola")
+                } else{
+                    alert(data.inf);
+                }
+            })
+        }
     }
 }
-document.getElementById("FinalSign").addEventListener("click", Register);
+
+
+
+function Register(e) {
+    e.preventDefault();
+    let UserName = document.getElementById("user-data").value;
+    let UserPassword = document.getElementById("password-data").value;
+    if (e.target.id === "FinalSign") {
+        if (UserName === "" || UserPassword === ""){
+            alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+        } else if ((UserName.length > 32||UserPassword.length  > 32 || UserPassword.length < 8 || UserPassword.match(/[a-z]/) == null && UserPassword.includes("ñ") === false || UserPassword.match(/[A-Z]/) == null && UserPassword.includes("Ñ") === false || UserPassword.match(/[0-9]/) == null)) {
+            alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
+        } else {
+            postData("register", {name:UserName, password: UserPassword}, (data) => {
+                if(data.id !== null){
+                    UserShown.textContent = `${UserName}`;
+                    userFrame.style.display = "none";
+                    logIn.style.display = "none";
+                    CS.style.display = "flex"
+                    bell.style.display = "flex";
+                    SetId({id:data.id, name:UserName, admin: data.admin, JWT:data.JWT})
+                } else{
+                    alert(data.inf);
+                }
+            })
+        }
+    }
+}
 
 function SetId({id, name, admin, JWT}) {
     localStorage.setItem("userId", JSON.stringify(id));
@@ -169,7 +196,6 @@ function SetId({id, name, admin, JWT}) {
 }
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
-
 let show = document.getElementById("show");
 let hide = document.getElementById("hide");
 
@@ -183,8 +209,8 @@ function HideShow (event) {
         show.style.display = "none";
         hide.style.display = "block";
     }
-} document.getElementById("hide").addEventListener("click", HideShow);
-document.getElementById("show").addEventListener("click", HideShow);
+} hide.addEventListener("click", HideShow);
+show.addEventListener("click", HideShow);
 
 //Te deslogea de la cuenta y te vuelve al anónimo
 
@@ -196,9 +222,10 @@ function LogOut() {
     bell.style.display = "none";
     CS.style.display = "none"
     logIn.style.display = "flex";
+    signUp.style.display = "flex"
     document.getElementById("user-data").value = "";
     document.getElementById("password-data").value = "";
-    UserShown.textContent = "Anónimo"
+    UserShown.textContent = "";
     document.getElementById("notification-box").innerHTML = "";
 } document.getElementById("CS").addEventListener("click", LogOut);
 
@@ -210,7 +237,7 @@ const overlay= document.querySelector("[data-overlay]")
 
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
         modal.showModal();
-        bell.src = `../Imgs/bell-false.png`
+        bell.src = `../Imgs/bell-open.png`
         postData("notificacionesLeidas", JSON.parse(localStorage.getItem("JWT")), (retorno)=>{
             if(retorno === true){
             } else if (retorno === "expirado"){
@@ -236,6 +263,7 @@ const overlay= document.querySelector("[data-overlay]")
             e.clientY > dialogDimensions.bottom 
         ) {
             modal.close()
+            bell.src = `../Imgs/bell-false.png`
             iSettings()
         }
     }) 
@@ -248,4 +276,3 @@ function reDirect(event) {
     console.log(clickedDiv);
     window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${clickedDiv.id.split("-").pop()}`
 }
- 

@@ -557,5 +557,75 @@
       }
     ],
     "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "vestimenta",
+    "titulo": "kbjhb",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 10,
+    "creador": 55,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "mochilas",
+    "titulo": "ighuyguy",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "id": 11,
+    "creador": 55,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "cuaderno/carpeta",
+    "titulo": "dwadwadwa",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 12,
+    "creador": 55,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "accesorios",
+    "titulo": "aawdawdawdawdawd",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 13,
+    "creador": 55,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "mochilas",
+    "titulo": "awdawdawdawd",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 14,
+    "creador": 55,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

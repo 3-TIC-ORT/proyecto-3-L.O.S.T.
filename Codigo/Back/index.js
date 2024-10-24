@@ -59,13 +59,11 @@ async function crearPublicacion({publicacion, JWT}){
     }
     try {
         const { payload, protectedHeader} = await jose.jwtVerify(JWT, claveSecreta);
-        
         let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
         publicacion.id = lista.length;
-        
         publicacion.creador = payload.id;
         if(publicacion.imagen === false){
-            fs.copyFileSync(`Codigo/data/imgs/Default.png`, `${publicacion.id}.png`)
+            fs.copyFileSync(`Codigo/data/imgs/Default.png`, `Codigo/data/imgs/${publicacion.id}.png`)
             publicacion.tipoImg = "png"
 
         }else{

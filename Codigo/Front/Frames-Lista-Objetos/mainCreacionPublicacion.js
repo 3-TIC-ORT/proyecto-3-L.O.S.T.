@@ -49,16 +49,13 @@ getData();
 //Falta poner límite de size en imagen
 //La siguiente funcion lo que hace es guardar toda la info de los inputs y enviarla al back
 
-
 const form = document.querySelector(`form`)
-console.log("hola")
 form.addEventListener(`submit`, (e) => {
     let params = new URLSearchParams(document.location.search);
     e.preventDefault();
     formulario = e.target;
     if (formulario.img.files[0] === undefined && !params.get("editado")) {
         publicacion.imagen = false;
-        console.log(formulario.img.files[0])
         publicacion.tipoImg = "image/png"
     } else if(!params.get("editado")) {
         publicacion.imagen = formulario.img.files[0];
@@ -70,7 +67,7 @@ form.addEventListener(`submit`, (e) => {
     publicacion.descripcion = formulario.description.value;
     publicacion.dejado = formulario.placeLeft.value;
     publicacion.hora = formulario.time.value;
-    if (params.get("editado") ) { 
+    if (params.get("editado")) { 
         console.log(publicacion)
         if (formulario.img.files[0] === undefined) {
             publicacion.imagen = false;

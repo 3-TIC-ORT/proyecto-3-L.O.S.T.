@@ -40,8 +40,8 @@ function iSettings() {
             } else {
                 let bellringing = false
                 for (let i = 0; i < lista.length; i++) {
-                    //Falta el if para corroborar si es comentario o de "fue encontrado"
-                    if (lista[i].commenter !== JSON.parse(localStorage.getItem("userName"))) {
+                    if (lista[i].commenter !== localStorage.getItem("userName")) {
+                        //si no hago continue, me tira error porque la publicacion de la notificacion no existe. Quiza el eliminado esta mal.
                         const markup =     
                         ` <div id="pub${i}-${lista[i].publicacion}"> 
                               <h5 id="h5${i}-${lista[i].publicacion}"></h5>                                                         
@@ -69,15 +69,14 @@ function iSettings() {
                 } else{
                     bell.src = `../Imgs/bell-false.png`
                 }
-                i = 0;
-                lista.forEach(noti => {
+                for (let a = 0; a < lista.length ; a++) {
                     //Por como funciona querySelector le tuve que agregar un cacho de string extra, ya que querySelector no puede agarrar números sueltos.
-                    document.querySelectorAll(`#pub${i}-${noti.publicacion}`).forEach(div => {
-                        //Hay que revisar esto
-                       div.addEventListener("click", reDirect);
-                })
-                i++
-              })
+                    if (lista[a].commenter !== localStorage.getItem("userName") && lista[a].eliminado === false) {
+                        document.querySelectorAll(`#pub${a}-${lista[a].publicacion}`).forEach(noti => {
+                            noti.addEventListener("click", reDirect);
+                    }) 
+                    }
+                }
             }
         })
     )

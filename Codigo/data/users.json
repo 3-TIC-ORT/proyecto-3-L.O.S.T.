@@ -294,6 +294,7 @@
     "admin": false
   },
   {
+<<<<<<< Updated upstream
     "name": "DHuhiwahdwa",
     "password": "AIUDwadw123d",
     "id": 49,
@@ -340,5 +341,11 @@
     "password": "6saS5Asafoas0ssdSdf",
     "id": 56,
     "admin": false
+=======
+    "name": "nacho",
+    "password": "adsfhadshjfg36245123rRRRR",
+    "id": 49,
+    "admin": false
+>>>>>>> Stashed changes
   }
 ]

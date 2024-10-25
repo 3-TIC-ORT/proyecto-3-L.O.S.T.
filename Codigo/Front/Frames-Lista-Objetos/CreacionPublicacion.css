@@ -132,7 +132,7 @@ textarea[name="description"] {
     resize: none;
     flex-shrink: 0;
     height: 20vh;
-    border: 0.22rem solid var(--gris);
+    border: 0.22rem solid var(--border);
     transition: border 0.5s;
 }
 

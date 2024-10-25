@@ -14,6 +14,18 @@ function DataLoader () {
             document.getElementById("lugar").textContent = publicaciones[i].ubicacion;
             document.getElementById("dejado").textContent = publicaciones[i].dejado;
             document.getElementById("foto").src = `../../data/imgs/${publicaciones[i].id}.${publicaciones[i].tipoImg}`
+            let dejadoTitle = document.querySelector("#dejado-title");
+            let fechaTitle = document.querySelector("#fecha-title");
+            let lugarTitle = document.querySelector("#lugar-title")
+            if (publicaciones[i].tipo === "encontrado") {
+                fechaTitle.textContent = "Fecha y hora"
+                lugarTitle.textContent = "Lugar donde se encontró"
+                dejadoTitle.textContent = "Lugar donde se dejó"
+            } else if (publicaciones[i].tipo === "perdido") {
+                fechaTitle.textContent = "Hora aproximada en la que se perdió"
+                lugarTitle.textContent = "Información de contacto"
+                dejadoTitle.textContent = "Ultima vez visto"
+            }
             for (let a = 0; a < publicaciones[i].comentarios.length; a++) {
                 const comentario = 
                 `<article>

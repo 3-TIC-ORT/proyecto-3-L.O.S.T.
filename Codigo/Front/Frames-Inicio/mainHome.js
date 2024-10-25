@@ -50,11 +50,11 @@ function iSettings() {
                           document.getElementById("notification-box").innerHTML += markup;
                           let tituloPublicacion = JSON.parse(localStorage.getItem("publicaciones"))[lista[i].publicacion].titulo;
                           if (lista[i].type === "encontrado") {
-                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha encontrado "${tituloPublicacion}"`
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha encontrado "${tituloPublicacion}":`
                           } else if (lista[i].type === "perdido") {
-                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} es el dueño de "${tituloPublicacion}"`
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} es el dueño de "${tituloPublicacion}":`
                           } else {
-                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha comentado "${tituloPublicacion}"`
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha comentado "${tituloPublicacion}":`
                           }
                     document.getElementById(`pub${i}-${lista[i].publicacion}`).classList.remove("newNotification");
                     if (lista[i].leido === false) {
@@ -78,7 +78,7 @@ function iSettings() {
                     }
                 }
                 if (document.getElementById("notification-box").innerHTML === ``) {
-                    document.getElementById("notification-box").innerHTML = ``,
+                    document.getElementById("notification-box").innerHTML = ``;
                     bell.src = `../Imgs/bell-false.png`
                     const h1 = `<h1>Sin notificaciones</h1>`;
                     document.getElementById("notification-box").innerHTML += h1;
@@ -113,10 +113,12 @@ function dataBox (event) {
     if (button.id === "log-in") {
         dataReciever.id = "FinalLog"
         h1.textContent = "Inicia sesión"
+        document.getElementById("FinalLog").textContent = "Inciar Sesión"
         containerReceiver.addEventListener("click", Login)
     } else {
         dataReciever.id = "FinalSign"
         h1.textContent = "Crea tu cuenta"
+        document.getElementById("FinalSign").textContent = "Registrarse"
         containerReceiver.addEventListener("click", Register)
 
     }

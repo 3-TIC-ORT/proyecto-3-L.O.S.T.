@@ -34,5 +34,14 @@
     "publicacion": 0,
     "leido": true,
     "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "HolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHola",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": false
   }
 ]

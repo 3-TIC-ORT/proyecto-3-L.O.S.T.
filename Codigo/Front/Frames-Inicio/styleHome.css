@@ -8,8 +8,12 @@
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
     --font-INTER: "Inter", sans-serif;
-    --font-LOST: 'jsMath-cmr10', sans-serif;
-    
+    --font-JSMATH: 'jsMath-cmr10', sans-serif;
+    --font-LALEZAR: "Lalezar", system-ui;
+    --red: #A90000;
+    --register: #0783C8;
+    --login: #8D8D8D;
+    --reallyDarkBlue: #121E46;
 }
 
 
@@ -18,7 +22,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-INTER);
-    font-weight: 750;
+    font-style: normal;
 }
 
 body {
@@ -42,30 +46,72 @@ header{
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 15%;
-    padding: 2vh;
-
+    height: 11%;
+    padding: 2vh 1.5vw;
     margin: 0;
-    background-color: aquamarine;
+    background: linear-gradient(to left, var(--azulOscuro), #1D71A9, #1F7AB6, #248FD6);
 }
 
+.LOST-title {
+    color: transparent;
+}
+
+.titulo{
+    font-family: var(--font-JSMATH);
+    font-size: 4rem;
+    font-weight: 200;
+    background: linear-gradient(to top, var(--azulOscuro), var(--slightlyWhite));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.acronim{
+  font-family: var(--font-LALEZAR);
+  color: white;
+  font-weight: 100;
+  font-size: 0.6rem;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
 
 .CS{
     display: none;
     align-items: center;
     justify-content: center;
-    font-size: 4vh;
-    width: 15vw;
-    height: 10vh;
-    background-color: rgb(255, 0, 0);
+    font-size: 1rem;
+    width: 7vw;
+    height: 6vh;
+    background-color: var(--red);
     color: white;
     border: none;
     cursor: pointer;
 }
 
+#log-in {
+    background-color: var(--login);
+}
+
+#sign-up {
+    background-color: var(--register);
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    height: 6vh;
+    width: 8vw;
+    color: white;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+
 .user-nameShown{
     display: flex;
-    font-size: 4vh;
+    font-size: 2rem;
+    color: white;
     user-select:none;
 }
 
@@ -75,14 +121,14 @@ header{
     align-items: center;
     width: auto;
     height: 100%;
-    gap: 4%;
+    gap: 6%;
 }
 
 #bell{
     display: none;
     cursor: pointer;
-    width: 3.5vw;
-    height: 7vh;
+    width: 2vw;
+    height: 5vh;
 }
 
 .comentNotis {
@@ -96,22 +142,8 @@ header{
     padding: 1vh 1vw;
 }
 
-.login-signup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4vh;
-    height: 10vh;
-    width: 15vw;
-    background-color: #05B0E5;
-    color: white;
-    border: none;
-    cursor: pointer;
-    user-select: none;
-}
-
 .medio {
-    height: 85%;
+    height: 89%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -120,10 +152,10 @@ header{
 }
 
 .centro {
-    width: 50%;
-    height: 40%;
+    width: 90%;
+    height: 60%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     
@@ -134,21 +166,13 @@ header{
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 5vh;
-    width: 20vw; 
-    height: 15vh; 
+    font-size: 3rem;
+    width: 30vw; 
+    height: 25vh; 
+    font-weight: 600;
     background: #000000;
     color: white;
     cursor: pointer;
-}
-
-.choice{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    user-select:none;
 }
 
 /* Frame Log in/Sign up: */
@@ -174,7 +198,7 @@ header{
     flex-flow: column wrap;
     justify-content: space-around;
     align-items: center;
-    background-color: #D9D9D9;
+    background-color: var(--reallyDarkBlue);
     height: 100%;
 }
 
@@ -201,6 +225,10 @@ header{
     grid-area: 3/1/3/4;
 }
 
+h1 {
+    color: white;
+}
+
 .atras-log {
     user-select: none;
     cursor: pointer;
@@ -213,8 +241,6 @@ header{
     width: 70%;
     justify-content: space-around;
 }
-
-
 
 #password-data {
     height: 100%;
@@ -363,12 +389,4 @@ dialog > main > div > small {
 
 .newNotification {
     background-color: yellow;
-}
-
-h3{
-    font-family: var(--font-LOST);
-}
-
-h5{
-  font-family: var(--font-INTER);
 }

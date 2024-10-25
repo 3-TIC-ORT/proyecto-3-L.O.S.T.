@@ -5,25 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts: -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/jsmath-cmr10" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Moderustic:wght@300..800&display=swap" rel="stylesheet">
     <title>Inicio</title>
 </head>
 <body>
     <section class="home-frame" id="home-frame">
         <header>
-            <div>
-                <h3>L.O.S.T</h3>
-                <h5>Logística de Objetos Sin Tenencia</h5>
+            <div class="LOST-title">
+                <h3 class="titulo">L.O.S.T</h3>
+                <h5 class="acronim">Logística de Objetos Sin Tenencia</h5>
             </div>
             <div class="user-data">
                 <span id="user-nameShown" class="user-nameShown"></span>
                 <img data-open-modal="" src="../Imgs/bell-false.png" id="bell" alt="campanita" title="notification-bell">
                 <button class="CS" id="CS"><span>Cerrar sesión</span></button>
-                <button class="login-signup" id="log-in">Iniciar Sesión</button>
                 <button class="login-signup" id="sign-up">Registrarse</button>
+                <button class="login-signup" id="log-in">Iniciar Sesión</button>
             </div>
                 <dialog data-modal>
                     <main id="notification-box"></main>
@@ -32,10 +36,8 @@
         </header>
         <main class="medio">
             <div class="centro">
-                <div class="choice">         
                     <div class="find-lost" id="lost"><span>Perdí algo</span></div>
                     <div class="find-lost" id="found"><span>Encontré algo</span></div>
-                </div>
             </div>
             
         </div>
@@ -48,7 +50,7 @@
         <main id="main-data">
             <form class="datas" id="datas">
                 <h1 id="status"></h5>
-                <input class="data" id="user-data" type="text" name="user-data"  placeholder="Usuario"  maxlength="32">
+                <input class="data" id="user-data" type="text" name="user-data"  placeholder="Nombre"  maxlength="32">
                 <div class="data" id="password-eye">
                     <input id="password-data" type="password" name="password-data" placeholder="Contraseña" minlength="8" maxlength="32" >
                     <img class="show" id="show" src="../Imgs/view-eye.png" alt="ojo view">

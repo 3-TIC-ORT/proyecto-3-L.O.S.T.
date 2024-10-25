@@ -120,6 +120,10 @@ main {
     font-size: 4rem;
 }
 
+h2 {
+    font-weight: 500;
+}
+
 .lugar, .fecha, .dejado, .descr {
     display: flex;
     justify-content: flex-start;
@@ -129,7 +133,8 @@ main {
     background-color: var(--slightlyWhite);
     border: 0.2rem solid var(--border);
     border-radius: 1vw;
-    font-size: 2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
     padding: 1vh 1vw
 }
 
@@ -208,6 +213,25 @@ main {
     height: auto;
     display: flex;
     flex-flow: column-reverse;
+}
+
+#coment-box > article {
+    border-top: 0.1rem solid #A7A7A7;
+    padding: 1.5vh 0;
+    display: flex;
+    flex-flow: column wrap;
+    word-break: break-all;
+}
+
+#coment-box > article > h4 {
+    font-weight: 200;
+    font-size: 1.4rem;
+}
+
+#coment-box > article > p {
+    font-weight: 500;
+    font-size: 1.7rem;
+    padding-left: 0.7vw;
 }
 
 body > .Mder > .coments > section {

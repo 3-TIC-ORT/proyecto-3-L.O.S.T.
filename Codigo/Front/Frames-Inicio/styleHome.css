@@ -7,6 +7,9 @@
     --blue: #3B7DF9;
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
+    --font-INTER: "Inter", sans-serif;
+    --font-LOST: 'jsMath-cmr10', sans-serif;
+    
 }
 
 
@@ -14,6 +17,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-INTER);
+    font-weight: 750;
 }
 
 body {
@@ -358,4 +363,12 @@ dialog > main > div > small {
 
 .newNotification {
     background-color: yellow;
+}
+
+h3{
+    font-family: var(--font-LOST);
+}
+
+h5{
+  font-family: var(--font-INTER);
 }

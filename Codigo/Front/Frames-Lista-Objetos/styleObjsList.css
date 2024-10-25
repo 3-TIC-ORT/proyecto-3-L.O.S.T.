@@ -3,6 +3,7 @@
     --blue: #3B7DF9;
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
+    --font-INTER: "Inter", sans-serif;
 }
 
 body {
@@ -119,4 +120,7 @@ body > header > img {
     width: 5vw;
     height: 5vh;
     user-select: pointer;    
+}
+*{
+    font-family: var(--font-INTER);
 }

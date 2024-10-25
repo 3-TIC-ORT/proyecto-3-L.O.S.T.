@@ -6,12 +6,15 @@
     --slightlyWhite: #EEEEEE;
     --focus: #66A0BD;
     --editColor: #3B7DF9;
+    --font-INTER: "Inter", sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-INTER);
+    font-weight: 750;
 }
 
 body{

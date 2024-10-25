@@ -37,11 +37,11 @@ function iSettings() {
                 bell.src = `../Imgs/bell-false.png`
                 const h1 = `<h1>Sin notificaciones</h1>`;
                 document.getElementById("notification-box").innerHTML += h1;
-            } else {
+            }
+            else {
                 let bellringing = false
                 for (let i = 0; i < lista.length; i++) {
-                    if (lista[i].commenter !== localStorage.getItem("userName")) {
-                        //si no hago continue, me tira error porque la publicacion de la notificacion no existe. Quiza el eliminado esta mal.
+                    if (lista[i].commenter !== localStorage.getItem("userName").replace(`"`, ``).replace(`"`, ``)) {
                         const markup =     
                         ` <div id="pub${i}-${lista[i].publicacion}"> 
                               <h5 id="h5${i}-${lista[i].publicacion}"></h5>                                                         
@@ -76,6 +76,12 @@ function iSettings() {
                             noti.addEventListener("click", reDirect);
                     }) 
                     }
+                }
+                if (document.getElementById("notification-box").innerHTML === ``) {
+                    document.getElementById("notification-box").innerHTML = ``,
+                    bell.src = `../Imgs/bell-false.png`
+                    const h1 = `<h1>Sin notificaciones</h1>`;
+                    document.getElementById("notification-box").innerHTML += h1;
                 }
             }
         })

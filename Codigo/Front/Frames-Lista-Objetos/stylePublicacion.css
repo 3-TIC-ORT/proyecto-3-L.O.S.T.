@@ -1,5 +1,6 @@
 :root {
     --grey: rgb(161, 168, 153);
+    --border:#C4C4C4;
     --celeste:  #0186BF;
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
@@ -123,9 +124,9 @@ main {
     width: 55vw;
     color: black;
     background-color: var(--slightlyWhite);
+    border: 0.2rem solid var(--border);
     border-radius: 1vw;
     font-size: 2rem;
-    box-sizing: border-box;
     padding: 1vh 1vw
 }
 
@@ -167,6 +168,7 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: auto;
     gap: 2vh;
     padding: 1.5vh 1.5vw;
 }

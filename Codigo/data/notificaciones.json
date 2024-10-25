@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Hola",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Chau",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Mentira\n",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Fachessdss",
+    "text": "hOLA",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": false
+  }
+]

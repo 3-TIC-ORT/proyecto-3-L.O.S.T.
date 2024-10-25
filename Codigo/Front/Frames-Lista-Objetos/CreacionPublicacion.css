@@ -1,5 +1,5 @@
 :root {
-    --gris:#C4C4C4;
+    --border:#C4C4C4;
     --blanco:white;
     --celeste:rgb(66, 167, 201);
     --azul: #3B7DF9;
@@ -60,7 +60,7 @@ form {
     border-radius: 1rem;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--gris);
+    background-color: var(--border);
 }
 
 .filecontainer input[type="file"] {
@@ -94,7 +94,7 @@ select{
     padding: 1vh 1vw;
     background-color: var(--blanco);
     color: var(--darkGrey);
-    border: 0.22rem solid #C4C4C4;
+    border: 0.22rem solid var(--border);
     transition: border 0.5s;
 }
 
@@ -112,7 +112,7 @@ select{
     border: none;
     padding: 1vh 1vw;
     color: var(--darkGrey);
-    border: 0.22rem solid #C4C4C4;
+    border: 0.22rem solid var(--border);
     transition: border 0.5s;
 }
 
@@ -127,7 +127,7 @@ textarea[name="description"] {
     resize: none;
     flex-shrink: 0;
     height: 20vh;
-    border: 0.22rem solid #C4C4C4;
+    border: 0.22rem solid var(--gris);
     transition: border 0.5s;
 }
 

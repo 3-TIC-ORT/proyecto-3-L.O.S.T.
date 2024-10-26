@@ -1,4 +1,17 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
+
+let colores = {
+    vestimenta: "#04d616",
+    paraguas: "#0804d6",
+    accesorios: "#f7e51b",
+    mochilas: "#1be9f7",
+    "cuaderno/carpeta": "#de20f7",
+    "útiles escolares": "#ffa600",
+    "productos electrónicos": "#8a16c4",
+    otros: "#f01818"
+}
+
+
 let filtro = {
     vestimenta: true,
     paraguas: true,
@@ -51,6 +64,7 @@ function LoadPosts(listaCompleta) {
         document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoDown);
         nuevoDown.appendChild(Downtxt);
+        nuevoBox.style = `box-shadow: 0rem 0rem 1rem ${colores[postList[i].categoria]};`
     }
     //Una vez cargadas las publicaciones, le agrego el EventListener a cada publicación.
     document.querySelectorAll("article").forEach(article => {

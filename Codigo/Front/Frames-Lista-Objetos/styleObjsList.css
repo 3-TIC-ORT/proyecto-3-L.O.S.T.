@@ -92,12 +92,12 @@ li{
 }
 
 .create {
-    font-size: 7vh;
-    background-color: blue;
+    font-size: 5rem;
+    background-color: var(--azulOscuro);
 }
 
 .post {
-    font-size: 20vh;
+    font-size: 5rem;
     order: -1;
 }
 
@@ -106,13 +106,12 @@ li{
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    
+    width: 100%; 
+
 }
 
 .up  {
     height: 75%;
-    font-size: 4vh;
     border-top-left-radius: 2vw;
     border-top-right-radius: 2vw;
 }
@@ -130,6 +129,13 @@ h3 {
     cursor:text;
 }
 
-.addtxt {
-    font-size: 4vh;
+.addtxt, .add {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #D4D4D4;
+}
+
+.add{
+    font-size: 15rem;
+    font-weight: 500;
 }

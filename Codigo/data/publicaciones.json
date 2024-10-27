@@ -1,83 +1,15 @@
 [
   {
-    "tipoImg": "png",
-    "categoria": "útiles escolares",
-    "titulo": "Sigue perdido",
-    "ubicacion": "ni idea",
-    "descripcion": "una tortuga",
-    "dejado": "en mi casa",
-    "hora": "a las 3",
+    "tipoImg": "jpeg",
+    "categoria": "accesorios",
+    "titulo": "Pepito",
+    "ubicacion": "",
+    "descripcion": "Pene",
+    "dejado": "",
+    "hora": "",
     "tipo": "perdido",
     "id": 0,
     "creador": 44,
-    "comentarios": [
-      {
-        "user": 44,
-        "comm": "Hola",
-        "userName": "Mate"
-      },
-      {
-        "user": 44,
-        "comm": "Chau",
-        "userName": "Mate"
-      },
-      {
-        "user": 44,
-        "comm": "Mentira\n",
-        "userName": "Mate"
-      },
-      {
-        "user": 56,
-        "comm": "hOLA",
-        "userName": "Fachessdss"
-      },
-      {
-        "user": 44,
-        "comm": "HolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHolaHola",
-        "userName": "Mate"
-      }
-    ],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "webp",
-    "categoria": "mochilas",
-    "titulo": "Test de cosas",
-    "ubicacion": "Información de contacto",
-    "descripcion": "Descripción",
-    "dejado": "último lugar en el que se vió",
-    "hora": "Hora aproximada en la que se perdio",
-    "tipo": "perdido",
-    "id": 1,
-    "creador": 44,
-    "comentarios": [],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "productos electrónicos",
-    "titulo": "Cascos piola",
-    "ubicacion": "en Labo4",
-    "descripcion": "Tienen lucecitas",
-    "dejado": "En la bilioteca",
-    "hora": "ayer",
-    "tipo": "encontrado",
-    "id": 2,
-    "creador": 44,
-    "comentarios": [],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "mochilas",
-    "titulo": "Hola",
-    "ubicacion": "",
-    "descripcion": "awdawdwd",
-    "dejado": "",
-    "hora": "",
-    "tipo": "encontrado",
-    "id": 3,
-    "creador": 60,
     "comentarios": [],
     "cumplio": false
   }

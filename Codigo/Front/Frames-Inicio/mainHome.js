@@ -50,9 +50,9 @@ function iSettings() {
                           document.getElementById("notification-box").innerHTML += markup;
                           let tituloPublicacion = JSON.parse(localStorage.getItem("publicaciones"))[lista[i].publicacion].titulo;
                           if (lista[i].type === "encontrado") {
-                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha encontrado "${tituloPublicacion}":`
-                          } else if (lista[i].type === "perdido") {
                             document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} es el dueño de "${tituloPublicacion}":`
+                          } else if (lista[i].type === "perdido") {
+                            document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha encontrado "${tituloPublicacion}":`
                           } else {
                             document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha comentado "${tituloPublicacion}":`
                           }

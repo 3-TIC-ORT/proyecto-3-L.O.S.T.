@@ -1,6 +1,6 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 
-let colores = {
+const colores = {
     vestimenta: "#04d616",
     paraguas: "#0804d6",
     accesorios: "#f7e51b",
@@ -10,7 +10,6 @@ let colores = {
     "productos electrónicos": "#8a16c4",
     otros: "#f01818"
 }
-
 
 let filtro = {
     vestimenta: true,
@@ -29,9 +28,10 @@ function LoadPosts(listaCompleta) {
     addNav.id = "create";
     let addH1 = document.createElement("h1");
     addH1.textContent = "+";
+    addH1.classList.add("add")
     let addSpan = document.createElement("span");
     addSpan.classList.add("addtxt");
-    addSpan.textContent = "Agregar Objeto";
+    addSpan.textContent = "Crear publicación";
     addNav.appendChild(addH1)   
     addNav.appendChild(addSpan)
     document.getElementById("ObjectsList").appendChild(addNav)

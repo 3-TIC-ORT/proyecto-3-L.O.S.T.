@@ -91,23 +91,32 @@ header{
     border: none;
     cursor: pointer;
     border-radius: 15px;
+    transition: background-color 0.25s;
+}
+
+.CS:hover {
+    transition: background-color 0.25s;
+    background-color: #830000;
 }
 
 #log-in {
     background-color: var(--login);
+    transition: background-color 0.25s;
 }
 
 #log-in:hover{
-    transition: 1s;
+    transition: background-color 0.25s;
     background-color: var(--login-hover);
 }
 
 #sign-up {
     background-color: var(--register);
+    transition: background-color 0.25s;
+    
 }
 
 #sign-up:hover{
-    transition: 1s;
+    transition: background-color 0.25s;
     background-color: var(--register-hover);
 }
 
@@ -132,21 +141,25 @@ header{
 
 #found{
     background-color:  #92B5D5;
+    transition: background-color 0.25s;
 }
+
 #found:hover{
-    transition: 1s;
+    transition: background-color 0.25s;
     background-color: var(--found-hover);
 
 }
 
 #lost{
  background-color:#346FA5 ;
+ transition: background-color 0.25s;
 }
 
 #lost:hover{
-    transition: 1s;
+    transition: background-color 0.25s;
     background-color: var(--lost-hover);
 }
+
 .user-nameShown{
     display: flex;
     font-size: 1.75rem;
@@ -284,6 +297,10 @@ h1 {
     justify-content: space-around;
 }
 
+.datas > h1 {
+    color: white;
+}
+
 #password-data {
     height: 100%;
     width: 100%;
@@ -387,6 +404,10 @@ dialog{
     transform: translateY(5em) translateX(68em);
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+dialog > h1 {
+    color: #000000;
 }
 
 dialog::-webkit-scrollbar {  

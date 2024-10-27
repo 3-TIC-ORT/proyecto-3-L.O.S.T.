@@ -71,8 +71,10 @@ function DataLoader () {
                 })
             }  else {
                 let dialog = document.createElement("dialog");
+                const h2 = document.createElement("h2");
+                h2.textContent = "Envia un comentario al creador de la publicacion sobre el paradero del objeto"
                 let form = document.createElement("form")
-                let input = document.createElement("input");
+                let input = document.createElement("textarea");
                 input.type = "text"
                 input.name = "text"
                 let submit = document.createElement("input")
@@ -81,8 +83,9 @@ function DataLoader () {
                 submit.value = "Enviar"
                 document.querySelector("body").appendChild(dialog)
                 dialog.appendChild(form)
-                form.appendChild(submit)
+                form.appendChild(h2)
                 form.appendChild(input)
+                form.appendChild(submit)
                 submit.addEventListener("click", (e) => {
                     e.preventDefault()
                     propuesta.text = input.value

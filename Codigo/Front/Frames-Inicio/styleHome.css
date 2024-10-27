@@ -12,7 +12,11 @@
     --font-LALEZAR: "Lalezar variant0", sans-serif;
     --red: #A90000;
     --register: #0783C8;
+    --register-hover:#1b6892;
     --login: #8D8D8D;
+    --login-hover: #6b6969;
+    --lost-hover:#326695;
+    --found-hover: #698DAE;
     --reallyDarkBlue: #121E46;
 }
 
@@ -93,8 +97,18 @@ header{
     background-color: var(--login);
 }
 
+#log-in:hover{
+    transition: 1s;
+    background-color: var(--login-hover);
+}
+
 #sign-up {
     background-color: var(--register);
+}
+
+#sign-up:hover{
+    transition: 1s;
+    background-color: var(--register-hover);
 }
 
 .login-signup {
@@ -116,6 +130,23 @@ header{
     vertical-align: baseline;
 }
 
+#found{
+    background-color:  #92B5D5;
+}
+#found:hover{
+    transition: 1s;
+    background-color: var(--found-hover);
+
+}
+
+#lost{
+ background-color:#346FA5 ;
+}
+
+#lost:hover{
+    transition: 1s;
+    background-color: var(--lost-hover);
+}
 .user-nameShown{
     display: flex;
     font-size: 1.75rem;

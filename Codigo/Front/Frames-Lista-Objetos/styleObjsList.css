@@ -73,7 +73,7 @@ li{
 
 .ObjectsList {
     display: grid;
-    grid-template: repeat(25, 25rem) / 1fr 1fr 1fr 1fr ;
+    grid-template: repeat(25, 40rem) / 1fr 1fr 1fr 1fr ;
     width: 90%;
     height: 90%;
 }
@@ -88,6 +88,7 @@ li{
     width: 80%;
     height: 80%;
     justify-self: center;
+    border-radius: 2vw;
 }
 
 .create {
@@ -110,14 +111,18 @@ li{
 }
 
 .up  {
-    height: 70%;
+    height: 75%;
     font-size: 4vh;
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
 }
 
 .down {
-    height: 30%;
+    height: 25%;
     font-size: 3vh;
     background-color:blueviolet;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
 }
 
 h3 {

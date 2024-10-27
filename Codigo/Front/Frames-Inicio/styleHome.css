@@ -113,6 +113,7 @@ header{
     user-select: none;
     border-radius: 15px;
     outline: none;
+    vertical-align: baseline;
 }
 
 .user-nameShown{

@@ -162,3 +162,10 @@ select:focus{
 .einput > input:hover {
     background-color: var(--celeste);
 }
+
+#imagen{
+    border-radius: 1rem;
+    height: 100%;
+    width: 100%;
+    z-index: 0.5;
+}

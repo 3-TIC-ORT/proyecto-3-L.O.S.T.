@@ -24,14 +24,14 @@ function getData () {
                 form.placeLeft.value = p.dejado;
                 form.time.value = p.hora;
                 // Falta ver esto, si hacer un elemento img o meterlo como background img del filecontainer
-                const foto = document.createElement("img");
-                foto.src = `../../data/imgs/${p.id}.${p.tipoImg}`
-                foto.style.width = "100%"
-                foto.style.height = "100%"
-                fileContainer.appendChild(foto);
+                document.getElementById("imagen").src = `../../data/imgs/${p.id}.${p.tipoImg}`
             }
         })
     } else {
+        let editImg = document.createElement("img");
+        editImg.classList.add("editImg")
+        fileContainer.appendChild(editImg)
+        editImg.src = "../Imgs/change-image.png"
         fileContainer.style.backgroundImage = "url(../Imgs/Upload-img.png)"
         fileContainer.style.backgroundSize = "cover"
     }
@@ -122,3 +122,18 @@ form.addEventListener(`submit`, (e) => {
 document.getElementById("quitPublicacion").addEventListener("click", () => {
     window.location.href = `indexObjsList.html`
 })
+
+document.getElementById('fileUploader').addEventListener('change', function(event) {
+    const image = event.target.files[0];
+    if (image) {
+        const reader = new FileReader();
+
+        // Función que se ejecuta cuando el archivo se ha cargado
+        reader.onload = function(e) {
+            const imagePreview = document.getElementById('imagen');
+            imagePreview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(image);
+    }
+});

@@ -66,5 +66,19 @@
     "creador": 44,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "mochilas",
+    "titulo": "Hola",
+    "ubicacion": "",
+    "descripcion": "awdawdwd",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "id": 3,
+    "creador": 60,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

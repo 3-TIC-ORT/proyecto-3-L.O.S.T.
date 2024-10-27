@@ -358,5 +358,11 @@
     "password": "Radio5tarjeta",
     "id": 59,
     "admin": false
+  },
+  {
+    "name": "Hola1234",
+    "password": "HolaSeñores123",
+    "id": 60,
+    "admin": false
   }
 ]

@@ -112,12 +112,12 @@ function dataBox (event) {
     let h1 = document.getElementById("status");
     if (button.id === "log-in") {
         dataReciever.id = "FinalLog"
-        h1.textContent = "Inicia sesión"
+        h1.textContent = "‎‎ Inicia sesión"
         document.getElementById("FinalLog").textContent = "Inciar Sesión"
         containerReceiver.addEventListener("click", Login)
     } else {
         dataReciever.id = "FinalSign"
-        h1.textContent = "Crea tu cuenta"
+        h1.textContent = "‎‎ Crea tu cuenta"
         document.getElementById("FinalSign").textContent = "Registrarse"
         containerReceiver.addEventListener("click", Register)
 

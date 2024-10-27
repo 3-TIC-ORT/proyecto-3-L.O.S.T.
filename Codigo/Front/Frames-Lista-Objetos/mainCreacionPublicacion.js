@@ -23,7 +23,6 @@ function getData () {
                 form.description.value = p.descripcion;
                 form.placeLeft.value = p.dejado;
                 form.time.value = p.hora;
-                // Falta ver esto, si hacer un elemento img o meterlo como background img del filecontainer
                 document.getElementById("imagen").src = `../../data/imgs/${p.id}.${p.tipoImg}`
             }
         })
@@ -127,13 +126,10 @@ document.getElementById('fileUploader').addEventListener('change', function(even
     const image = event.target.files[0];
     if (image) {
         const reader = new FileReader();
-
-        // Función que se ejecuta cuando el archivo se ha cargado
         reader.onload = function(e) {
             const imagePreview = document.getElementById('imagen');
             imagePreview.src = e.target.result;
         };
-
         reader.readAsDataURL(image);
     }
 });

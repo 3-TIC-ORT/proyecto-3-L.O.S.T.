@@ -34,12 +34,24 @@ function iSettings() {
             } else if(lista === false){
                 alert("Hubo un error")
             } else if(lista.length === 0) {
+                let notificationBox = document.getElementById("notification-box")
+                notificationBox.style.justifyContent = "center"
                 bell.src = `../Imgs/bell-false.png`
-                const h1 = `<h1>Sin notificaciones</h1>`;
-                document.getElementById("notification-box").innerHTML += h1;
+                const bellNone = document.createElement("img")
+                bellNone.src = "../Imgs/no-notifications.png"
+                bellNone.classList.add("bellNone")
+                const h5 = document.createElement("h5")
+                h5.textContent = "Aquí se guardan tus notificaciones"
+                const h6 = document.createElement("h6");
+                h6.textContent = "No tenes ninguna notificación hasta el momento"
+                notificationBox.appendChild(h6);
+                notificationBox.appendChild(h5);
+                notificationBox.appendChild(bellNone);
             }
             else {
                 let bellringing = false
+                let notificationBox = document.getElementById("notification-box")
+                notificationBox.style.justifyContent = ""
                 for (let i = 0; i < lista.length; i++) {
                     if (lista[i].commenter !== localStorage.getItem("userName").replace(`"`, ``).replace(`"`, ``)) {
                         const markup =     
@@ -78,10 +90,19 @@ function iSettings() {
                     }
                 }
                 if (document.getElementById("notification-box").innerHTML === ``) {
-                    document.getElementById("notification-box").innerHTML = ``;
+                    let notificationBox = document.getElementById("notification-box")
+                    notificationBox.style.justifyContent = "center"
                     bell.src = `../Imgs/bell-false.png`
-                    const h1 = `<h1>Sin notificaciones</h1>`;
-                    document.getElementById("notification-box").innerHTML += h1;
+                    const bellNone = document.createElement("img")
+                    bellNone.src = "../Imgs/no-notifications.png"
+                    bellNone.classList.add("bellNone")
+                    const h5 = document.createElement("h5")
+                    h5.textContent = "Aquí se guardan tus notificaciones"
+                    const h6 = document.createElement("h6");
+                    h6.textContent = "No tenes ninguna notificación hasta el momento"
+                    notificationBox.appendChild(h6);
+                    notificationBox.appendChild(h5);
+                    notificationBox.appendChild(bellNone);
                 }
             }
         })
@@ -113,7 +134,7 @@ function dataBox (event) {
     if (button.id === "log-in") {
         dataReciever.id = "FinalLog"
         h1.textContent = "‎‎ Inicia sesión"
-        document.getElementById("FinalLog").textContent = "Inciar Sesión"
+        document.getElementById("FinalLog").textContent = "Iniciar Sesión"
         containerReceiver.addEventListener("click", Login)
     } else {
         dataReciever.id = "FinalSign"

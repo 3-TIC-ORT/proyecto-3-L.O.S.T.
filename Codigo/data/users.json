@@ -364,5 +364,11 @@
     "password": "HolaSeñores123",
     "id": 60,
     "admin": false
+  },
+  {
+    "name": "Santrinix",
+    "password": "Skibidi123",
+    "id": 61,
+    "admin": false
   }
 ]

@@ -10,7 +10,28 @@
     "tipo": "perdido",
     "id": 0,
     "creador": 44,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 61,
+        "comm": "Skibidi",
+        "userName": "Santrinix"
+      },
+      {
+        "user": 61,
+        "comm": "Sigma",
+        "userName": "Santrinix"
+      },
+      {
+        "user": 61,
+        "comm": "Fanum Tax",
+        "userName": "Santrinix"
+      },
+      {
+        "user": 61,
+        "comm": "Buenas",
+        "userName": "Santrinix"
+      }
+    ],
     "cumplio": false
   }
 ]

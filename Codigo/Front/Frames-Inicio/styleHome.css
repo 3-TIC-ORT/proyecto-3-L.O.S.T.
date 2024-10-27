@@ -12,12 +12,13 @@
     --font-LALEZAR: "Lalezar variant0", sans-serif;
     --red: #A90000;
     --register: #0783C8;
-    --register-hover:#1b6892;
+    --register-hover: #0267A0;
     --login: #8D8D8D;
-    --login-hover: #6b6969;
+    --login-hover: #696969;
     --lost-hover:#326695;
     --found-hover: #698DAE;
     --reallyDarkBlue: #121E46;
+    --focus: #5588E8;
 }
 
 
@@ -53,18 +54,20 @@ header{
     height: 11%;
     padding: 2vh 1.5vw;
     margin: 0;
-    background: linear-gradient(to left, var(--azulOscuro), #1D71A9, #1F7AB6, #248FD6);
+    background: linear-gradient(2deg, #248FD6 0%, #1F7AB6 25%, #1D71A9 40%, var(--azulOscuro) 99%);
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 
 .LOST-title {
     color: transparent;
+    user-select: none;
 }
 
 .titulo{
     font-family: var(--font-JSMATH);
     font-size: 4rem;
     font-weight: 200;
-    background: linear-gradient(to top, var(--azulOscuro), var(--slightlyWhite));
+    background: linear-gradient(to top, #B0AAAA 30%, var(--slightlyWhite) 90%);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -84,7 +87,7 @@ header{
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    width: 12vw;
+    width: 8vw;
     height: 5vh;
     background-color: var(--red);
     color: white;
@@ -92,6 +95,7 @@ header{
     cursor: pointer;
     border-radius: 15px;
     transition: background-color 0.25s;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
 .CS:hover {
@@ -112,7 +116,6 @@ header{
 #sign-up {
     background-color: var(--register);
     transition: background-color 0.25s;
-    
 }
 
 #sign-up:hover{
@@ -122,12 +125,12 @@ header{
 
 .login-signup {
     font-family: "Khula", sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-style: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     height: 6vh;
     width: 9vw;
     color: white;
@@ -137,17 +140,17 @@ header{
     border-radius: 15px;
     outline: none;
     vertical-align: baseline;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
 }
 
 #found{
-    background-color:  #92B5D5;
+    background-color:  #749DC3;
     transition: background-color 0.25s;
 }
 
 #found:hover{
     transition: background-color 0.25s;
     background-color: var(--found-hover);
-
 }
 
 #lost{
@@ -179,8 +182,19 @@ header{
 #bell{
     display: none;
     cursor: pointer;
-    width: 3vw;
+    width: 2vw;
     height: 5vh;
+}
+
+.bellBox {
+    border-radius: 2vw;
+    transition: background-color 0.25s;
+    padding: 0.3vh 0.4vw;
+}
+
+.bellBox:hover{
+    transition: background-color 0.25s;
+    background-color: #9C9C9C60;
 }
 
 .comentNotis {
@@ -201,6 +215,8 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("../Imgs/main-backgroundImg.png");
+    background-size: cover;
 }
 
 .centro {
@@ -224,7 +240,8 @@ header{
     font-weight: 600;
     color: white;
     cursor: pointer;
-    border-radius: 30px;
+    border-radius: 1.5vw;
+    box-shadow: 0 0.15rem 0.15rem rgba(0, 0, 0, 0.3);
 }
 
 /* Frame Log in/Sign up: */
@@ -279,7 +296,7 @@ header{
     grid-area: 3/1/3/4;
 }
 
-h1 {
+.datas > h1 {
     color: white;
     font-size: 2.5rem;
 }
@@ -333,16 +350,23 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
 
 .show,
 .hide {
-    height: 60%;
-    width: 18%;
-    padding-left: 0.5vw;
-
+    height: 55%;
+    width: 7%;
+    box-sizing: content-box;
+    padding: 0.6vh 0.3vw;
+    border-radius: 5vw;
     cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.show:hover,
+.hide:hover {
+    transition: background-color 0.25s;
+    background-color: #58585890;
 }
 
 .show {
@@ -367,12 +391,18 @@ h1 {
     height: 4vw;
     font-size: 1.5rem;
     background-color: #346FA5;
+    transition: background-color 0.25s;
     user-select: none;
     cursor: pointer;
     border: none;
     border-radius: 1.25vw;
     color: white;
     font-weight: 600;
+}
+
+.LS:hover {
+    transition: background-color 0.25s;
+    background-color: #226098;
 }
 
 .LSs {
@@ -382,6 +412,7 @@ h1 {
     height: auto;
     width: 100%;
 }
+
 
 #anonymus {
     display: flex;
@@ -396,65 +427,116 @@ h1 {
     cursor: pointer;
 }
 
-dialog{
-    background: rgb(255, 255, 255);
+header > dialog{
+    background: #FAF8F8;
     position: absolute;
-    width: 15vw;
-    max-height: 40vh;
+    width: 32vw;
+    height: 70vh;
+    max-height: 70vh;
     transform: translateY(5em) translateX(68em);
     overflow-y: auto;
     overflow-x: hidden;
+    outline: none;
+    border: none;
+    border-radius: 0.7vw;
+    opacity: 0.96;
 }
 
-dialog > h1 {
+header > dialog > h1 {
     color: #000000;
 }
 
-dialog::-webkit-scrollbar {  
+header > dialog::-webkit-scrollbar {  
     width: 0.8rem;
     background-color: var(--azulOscuro);
 }
 
-dialog::-webkit-scrollbar-thumb {
+header > dialog::-webkit-scrollbar-thumb {
     border-radius: 2rem;
     background-color: var(--blue);
+}
+
+.notification-header {
+    width: 100%;
+    height: 7vh;
+    padding: 1vh 0.7vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 0.1vw solid #00000030;
+    user-select: none;
+}
+
+.notification-header > h3{
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 #notification-box {
     background-color: white;
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 
-#notification-box > div:hover {
-    background-color: #05B0E5;
+.bellNone {
+    width: 8.5vw;
+    height: 18vh;
 }
 
-dialog > main > div {
+#notification-box > h5 {
+    color: #828282;
+    font-size: 1.5rem;
+    font-weight: 500;
+    user-select: none;
+}
+
+#notification-box > h6 {
+    color: #828282;
+    font-size: 0.75rem;
+    font-weight: 400;
+    user-select: none;
+}
+
+#notification-box > div {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    transition: background-color 1s;
+    text-align: start;
+    transition: background-color 0.25s;
+    padding: 0 1vw;
     width: 100%;
     height: auto;
     min-height: 8vh;
 }
 
-dialog > main > div > h5 {
-    margin: 0;
-    padding: 0.5vh;
+
+#notification-box > div:hover {
+    background-color: #B1B1B1A0;
+}
+
+#notification-box > div > h5 {
+    padding: 0.3vh;
+    font-size: 0.8rem;
+    font-weight: 300;
     width: 100%;
 }
 
-dialog > main > div > small {
+#notification-box > div > small {
     width: 100%;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-left: 0.3vw;
     word-wrap: break-word;
 }
 
-.newNotification {
-    background-color: yellow;
+.newNotification > small:before {
+    padding-left: 0;
+    content:"• ";
+    color: #007BFF;
 }
 
 #user-data, #password-data{

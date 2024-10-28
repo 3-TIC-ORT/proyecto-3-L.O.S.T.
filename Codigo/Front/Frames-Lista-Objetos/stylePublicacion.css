@@ -71,9 +71,10 @@ header {
     border: none;
     width: 4vw;
     height: 4vh;
+    font-weight: 700;
     cursor: pointer;
-    font-size: 1rem;
-    border-radius: 1rem;
+    font-size: 0.8rem;
+    border-radius: 0.6vw;
 }
 
 main {
@@ -174,6 +175,10 @@ main {
     border-radius: 2vh;
 }
 
+.coments > span {
+    font-size: 1.5rem;
+}
+
 .input-but {
     display: flex;
     flex-direction: column;
@@ -203,11 +208,16 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    border-radius: 2vh;
+    font-size: 1.1rem;
+    border-radius: 1vw;
     background-color: var(--celeste);
     cursor: pointer;
     color: white;
+    transition: background-color 0.25s;
+}
+
+#enviar:hover {
+    background-color: #3E6DC2;
 }
 
 #coment-box {
@@ -277,7 +287,8 @@ body > .Mder > .coments > section > article > p {
     border: none;
     cursor: pointer;
     user-select: none;
-    font-size: 2.5rem;
+    font-weight: 700;
+    font-size: 2rem;
 }
 
 .input-but > button{

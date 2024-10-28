@@ -376,5 +376,23 @@
     "password": "SodaStereo123",
     "id": 62,
     "admin": false
+  },
+  {
+    "name": "nico",
+    "password": "AAAAAAAAAAAAAAAAAAAAAAq1",
+    "id": 63,
+    "admin": false
+  },
+  {
+    "name": "SDjmamkldas",
+    "password": "sdajudins56789S",
+    "id": 64,
+    "admin": false
+  },
+  {
+    "name": "sebastian",
+    "password": "Theoconti9",
+    "id": 65,
+    "admin": false
   }
 ]

@@ -1,3 +1,4 @@
+
 let userFrame = document.getElementById("user-frame");  
 let UserShown = document.getElementById("user-nameShown")
 let logIn = document.getElementById("log-in");
@@ -60,8 +61,13 @@ function iSettings() {
                               <small>${lista[i].text}</small>
                           </div>`;
                           document.getElementById("notification-box").innerHTML += markup;
-                          let tituloPublicacion = JSON.parse(localStorage.getItem("publicaciones"))[lista[i].publicacion].titulo;
-                          if (lista[i].type === "encontrado") {
+                          let tituloPublicacion;
+                          JSON.parse(localStorage.getItem("publicaciones")).forEach(publicacion => {
+                              if (publicacion.id === lista[i].publicacion) {
+                                  tituloPublicacion = publicacion.titulo
+                              }
+                          })
+                          if(lista[i].type === "encontrado") {
                             document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} es el dueño de "${tituloPublicacion}":`
                           } else if (lista[i].type === "perdido") {
                             document.getElementById(`h5${i}-${lista[i].publicacion}`).textContent = `${lista[i].commenter} ha encontrado "${tituloPublicacion}":`
@@ -302,5 +308,15 @@ function reDirect(event) {
         clickedDiv = event.target
     }
     console.log(clickedDiv);
+    console.log(event)
+    JSON.parse(localStorage.getItem("publicaciones")).forEach(publicacion => {
+        if (clickedDiv.id.split("-").pop() == publicacion.id) {
+            if (publicacion.tipo === "encontrado") {
+                localStorage.setItem("tipo", JSON.stringify("perdido"))
+            } else {
+                localStorage.setItem("tipo", JSON.stringify("encontrado"))
+            }
+        }
+    })
     window.location.href = `../Frames-Lista-Objetos/indexPublicacion.html?pId=${clickedDiv.id.split("-").pop()}`
 }

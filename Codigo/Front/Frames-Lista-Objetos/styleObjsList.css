@@ -104,12 +104,12 @@ ul{
 li{
     cursor: pointer;
     list-style: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 li::before {
     content: "• ";
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     box-shadow: 0 0.2rem 0.2rem #0000;
 }
 
@@ -151,11 +151,11 @@ aside {
     justify-content: flex-start;
     align-items: center;
     display: none;
-    width: 15vw;
-    height: 60vh;
-    padding: 0 2vw;
+    width: 17vw;
+    height: 63vh;
+    padding: 0 1vw;
     border-radius: 0.7vw;
-    transform: translateX(-35.5vw) translateY(-1.5vh);
+    transform: translateX(-35vw) translateY(-0.5vh);
 }
 
 .ObjectsList {
@@ -173,7 +173,7 @@ aside {
     align-items: center;
     cursor: pointer;
     width: 80%;
-    height: 80%;
+    height: 60%;
     justify-self: center;
     border-radius: 2vw;
 }

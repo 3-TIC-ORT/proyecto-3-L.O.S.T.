@@ -6,7 +6,7 @@
     "text": "Skibidi",
     "publicacion": 0,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -15,7 +15,7 @@
     "text": "Sigma",
     "publicacion": 0,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -24,7 +24,7 @@
     "text": "Fanum Tax",
     "publicacion": 0,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -33,7 +33,7 @@
     "text": "Buenas",
     "publicacion": 0,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -42,7 +42,7 @@
     "text": "Holaaa",
     "publicacion": 0,
     "leido": true,
-    "eliminado": false
+    "eliminado": true
   },
   {
     "type": "comentario",
@@ -51,6 +51,78 @@
     "text": "Épicooo",
     "publicacion": 0,
     "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Buenas",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "SDjmamkldas",
+    "text": "Que onda",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "SDjmamkldas",
+    "text": "Piola el brocoli",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "SDjmamkldas",
+    "text": "coment 1000",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "SDjmamkldas",
+    "text": "No se donde está",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "YO ME SENTÉ EN EL SKIBIDI TOILET Y SE METIÓ LA CABEZA POR MI ANOOO 10/10",
+    "publicacion": 1,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Santrinix",
+    "text": "Skibidiiiiiiiiiii",
+    "publicacion": 1,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "sebastian",
+    "text": "Yo también perdi un asado\n",
+    "publicacion": 2,
+    "leido": false,
     "eliminado": false
   }
 ]

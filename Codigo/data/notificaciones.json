@@ -34,5 +34,23 @@
     "publicacion": 0,
     "leido": true,
     "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Holaaa",
+    "publicacion": 0,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Santiago Ruina",
+    "text": "Épicooo",
+    "publicacion": 0,
+    "leido": false,
+    "eliminado": false
   }
 ]

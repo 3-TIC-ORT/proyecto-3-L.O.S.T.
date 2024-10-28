@@ -197,17 +197,6 @@ header{
     background-color: #9C9C9C60;
 }
 
-.comentNotis {
-    background-color: #1a0dab;
-    width: 30vw;
-    height: 70%;
-    z-index: 0;
-    top: 15vh;
-    left: 70vw;
-    position: absolute;
-    padding: 1vh 1vw;
-}
-
 .medio {
     height: 89%;
     width: 100%;
@@ -433,7 +422,7 @@ header > dialog{
     width: 32vw;
     height: 70vh;
     max-height: 70vh;
-    transform: translateY(5em) translateX(68em);
+    transform: translateY(8vh) translateX(56.7vw);
     overflow-y: auto;
     overflow-x: hidden;
     outline: none;

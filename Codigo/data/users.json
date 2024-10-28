@@ -370,5 +370,11 @@
     "password": "Skibidi123",
     "id": 61,
     "admin": false
+  },
+  {
+    "name": "Santiago Ruina",
+    "password": "SodaStereo123",
+    "id": 62,
+    "admin": false
   }
 ]

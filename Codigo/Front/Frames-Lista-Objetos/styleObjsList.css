@@ -4,6 +4,14 @@
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
     --font-INTER: "Inter", sans-serif;
+    --vestimenta: #3AD304;
+    --paraguas: #0214BE;
+    --accesorios: #D8D00D;
+    --mochilas: #FF6200;
+    --cuaderno-carpeta: #A80384;
+    --utiles-escolares: #893A01;
+    --productos-electronicos: #3BABBF;
+    --otros: #FF0000;
 }
 
 *{
@@ -39,7 +47,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: white;
-    background-image: linear-gradient(to left, var(--azulOscuro), #248FD6);
+    background: linear-gradient(2deg, #248FD6 0%, #1F7AB6 25%, #1D71A9 40%, var(--azulOscuro) 99%);
     border-bottom-width: 0.3vh;
     padding: 2vh 1vw;
 }
@@ -47,7 +55,15 @@ header {
 body > header > img {
     width: 2.5vw;
     height: 3vh;
-    user-select: pointer;    
+    cursor: pointer;
+    transition: background-color 0.25s;
+    box-sizing: content-box;  
+    padding: 1.7vh 0.4vw;
+    border-radius: 2vw; 
+}
+
+body > header > img:hover {
+    background-color: #58585850;;
 }
 
 body > header > div {
@@ -58,17 +74,88 @@ body > header > div {
 main{
     display: flex;
     justify-content: center;
-    padding-top: 5vh;
+    padding: 10vh 5vw;
     height: 90%;
     width: 100%;
 }
 
+#filtroImg {
+    padding: 0.2vh 0.2vw;
+    width: 4vw;
+    height: 8vh;
+    cursor: pointer;
+    position: absolute;
+    transform: translateX(-45vw) translateY(-7vh);
+    transition: background-color 0.25s;
+    border-radius: 3vw;
+}
+
+#filtroImg:hover {
+    background-color: #58585890;;
+}
+
 ul{
-    height: 20vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 li{
     cursor: pointer;
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+li::before {
+    content: "• ";
+    font-size: 1.3rem;
+    box-shadow: 0 0.2rem 0.2rem #0000;
+}
+
+.vestimenta::before {
+    color: var(--vestimenta);
+}
+
+.paraguas::before {
+    color: var(--paraguas);
+}
+
+.accesorios::before {
+    color: var(--accesorios);
+}
+
+.mochilas::before {
+    color: var(--mochilas); 
+}
+
+.cuaderno-carpeta::before {
+    color: var(--cuaderno-carpeta); 
+}
+
+.utiles-escolares::before {
+    color: var(--utiles-escolares);
+}
+
+.productos-electronicos::before {
+    color: var(--productos-electronicos);
+}
+
+.otros::before {
+    color: var(--otros);
+}
+
+aside {
+    position: absolute;
+    background-color: #D2D2D2F8;
+    justify-content: flex-start;
+    align-items: center;
+    display: none;
+    width: 15vw;
+    height: 60vh;
+    padding: 0 2vw;
+    border-radius: 0.7vw;
+    transform: translateX(-35.5vw) translateY(-1.5vh);
 }
 
 .ObjectsList {
@@ -119,7 +206,8 @@ li{
 .down {
     height: 25%;
     font-size: 3vh;
-    background-color:blueviolet;
+    background-color:var(--azulOscuro);
+    color: #D3D3D3;
     border-bottom-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
 }

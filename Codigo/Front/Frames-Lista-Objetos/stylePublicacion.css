@@ -292,7 +292,7 @@ dialog {
     position: absolute;
     width: 28vw;
     height: 47vh;
-    transform: translateY(15em) translateX(40em);
+    transform: translateY(20vh) translateX(35vw);
     background-color: var(--dialog);
     border-radius: 0.8rem;
     padding: 0.5vh 0.5vw;

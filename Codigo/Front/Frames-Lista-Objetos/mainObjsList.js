@@ -1,14 +1,14 @@
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 
 const colores = {
-    vestimenta: "#04d616",
-    paraguas: "#0804d6",
-    accesorios: "#f7e51b",
-    mochilas: "#1be9f7",
-    "cuaderno/carpeta": "#de20f7",
-    "útiles escolares": "#ffa600",
-    "productos electrónicos": "#8a16c4",
-    otros: "#f01818"
+    vestimenta: "#3AD304",
+    paraguas: "#0214BE",
+    accesorios: "#D8D00D",
+    mochilas: "#FF6200",
+    "cuaderno/carpeta": "#A80384",
+    "útiles escolares": "#893A01",
+    "productos electrónicos": "#3BABBF",
+    otros: "#FF0000"
 }
 
 let filtro = {
@@ -102,8 +102,31 @@ function Filtrar(event){
     filtro[event.target.textContent.toLowerCase()] = !filtro[event.target.textContent.toLowerCase()]
     if(event.target.style.opacity == 0.5){
         event.target.style.opacity = 1
-    } else{
+    } else if (event.target.id !== "filtros"){
         event.target.style.opacity = 0.5
     }
     fetchData("cargarPublicaciones", LoadPosts);
 } document.getElementById("filtros").addEventListener("click", Filtrar)
+
+let aside = document.querySelector("aside");
+let filtroAbierto = false;
+
+function showFilter () {
+    if (!filtroAbierto) {
+        aside.style.display = "flex"
+        setTimeout(filtroAbierto = true, 100)
+    } else {
+        aside.style.display = "none" 
+        setTimeout(filtroAbierto = false, 100)
+    }
+} document.getElementById("filtroImg").addEventListener("click", showFilter);
+
+function closeFilter (e) {
+    if (filtroAbierto && e.target !== document.getElementById("filtroImg")) {
+        const dimensiones = aside.getBoundingClientRect()
+        if (e.clientX < dimensiones.left || e.clientX > dimensiones.right || e.clientY < dimensiones.top ||e.clientY > dimensiones.bottom ) {
+            aside.style.display = "none";
+            filtroAbierto = false;
+        }
+    }
+} document.addEventListener("click", closeFilter)

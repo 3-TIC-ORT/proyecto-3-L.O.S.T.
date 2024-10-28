@@ -122,7 +122,16 @@
     "commenter": "sebastian",
     "text": "Yo también perdi un asado\n",
     "publicacion": 2,
-    "leido": false,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Test xd",
+    "publicacion": 2,
+    "leido": true,
     "eliminado": false
   }
 ]

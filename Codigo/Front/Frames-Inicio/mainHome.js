@@ -1,4 +1,3 @@
-
 let userFrame = document.getElementById("user-frame");  
 let UserShown = document.getElementById("user-nameShown")
 let logIn = document.getElementById("log-in");
@@ -158,7 +157,7 @@ document.getElementById("sign-up").addEventListener("click", dataBox)
 
 function BackHome () {
     userFrame.style.display = "none";
-    document.getElementById("user-data").value = "";
+    document.getElementById("name-data").value = "";
     document.getElementById("password-data").value = "";
 } 
 document.getElementsByClassName("a")[0].addEventListener("click", BackHome);
@@ -169,7 +168,7 @@ document.getElementsByClassName("d")[0].addEventListener("click", BackHome);
 
 function Login(e) {
     e.preventDefault();
-    let UserName = document.getElementById("user-data").value;
+    let UserName = document.getElementById("name-data").value;
     let UserPassword = document.getElementById("password-data").value;
     if(e.target.id === "FinalLog") {
         if (UserName === "" || UserPassword === ""){
@@ -197,7 +196,7 @@ function Login(e) {
 
 function Register(e) {
     e.preventDefault();
-    let UserName = document.getElementById("user-data").value;
+    let UserName = document.getElementById("name-data").value;
     let UserPassword = document.getElementById("password-data").value;
     if (e.target.id === "FinalSign") {
         if (UserName === "" || UserPassword === ""){
@@ -257,7 +256,7 @@ function LogOut() {
     CS.style.display = "none"
     logIn.style.display = "flex";
     signUp.style.display = "flex"
-    document.getElementById("user-data").value = "";
+    document.getElementById("name-data").value = "";
     document.getElementById("password-data").value = "";
     UserShown.textContent = "";
     document.getElementById("notification-box").innerHTML = "";

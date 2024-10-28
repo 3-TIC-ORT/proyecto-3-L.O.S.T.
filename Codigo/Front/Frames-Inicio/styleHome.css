@@ -308,45 +308,69 @@ header{
 }
 
 #password-data {
-    height: 100%;
-    width: 100%;
     color: white;
-    font-size: 4vh;
-    background-color: #636363;
+    font-size: 1.8rem;
     border:none;
     z-index: 2;
     outline: none;
-    padding: 0;
 }
 
 #password-data::placeholder {
     color: rgb(155, 155, 155);
 }
 
+#name-data {
+    color: white;
+    font-size: 1.8rem;
+    border:none;
+    z-index: 2;
+    outline: none;
+}
+
+#name-data::placeholder {
+    color: rgb(155, 155, 155);
+}
+
+#name-data, #password-data{
+    width: 90%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
 .data {
     height: 11vh;
     width: 100%;
-    border: none;
     outline: none;
     color: white;
-    font-size: 4vh;
-    padding: 1vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 1vh 0.6vw;
     border: solid #989898 0.2rem;
     border-radius: 1vw;
 }
 
-#password-eye {
+.data > span {
+    font-size: 1.1rem;
+    user-select: none;
+    box-sizing: content-box;
+    padding-left: 0.2vw;
+}
+
+.data-inside {
+    height: 60%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
 .show,
 .hide {
-    height: 55%;
-    width: 7%;
+    align-self: flex-end;
+    height: 5.7vh;
+    width: 2.5vw;
     box-sizing: content-box;
-    padding: 0.6vh 0.3vw;
+    padding: 0.2vh 0.2vw;
     border-radius: 5vw;
     cursor: pointer;
     transition: background-color 0.25s;
@@ -368,7 +392,7 @@ header{
 
 .data::placeholder {
     color: rgb(155, 155, 155);
-    font-size: 4vh;
+    font-size: 2rem;
 }
 
 .LS {
@@ -400,20 +424,6 @@ header{
     justify-content: center;
     height: auto;
     width: 100%;
-}
-
-
-#anonymus {
-    display: flex;
-    justify-content: center;
-    font-size: 3vh;
-    user-select: none;
-    color: #1a0dab;
-}
-
-#anonymus:hover {
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 header > dialog{
@@ -496,6 +506,8 @@ header > dialog::-webkit-scrollbar-thumb {
     width: 100%;
     height: auto;
     min-height: 8vh;
+    user-select: none;
+    cursor: pointer;
 }
 
 
@@ -522,8 +534,4 @@ header > dialog::-webkit-scrollbar-thumb {
     padding-left: 0;
     content:"• ";
     color: #007BFF;
-}
-
-#user-data, #password-data{
-    background-color: rgba(255, 255, 255, 0);
 }

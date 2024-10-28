@@ -99,7 +99,7 @@
     "categoria": "útiles escolares",
     "titulo": "Asado",
     "ubicacion": "",
-    "descripcion": " xd",
+    "descripcion": "PIOLAAAA",
     "dejado": "",
     "hora": "",
     "tipo": "perdido",
@@ -110,6 +110,11 @@
         "user": 65,
         "comm": "Yo también perdi un asado\n",
         "userName": "sebastian"
+      },
+      {
+        "user": 44,
+        "comm": "Test xd",
+        "userName": "Mate"
       }
     ],
     "cumplio": false

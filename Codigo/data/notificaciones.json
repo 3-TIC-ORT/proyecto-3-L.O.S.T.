@@ -133,5 +133,32 @@
     "publicacion": 2,
     "leido": true,
     "eliminado": false
+  },
+  {
+    "type": "perdido",
+    "id": 68,
+    "commenter": "Lucho",
+    "text": "la tenía metida en el orto...",
+    "publicacion": 5,
+    "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "perdido",
+    "id": 68,
+    "commenter": "Lucho",
+    "text": "la tenía metida en el orto...",
+    "publicacion": 5,
+    "leido": true,
+    "eliminado": true
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Lucio",
+    "text": "invitenme wacho",
+    "publicacion": 2,
+    "leido": true,
+    "eliminado": false
   }
 ]

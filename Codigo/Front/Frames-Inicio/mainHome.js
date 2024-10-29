@@ -136,6 +136,8 @@ function dataBox (event) {
     let dataReciever = document.getElementsByClassName("LS")[0];
     let containerReceiver = document.getElementById("LSs")
     let h1 = document.getElementById("status");
+    document.getElementById("alerta").innerHTML = ""
+    document.getElementById("alerta").style.display = "none"
     if (button.id === "log-in") {
         dataReciever.id = "FinalLog"
         h1.textContent = "‎‎ Inicia sesión"
@@ -156,6 +158,8 @@ document.getElementById("sign-up").addEventListener("click", dataBox)
 //La función BackHome hace que cuando apretes afuera de la caja "main", se muestre el frame de inicio devuelta.
 
 function BackHome () {
+    document.getElementById("alerta").innerHTML = ""
+    document.getElementById("alerta").style.display = "none"
     userFrame.style.display = "none";
     document.getElementById("name-data").value = "";
     document.getElementById("password-data").value = "";
@@ -170,10 +174,13 @@ function Login(e) {
     e.preventDefault();
     let UserName = document.getElementById("name-data").value;
     let UserPassword = document.getElementById("password-data").value;
+    let alerta = document.getElementById("alerta");
     if(e.target.id === "FinalLog") {
         if (UserName === "" || UserPassword === ""){
-            alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+            alerta.textContent = "Es obligatorio indicar un nombre de usuario y una contraseña para continuar"
+            alerta.style.display = "flex"
         } else {
+            alerta.innerHTML = ""
             postData("login", {name:UserName, password: UserPassword}, (data) => {
                 console.log(data);
                 if(data.id !== null){
@@ -185,7 +192,8 @@ function Login(e) {
                     SetId({id:data.id, name:UserName, admin:data.admin, JWT:data.JWT})
                     console.log("hola")
                 } else{
-                    alert(data.inf);
+                    alerta.textContent = `${data.inf}`
+                    alerta.style.display = "flex"
                 }
             })
         }
@@ -198,12 +206,16 @@ function Register(e) {
     e.preventDefault();
     let UserName = document.getElementById("name-data").value;
     let UserPassword = document.getElementById("password-data").value;
+    let alerta = document.getElementById("alerta");
     if (e.target.id === "FinalSign") {
         if (UserName === "" || UserPassword === ""){
-            alert(`"Es obligatorio indicar un nombre de usuario y una contraseña para continuar"`);
+            alerta.textContent = "Es obligatorio indicar un nombre de usuario y una contraseña para continuar"
+            alerta.style.display = "flex"
         } else if ((UserName.length > 32||UserPassword.length  > 32 || UserPassword.length < 8 || UserPassword.match(/[a-z]/) == null && UserPassword.includes("ñ") === false || UserPassword.match(/[A-Z]/) == null && UserPassword.includes("Ñ") === false || UserPassword.match(/[0-9]/) == null)) {
-            alert(`"La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"`)
+            alerta.textContent = "La contraseña del usuario no debe contener una cantidad mayor de 32 carácteres, al igual que el nombre de usuario, y la contraseña no puede tener una cantidad menor de 8. Además, debe contener letras en minúscula, mayúscula y números"
+            alerta.style.display = "flex"
         } else {
+            alerta.innerHTML = ""
             postData("register", {name:UserName, password: UserPassword}, (data) => {
                 if(data.id !== null){
                     UserShown.textContent = `${UserName}`;
@@ -213,7 +225,8 @@ function Register(e) {
                     bell.style.display = "flex";
                     SetId({id:data.id, name:UserName, admin: data.admin, JWT:data.JWT})
                 } else{
-                    alert(data.inf);
+                    alerta.textContent = `${data.inf}`
+                    alerta.style.display = "flex"
                 }
             })
         }

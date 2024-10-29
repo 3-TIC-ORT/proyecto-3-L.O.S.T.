@@ -70,7 +70,7 @@ header{
     background: linear-gradient(to top, #B0AAAA 30%, var(--slightlyWhite) 90%);
     -webkit-background-clip: text;
     background-clip: text;
-    vertical-align: bottom;
+    line-height: 95%;
 }
 
 .acronim{
@@ -81,6 +81,7 @@ header{
   -webkit-background-clip: text;
   background-clip: text;
   font-style: normal;
+  line-height: 10%;
 }
 
 .CS{
@@ -165,7 +166,7 @@ header{
 
 .user-nameShown{
     display: flex;
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     color: white;
     user-select:none;
 }
@@ -237,7 +238,7 @@ header{
 
 .user-frame {
     display: none;
-    grid-template: 1fr 70% 1fr/ 1fr 40% 1fr;
+    grid-template: 1fr 75% 0.7fr/ 1fr 39% 1fr;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -309,26 +310,18 @@ header{
 
 #password-data {
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     border:none;
     z-index: 2;
     outline: none;
-}
-
-#password-data::placeholder {
-    color: rgb(155, 155, 155);
 }
 
 #name-data {
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     border:none;
     z-index: 2;
     outline: none;
-}
-
-#name-data::placeholder {
-    color: rgb(155, 155, 155);
 }
 
 #name-data, #password-data{
@@ -351,10 +344,11 @@ header{
 }
 
 .data > span {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     user-select: none;
     box-sizing: content-box;
     padding-left: 0.2vw;
+    color: #FFFFFFA0;
 }
 
 .data-inside {
@@ -420,10 +414,28 @@ header{
 
 .LSs {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: auto;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
+    height: 10vh;
+}
+
+#alerta {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
+    max-width: 37vw;
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+    box-sizing: content-box;
+    padding: 0.4vh 0.2vw;
+    background-color: #C21616AF;
+    border-radius: 0.5vw;
 }
 
 header > dialog{
@@ -432,13 +444,12 @@ header > dialog{
     width: 32vw;
     height: 70vh;
     max-height: 70vh;
-    transform: translateY(3vh) translateX(55.5vw);
+    transform: translateY(2.7vh) translateX(55.5vw);
     overflow-y: auto;
     overflow-x: hidden;
     outline: none;
     border: none;
     border-radius: 0.7vw;
-    opacity: 0.96;
 }
 
 header > dialog::-webkit-scrollbar {  

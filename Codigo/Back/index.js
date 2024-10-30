@@ -10,6 +10,7 @@ const claveSecreta = new TextEncoder().encode(jose.base64url.encode("Felipe Dani
 // Intento registro con JWT
 async function register(user){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/users.json", 'utf-8'));
+    const prohibido = fs.readFileSync("Codigo/data/prohibido.txt", "utf-8").split("\r\n")
     if(user.name.length > 32){
         return {id:null, inf:"Invalid"}
     } else{
@@ -21,12 +22,23 @@ async function register(user){
     if(user.password.length > 32 || user.password.length < 8 || user.password.match(/[a-z]/) == null && user.password.includes("ñ") === false || user.password.match(/[A-Z]/) == null && user.password.includes("Ñ") === false || user.password.match(/[0-9]/) == null){
         return {id:null, inf:"Invalid"}
     }
-    user.id = lista.length;
-    user.admin = false;
-    lista.push({...user});
-    fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
-    const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2d").sign(claveSecreta);
-    return {JWT:mensaje, id:user.id, admin:user.admin};
+    let estaProhibido = false;
+    prohibido.forEach(palabra =>{
+        if(user.name.includes(palabra)){
+            estaProhibido = true;
+        }
+    })
+    if(estaProhibido){
+        return {id:null, inf:"Utilizaste una palabra prohibida en tu nombre de usuario"}
+    } else{
+        user.id = lista.length;
+        user.admin = false;
+        lista.push({...user});
+        fs.writeFileSync("Codigo/data/users.json", JSON.stringify(lista, null, 2));
+        const mensaje = await new jose.SignJWT({id:user.id, admin:user.admin}).setProtectedHeader({alg:"HS256"}).setExpirationTime("2d").sign(claveSecreta);
+        return {JWT:mensaje, id:user.id, admin:user.admin};
+    }
+    
     }
 }
 
@@ -261,6 +273,7 @@ onEvent("notificacionesLeidas", notificacionesLeidas)
 
 
 import * as url from 'node:url';
+import { PRIORITY_ABOVE_NORMAL } from "constants";
 
 if(import.meta.url.startsWith('file:')){
     const modulePath = url.fileURLToPath(import.meta.url);

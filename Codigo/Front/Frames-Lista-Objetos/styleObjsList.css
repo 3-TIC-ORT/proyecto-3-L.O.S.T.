@@ -41,7 +41,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 header {
-    font-size: 1.9rem;
+    font-size: 1.2rem;
     font-weight: 900;
     display: flex;  
     justify-content: space-between;
@@ -54,7 +54,7 @@ header {
 
 body > header > img {
     width: 2.5vw;
-    height: 3vh;
+    height: 3.5vh;
     cursor: pointer;
     transition: background-color 0.25s;
     box-sizing: content-box;  
@@ -179,8 +179,16 @@ aside {
 }
 
 .create {
-    font-size: 5rem;
     background-color: var(--azulOscuro);
+}
+
+.create > h1 {
+    font-size: 15rem;
+    padding-bottom: 3vh;
+}
+
+.create > span {
+     font-size: 1.3rem;
 }
 
 .post {

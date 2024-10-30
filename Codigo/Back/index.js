@@ -24,7 +24,7 @@ async function register(user){
     }
     let estaProhibido = false;
     prohibido.forEach(palabra =>{
-        if(user.name.includes(palabra)){
+        if(user.name.toLowerCase().includes(palabra)){
             estaProhibido = true;
         }
     })

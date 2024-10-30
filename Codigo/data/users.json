@@ -472,5 +472,11 @@
     "password": "JKN32wadW",
     "id": 78,
     "admin": false
+  },
+  {
+    "name": "Santinorua",
+    "password": "HolaChicos987",
+    "id": 79,
+    "admin": true
   }
 ]

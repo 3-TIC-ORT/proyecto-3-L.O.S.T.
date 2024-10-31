@@ -28,6 +28,7 @@
     box-sizing: border-box;
     font-family: var(--font-INTER);
     font-style: normal;
+    user-select: none;
 }
 
 body {
@@ -60,7 +61,6 @@ header{
 
 .LOST-title {
     color: transparent;
-    user-select: none;
 }
 
 .titulo{
@@ -139,7 +139,6 @@ header{
     color: white;
     border: none;
     cursor: pointer;
-    user-select: none;
     border-radius: 1vw;
     outline: none;
     box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3);
@@ -180,7 +179,6 @@ header{
     font-size: 1.3rem;
     color: white;
     width: 50vw;
-    user-select:none;
 }
 
 #bell{
@@ -295,7 +293,6 @@ header{
 }
 
 .atras-log {
-    user-select: none;
     cursor: pointer;
 }
 
@@ -344,7 +341,7 @@ header{
     padding: 1vh 0.6vw;
     border: solid #989898 0.2rem;
     border-radius: 1vw;
-    transition: border 0.25s;
+    transition: border 0.1s;
 }
 
 .focus{
@@ -358,7 +355,6 @@ header{
 
 .data > span {
     font-size: 0.8rem;
-    user-select: none;
     box-sizing: content-box;
     padding-left: 0.2vw;
     color: #FFFFFFA0;
@@ -408,7 +404,6 @@ header{
     font-size: 1.5rem;
     background-color: #346FA5;
     transition: background-color 0.25s;
-    user-select: none;
     cursor: pointer;
     border: none;
     border-radius: 1.25vw;
@@ -479,7 +474,6 @@ header > dialog::-webkit-scrollbar-thumb {
     justify-content: flex-start;
     align-items: center;
     border-bottom: 0.1vw solid #00000030;
-    user-select: none;
 }
 
 .notification-header > h3{
@@ -506,14 +500,12 @@ header > dialog::-webkit-scrollbar-thumb {
     color: #828282;
     font-size: 1.5rem;
     font-weight: 500;
-    user-select: none;
 }
 
 #notification-box > h6 {
     color: #828282;
     font-size: 0.75rem;
     font-weight: 400;
-    user-select: none;
 }
 
 #notification-box > div {
@@ -526,7 +518,6 @@ header > dialog::-webkit-scrollbar-thumb {
     width: 100%;
     height: auto;
     min-height: 8vh;
-    user-select: none;
     cursor: pointer;
 }
 

@@ -71,6 +71,7 @@ function DataLoader () {
                 })
             }  else {
                 let dialog = document.createElement("dialog");
+                dialog.classList.add("propuestaDialog")
                 const h2 = document.createElement("h2");
                 h2.textContent = "Envia un comentario al creador de la publicacion sobre el paradero del objeto"
                 let form = document.createElement("form")
@@ -143,6 +144,38 @@ function Comentar(){
     let comentario = {}
     if(JSON.parse(localStorage.getItem("JWT")) === null) {
         alert("Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente")
+        // let darker = document.createElement("div")
+        // darker.classList.add("darker")
+        // let error = document.createElement("dialog")
+        // error.id = "error"
+        // error.classList.add("error");
+        // let header = document.createElement("header");
+        // let warning = document.createElement("img");
+        // warning.src = "../Imgs/warning.png";
+        // let main = document.createElement("main");
+        // let h2 = document.createElement("h2")
+        // h2.textContent = "Falta de Permisos"
+        // let p = document.createElement("p")
+        // p.textContent = "Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente"
+        // header.appendChild(warning)
+        // error.appendChild(header)
+        // main.appendChild(h2)
+        // main.appendChild(p)
+        // error.appendChild(main)
+        // document.querySelector("body").appendChild(error)
+        // document.querySelector("body").appendChild(darker)
+        // error.showModal();
+        // error.addEventListener ("click", e => {
+        //     const dialogDimensions = error.getBoundingClientRect()
+        //     if (
+        //         e.clientX < dialogDimensions.left ||
+        //         e.clientX > dialogDimensions.right ||
+        //         e.clientY < dialogDimensions.top ||
+        //         e.clientY > dialogDimensions.bottom 
+        //     ) {
+        //         error.close()
+        //     }
+        // }) 
     } else {
         if(document.getElementById("InputComentario").value === ""){
             alert("No puedes enviar un comentario vacío")

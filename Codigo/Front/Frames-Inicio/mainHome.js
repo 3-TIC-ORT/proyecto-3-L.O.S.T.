@@ -190,7 +190,6 @@ function Login(e) {
                     CS.style.display = "flex"
                     bell.style.display = "flex"
                     SetId({id:data.id, name:UserName, admin:data.admin, JWT:data.JWT})
-                    console.log("hola")
                 } else{
                     alerta.textContent = `${data.inf}`
                     alerta.style.display = "flex"
@@ -244,20 +243,23 @@ function SetId({id, name, admin, JWT}) {
 function Focus () {
     let passwordData = document.getElementById("password-data")
     let nameData = document.getElementById("name-data");
-    let padre;
+    let padre1 = passwordData.parentNode.parentNode;
+    let padre2 = nameData.parentNode;
     if (nameData === document.activeElement) {
-        padre = nameData.parentNode;
-        padre.classList.add("focus")
+        padre2.classList.add("focus")
+        padre1.classList.remove("focus")
     } else if (passwordData === document.activeElement){
-        padre = passwordData.parentNode.parentNode;
-        padre.classList.add("focus");
+        padre1.classList.add("focus");
+        padre2.classList.remove("focus")
     } else {
-        let padre1 = passwordData.parentNode.parentNode;
         padre1.classList.remove("focus");
-        let padre2 = nameData.parentNode;
         padre2.classList.remove("focus");
     }
-} document.getElementById("main-data").addEventListener("click", Focus)
+} document.getElementById("password-data").addEventListener("focus", Focus)
+document.getElementById("name-data").addEventListener("focus", Focus)
+document.getElementById("password-data").addEventListener("focusout", Focus)
+document.getElementById("name-data").addEventListener("focusout", Focus)
+document.querySelector("form").addEventListener("click", Focus)
 
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
@@ -338,8 +340,6 @@ function reDirect(event) {
     if (clickedDiv.id === "notification-box") {
         clickedDiv = event.target
     }
-    console.log(clickedDiv);
-    console.log(event)
     JSON.parse(localStorage.getItem("publicaciones")).forEach(publicacion => {
         if (clickedDiv.id.split("-").pop() == publicacion.id) {
             if (publicacion.tipo === "encontrado") {

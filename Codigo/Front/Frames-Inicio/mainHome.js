@@ -241,15 +241,24 @@ function SetId({id, name, admin, JWT}) {
     iSettings()
 }
 
-function Focus (e) {
-    let input = e.target
-    if (input.id !== "password-data") {
-        let padre = input.parentNode
-        console.log(padre)
+function Focus () {
+    let passwordData = document.getElementById("password-data")
+    let nameData = document.getElementById("name-data");
+    let padre;
+    if (nameData === document.activeElement) {
+        padre = nameData.parentNode;
+        padre.classList.add("focus")
+    } else if (passwordData === document.activeElement){
+        padre = passwordData.parentNode.parentNode;
+        padre.classList.add("focus");
+    } else {
+        let padre1 = passwordData.parentNode.parentNode;
+        padre1.classList.remove("focus");
+        let padre2 = nameData.parentNode;
+        padre2.classList.remove("focus");
     }
+} document.getElementById("main-data").addEventListener("click", Focus)
 
-} document.getElementById("password-data").addEventListener("click", Focus);
-document.getElementById("name-data").addEventListener("click", Focus);
 
 //La función HideShow lo que hace es que cuando se clickea uno de los dos ojos, por ejemplo el "hide"", proximamente el type del texto de la contraseña se verá como el nombre del id lo indica
 let show = document.getElementById("show");

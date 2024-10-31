@@ -347,8 +347,13 @@ header{
     transition: border 0.25s;
 }
 
-.focus .data {
+.focus{
     border: solid #5588E8 0.2rem;
+}
+
+.data::placeholder {
+    color: rgb(155, 155, 155);
+    font-size: 2rem;
 }
 
 .data > span {
@@ -392,10 +397,6 @@ header{
     display: block;
 }
 
-.data::placeholder {
-    color: rgb(155, 155, 155);
-    font-size: 2rem;
-}
 
 .LS {
     display: flex;

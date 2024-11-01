@@ -160,5 +160,23 @@
     "publicacion": 2,
     "leido": true,
     "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Buenas",
+    "publicacion": 2,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Ahora si",
+    "publicacion": 2,
+    "leido": true,
+    "eliminado": false
   }
 ]

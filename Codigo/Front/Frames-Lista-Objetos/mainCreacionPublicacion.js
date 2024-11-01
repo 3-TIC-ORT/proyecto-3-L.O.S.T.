@@ -119,7 +119,12 @@ form.addEventListener(`submit`, (e) => {
 })
 
 document.getElementById("quitPublicacion").addEventListener("click", () => {
-    window.location.href = `indexObjsList.html`
+    let params = new URLSearchParams(document.location.search);
+    if (params.get("editado")) {
+        window.location.href = `indexPublicacion.html?pId=${params.get("pId")}`
+    } else {
+        window.location.href = `indexObjsList.html`
+    }
 })
 
 document.getElementById('fileUploader').addEventListener('change', function(event) {

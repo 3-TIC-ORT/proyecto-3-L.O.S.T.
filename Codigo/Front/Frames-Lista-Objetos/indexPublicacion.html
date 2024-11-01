@@ -47,10 +47,19 @@
         <div class="input-but">
             <textarea id="InputComentario" type="text" placeholder="Escribe tu comentario aquí" maxlength="300"></textarea>
             <button id="enviar">Enviar</button>
+            <div id = "alerta">No puedes enviar un comentario vacío</div>
         </div>
         <section id="coment-box">
         </section>
     </nav>
+    <dialog id = "error">
+        <header><img src="../Imgs/warning.png" alt=""></header>
+        <main>
+            <h2 id= "h2Error"></h2>
+            <p id="pError"></p>
+        </main>
+    </dialog>
+    <div id="darker"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="../socket.js"></script>
     <script src="mainPublicacion.js"></script>

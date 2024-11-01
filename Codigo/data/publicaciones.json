@@ -120,6 +120,16 @@
         "user": 70,
         "comm": "invitenme wacho",
         "userName": "Lucio"
+      },
+      {
+        "user": 44,
+        "comm": "Buenas",
+        "userName": "Mate"
+      },
+      {
+        "user": 44,
+        "comm": "Ahora si",
+        "userName": "Mate"
       }
     ],
     "cumplio": false
@@ -165,5 +175,19 @@
     "creador": 68,
     "comentarios": [],
     "cumplio": true
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "BEN 11",
+    "ubicacion": "Nos encontramos en mi casa uwu",
+    "descripcion": "Mi ben 100000",
+    "dejado": "ni idea donde lo vi por ultima vez",
+    "hora": "no se cuando se perdio",
+    "tipo": "perdido",
+    "id": 6,
+    "creador": 44,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

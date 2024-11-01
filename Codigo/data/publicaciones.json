@@ -187,7 +187,53 @@
     "tipo": "perdido",
     "id": 6,
     "creador": 44,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 44,
+        "comm": "Ahora si",
+        "userName": "Mate"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "cuaderno/carpeta",
+    "titulo": "Zapatillas",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "id": 7,
+    "creador": 44,
+    "comentarios": [
+      {
+        "user": 83,
+        "comm": "Facha las zapatillas",
+        "userName": "Teo"
+      }
+    ],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "vestimenta",
+    "titulo": "Gorro",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 8,
+    "creador": 44,
+    "comentarios": [
+      {
+        "user": 83,
+        "comm": "Facha el gorro",
+        "userName": "Teo"
+      }
+    ],
     "cumplio": false
   }
 ]

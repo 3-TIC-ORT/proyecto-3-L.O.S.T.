@@ -119,15 +119,6 @@
   {
     "type": "comentario",
     "id": 44,
-    "commenter": "sebastian",
-    "text": "Yo también perdi un asado\n",
-    "publicacion": 2,
-    "leido": true,
-    "eliminado": false
-  },
-  {
-    "type": "comentario",
-    "id": 44,
     "commenter": "Mate",
     "text": "Test xd",
     "publicacion": 2,
@@ -155,15 +146,6 @@
   {
     "type": "comentario",
     "id": 44,
-    "commenter": "Lucio",
-    "text": "invitenme wacho",
-    "publicacion": 2,
-    "leido": true,
-    "eliminado": false
-  },
-  {
-    "type": "comentario",
-    "id": 44,
     "commenter": "Mate",
     "text": "Buenas",
     "publicacion": 2,
@@ -176,6 +158,51 @@
     "commenter": "Mate",
     "text": "Ahora si",
     "publicacion": 2,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "Ahora si",
+    "publicacion": 6,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Teo",
+    "text": "Facha el gorro",
+    "publicacion": 8,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "perdido",
+    "id": 44,
+    "commenter": "Teo",
+    "text": "Encontré el gorro",
+    "publicacion": 8,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Teo",
+    "text": "Facha las zapatillas",
+    "publicacion": 7,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "encontrado",
+    "id": 44,
+    "commenter": "Teo",
+    "text": "Son mías las zapatillas",
+    "publicacion": 7,
     "leido": true,
     "eliminado": false
   }

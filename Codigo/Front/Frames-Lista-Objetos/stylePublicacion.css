@@ -197,19 +197,30 @@ main {
 }
 
 .input-but > textarea{
-    height: 6vh;
+    height: 7vh;
     width: 77vw;
     resize: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     padding: 1vh 1vw;
-    border-radius: 1vh;
+    border-radius: 0.9vw;
     border: 0.2rem solid var(--grey);
     transition: border 0.5s;
 } 
 
 .input-but > textarea:focus {
     border: 0.2rem solid var(--focus);
+}
+
+.input-but > textarea::-webkit-scrollbar { 
+    border-radius: 2rem; 
+    width: 0.8rem;
+    background-color: var(--azulOscuro);
+}
+
+.input-but > textarea::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: var(--celeste);
 }
 
 #alerta {

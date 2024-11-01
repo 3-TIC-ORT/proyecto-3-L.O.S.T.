@@ -2,6 +2,26 @@
 
 //Hace que se muestre todo en pantallas: imagen, comentarios, descripcion, titulo, entre mas cosas.
 
+const error = document.getElementById("error")
+
+function cerrarError (e) {
+    const dialogDimensions = error.getBoundingClientRect()
+    console.log(dialogDimensions)
+    console.log(e.clientX)
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom 
+    ) {
+        if (document.getElementById("h2Error").textContent === "Sesion expirada") {
+            window.location.href = "../Frames-Inicio/indexHome.html";
+        }
+        error.close()
+        document.getElementById("darker").classList.remove("darker")
+    }
+} error.addEventListener ("click", cerrarError);
+
 function DataLoader () {
     let params = new URLSearchParams(document.location.search);
     let publicacionId = Number(params.get("pId"));
@@ -55,17 +75,26 @@ function DataLoader () {
                         if (e === false) {
                             alert("No tienes permiso para realizar esta acciónn")
                         } else if (e === "expirado") {
-                            alert("Has tardado mucho tiempo, debes volver a logearte")
-                                localStorage.removeItem("admin")
-                                localStorage.removeItem("userId");
-                                localStorage.removeItem("userName");
-                                localStorage.removeItem("JWT");
-                                window.location.href = "../Frames-Inicio/indexHome.html";
+                            document.getElementById("headerError").style.backgroundColor = "#0783C8"
+                            document.getElementById("h2Error").textContent = "Sesión expirata"
+                            document.getElementById("pError").textContent = "Has tardado mucho, debes volver a logearte"
+                            document.getElementById("darker").classList.add("darker")
+                            error.showModal();
+                            cerrarError()
+                            localStorage.removeItem("admin")
+                            localStorage.removeItem("userId");
+                            localStorage.removeItem("userName");
+                            localStorage.removeItem("JWT");
+                            window.location.href = "../Frames-Inicio/indexHome.html";
                         } else if (e === true) {
                             window.location.href = "indexObjsList.html";
                         } else {
-                            alert("Hubo un error")
-                            console.log(e);
+                            document.getElementById("h2Error").textContent = "Ocurrió un error"
+                            document.getElementById("pError").textContent = "Para más información fijese en la consola"
+                            document.getElementById("darker").classList.add("darker")
+                            error.showModal();
+                            cerrarError()
+                            console.log(retorno);
                         }
                     })
                 })
@@ -95,13 +124,22 @@ function DataLoader () {
                         if(retorno === true){
                             dialog.close()
                         } else if (retorno === "expirado"){
-                            alert("Has tardado mucho tiempo, debes volver a logearte")
+                            document.getElementById("headerError").style.backgroundColor = "#0783C8"
+                            document.getElementById("h2Error").textContent = "Sesión expirada"
+                            document.getElementById("pError").textContent = "Has tardado mucho, debes volver a logearte"
+                            document.getElementById("darker").classList.add("darker")
+                            error.showModal();
+                            cerrarError()
                             localStorage.removeItem("admin")
                             localStorage.removeItem("userId");
                             localStorage.removeItem("userName");
                             localStorage.removeItem("JWT");
                         } else{
-                            alert("Hubo un error");
+                            document.getElementById("h2Error").textContent = "Ocurrió un error"
+                            document.getElementById("pError").textContent = "Para más información fijese en la consola"
+                            document.getElementById("darker").classList.add("darker")
+                            error.showModal();
+                            cerrarError()
                             console.log(retorno);
                         }
                     });
@@ -127,7 +165,12 @@ function DataLoader () {
                 }
                 encontrado.addEventListener("click", () => {
                     if (JSON.parse(localStorage.getItem("JWT")) === null) {
-                        alert("Para hacer esta acción necesita haberse iniciado sesión o registrado anteriormente")
+                        document.getElementById("headerError").style.backgroundColor = "#0783C8"
+                        document.getElementById("h2Error").textContent = "Falta de Permisos"
+                        document.getElementById("pError").textContent = "Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente"
+                        document.getElementById("darker").classList.add("darker")
+                        error.showModal();
+                        cerrarError()
                     } else {
                         dialog.showModal();; 
                     }
@@ -143,23 +186,12 @@ DataLoader();
 function Comentar(){
     let comentario = {}
     if(JSON.parse(localStorage.getItem("JWT")) === null) {
-        let error = document.getElementById("error")
+        document.getElementById("headerError").style.backgroundColor = "#0783C8"
         document.getElementById("h2Error").textContent = "Falta de Permisos"
         document.getElementById("pError").textContent = "Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente"
         document.getElementById("darker").classList.add("darker")
         error.showModal();
-        error.addEventListener ("click", e => {
-            const dialogDimensions = error.getBoundingClientRect()
-            if (
-                e.clientX < dialogDimensions.left ||
-                e.clientX > dialogDimensions.right ||
-                e.clientY < dialogDimensions.top ||
-                e.clientY > dialogDimensions.bottom 
-            ) {
-                error.close()
-                document.getElementById("darker").classList.remove("darker")
-            }
-        }) 
+        cerrarError()
     } else {
         if(document.getElementById("InputComentario").value === ""){
             document.getElementById("alerta").style.display = "flex"
@@ -180,14 +212,23 @@ function Comentar(){
                     document.getElementById("InputComentario").value = "";
                     console.log(`2` , comentario)
                 } else if(retorno === "expirado"){
-                    alert("Has tardado mucho tiempo, debes volver a logearte")
+                    document.getElementById("headerError").style.backgroundColor = "#0783C8"
+                    document.getElementById("h2Error").textContent = "Sesión expirada"
+                    document.getElementById("pError").textContent = "Has tardado mucho, debes volver a logearte"
+                    document.getElementById("darker").classList.add("darker")
+                    error.showModal();
+                    cerrarError()
                     localStorage.removeItem("admin")
                     localStorage.removeItem("userId");
                     localStorage.removeItem("userName");
                     localStorage.removeItem("JWT");
-                    window.location.href = "../Frames-Inicio/indexHome.html";
                 } else{
-                    console.log(retorno);
+                    document.getElementById("h2Error").textContent = "Ocurrió un error"
+                    document.getElementById("pError").textContent = "Para más información fijese en la consola"
+                    document.getElementById("darker").classList.add("darker")
+                    error.showModal();
+                    cerrarError()
+                    console.log(retorno)
                 }
             });
         }

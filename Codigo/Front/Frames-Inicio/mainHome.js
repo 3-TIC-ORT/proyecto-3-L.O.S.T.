@@ -17,11 +17,11 @@ function cerrarError (e) {
         e.clientY > dialogDimensions.bottom 
     ) {
         if (document.getElementById("h2Error").textContent === "Sesión expirada") {
-            window.location.href = "../Frames-Inicio/indexHome.html";
             localStorage.removeItem("admin");
             localStorage.removeItem("userId");
             localStorage.removeItem("userName");
             localStorage.removeItem("JWT");
+            window.location.href = "../Frames-Inicio/indexHome.html";
         }
         error.close()
         document.getElementById("darker").classList.remove("darker")

@@ -31,6 +31,7 @@ body > header{
     height: 8vh;
     align-items: center;
     justify-content: space-between;
+    padding-right: 1vw;
 }
 
 h1{  
@@ -41,8 +42,14 @@ h1{
 }
 
 #quitPublicacion {
-    padding-right: 1vw;
+    padding: 0.4vh 0.4vw;
     cursor: pointer;
+    transition: 0.25s;
+    border-radius: 5vw;
+}
+
+#quitPublicacion:hover {
+    background-color:#36353560;
 }
 
 body > main{

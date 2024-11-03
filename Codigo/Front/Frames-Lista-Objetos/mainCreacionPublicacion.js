@@ -146,6 +146,13 @@ form.addEventListener(`submit`, (e) => {
                 error.showModal();
                 cerrarError()
             } else if(retorno === true){
+                if (JSON.parse(localStorage.getItem("tipo")) === "encontrado") {
+                    localStorage.removeItem("tipo");
+                    localStorage.setItem("tipo", JSON.stringify("perdido"))
+                } else {
+                    localStorage.removeItem("tipo");
+                    localStorage.setItem("tipo", JSON.stringify("encontrado"))
+                }
                 window.location.href = "indexObjsList.html";
             } else{
                 console.log(retorno);

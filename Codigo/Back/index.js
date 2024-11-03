@@ -199,21 +199,27 @@ async function botonEncontre({JWT, id, text}){
     let lista = JSON.parse(fs.readFileSync("Codigo/data/publicaciones.json", 'utf-8'));
     let notificaciones = JSON.parse(fs.readFileSync("Codigo/data/notificaciones.json", "utf-8"));
     let usuarios = JSON.parse(fs.readFileSync("Codigo/data/users.json", "utf-8"));
-    try{
-        const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
-        let notificacion = {type: lista[id].tipo, id:lista[id].creador, commenter:usuarios[payload.id].name, text:text, publicacion:id, leido: false, eliminado: false};
+    if(JWT === false){
+        let notificacion = {type: lista[id].tipo, id:lista[id].creador, commenter:"Anónimo", text:text, publicacion:id, leido: false, eliminado: false};
         notificaciones.push({...notificacion});
         fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
         return true;
-    } catch(err){
-        if (err.code === 'ERR_JWT_EXPIRED') {
-            return "expirado"
-        } else{
-            console.log(err)
-            return err;
+    } else{
+        try{
+            const { payload, protectedHeader } = await jose.jwtVerify(JWT, claveSecreta);
+            let notificacion = {type: lista[id].tipo, id:lista[id].creador, commenter:usuarios[payload.id].name, text:text, publicacion:id, leido: false, eliminado: false};
+            notificaciones.push({...notificacion});
+            fs.writeFileSync("Codigo/data/notificaciones.json", JSON.stringify(notificaciones, null, 2))
+            return true;
+        } catch(err){
+            if (err.code === 'ERR_JWT_EXPIRED') {
+                return "expirado"
+            } else{
+                console.log(err)
+                return err;
+            }
         }
     }
-    
 }
 
 async function mostrarNotificaciones(JWT){
@@ -274,6 +280,7 @@ onEvent("notificacionesLeidas", notificacionesLeidas)
 
 import * as url from 'node:url';
 import { PRIORITY_ABOVE_NORMAL } from "constants";
+import { error } from "console";
 
 if(import.meta.url.startsWith('file:')){
     const modulePath = url.fileURLToPath(import.meta.url);

@@ -1,3 +1,22 @@
+
+const error = document.getElementById("error");
+
+function cerrarError (e) {
+    const dialogDimensions = error.getBoundingClientRect()
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom 
+    ) {
+        if (document.getElementById("h2Error").textContent === "Sesión expirada") {
+            window.location.href = "../Frames-Inicio/indexHome.html";
+        }
+        error.close()
+        document.getElementById("darker").classList.remove("darker")
+    }
+} error.addEventListener ("click", cerrarError);
+
 // La función create post lo que hace es repasar por toda la lista de publicaciones, y mostrar todas las que haya en el html.
 
 const colores = {
@@ -77,7 +96,12 @@ fetchData("cargarPublicaciones", LoadPosts);
 // Para agregar publicación
 function Add() {
     if (JSON.parse(localStorage.getItem("JWT")) === null) {
-        alert("Para hacer esta acción necesita haberse iniciado sesión o registrado anteriormente")
+        document.getElementById("headerError").style.backgroundColor = "#0783C8"
+        document.getElementById("h2Error").textContent = "Falta de Permisos"
+        document.getElementById("pError").textContent = "Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente"
+        document.getElementById("darker").classList.add("darker")
+        error.showModal();
+        cerrarError()
     } else {
         window.location.href = "indexCreacionPublicacion.html";
     }

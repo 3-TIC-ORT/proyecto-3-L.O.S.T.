@@ -6,6 +6,28 @@ let logOut = document.getElementById("log-stuff");
 let bell = document.getElementById("bell");
 let CS = document.getElementById("CS");
 
+const error = document.getElementById("error");
+
+function cerrarError (e) {
+    const dialogDimensions = error.getBoundingClientRect()
+    if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom 
+    ) {
+        if (document.getElementById("h2Error").textContent === "Sesión expirada") {
+            window.location.href = "../Frames-Inicio/indexHome.html";
+            localStorage.removeItem("admin");
+            localStorage.removeItem("userId");
+            localStorage.removeItem("userName");
+            localStorage.removeItem("JWT");
+        }
+        error.close()
+        document.getElementById("darker").classList.remove("darker")
+    }
+} error.addEventListener ("click", cerrarError);
+
 //Si ya estas logeado y venís de otro frame que se te ponga el nombre de usuario y que aparezca como si siguieses logueado.
 
 function iSettings() {
@@ -25,14 +47,18 @@ function iSettings() {
         postData("mostrarNotificaciones", JSON.parse(localStorage.getItem("JWT")), (lista => {
             document.getElementById("notification-box").innerHTML = ``;
             if(lista === "expirado"){
-                alert("Has tardado mucho tiempo, debes volver a logearte")
-                localStorage.removeItem("admin");
-                localStorage.removeItem("userId");
-                localStorage.removeItem("userName");
-                localStorage.removeItem("JWT");
-                window.location.href = "../Frames-Inicio/indexHome.html";
+                document.getElementById("headerError").style.backgroundColor = "#0783C8"
+                document.getElementById("h2Error").textContent = "Sesión expirada"
+                document.getElementById("pError").textContent = "Has tardado mucho, debes volver a logearte"
+                document.getElementById("darker").classList.add("darker")
+                error.showModal();
+                cerrarError()
             } else if(lista === false){
-                alert("Hubo un error")
+                document.getElementById("h2Error").textContent = "Ocurrió un error"
+                document.getElementById("pError").textContent = "Le recomendamos cerrar sesión para solucionar el problema"
+                document.getElementById("darker").classList.add("darker")
+                error.showModal();
+                cerrarError()
             } else if(lista.length === 0) {
                 let notificationBox = document.getElementById("notification-box")
                 notificationBox.style.justifyContent = "center"
@@ -303,20 +329,24 @@ const overlay= document.querySelector("[data-overlay]")
 
 
     document.querySelector("[data-open-modal]").addEventListener("click", () =>{ 
-        modal.showModal();
-        bell.src = `../Imgs/bell-open.png`
         postData("notificacionesLeidas", JSON.parse(localStorage.getItem("JWT")), (retorno)=>{
             if(retorno === true){
+                modal.showModal();
+                bell.src = `../Imgs/bell-open.png`
             } else if (retorno === "expirado"){
-                alert("Has tardado mucho tiempo, debes volver a logearte")
-                localStorage.removeItem("admin")
-                localStorage.removeItem("userId");
-                localStorage.removeItem("userName");
-                localStorage.removeItem("JWT");
-                window.location.href = "../Frames-Inicio/indexHome.html";
+                document.getElementById("headerError").style.backgroundColor = "#0783C8"
+                document.getElementById("h2Error").textContent = "Sesión expirada"
+                document.getElementById("pError").textContent = "Has tardado mucho, debes volver a logearte"
+                document.getElementById("darker").classList.add("darker")
+                error.showModal();
+                cerrarError()
             } else{
-                alert("Hubo un error");
                 console.log(retorno);
+                document.getElementById("h2Error").textContent = "Ocurrió un error"
+                document.getElementById("pError").textContent = "Para más información fijese en la consola"
+                document.getElementById("darker").classList.add("darker")
+                error.showModal();
+                cerrarError()
             }
         });
 })

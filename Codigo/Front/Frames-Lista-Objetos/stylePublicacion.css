@@ -66,6 +66,14 @@ body::-webkit-scrollbar-thumb {
     width: 1.5vw;
     height: 100%;
     cursor: pointer;
+    transition: 0.25s;
+    border-radius: 2vw;
+    box-sizing: content-box;
+    padding: 0.2vh 0.3vw;
+}
+
+#quitPublicacion:hover {
+    background-color:#36353560;
 }
 
 #editar {
@@ -402,6 +410,11 @@ body > .Mder > .coments > section > article > p {
     font-weight: 500;
     user-select: none;
     cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.propuestaDialog > form > input[type="submit"]:hover {
+    background-color: #346FA590;
 }
 
 #error {
@@ -411,6 +424,7 @@ body > .Mder > .coments > section > article > p {
     transform: translateY(10vh) translateX(33vw);
     position: fixed;
     border: none;
+    outline: none;
     user-select: none;
     z-index: 2;
 }

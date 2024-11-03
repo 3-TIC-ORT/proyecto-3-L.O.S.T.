@@ -2,20 +2,22 @@
 
 //Hace que se muestre todo en pantallas: imagen, comentarios, descripcion, titulo, entre mas cosas.
 
-const error = document.getElementById("error")
+const error = document.getElementById("error");
 
 function cerrarError (e) {
     const dialogDimensions = error.getBoundingClientRect()
-    console.log(dialogDimensions)
-    console.log(e.clientX)
     if (
         e.clientX < dialogDimensions.left ||
         e.clientX > dialogDimensions.right ||
         e.clientY < dialogDimensions.top ||
         e.clientY > dialogDimensions.bottom 
     ) {
-        if (document.getElementById("h2Error").textContent === "Sesion expirada") {
+        if (document.getElementById("h2Error").textContent === "Sesión expirada") {
             window.location.href = "../Frames-Inicio/indexHome.html";
+            localStorage.removeItem("admin");
+            localStorage.removeItem("userId");
+            localStorage.removeItem("userName");
+            localStorage.removeItem("JWT");
         }
         error.close()
         document.getElementById("darker").classList.remove("darker")
@@ -58,6 +60,9 @@ function DataLoader () {
                 JWT: JSON.parse(localStorage.getItem("JWT")),
                 id: publicacionId
             }
+            if (propuesta.JWT === undefined || propuesta.JWT === null) {
+                propuesta.JWT = false;
+            }
             if (JSON.parse(localStorage.getItem("userId")) === publicaciones[i].creador || JSON.parse(localStorage.getItem("admin")) === true) {
                 let editar = document.createElement("button");
                 editar.id = "editar";
@@ -73,28 +78,28 @@ function DataLoader () {
                 terminar.addEventListener("click", () => {
                     postData("terminarPublicacion", propuesta, (e) => {
                         if (e === false) {
-                            alert("No tienes permiso para realizar esta acciónn")
+                            document.getElementById("headerError").style.backgroundColor = "#0783C8"
+                            document.getElementById("h2Error").textContent = "Falta de Permisos"
+                            document.getElementById("pError").textContent = "No tienes permiso para hacer esta acción"
+                            document.getElementById("darker").classList.add("darker")
+                            error.showModal();
+                            cerrarError()
                         } else if (e === "expirado") {
                             document.getElementById("headerError").style.backgroundColor = "#0783C8"
-                            document.getElementById("h2Error").textContent = "Sesión expirata"
+                            document.getElementById("h2Error").textContent = "Sesión expirada"
                             document.getElementById("pError").textContent = "Has tardado mucho, debes volver a logearte"
                             document.getElementById("darker").classList.add("darker")
                             error.showModal();
                             cerrarError()
-                            localStorage.removeItem("admin")
-                            localStorage.removeItem("userId");
-                            localStorage.removeItem("userName");
-                            localStorage.removeItem("JWT");
-                            window.location.href = "../Frames-Inicio/indexHome.html";
                         } else if (e === true) {
                             window.location.href = "indexObjsList.html";
                         } else {
+                            console.log(retorno);
                             document.getElementById("h2Error").textContent = "Ocurrió un error"
                             document.getElementById("pError").textContent = "Para más información fijese en la consola"
                             document.getElementById("darker").classList.add("darker")
                             error.showModal();
                             cerrarError()
-                            console.log(retorno);
                         }
                     })
                 })
@@ -106,6 +111,7 @@ function DataLoader () {
                 let form = document.createElement("form")
                 let input = document.createElement("textarea");
                 input.type = "text"
+                input.required = true;
                 input.name = "text"
                 let submit = document.createElement("input")
                 submit.type = "submit"
@@ -116,11 +122,10 @@ function DataLoader () {
                 form.appendChild(h2)
                 form.appendChild(input)
                 form.appendChild(submit)
-                submit.addEventListener("click", (e) => {
+                form.addEventListener("submit", (e) => {
                     e.preventDefault()
                     propuesta.text = input.value
                     postData("botonEncontre", propuesta, (retorno)=>{
-                        console.log(retorno)
                         if(retorno === true){
                             dialog.close()
                         } else if (retorno === "expirado"){
@@ -130,17 +135,13 @@ function DataLoader () {
                             document.getElementById("darker").classList.add("darker")
                             error.showModal();
                             cerrarError()
-                            localStorage.removeItem("admin")
-                            localStorage.removeItem("userId");
-                            localStorage.removeItem("userName");
-                            localStorage.removeItem("JWT");
                         } else{
+                            console.log(retorno);
                             document.getElementById("h2Error").textContent = "Ocurrió un error"
                             document.getElementById("pError").textContent = "Para más información fijese en la consola"
                             document.getElementById("darker").classList.add("darker")
                             error.showModal();
                             cerrarError()
-                            console.log(retorno);
                         }
                     });
                 })
@@ -164,16 +165,7 @@ function DataLoader () {
                     encontrado.textContent = "Lo encontré"
                 }
                 encontrado.addEventListener("click", () => {
-                    if (JSON.parse(localStorage.getItem("JWT")) === null) {
-                        document.getElementById("headerError").style.backgroundColor = "#0783C8"
-                        document.getElementById("h2Error").textContent = "Falta de Permisos"
-                        document.getElementById("pError").textContent = "Para hacer un comentario necesita haberse iniciado sesión o registrado anteriormente"
-                        document.getElementById("darker").classList.add("darker")
-                        error.showModal();
-                        cerrarError()
-                    } else {
-                        dialog.showModal();; 
-                    }
+                    dialog.showModal();
                     }) 
             }
         }
@@ -218,17 +210,13 @@ function Comentar(){
                     document.getElementById("darker").classList.add("darker")
                     error.showModal();
                     cerrarError()
-                    localStorage.removeItem("admin")
-                    localStorage.removeItem("userId");
-                    localStorage.removeItem("userName");
-                    localStorage.removeItem("JWT");
                 } else{
+                    console.log(retorno);
                     document.getElementById("h2Error").textContent = "Ocurrió un error"
                     document.getElementById("pError").textContent = "Para más información fijese en la consola"
                     document.getElementById("darker").classList.add("darker")
                     error.showModal();
                     cerrarError()
-                    console.log(retorno)
                 }
             });
         }

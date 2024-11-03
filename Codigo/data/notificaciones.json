@@ -205,5 +205,68 @@
     "publicacion": 7,
     "leido": true,
     "eliminado": false
+  },
+  {
+    "type": "encontrado",
+    "id": 66,
+    "commenter": "Mate",
+    "text": "",
+    "publicacion": 4,
+    "leido": false,
+    "eliminado": false
+  },
+  {
+    "type": "encontrado",
+    "id": 66,
+    "commenter": "Mate",
+    "text": "",
+    "publicacion": 4,
+    "leido": false,
+    "eliminado": false
+  },
+  {
+    "type": "perdido",
+    "id": 44,
+    "commenter": "Anónimo",
+    "text": "Pene",
+    "publicacion": 8,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "encontrado",
+    "id": 44,
+    "commenter": "Anónimo",
+    "text": "Pene 2",
+    "publicacion": 7,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Santrinix",
+    "text": "Capítulo 1\n\n1 Al principio Dios creó el cielo y la tierra.\n\n2 La tierra era algo informe y vacío, las tinieblas cubrían el abismo, y el soplo de Dios se cernía sobre las aguas.\n\n3 Entonces Dios dijo: «Que exista la luz». Y la luz existió.\n\n4 Dios vio que la luz era buena, y separó la luz de las tini",
+    "publicacion": 8,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "perdido",
+    "id": 44,
+    "commenter": "Anónimo",
+    "text": "sssss",
+    "publicacion": 8,
+    "leido": true,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 44,
+    "commenter": "Mate",
+    "text": "sss",
+    "publicacion": 8,
+    "leido": false,
+    "eliminado": false
   }
 ]

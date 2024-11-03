@@ -219,7 +219,7 @@
   {
     "tipoImg": "jpeg",
     "categoria": "vestimenta",
-    "titulo": "Gorro",
+    "titulo": "Gorros",
     "ubicacion": "",
     "descripcion": "",
     "dejado": "",
@@ -232,6 +232,11 @@
         "user": 83,
         "comm": "Facha el gorro",
         "userName": "Teo"
+      },
+      {
+        "user": 61,
+        "comm": "Capítulo 1\n\n1 Al principio Dios creó el cielo y la tierra.\n\n2 La tierra era algo informe y vacío, las tinieblas cubrían el abismo, y el soplo de Dios se cernía sobre las aguas.\n\n3 Entonces Dios dijo: «Que exista la luz». Y la luz existió.\n\n4 Dios vio que la luz era buena, y separó la luz de las tini",
+        "userName": "Santrinix"
       }
     ],
     "cumplio": false

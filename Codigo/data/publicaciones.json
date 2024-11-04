@@ -1,244 +1,114 @@
 [
   {
     "tipoImg": "png",
-    "categoria": "accesorios",
-    "titulo": "Brocoliiii",
-    "ubicacion": "",
-    "descripcion": "Pene",
-    "dejado": "",
-    "hora": "",
-    "tipo": "perdido",
+    "categoria": "vestimenta",
+    "titulo": "Buzo gris",
+    "ubicacion": "Vestuarios del poli",
+    "descripcion": "El martes en el tercer bloque encontré este buzo gris, que tiene un dibujo de una camioneta verde y una palmera con el sol de fondo.",
+    "dejado": "Biblioteca",
+    "hora": "3er Bloque, martes",
+    "tipo": "encontrado",
     "id": 0,
-    "creador": 44,
-    "comentarios": [
-      {
-        "user": 61,
-        "comm": "Skibidi",
-        "userName": "Santrinix"
-      },
-      {
-        "user": 61,
-        "comm": "Sigma",
-        "userName": "Santrinix"
-      },
-      {
-        "user": 61,
-        "comm": "Fanum Tax",
-        "userName": "Santrinix"
-      },
-      {
-        "user": 61,
-        "comm": "Buenas",
-        "userName": "Santrinix"
-      },
-      {
-        "user": 44,
-        "comm": "Holaaa",
-        "userName": "Mate"
-      },
-      {
-        "user": 62,
-        "comm": "Épicooo",
-        "userName": "Santiago Ruina"
-      },
-      {
-        "user": 44,
-        "comm": "Buenas",
-        "userName": "Mate"
-      },
-      {
-        "user": 64,
-        "comm": "Que onda",
-        "userName": "SDjmamkldas"
-      },
-      {
-        "user": 64,
-        "comm": "Piola el brocoli",
-        "userName": "SDjmamkldas"
-      },
-      {
-        "user": 64,
-        "comm": "coment 1000",
-        "userName": "SDjmamkldas"
-      },
-      {
-        "user": 64,
-        "comm": "No se donde está",
-        "userName": "SDjmamkldas"
-      }
-    ],
-    "cumplio": true
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
   },
   {
-    "tipoImg": "jpeg",
-    "categoria": "paraguas",
-    "titulo": "Buenaas",
-    "ubicacion": "El baño de tic",
-    "descripcion": "skibidi dop dop dop yes yes ",
-    "dejado": "El baño de medios",
-    "hora": "4:20 pm",
+    "tipoImg": "png",
+    "categoria": "cuaderno/carpeta",
+    "titulo": "Cuadernos marrones",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
     "tipo": "encontrado",
     "id": 1,
-    "creador": 44,
-    "comentarios": [
-      {
-        "user": 44,
-        "comm": "YO ME SENTÉ EN EL SKIBIDI TOILET Y SE METIÓ LA CABEZA POR MI ANOOO 10/10",
-        "userName": "Mate"
-      },
-      {
-        "user": 61,
-        "comm": "Skibidiiiiiiiiiii",
-        "userName": "Santrinix"
-      }
-    ],
-    "cumplio": true
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
   },
   {
-    "tipoImg": "jpeg",
-    "categoria": "útiles escolares",
-    "titulo": "Asado",
+    "tipoImg": "png",
+    "categoria": "mochilas",
+    "titulo": "Mochila roja",
     "ubicacion": "",
-    "descripcion": "PIOLAAAA",
+    "descripcion": "",
     "dejado": "",
     "hora": "",
-    "tipo": "perdido",
+    "tipo": "encontrado",
     "id": 2,
-    "creador": 44,
-    "comentarios": [
-      {
-        "user": 65,
-        "comm": "Yo también perdi un asado\n",
-        "userName": "sebastian"
-      },
-      {
-        "user": 44,
-        "comm": "Test xd",
-        "userName": "Mate"
-      },
-      {
-        "user": 70,
-        "comm": "invitenme wacho",
-        "userName": "Lucio"
-      },
-      {
-        "user": 44,
-        "comm": "Buenas",
-        "userName": "Mate"
-      },
-      {
-        "user": 44,
-        "comm": "Ahora si",
-        "userName": "Mate"
-      }
-    ],
+    "creador": 0,
+    "comentarios": [],
     "cumplio": false
   },
   {
     "tipoImg": "png",
-    "categoria": "otros",
-    "titulo": "campana",
-    "ubicacion": "L5",
-    "descripcion": "encontre un campana",
-    "dejado": "en ASISTENCIA",
-    "hora": "mas o menos a las 10:45",
+    "categoria": "paraguas",
+    "titulo": "4 Paraguas",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
     "tipo": "encontrado",
     "id": 3,
-    "creador": 66,
+    "creador": 0,
     "comentarios": [],
     "cumplio": false
   },
   {
     "tipoImg": "png",
-    "categoria": "otros",
-    "titulo": "campana",
-    "ubicacion": "L5",
-    "descripcion": "encontre un campana",
-    "dejado": "en ASISTENCIA",
-    "hora": "mas o menos a las 10:45",
+    "categoria": "productos electrónicos",
+    "titulo": "Calculadoras",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
     "tipo": "encontrado",
     "id": 4,
-    "creador": 66,
+    "creador": 0,
     "comentarios": [],
     "cumplio": false
   },
   {
-    "tipoImg": "jpeg",
-    "categoria": "otros",
-    "titulo": "botella",
-    "ubicacion": "yqc",
-    "descripcion": "Es mia, es una botella trans y celeste ",
-    "dejado": "yqc",
-    "hora": "yqc",
-    "tipo": "perdido",
+    "tipoImg": "png",
+    "categoria": "productos electrónicos",
+    "titulo": "Auriculares de colores",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
     "id": 5,
-    "creador": 68,
+    "creador": 0,
     "comentarios": [],
-    "cumplio": true
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "vestimenta",
-    "titulo": "BEN 11",
-    "ubicacion": "Nos encontramos en mi casa uwu",
-    "descripcion": "Mi ben 100000",
-    "dejado": "ni idea donde lo vi por ultima vez",
-    "hora": "no se cuando se perdio",
-    "tipo": "perdido",
-    "id": 6,
-    "creador": 44,
-    "comentarios": [
-      {
-        "user": 44,
-        "comm": "Ahora si",
-        "userName": "Mate"
-      }
-    ],
     "cumplio": false
   },
   {
-    "tipoImg": "jpeg",
-    "categoria": "cuaderno/carpeta",
-    "titulo": "Zapatillas",
+    "tipoImg": "png",
+    "categoria": "mochilas",
+    "titulo": "Mochila azul",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "encontrado",
+    "id": 6,
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "png",
+    "categoria": "productos electrónicos",
+    "titulo": "PC vieja",
     "ubicacion": "",
     "descripcion": "",
     "dejado": "",
     "hora": "",
     "tipo": "encontrado",
     "id": 7,
-    "creador": 44,
-    "comentarios": [
-      {
-        "user": 83,
-        "comm": "Facha las zapatillas",
-        "userName": "Teo"
-      }
-    ],
-    "cumplio": false
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "vestimenta",
-    "titulo": "Gorros",
-    "ubicacion": "",
-    "descripcion": "",
-    "dejado": "",
-    "hora": "",
-    "tipo": "perdido",
-    "id": 8,
-    "creador": 44,
-    "comentarios": [
-      {
-        "user": 83,
-        "comm": "Facha el gorro",
-        "userName": "Teo"
-      },
-      {
-        "user": 61,
-        "comm": "Capítulo 1\n\n1 Al principio Dios creó el cielo y la tierra.\n\n2 La tierra era algo informe y vacío, las tinieblas cubrían el abismo, y el soplo de Dios se cernía sobre las aguas.\n\n3 Entonces Dios dijo: «Que exista la luz». Y la luz existió.\n\n4 Dios vio que la luz era buena, y separó la luz de las tini",
-        "userName": "Santrinix"
-      }
-    ],
+    "creador": 0,
+    "comentarios": [],
     "cumplio": false
   },
   {

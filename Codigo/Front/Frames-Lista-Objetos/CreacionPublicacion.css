@@ -46,6 +46,7 @@ h1{
     cursor: pointer;
     transition: 0.25s;
     border-radius: 5vw;
+    width: 2.5vw;
 }
 
 #quitPublicacion:hover {

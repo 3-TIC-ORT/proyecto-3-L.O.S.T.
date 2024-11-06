@@ -57,7 +57,7 @@ body > header {
 
 body > header > img {
     width: 2.5vw;
-    height: 3.5vh;
+    height: 1.85vw;
     cursor: pointer;
     transition: background-color 0.25s;
     box-sizing: content-box;  

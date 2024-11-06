@@ -163,7 +163,7 @@ aside {
 
 .ObjectsList {
     display: grid;
-    grid-template: repeat(25, 32.5rem) / 1fr 1fr 1fr 1fr ;
+    grid-template: repeat(25, 29rem) / 1fr 1fr 1fr 1fr ;
     width: 90%;
     height: 90%;
 }
@@ -176,7 +176,7 @@ aside {
     align-items: center;
     cursor: pointer;
     width: 80%;
-    height: 80%;
+    height: 90%;
     justify-self: center;
     border-radius: 2vw;
     transition: background-color 0.25s;

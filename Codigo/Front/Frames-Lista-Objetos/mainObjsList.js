@@ -72,12 +72,35 @@ function LoadPosts(listaCompleta) {
         let nuevoBox = document.createElement("article");
         nuevoBox.id = `${postList[i].id}`;
         nuevoBox.classList.add("post");
+        // const image = new Image();
+        // image.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
         let nuevoUp = document.createElement("img");
         nuevoUp.classList.add("up");
+        // const ctx = nuevoUp.getContext('2d');
+        // nuevoUp.width = image.width;
+        // nuevoUp.height = image.height;
+        // ctx.drawImage(image, 0, 0, nuevoUp.width, nuevoUp.height);
+
+        // const imageData = ctx.getImageData(0, 0, nuevoUp.width, nuevoUp.height);
+        // const data = imageData.data;
+
+        // let r = 0, g = 0, b = 0;
+        // for (let i = 0; i < data.length; i += 4) {
+        //     r += data[i];
+        //     g += data[i + 1];
+        //     b += data[i + 2];
+        // }
+
+        // const pixelCount = data.length / 4;
+        // r = Math.floor(r / pixelCount);
+        // g = Math.floor(g / pixelCount);
+        // b = Math.floor(b / pixelCount);
+        // console.log(`Promedio del color: rgb(${r}, ${g}, ${b})`);
+        nuevoUp.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
+        nuevoUp.style.backgroundColor = "black";
         let nuevoDown = document.createElement("div");
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");
-        nuevoUp.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
         Downtxt.textContent = postList[i].titulo;
         document.getElementById("ObjectsList").appendChild(nuevoBox);
         document.getElementById(`${postList[i].id}`).appendChild(nuevoUp);

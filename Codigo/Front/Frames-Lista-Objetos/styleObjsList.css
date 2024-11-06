@@ -217,6 +217,7 @@ aside {
     border-top-left-radius: 2vw;
     border-top-right-radius: 2vw;
     transition: opacity 0.25s;
+    object-fit: contain;
 }
 
 .down {

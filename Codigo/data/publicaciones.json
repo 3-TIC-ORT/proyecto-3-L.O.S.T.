@@ -20,6 +20,11 @@
         "user": 1,
         "comm": "Chau",
         "userName": "Hola1234"
+      },
+      {
+        "user": 1,
+        "comm": "no me lo roben es mio ",
+        "userName": "brigu"
       }
     ],
     "cumplio": false
@@ -149,5 +154,19 @@
     "creador": 44,
     "comentarios": [],
     "cumplio": true
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "útiles escolares",
+    "titulo": "lapiz blanco prismacolor premier",
+    "ubicacion": "llamar",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "lo perdi hace un mes ",
+    "tipo": "perdido",
+    "id": 10,
+    "creador": 1,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

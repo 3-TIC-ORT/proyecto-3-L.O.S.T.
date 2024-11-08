@@ -72,32 +72,35 @@ function LoadPosts(listaCompleta) {
         let nuevoBox = document.createElement("article");
         nuevoBox.id = `${postList[i].id}`;
         nuevoBox.classList.add("post");
-        // const image = new Image();
-        // image.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
-        let nuevoUp = document.createElement("img");
+        let nuevoUp = document.createElement("div");
         nuevoUp.classList.add("up");
-        // const ctx = nuevoUp.getContext('2d');
-        // nuevoUp.width = image.width;
-        // nuevoUp.height = image.height;
-        // ctx.drawImage(image, 0, 0, nuevoUp.width, nuevoUp.height);
-
-        // const imageData = ctx.getImageData(0, 0, nuevoUp.width, nuevoUp.height);
-        // const data = imageData.data;
-
-        // let r = 0, g = 0, b = 0;
-        // for (let i = 0; i < data.length; i += 4) {
-        //     r += data[i];
-        //     g += data[i + 1];
-        //     b += data[i + 2];
+        let nuevaImg = document.createElement("img");
+        nuevoUp.appendChild(nuevaImg);
+        nuevaImg.classList.add("nuevaImg");
+        nuevaImg.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
+        nuevoUp.style.backgroundImage = `url('../../data/imgs/${postList[i].id}.${postList[i].tipoImg}')`;
+        // nuevoUp.crossOrigin = "anonymous";
+        // nuevoUp.onload = () => {
+        //     const canvas = document.createElement('canvas');
+        //     const ctx = canvas.getContext('2d');
+        //     canvas.width = nuevoUp.width;
+        //     canvas.height = nuevoUp.height;
+        //     ctx.drawImage(nuevoUp, 0, 0, canvas.width, canvas.height);
+        //     const imageData = ctx.getImageData(0, 0, nuevoUp.width, nuevoUp.height);
+        //     const data = imageData.data;
+        //     let r = 0, g = 0, b = 0;
+        //     for (let i = 0; i < data.length; i += 4) {
+        //         r += data[i];
+        //         g += data[i + 1];
+        //         b += data[i + 2];
+        //     }
+        //     const pixelCount = data.length / 4;
+        //     r = Math.floor(r / pixelCount);
+        //     g = Math.floor(g / pixelCount);
+        //     b = Math.floor(b / pixelCount);
+        //     nuevoUp.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        //     console.log(`Promedio del color: rgb(${r}, ${g}, ${b})`);
         // }
-
-        // const pixelCount = data.length / 4;
-        // r = Math.floor(r / pixelCount);
-        // g = Math.floor(g / pixelCount);
-        // b = Math.floor(b / pixelCount);
-        // console.log(`Promedio del color: rgb(${r}, ${g}, ${b})`);
-        nuevoUp.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
-        nuevoUp.style.backgroundColor = "black";
         let nuevoDown = document.createElement("div");
         nuevoDown.classList.add("down");
         let Downtxt = document.createElement("h3");

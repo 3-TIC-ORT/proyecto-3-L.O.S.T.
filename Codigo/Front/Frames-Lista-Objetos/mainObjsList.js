@@ -76,9 +76,12 @@ function LoadPosts(listaCompleta) {
         nuevoUp.classList.add("up");
         let nuevaImg = document.createElement("img");
         nuevoUp.appendChild(nuevaImg);
+        let nuevoFondo = document.createElement("img");
+        nuevoUp.appendChild(nuevoFondo);
         nuevaImg.classList.add("nuevaImg");
         nuevaImg.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
-        nuevoUp.style.backgroundImage = `url('../../data/imgs/${postList[i].id}.${postList[i].tipoImg}')`;
+        nuevoFondo.src = `../../data/imgs/${postList[i].id}.${postList[i].tipoImg}`;
+        nuevoFondo.classList.add("nuevoFondo")
         // nuevoUp.crossOrigin = "anonymous";
         // nuevoUp.onload = () => {
         //     const canvas = document.createElement('canvas');

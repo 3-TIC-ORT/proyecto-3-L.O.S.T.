@@ -4,11 +4,5 @@
     "password": "ContraseñaPrueba1",
     "id": 0,
     "admin": false
-  },
-  {
-    "name": "brigu",
-    "password": "brigu12345Q",
-    "id": 1,
-    "admin": false
   }
 ]

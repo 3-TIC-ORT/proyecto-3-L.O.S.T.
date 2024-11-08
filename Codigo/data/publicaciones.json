@@ -2,7 +2,7 @@
   {
     "tipoImg": "png",
     "categoria": "vestimenta",
-    "titulo": "Buzo gris",
+    "titulo": "Buzo Gris",
     "ubicacion": "Vestuarios del poli",
     "descripcion": "El martes en el tercer bloque encontré este buzo gris, que tiene un dibujo de una camioneta verde y una palmera con el sol de fondo.",
     "dejado": "Biblioteca",
@@ -154,19 +154,5 @@
     "creador": 44,
     "comentarios": [],
     "cumplio": true
-  },
-  {
-    "tipoImg": "jpeg",
-    "categoria": "útiles escolares",
-    "titulo": "lapiz blanco prismacolor premier",
-    "ubicacion": "llamar",
-    "descripcion": "",
-    "dejado": "",
-    "hora": "lo perdi hace un mes ",
-    "tipo": "perdido",
-    "id": 10,
-    "creador": 1,
-    "comentarios": [],
-    "cumplio": false
   }
 ]

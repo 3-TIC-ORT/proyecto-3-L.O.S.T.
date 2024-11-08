@@ -109,6 +109,12 @@ select{
     color: var(--darkGrey);
     border: 0.22rem solid var(--border);
     transition: border 0.5s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../Imgs/select-arrow.png");
+    background-repeat: no-repeat;
+    background-position-x: 99%;
+    background-position-y: 1vh;
 }
 
 .tamaños {

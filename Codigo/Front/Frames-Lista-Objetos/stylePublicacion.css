@@ -108,7 +108,7 @@ main {
     height: 90vh;   
 }
 
-.Mizq > img{
+#foto{
     width: 90%;
     height: 60vh;
     background-color: var(--grey);

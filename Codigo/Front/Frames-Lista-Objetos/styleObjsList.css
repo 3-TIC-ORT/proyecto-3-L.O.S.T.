@@ -102,18 +102,31 @@ ul{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transition: all 0.25s;
 }
 
 li{
     cursor: pointer;
     list-style: none;
     font-size: 1.1rem;
+    transition: all 0.25s;
+}
+
+li:hover{
+    color: var(--azulOscuro);
+    font-size: 1.15rem;
+    font-weight: 500;
 }
 
 li::before {
     content: "• ";
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     box-shadow: 0 0.2rem 0.2rem #0000;
+    transition: all 0.25s;
+}
+
+li:hover::before {
+    color: var(--azulOscuro);
 }
 
 .vestimenta::before {
@@ -150,11 +163,11 @@ li::before {
 
 aside {
     position: absolute;
-    background-color: #D2D2D2F8;
+    background-color: #D2D2D2FA;
     justify-content: flex-start;
     align-items: center;
     display: none;
-    width: 17vw;
+    width: 14vw;
     height: 63vh;
     padding: 0 1vw;
     border-radius: 0.7vw;
@@ -179,7 +192,7 @@ aside {
     height: 90%;
     justify-self: center;
     border-radius: 2vw;
-    transition: background-color 0.25s;
+    transition: all 0.25s;
 }
 
 .create:hover {
@@ -202,6 +215,11 @@ aside {
 .post {
     font-size: 5rem;
     order: -1;
+}
+
+.post:hover {
+    width: 82%;
+    height: 92%;
 }
 
 .up, .down {
@@ -228,8 +246,9 @@ aside {
     border-top-right-radius: 2vw;
     border-top-left-radius: 2vw;
     position: absolute;
+    background-color: none;
     width: 16vw;
-    height: 36vh;
+    height: 35vh;
 }
 
 .nuevaImg {
@@ -248,11 +267,13 @@ aside {
     border-bottom-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
     transition: background-color 0.25s;
+    padding: 0.5vh 0.5vw;
 }
 
-h3 {
+.down > h3 {
     user-select:text;
     cursor:text;
+    text-align: center;
 }
 
 .addtxt, .add {

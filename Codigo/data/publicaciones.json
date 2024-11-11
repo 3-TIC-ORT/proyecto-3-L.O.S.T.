@@ -10,23 +10,7 @@
     "tipo": "encontrado",
     "id": 0,
     "creador": 0,
-    "comentarios": [
-      {
-        "user": 1,
-        "comm": "Hola",
-        "userName": "Hola1234"
-      },
-      {
-        "user": 1,
-        "comm": "Chau",
-        "userName": "Hola1234"
-      },
-      {
-        "user": 1,
-        "comm": "no me lo roben es mio ",
-        "userName": "brigu"
-      }
-    ],
+    "comentarios": [],
     "cumplio": false
   },
   {
@@ -126,33 +110,5 @@
     "creador": 0,
     "comentarios": [],
     "cumplio": false
-  },
-  {
-    "tipoImg": "png",
-    "categoria": "mochilas",
-    "titulo": "Pene",
-    "ubicacion": "",
-    "descripcion": "",
-    "dejado": "",
-    "hora": "",
-    "tipo": "encontrado",
-    "id": 9,
-    "creador": 44,
-    "comentarios": [],
-    "cumplio": true
-  },
-  {
-    "tipoImg": "png",
-    "categoria": "cuaderno/carpeta",
-    "titulo": "Pene 2",
-    "ubicacion": "",
-    "descripcion": "",
-    "dejado": "",
-    "hora": "",
-    "tipo": "encontrado",
-    "id": 10,
-    "creador": 44,
-    "comentarios": [],
-    "cumplio": true
   }
 ]

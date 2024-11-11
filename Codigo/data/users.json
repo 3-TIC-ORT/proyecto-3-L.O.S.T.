@@ -4,5 +4,11 @@
     "password": "ContraseñaPrueba1",
     "id": 0,
     "admin": false
+  },
+  {
+    "name": "gloria",
+    "password": "Medrano2665",
+    "id": 1,
+    "admin": false
   }
 ]

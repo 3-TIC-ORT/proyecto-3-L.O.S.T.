@@ -265,7 +265,7 @@ aside {
 
 .down {
     height: 25%;
-    font-size: 3vh;
+    font-size: 1.4rem;
     background-color:var(--azulOscuro);
     color: #D3D3D3;
     border-bottom-left-radius: 2vw;
@@ -278,6 +278,8 @@ aside {
     user-select:text;
     cursor:text;
     text-align: center;
+    text-overflow: ellipsis;
+    overflow: none;
 }
 
 .addtxt, .add {

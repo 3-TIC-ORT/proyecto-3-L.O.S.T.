@@ -110,5 +110,19 @@
     "creador": 0,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "útiles escolares",
+    "titulo": "Lapicera negra",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 8,
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
   }
 ]

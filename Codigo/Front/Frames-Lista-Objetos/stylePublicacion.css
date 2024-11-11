@@ -337,7 +337,7 @@ body > .Mder > .coments > section > article > p {
     cursor: pointer;
     user-select: none;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.7rem;
     transition: background-color 0.25s;
 }
 

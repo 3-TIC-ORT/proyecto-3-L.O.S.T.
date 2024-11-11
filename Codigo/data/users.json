@@ -6,9 +6,15 @@
     "admin": false
   },
   {
-    "name": "gloria",
-    "password": "Medrano2665",
+    "name": "p i t o",
+    "password": "Felipoto123",
     "id": 1,
+    "admin": false
+  },
+  {
+    "name": "p ija",
+    "password": "Teogay123",
+    "id": 2,
     "admin": false
   }
 ]

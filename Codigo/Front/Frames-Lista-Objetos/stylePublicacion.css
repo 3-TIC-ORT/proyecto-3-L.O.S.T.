@@ -51,11 +51,11 @@ body::-webkit-scrollbar-thumb {
     color: white;
 }
 
-.Mder > header {
+header {
     width: 7vw;
     height: 4vh;
     box-sizing: content-box;
-    padding: 0 1.5vw;
+    padding: 1vh 1.5vw;
     align-self: flex-end;
     display: flex;
     justify-content: space-between;
@@ -96,19 +96,20 @@ body::-webkit-scrollbar-thumb {
 main {
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 95%;
 }
 
 .Mizq {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 1.5%;
     width: 40%;
     height: 90vh;   
 }
 
 #foto{
-    width: 90%;
+    width: 80%;
     height: 60vh;
     background-color: var(--grey);
     display: flex;
@@ -119,7 +120,7 @@ main {
 .Mder {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 4%;
     align-items: center;
     width: 60%;
     height: auto;
@@ -135,23 +136,24 @@ main {
     text-decoration: underline;
     text-underline-offset: 0.7rem;
     color: white;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 .Mder > article > h2 {
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .lugar, .fecha, .dejado, .descr {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 55vw;
+    width: 50vw;
     color: black;
     background-color: var(--slightlyWhite);
     border: 0.2rem solid var(--border);
     border-radius: 1vw;
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     font-weight: 400;
     padding: 1vh 1vw
 }
@@ -248,16 +250,18 @@ main {
 }
 
 #enviar{
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    height: 6vh;
+    height: 7vh;
     width: 13vw;
     border-radius: 0.8vw;
     background-color: var(--celeste);
     cursor: pointer;
     color: white;
+    box-shadow: 0 0.1rem 0.2rem rgba(65, 65, 65, 0.693);
     transition: background-color 0.25s;
 }
 
@@ -320,8 +324,8 @@ body > .Mder > .coments > section > article > p {
     display: grid;
     place-items: center;
     align-self: center;
-    width: 90%;
-    height: 15vh;
+    width: 65%;
+    height: 13vh;
 }
 
 #terminar, #encontrado{
@@ -341,14 +345,6 @@ body > .Mder > .coments > section > article > p {
 #encontrado:hover{
     background-color:#00628C;
 }
-
-.input-but > button{
-    padding: 1vw;
-    padding-right: 2vw;
-    border-radius: 1vh;
-    width:17vw;
-    border: none;
-} 
 
 .propuestaDialog {
     position: fixed;

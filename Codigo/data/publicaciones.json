@@ -10,7 +10,13 @@
     "tipo": "encontrado",
     "id": 0,
     "creador": 0,
-    "comentarios": [],
+    "comentarios": [
+      {
+        "user": 1,
+        "comm": "Che, es mi buzo. Borra la publicacion",
+        "userName": "JuancitoPro"
+      }
+    ],
     "cumplio": false
   },
   {
@@ -121,6 +127,76 @@
     "hora": "",
     "tipo": "perdido",
     "id": 8,
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "webp",
+    "categoria": "vestimenta",
+    "titulo": "Buzo marrón GROSS CLOTHING EPICOOOOOOOOOOOOOOOOOOO",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 9,
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "webp",
+    "categoria": "productos electrónicos",
+    "titulo": "Airpods",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 10,
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "avif",
+    "categoria": "accesorios",
+    "titulo": "Anillo blanco",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 11,
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "productos electrónicos",
+    "titulo": "iPhone 16",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 12,
+    "creador": 0,
+    "comentarios": [],
+    "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "otros",
+    "titulo": "Vianda amarilla",
+    "ubicacion": "",
+    "descripcion": "",
+    "dejado": "",
+    "hora": "",
+    "tipo": "perdido",
+    "id": 13,
     "creador": 0,
     "comentarios": [],
     "cumplio": false

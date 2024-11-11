@@ -192,8 +192,8 @@ aside {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    width: 80%;
-    height: 90%;
+    width: 15vw;
+    height: 45vh;
     justify-self: center;
     border-radius: 2vw;
     transition: all 0.25s;
@@ -222,8 +222,7 @@ aside {
 }
 
 .post:hover {
-    width: 82%;
-    height: 92%;
+    scale: 1.05;
 }
 
 .up, .down {
@@ -275,11 +274,14 @@ aside {
 }
 
 .down > h3 {
+    max-width: 90%;
+    font-size: 1.4rem;
     user-select:text;
     cursor:text;
     text-align: center;
     text-overflow: ellipsis;
-    overflow: none;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .addtxt, .add {

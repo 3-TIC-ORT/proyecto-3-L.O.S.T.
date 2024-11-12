@@ -193,7 +193,7 @@ aside {
     align-items: center;
     cursor: pointer;
     width: 15vw;
-    height: 40vh;
+    height: 60vh;
     justify-self: center;
     border-radius: 2vw;
     transition: all 0.25s;
@@ -209,7 +209,6 @@ aside {
 
 .create > h1 {
     font-size: 15rem;
-    padding-bottom: 3vh;
 }
 
 .create > span {

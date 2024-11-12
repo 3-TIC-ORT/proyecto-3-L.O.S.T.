@@ -8,7 +8,7 @@
     --azulOscuro: #134B70;
     --slightlyWhite: #EEEEEE;
     --font-INTER: "Inter", sans-serif;
-    --font-JSMATH: 'jsMath-cmr10', sans-serif;
+    --font-JSMATH: 'jsMath-cmr10';
     --font-LALEZAR: "Lalezar variant0", sans-serif;
     --red: #A90000;
     --register: #0783C8;
@@ -70,7 +70,7 @@ section > header{
     background: linear-gradient(to top, #B0AAAA 30%, var(--slightlyWhite) 90%);
     -webkit-background-clip: text;
     background-clip: text;
-    line-height: 95%;
+    line-height: 100%;
 }
 
 .acronim{

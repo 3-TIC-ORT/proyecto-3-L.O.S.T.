@@ -529,6 +529,9 @@ header > dialog::-webkit-scrollbar-thumb {
     font-size: 0.8rem;
     font-weight: 300;
     width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 #notification-box > div > small {

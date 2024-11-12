@@ -67,7 +67,7 @@ function DataLoader () {
                 let editar = document.createElement("button");
                 editar.id = "editar";
                 editar.textContent = "Editar";
-                document.querySelector("header").appendChild(editar);
+                document.querySelector("#access-nav").appendChild(editar);
                 document.getElementById("editar").addEventListener("click", () => {
                     window.location.href = `indexCreacionPublicacion.html?pId=${new URLSearchParams(document.location.search).get("pId")}&editado=true` 
                 });

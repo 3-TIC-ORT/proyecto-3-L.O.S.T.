@@ -51,7 +51,7 @@ body::-webkit-scrollbar-thumb {
     color: white;
 }
 
-.access-nav {
+#access-nav {
     width: 7vw;
     height: 4vh;
     box-sizing: content-box;

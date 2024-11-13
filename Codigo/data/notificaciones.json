@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "type": "encontrado",
+    "id": 0,
+    "commenter": "Facu99",
+    "text": "Soy facu, es mi buzo",
+    "publicacion": 0,
+    "leido": false,
+    "eliminado": false
+  },
+  {
+    "type": "comentario",
+    "id": 0,
+    "commenter": "Facu99",
+    "text": "Ya te mande el mensaje, es mio",
+    "publicacion": 0,
+    "leido": false,
+    "eliminado": false
+  },
+  {
+    "type": "perdido",
+    "id": 1,
+    "commenter": "Felipao",
+    "text": "Yo encontré tu cartuchera, ahora te mando un mensaje.",
+    "publicacion": 14,
+    "leido": true,
+    "eliminado": true
+  }
+]

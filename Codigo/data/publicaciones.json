@@ -15,6 +15,11 @@
         "user": 1,
         "comm": "Che, es mi buzo. Borra la publicacion",
         "userName": "JuancitoPro"
+      },
+      {
+        "user": 1,
+        "comm": "Ya te mande el mensaje, es mio",
+        "userName": "Facu99"
       }
     ],
     "cumplio": false
@@ -200,5 +205,19 @@
     "creador": 0,
     "comentarios": [],
     "cumplio": false
+  },
+  {
+    "tipoImg": "jpeg",
+    "categoria": "útiles escolares",
+    "titulo": "Cartuchera Roja",
+    "ubicacion": "+54 9 11234566",
+    "descripcion": "roja, y con cierres grises",
+    "dejado": "L2",
+    "hora": "No se",
+    "tipo": "perdido",
+    "id": 14,
+    "creador": 1,
+    "comentarios": [],
+    "cumplio": true
   }
 ]
